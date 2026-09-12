@@ -1,20 +1,6 @@
 name: windows-static-shipping
 
-# Дзеркало ЛОКАЛЬНОЇ збірки, з якої постачається single-DLL `Tamga.dll`.
-#
-# Навіщо окремий workflow. `windows-msvc-matrix` конфігурує без
-# `TAMGA_ENABLE_XML_SIGNATURES` і `TAMGA_ENABLE_PDF_SIGNATURES`, а в
-# `tests/CMakeLists.txt` увесь блок від `if(TAMGA_ENABLE_XML_SIGNATURES AND
-# TAMGA_CRYPTONITE_TARGETS)` до `endif()` гейтиться саме на них. Отже вся
-# interop-сюїта проти РЕАЛЬНИХ підписів Дія/Вчасно — регресії Купини,
-# мультипідпис CMS, PAdES-фікстури, перевірка підпису довірчого списку — у тій
-# матриці навіть не збиралася. Тобто конфігурація, яка реально їде до
-# користувача, не перевірялася взагалі.
-#
-# Цей job закриває саме цю прогалину і додатково стереже дві властивості, які
-# інакше губляться непомітно:
-#   * повний CTest у статичній конфігурації;
-#   * `Tamga.dll` залежить ЛИШЕ від системних DLL Windows (single-DLL).
+# Автономна shipping-збірка з XML/PDF, публічним CTest і перевіркою single-DLL.
 
 on:
   push:
@@ -38,17 +24,6 @@ jobs:
         uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1
         with:
           arch: x64
-
-      # Н-08 (завершення): залежності більше не перелічуються тут.
-      # `vcpkg.json` — єдине джерело і складу, і версій; manifest-режим
-      # ставить їх під час `cmake` у `<build>/vcpkg_installed`.
-      #
-      # Що це прибрало, крім дублювання переліку: явні VCPKG_INSTALLED_DIR
-      # і CMAKE_PREFIX_PATH. Вони були потрібні саме тому, що пакети
-      # ставилися в ОДНЕ дерево, а toolchain шукав в іншому. У
-      # manifest-режимі дерево одне й належить збірці, тож розходитися
-      # немає чому. Перевірено локально: конфігурація без обох прапорців
-      # знаходить libxml2, qpdf і zlib і дає 53/53 зелених.
 
       - name: Configure
         shell: pwsh
@@ -102,7 +77,7 @@ jobs:
           if ($log -notmatch 'TAMGA_ENABLE_XML_SIGNATURES:BOOL=ON') { throw "XMLDSIG engine is OFF" }
           if ($log -notmatch 'TAMGA_ENABLE_PDF_SIGNATURES:BOOL=ON') { throw "PAdES engine is OFF" }
           $tests = ctest --test-dir $env:BUILD_DIR -N | Out-String
-          foreach ($t in @('tamga-interop-replay-tests','tamga-diia-xades-regression')) {
+          foreach ($t in @('tamga-xmldsig-security-tests','tamga-pades-security-tests')) {
             if ($tests -notmatch [regex]::Escape($t)) { throw "gated suite missing: $t" }
           }
           Write-Host $tests
@@ -111,33 +86,7 @@ jobs:
         shell: pwsh
         run: ctest --test-dir $env:BUILD_DIR --output-on-failure
 
-      # Диференційна звірка проти ETSI DSS — еталонної реалізації ЄК.
-      # Чужа реалізація ловить те, чого власні тести не бачать: вони
-      # написані тією ж головою, що й код.
-      #
-      # Криптографічні вердикти звірити НЕ вдається — DSS не знає ДСТУ 4145,
-      # ГОСТ 34.311 і Купини, тож на українських артефактах падає ще до
-      # вердикту. Звіряється структурний шар: тип контейнера, склад
-      # підписаних записів, кількість файлів підпису. Подробиці й межі —
-      # у docs/dss-crosscheck.md.
-      #
-      # Крок навмисно доданий у ЦЕЙ job, а не в окремий: інакше довелося б
-      # удруге збирати весь C++ заради одного tamga-interop-diag.
-      - name: Setup JDK for the ETSI DSS crosscheck
-        uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      # Припущення, яке варто назвати: Maven на образі windows-latest
-      # передвстановлений (actions/setup-java його НЕ ставить). Якщо образ
-      # колись зміниться, крок впаде з явним «mvn не знайдено в PATH», а не
-      # мовчки пропустить звірку. Гучна відмова тут краща за тихий пропуск.
-      - name: ETSI DSS crosscheck
-        shell: pwsh
-        run: |
-          pwsh -File scripts/dss-crosscheck.ps1 `
-            -Tool "$env:BUILD_DIR/tools/interop-diag/tamga-interop-diag.exe"
+      # Перевірки приватного interop-корпусу запускаються у приватному workspace.
 
       # Single-DLL: жодної сторонньої залежності. libxml2/qpdf/zlib/jpeg/iconv і
       # MSVC CRT мають бути ВСЕРЕДИНІ. Список дозволених — лише системні DLL.
