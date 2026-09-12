@@ -1,0 +1,440 @@
+diff --git a/vendor/cryptonite/src/cryptonite/c/hmac.c b/vendor/cryptonite/src/cryptonite/c/hmac.c
+index a6f9e16..d7382eb 100644
+--- a/vendor/cryptonite/src/cryptonite/c/hmac.c
++++ b/vendor/cryptonite/src/cryptonite/c/hmac.c
+@@ -6,6 +6,7 @@
+ #include <string.h>
+ 
+ #include "hmac.h"
++#include "dstu7564.h"
+ #include "gost34_311.h"
+ #include "sha1.h"
+ #include "md5.h"
+@@ -22,6 +23,7 @@ typedef enum {
+     HMAC_MODE_SHA1,
+     HMAC_MODE_SHA2,
+     HMAC_MODE_MD5,
++    HMAC_MODE_DSTU7564,
+ } HmacModeId;
+ 
+ /** Контекст выработки хэш-вектора. */
+@@ -31,14 +33,65 @@ struct HmacCtx_st {
+     ByteArray *k_opad;
+     size_t block_len;
+     HmacModeId mode_id;
++    ByteArray *kmac_key;
+     union {
+         Gost34311Ctx *gost34311;
+         Sha1Ctx *sha1;
+         Sha2Ctx *sha2;
+         Md5Ctx *md5;
++        Dstu7564Ctx *dstu7564;
+     } mode;
+ };
+ 
++static int hmac_dstu7564_reset(HmacCtx *ctx, const ByteArray *key)
++{
++    int ret = RET_OK;
++    Dstu7564Ctx *fresh_ctx = NULL;
++    ByteArray *fresh_key = NULL;
++
++    CHECK_PARAM(ctx != NULL);
++    CHECK_PARAM(key != NULL);
++    CHECK_PARAM(ba_get_len(key) == ctx->block_len);
++
++    CHECK_NOT_NULL(fresh_key = ba_copy_with_alloc(key, 0, 0));
++    CHECK_NOT_NULL(fresh_ctx = dstu7564_alloc(DSTU7564_SBOX_1));
++    DO(dstu7564_init_kmac(fresh_ctx, fresh_key, ctx->block_len));
++
++    dstu7564_free(ctx->mode.dstu7564);
++    ba_free_private(ctx->kmac_key);
++    ctx->mode.dstu7564 = fresh_ctx;
++    ctx->kmac_key = fresh_key;
++    fresh_ctx = NULL;
++    fresh_key = NULL;
++
++cleanup:
++
++    dstu7564_free(fresh_ctx);
++    ba_free_private(fresh_key);
++    return ret;
++}
++
++HmacCtx *hmac_alloc_dstu7564(Dstu7564Variant variant)
++{
++    int ret = RET_OK;
++    HmacCtx *ctx = NULL;
++
++    CHECK_PARAM(variant == DSTU7564_VARIANT_256 ||
++            variant == DSTU7564_VARIANT_384 || variant == DSTU7564_VARIANT_512);
++    CALLOC_CHECKED(ctx, sizeof(HmacCtx))
++    ctx->mode_id = HMAC_MODE_DSTU7564;
++    ctx->block_len = (size_t)variant;
++    CHECK_NOT_NULL(ctx->mode.dstu7564 = dstu7564_alloc(DSTU7564_SBOX_1));
++
++cleanup:
++
++    if (ret != RET_OK) {
++        hmac_free(ctx);
++        ctx = NULL;
++    }
++    return ctx;
++}
++
+ HmacCtx *hmac_alloc_gost34_311(Gost28147SboxId sbox_id, const ByteArray *sync)
+ {
+     int ret = RET_OK;
+@@ -210,6 +263,11 @@ int hmac_init(HmacCtx *ctx, const ByteArray *key)
+     CHECK_PARAM(ctx != NULL);
+     CHECK_PARAM(key != NULL);
+ 
++    if (ctx->mode_id == HMAC_MODE_DSTU7564) {
++        DO(hmac_dstu7564_reset(ctx, key));
++        goto cleanup;
++    }
++
+     if (key->len > 64) {
+         DO(hmac_hash_update(ctx, key));
+         DO(hmac_hash_final(ctx, &key_tmp));
+@@ -247,7 +305,11 @@ int hmac_update(HmacCtx *ctx, const ByteArray *data)
+     CHECK_PARAM(ctx != NULL);
+     CHECK_PARAM(data != NULL);
+ 
+-    DO(hmac_hash_update(ctx, data));
++    if (ctx->mode_id == HMAC_MODE_DSTU7564) {
++        DO(dstu7564_update_kmac(ctx->mode.dstu7564, data));
++    } else {
++        DO(hmac_hash_update(ctx, data));
++    }
+ 
+ cleanup:
+ 
+@@ -262,6 +324,15 @@ int hmac_final(HmacCtx *ctx, ByteArray **hmac)
+     CHECK_PARAM(ctx != NULL);
+     CHECK_PARAM(hmac != NULL);
+ 
++    if (ctx->mode_id == HMAC_MODE_DSTU7564) {
++        CHECK_PARAM(ctx->kmac_key != NULL);
++        DO(dstu7564_final_kmac(ctx->mode.dstu7564, hmac));
++        /* Reset транзакційний: старі секретні буфери знищуються лише після
++         * успішної ініціалізації нового контексту та копії ключа. */
++        DO(hmac_dstu7564_reset(ctx, ctx->kmac_key));
++        goto cleanup;
++    }
++
+     DO(hmac_hash_final(ctx, &upd_hmac));
+     DO(hmac_hash_update(ctx, ctx->k_opad));
+     DO(hmac_hash_update(ctx, upd_hmac));
+@@ -296,7 +367,11 @@ void hmac_free(HmacCtx *ctx)
+         case HMAC_MODE_MD5:
+             md5_free(ctx->mode.md5);
+             break;
++        case HMAC_MODE_DSTU7564:
++            dstu7564_free(ctx->mode.dstu7564);
++            break;
+         }
++        ba_free_private(ctx->kmac_key);
+         ba_free(ctx->k_opad);
+         ba_free(ctx->k_ipad);
+         free(ctx);
+diff --git a/vendor/cryptonite/src/cryptonite/c/hmac.h b/vendor/cryptonite/src/cryptonite/c/hmac.h
+index 603c0ab..778845b 100644
+--- a/vendor/cryptonite/src/cryptonite/c/hmac.h
++++ b/vendor/cryptonite/src/cryptonite/c/hmac.h
+@@ -7,6 +7,7 @@
+ #define CRYPTONITE_HMAC_H
+ 
+ #include "byte_array.h"
++#include "dstu7564.h"
+ #include "gost28147.h"
+ #include "sha2.h"
+ 
+@@ -19,6 +20,12 @@ extern "C" {
+  */
+ typedef struct HmacCtx_st HmacCtx;
+ 
++typedef enum {
++    DSTU7564_VARIANT_256 = 32,
++    DSTU7564_VARIANT_384 = 48,
++    DSTU7564_VARIANT_512 = 64
++} Dstu7564Variant;
++
+ /**
+  * Створює контекст HMAC на базі ГОСТ 34.311 зі стандартним sbox.
+  *
+@@ -52,6 +59,14 @@ CRYPTONITE_EXPORT HmacCtx *hmac_alloc_sha1(void);
+  */
+ CRYPTONITE_EXPORT HmacCtx *hmac_alloc_sha2(Sha2Variant variant);
+ 
++/**
++ * Створює контекст KMAC на базі ДСТУ 7564 (Купина).
++ *
++ * @param variant розмір імітовставки
++ * @return контекст HMAC/KMAC
++ */
++CRYPTONITE_EXPORT HmacCtx *hmac_alloc_dstu7564(Dstu7564Variant variant);
++
+ /**
+  * Створює контекст HMAC на базі MD5.
+  *
+diff --git a/vendor/cryptonite/src/pkix/c/api/oids.c b/vendor/cryptonite/src/pkix/c/api/oids.c
+index 7315d2c..d07bedd 100644
+--- a/vendor/cryptonite/src/pkix/c/api/oids.c
++++ b/vendor/cryptonite/src/pkix/c/api/oids.c
+@@ -37,6 +37,8 @@ CREATE_OID_VARS(OID_PKI_HMAC_GOST3411, {1, 2, 804, 2, 1, 1, 1, 1, 1, 2});
+ CREATE_OID_VARS(OID_PKI_ASYM, {1, 2, 804, 2, 1, 1, 1, 1, 3});
+ CREATE_OID_VARS(OID_PKI_DSTU4145_WITH_GOST3411, {1, 2, 804, 2, 1, 1, 1, 1, 3, 1});
+ CREATE_OID_VARS(OID_PKI_DSTU7564_256, {1, 2, 804, 2, 1, 1, 1, 1, 2, 2, 1});
++CREATE_OID_VARS(OID_HMAC_KUPYNA_256, {1, 2, 804, 2, 1, 1, 1, 1, 2, 2, 4});
++CREATE_OID_VARS(OID_KALYNA256_CBC, {1, 2, 804, 2, 1, 1, 1, 1, 1, 3, 5, 2});
+ CREATE_OID_VARS(OID_PKI_DSTU4145_WITH_DSTU7564, {1, 2, 804, 2, 1, 1, 1, 1, 3, 6});
+ CREATE_OID_VARS(OID_PKI_DSTU4145_DSTU7564_PB_LE, {1, 2, 804, 2, 1, 1, 1, 1, 3, 6, 1, 1});
+ CREATE_OID_VARS(OID_PKI_DSTU4145_DSTU7564_PB_BE, {1, 2, 804, 2, 1, 1, 1, 1, 3, 6, 1, 1, 1});
+@@ -485,6 +487,8 @@ const OidNumbers *oids_get_oid_numbers_by_id(OidId oid_id)
+         CASE_GET_OID_ST(OID_PKI_DSTU4145_WITH_DSTU7564);
+         CASE_GET_OID_ST(OID_PKI_DSTU4145_DSTU7564_PB_LE);
+         CASE_GET_OID_ST(OID_PKI_DSTU4145_DSTU7564_PB_BE);
++        CASE_GET_OID_ST(OID_HMAC_KUPYNA_256);
++        CASE_GET_OID_ST(OID_KALYNA256_CBC);
+     }
+ 
+     return NULL;
+diff --git a/vendor/cryptonite/src/pkix/c/api/oids.h b/vendor/cryptonite/src/pkix/c/api/oids.h
+index 708885f..73c7ae9 100644
+--- a/vendor/cryptonite/src/pkix/c/api/oids.h
++++ b/vendor/cryptonite/src/pkix/c/api/oids.h
+@@ -189,6 +189,8 @@ typedef enum OidId_st {
+     OID_SHA256_WITH_RSA_ENCRYPTION_ID                       = 167,    /* 1.2.840.113549.1.1.11 */
+     OID_SHA384_WITH_RSA_ENCRYPTION_ID                       = 168,    /* 1.2.840.113549.1.1.12 */
+     OID_SHA512_WITH_RSA_ENCRYPTION_ID                       = 169,    /* 1.2.840.113549.1.1.13 */
++    OID_HMAC_KUPYNA_256_ID                                 = 170,    /* 1.2.804.2.1.1.1.1.2.2.4 */
++    OID_KALYNA256_CBC_ID                                   = 171,    /* 1.2.804.2.1.1.1.1.1.3.5.2 */
+ } OidId;
+ 
+ typedef struct OidNumbers_st {
+diff --git a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+index 0739bf1..aae71e6 100644
+--- a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
++++ b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+@@ -13,6 +13,7 @@
+ #include "log_internal.h"
+ #include "gost34_311.h"
+ #include "dstu7564.h"
++#include "dstu7624.h"
+ #include "aes.h"
+ #include "dstu4145.h"
+ #include "rs.h"
+@@ -783,6 +784,12 @@ static int cryptonite_cipher_params_init(CryptoniteCipherParams *cipher_params_s
+         }
+         CHECK_NOT_NULL(cipher_params_struct->sbox);
+ 
++    } else if (pkix_check_oid_equal(&cipher_params_struct->asn_cipher_aid->algorithm,
++            oids_get_oid_numbers_by_id(OID_KALYNA256_CBC_ID))) {
++        CHECK_NOT_NULL(gost28147_params = asn_any2type(cipher_params_struct->asn_cipher_aid->parameters,
++                &GOST28147ParamsOptionalDke_desc));
++        DO(asn_OCTSTRING2ba(&gost28147_params->iv, &cipher_params_struct->cipher_init_vector));
++        CHECK_PARAM(ba_get_len(cipher_params_struct->cipher_init_vector) == 32);
+     } else if (pkix_check_oid_equal(&cipher_params_struct->asn_cipher_aid->algorithm,
+             oids_get_oid_numbers_by_id(OID_AES256_CBC_ID))) {
+         CHECK_NOT_NULL(iv_oct_str = asn_any2type(cipher_params_struct->asn_cipher_aid->parameters, &OCTET_STRING_desc));
+@@ -816,6 +823,7 @@ static int ca_cipher_encrypt(const CipherAdapter *ca, const ByteArray *key, cons
+ {
+     int ret = RET_OK;
+     AesCtx *aes_ctx = NULL;
++    Dstu7624Ctx *kalyna_ctx = NULL;
+     Gost28147Ctx *params = NULL;
+     CryptoniteCipherParams *cipher_params_str = NULL;
+     ByteArray *src_with_padding = NULL;
+@@ -839,6 +847,12 @@ static int ca_cipher_encrypt(const CipherAdapter *ca, const ByteArray *key, cons
+         CHECK_NOT_NULL(params = gost28147_alloc_user_sbox(cipher_params_str->sbox));
+         DO(gost28147_init_cfb(params, key, cipher_params_str->cipher_init_vector));
+         DO(gost28147_encrypt(params, src, dst));
++    } else if (pkix_check_oid_equal(&cipher_params_str->asn_cipher_aid->algorithm,
++            oids_get_oid_numbers_by_id(OID_KALYNA256_CBC_ID))) {
++        CHECK_NOT_NULL(kalyna_ctx = dstu7624_alloc(DSTU7624_SBOX_1));
++        DO(dstu7624_init_cbc(kalyna_ctx, key, cipher_params_str->cipher_init_vector));
++        DO(make_pkcs7_padding(src, 32, &src_with_padding));
++        DO(dstu7624_encrypt(kalyna_ctx, src_with_padding, dst));
+     } else if (pkix_check_oid_parent(&cipher_params_str->asn_cipher_aid->algorithm,
+             oids_get_oid_numbers_by_id(OID_AES256_CBC_ID))) {
+         CHECK_NOT_NULL(aes_ctx = aes_alloc());
+@@ -853,6 +867,7 @@ cleanup:
+ 
+     gost28147_free(params);
+     aes_free(aes_ctx);
++    dstu7624_free(kalyna_ctx);
+     ba_free(src_with_padding);
+ 
+     return ret;
+@@ -873,6 +888,7 @@ static int ca_cipher_decrypt(const CipherAdapter *ca, const ByteArray *key, cons
+     int ret = RET_OK;
+ 
+     AesCtx *aes_params = NULL;
++    Dstu7624Ctx *kalyna_params = NULL;
+     Gost28147Ctx *gost_params = NULL;
+     CryptoniteCipherParams *cipher_params_str = NULL;
+     ByteArray *dst_with_padding = NULL;
+@@ -902,6 +918,25 @@ static int ca_cipher_decrypt(const CipherAdapter *ca, const ByteArray *key, cons
+         DO(gost28147_init_cfb(gost_params, key, cipher_params_str->cipher_init_vector));
+         DO(gost28147_decrypt(gost_params, src, dst));
+ 
++    } else if (pkix_check_oid_equal(&cipher_params_str->asn_cipher_aid->algorithm,
++            oids_get_oid_numbers_by_id(OID_KALYNA256_CBC_ID))) {
++        const uint8_t *plain_buf = NULL;
++        size_t plain_len = 0;
++        size_t padding_len = 0;
++        size_t i = 0;
++
++        CHECK_NOT_NULL(kalyna_params = dstu7624_alloc(DSTU7624_SBOX_1));
++        DO(dstu7624_init_cbc(kalyna_params, key, cipher_params_str->cipher_init_vector));
++        DO(dstu7624_decrypt(kalyna_params, src, &dst_with_padding));
++        plain_buf = ba_get_buf(dst_with_padding);
++        plain_len = ba_get_len(dst_with_padding);
++        CHECK_PARAM(plain_buf != NULL && plain_len > 0);
++        padding_len = plain_buf[plain_len - 1];
++        CHECK_PARAM(padding_len > 0 && padding_len <= 32 && padding_len <= plain_len);
++        for (i = plain_len - padding_len; i < plain_len; i++) {
++            CHECK_PARAM(plain_buf[i] == padding_len);
++        }
++        DO(make_pkcs7_unpadding(dst_with_padding, dst));
+     } else if (pkix_check_oid_parent(&cipher_params_str->asn_cipher_aid->algorithm,
+             oids_get_oid_numbers_by_id(OID_AES256_CBC_ID))) {
+         CHECK_NOT_NULL(aes_params = aes_alloc());
+@@ -918,6 +953,7 @@ cleanup:
+ 
+     gost28147_free(gost_params);
+     aes_free(aes_params);
++    dstu7624_free(kalyna_params);
+     ba_free(dst_with_padding);
+ 
+     return ret;
+@@ -1726,17 +1762,12 @@ static int check_cert_corresponding(const CryptoniteSignParams *sign_params_str,
+     SubjectPublicKeyInfo_t *info = NULL;
+ 
+     if (sign_params_str->certificate != NULL) {
+-        if (!asn_equals(&Certificate_desc, sign_params_str->certificate, cert)) {
+-            SET_ERROR(RET_PKIX_NO_CERTIFICATE);
+-        } else {
++        if (asn_equals(&Certificate_desc, sign_params_str->certificate, cert)) {
+             goto cleanup;
+         }
+-    }
+-
+-    if (sign_params_str->signature_aid != NULL
+-            && !asn_equals(&OBJECT_IDENTIFIER_desc, &sign_params_str->signature_aid->algorithm,
+-                    &cert->tbsCertificate.signature.algorithm)) {
+-        SET_ERROR(RET_PKIX_NO_CERTIFICATE);
++        /* Інший сертифікат того самого ключа (наприклад, перевиданий sidecar)
++         * перевіряємо далі за відкритим ключем, а не відхиляємо за побайтовою
++         * нерівністю всього Certificate. */
+     }
+ 
+     DO(cryptonite_sign_params_get_pub_key(sign_params_str, &info));
+diff --git a/vendor/cryptonite/src/storage/c/file/pkcs5.c b/vendor/cryptonite/src/storage/c/file/pkcs5.c
+index 46de49b..8a59f0a 100644
+--- a/vendor/cryptonite/src/storage/c/file/pkcs5.c
++++ b/vendor/cryptonite/src/storage/c/file/pkcs5.c
+@@ -32,6 +32,7 @@ static int pbkdf2_f(const char *pass,
+     ByteArray *count_ba = NULL;
+     ByteArray *key = NULL;
+     ByteArray *out = NULL;
++    ByteArray *padded_pass = NULL;
+     ByteArray *u = NULL;
+     size_t cplen = 0;
+     size_t i;
+@@ -47,6 +48,19 @@ static int pbkdf2_f(const char *pass,
+ 
+     CHECK_NOT_NULL(pass_ba = ba_alloc_from_str(pass));
+ 
++    if (id == PBKDF2_KUPYNA256_HMAC_ID) {
++        size_t copy_len = ba_get_len(pass_ba);
++        if (copy_len > 32) {
++            copy_len = 32;
++        }
++        CHECK_NOT_NULL(padded_pass = ba_alloc_by_len(32));
++        DO(ba_set(padded_pass, 0));
++        DO(ba_copy(pass_ba, 0, copy_len, padded_pass, 0));
++        ba_free_private(pass_ba);
++        pass_ba = padded_pass;
++        padded_pass = NULL;
++    }
++
+     /* F(P, S, c, i) = U1 xor U2 xor ... Uc
+      *
+      * U1 = PRF(P, S || i)
+@@ -90,6 +104,10 @@ static int pbkdf2_f(const char *pass,
+         CHECK_NOT_NULL(ctx = hmac_alloc_sha2(SHA2_VARIANT_512));
+         hash_len = 64;
+         break;
++    case PBKDF2_KUPYNA256_HMAC_ID:
++        CHECK_NOT_NULL(ctx = hmac_alloc_dstu7564(DSTU7564_VARIANT_256));
++        hash_len = 32;
++        break;
+     default:
+         SET_ERROR(RET_STORAGE_UNSUPPORTED_HMAC_ID);
+     }
+@@ -153,6 +171,7 @@ cleanup:
+     ba_free(iv);
+     ba_free(count_ba);
+     ba_free(pass_ba);
++    ba_free_private(padded_pass);
+ 
+     hmac_free(ctx);
+ 
+@@ -242,20 +261,26 @@ int pkcs5_decrypt_dstu(const EncryptedPrivateKeyInfo_t *container,
+ 
+     if (pkix_check_oid_parent(&params->encryptionScheme.algorithm, oids_get_oid_numbers_by_id(OID_GOST28147_DSTU_ID))) {
+         key_len = 32;
++    } else if (pkix_check_oid_equal(&params->encryptionScheme.algorithm,
++            oids_get_oid_numbers_by_id(OID_KALYNA256_CBC_ID))) {
++        key_len = 32;
+     } else if (pkix_check_oid_parent(&params->encryptionScheme.algorithm, oids_get_oid_numbers_by_id(OID_AES256_CBC_ID))) {
+         key_len = 32;
+     } else {
+         SET_ERROR(RET_STORAGE_UNSUPPORTED_ENC_SCHEME_ALG);
+     }
+ 
+-    if (pkix_check_oid_equal(&kdf_params->parameters.prf->algorithm,
++    if (kdf_params->parameters.prf == NULL) { //DEFAULT SHA1
++        DO(pbkdf2_f(pass, salt, iterations, key_len, PBKDF2_SHA1_HMAC_ID, &dk));
++    } else if (pkix_check_oid_equal(&kdf_params->parameters.prf->algorithm,
+             oids_get_oid_numbers_by_id(OID_PKI_HMAC_GOST3411_ID))) {
+         DO(pbkdf2_f(pass, salt, iterations, key_len, PBKDF2_GOST_HMAC_ID, &dk));
+     } else if (pkix_check_oid_equal(&kdf_params->parameters.prf->algorithm,
+             oids_get_oid_numbers_by_id(OID_PKI_HMAC_SHA1_ID))) {
+         DO(pbkdf2_f(pass, salt, iterations, key_len, PBKDF2_SHA1_HMAC_ID, &dk));
+-    } else if (kdf_params->parameters.prf == NULL) { //DEFAULT SHA1
+-        DO(pbkdf2_f(pass, salt, iterations, key_len, PBKDF2_SHA1_HMAC_ID, &dk));
++    } else if (pkix_check_oid_equal(&kdf_params->parameters.prf->algorithm,
++            oids_get_oid_numbers_by_id(OID_HMAC_KUPYNA_256_ID))) {
++        DO(pbkdf2_f(pass, salt, iterations, key_len, PBKDF2_KUPYNA256_HMAC_ID, &dk));
+     } else {
+         SET_ERROR(RET_STORAGE_UNSUPPORTED_KDF_PARAMS_ALG);
+     }
+@@ -312,6 +337,12 @@ int pkcs5_encrypt_dstu(const ByteArray *key,
+         key_len = 32;
+         DO(aid_create_hmac_gost3411(&aid));
+         hmac_id = PBKDF2_GOST_HMAC_ID;
++    } else if (pkix_check_oid_equal(&encrypt_aid->algorithm,
++            oids_get_oid_numbers_by_id(OID_KALYNA256_CBC_ID))) {
++        key_len = 32;
++        ASN_ALLOC(aid);
++        DO(pkix_set_oid(oids_get_oid_numbers_by_id(OID_HMAC_KUPYNA_256_ID), &aid->algorithm));
++        hmac_id = PBKDF2_KUPYNA256_HMAC_ID;
+     } else if (pkix_check_oid_equal(&encrypt_aid->algorithm, oids_get_oid_numbers_by_id(OID_AES256_CBC_ID))) {
+         key_len = 32;
+         //Default sha1
+diff --git a/vendor/cryptonite/src/storage/c/file/pkcs5.h b/vendor/cryptonite/src/storage/c/file/pkcs5.h
+index fd2ee40..be7a237 100644
+--- a/vendor/cryptonite/src/storage/c/file/pkcs5.h
++++ b/vendor/cryptonite/src/storage/c/file/pkcs5.h
+@@ -23,7 +23,8 @@ typedef enum Pbkdf2HmacId_st {
+     PBKDF2_SHA224_HMAC_ID = 2,
+     PBKDF2_SHA256_HMAC_ID = 3,
+     PBKDF2_SHA384_HMAC_ID = 4,
+-    PBKDF2_SHA512_HMAC_ID = 5
++    PBKDF2_SHA512_HMAC_ID = 5,
++    PBKDF2_KUPYNA256_HMAC_ID = 6
+ } Pbkdf2HmacId;
+ 
+ CRYPTONITE_EXPORT int pkcs5_get_type(const EncryptedPrivateKeyInfo_t *container, Pkcs5Type *type);

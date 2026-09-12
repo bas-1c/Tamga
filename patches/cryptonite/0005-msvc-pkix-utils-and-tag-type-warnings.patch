@@ -1,0 +1,58 @@
+diff --git a/src/asn1/c/ber_tlv_tag.h b/src/asn1/c/ber_tlv_tag.h
+index 7f7ac12..54add99 100644
+--- a/src/asn1/c/ber_tlv_tag.h
++++ b/src/asn1/c/ber_tlv_tag.h
+@@ -18,6 +18,16 @@ enum asn_tag_class {
+ };
+ typedef unsigned ber_tlv_tag_t;    /* BER TAG from Tag-Length-Value */
+ 
++/*
++ * asn1c-generated PKIX structures initialize ber_tlv_tag_t from tag-class
++ * constants through integer expressions. Re-define these names as explicitly
++ * typed unsigned constants to avoid signed/unsigned C4245 noise on MSVC.
++ */
++#define ASN_TAG_CLASS_UNIVERSAL   ((ber_tlv_tag_t)0u)
++#define ASN_TAG_CLASS_APPLICATION ((ber_tlv_tag_t)1u)
++#define ASN_TAG_CLASS_CONTEXT     ((ber_tlv_tag_t)2u)
++#define ASN_TAG_CLASS_PRIVATE     ((ber_tlv_tag_t)3u)
++
+ /*
+  * Tag class is encoded together with tag value for optimization purposes.
+  */
+diff --git a/src/pkix/c/api/pkix_utils.c b/src/pkix/c/api/pkix_utils.c
+index 1410f4c..321c649 100644
+--- a/src/pkix/c/api/pkix_utils.c
++++ b/src/pkix/c/api/pkix_utils.c
+@@ -772,13 +772,20 @@ int utf16be_to_utf8(const unsigned char *in, size_t in_len, char **out)
+ {
+     int ret = RET_OK;
+ 
++#ifdef _WIN32
++    /*
++     * MSVC may take CHECK_PARAM() -> goto cleanup path before block-local
++     * declarations are reached. Keep cleanup pointers initialized upfront.
++     */
++    wchar_t *in_le = NULL;
++#endif
++
+     CHECK_PARAM(in != NULL);
+     CHECK_PARAM(out != NULL);
+ 
+ #ifdef _WIN32
+ 
+     int i;
+-    wchar_t *in_le = NULL;
+     int char_len = 0;
+     int wchar_len = (int)(in_len / 2);
+ 
+@@ -800,7 +807,9 @@ int utf16be_to_utf8(const unsigned char *in, size_t in_len, char **out)
+ 
+ cleanup:
+ 
+-    free(in_le);
++    if (in_le != NULL) {
++        free(in_le);
++    }
+ 
+ #elif defined(__linux__) || defined(__APPLE__) || defined(__GNUC__)
+     char *_out = NULL;

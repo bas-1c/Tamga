@@ -1,0 +1,103 @@
+name: windows-asan
+
+
+# AddressSanitizer для XML/PDF, export gates і corpus replay.
+# Історичні результати не замінюють цей прогін.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  asan:
+    name: windows-x64 (AddressSanitizer, XMLDSIG + PAdES)
+    runs-on: windows-2022
+    timeout-minutes: 120
+
+    env:
+      VCPKG_TRIPLET: x64-windows-static
+      BUILD_DIR: build-asan
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup MSVC
+        uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1
+        with:
+          arch: x64
+
+      # Ті самі залежності й той самий triplet, що в конфігурації постачання:
+      # покривати санітайзером треба саме той код, який постачається.
+      # Н-08 (завершення): склад береться з `vcpkg.json`, тож «ті самі»
+      # тепер не обіцянка коментаря, а той самий файл.
+
+      # Manifest-режим — див. коментар у windows-static-shipping.yml.
+      - name: Configure
+        shell: pwsh
+        run: >
+          cmake -S . -B $env:BUILD_DIR
+          -G Ninja
+          -DCMAKE_BUILD_TYPE=RelWithDebInfo
+          -DVCPKG_TARGET_TRIPLET="$env:VCPKG_TRIPLET"
+          -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
+          -DVCPKG_MANIFEST_MODE=ON
+          -DVCPKG_MANIFEST_FEATURES="xml-signatures;pdf-signatures"
+          -DTAMGA_ENABLE_SANITIZERS=ON
+          -DTAMGA_ENABLE_VENDOR_CRYPTONITE=ON
+          -DTAMGA_ENABLE_XML_SIGNATURES=ON
+          -DTAMGA_ENABLE_PDF_SIGNATURES=ON
+          -DTAMGA_BUILD_TESTS=ON
+          -DTAMGA_BUILD_CLI=ON
+
+      - name: Build
+        shell: pwsh
+        run: cmake --build $env:BUILD_DIR --parallel
+
+      # Сторожа проти тихого «успіху» №1: якщо санітайзер не ввімкнувся, job
+      # виглядав би зеленим, нічого при цьому не перевіряючи.
+      - name: Assert sanitizers are really on
+        shell: pwsh
+        run: |
+          $cache = Get-Content "$env:BUILD_DIR/CMakeCache.txt" -Raw
+          if ($cache -notmatch 'TAMGA_ENABLE_SANITIZERS:BOOL=ON') {
+            throw "sanitizers are not enabled in this build"
+          }
+          $ninja = Get-Content "$env:BUILD_DIR/build.ninja" -Raw
+          if ($ninja -notmatch '/fsanitize=address') {
+            throw "/fsanitize=address is missing from the generated build rules"
+          }
+
+      # Сторожа №2: XML/PDF мусять бути справді ввімкнені. Без цієї перевірки
+      # мовчазне відкочування конфігурації до «без XML/PDF» повернуло б рівно ту
+      # прогалину, заради якої цю роботу й переписано — і виглядало б зеленим.
+      - name: Assert XML and PDF engines are instrumented
+        shell: pwsh
+        run: |
+          $cache = Get-Content "$env:BUILD_DIR/CMakeCache.txt" -Raw
+          foreach ($opt in @('TAMGA_ENABLE_XML_SIGNATURES:BOOL=ON', 'TAMGA_ENABLE_PDF_SIGNATURES:BOOL=ON')) {
+            if ($cache -notmatch [regex]::Escape($opt)) {
+              throw "expected option is missing from the ASan build: $opt"
+            }
+          }
+
+      # Сторожа №3: fuzz-цілі мають існувати. Вони реєструються лише тоді, коли
+      # tests/fuzz увійшов у збірку; без цієї перевірки їхня відсутність теж
+      # виглядала б як успіх. Перелік навмисно повний — саме його усічення до
+      # asic/asn1 маскувало відсутність XML/PDF під санітайзером.
+      - name: Assert fuzz corpus tests exist
+        shell: pwsh
+        run: |
+          $list = ctest --test-dir $env:BUILD_DIR -N | Out-String
+          foreach ($t in @('tamga-fuzz-asic-corpus', 'tamga-fuzz-asn1-corpus',
+                           'tamga-fuzz-xml-corpus', 'tamga-fuzz-pdf-corpus')) {
+            if ($list -notmatch [regex]::Escape($t)) {
+              throw "expected fuzz target is missing: $t"
+            }
+          }
+          Write-Host $list
+
+      - name: Run CTest under ASan
+        shell: pwsh
+        run: ctest --test-dir $env:BUILD_DIR --output-on-failure

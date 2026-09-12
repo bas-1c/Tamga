@@ -1,0 +1,572 @@
+// Запускач тестів.
+//
+// Хвиля 8, п.5 завершена: у цьому файлі більше немає жодного тесту — самі
+// лише виклики. Тести живуть у `tests/suites/`, спільна інфраструктура —
+// у `tests/support/TestSupport`.
+//
+// Порядок викликів і гейти навколо них — це і є контракт: список рядків
+// `Running <name>`, який друкує бінарник, у кожній з трьох конфігурацій свій,
+// і саме він доводить, що жоден тест не загублено при переносі.
+
+#include <cstdlib>
+#include <iostream>
+
+#ifndef TAMGA_CRYPTONITE_ENABLED
+#define TAMGA_CRYPTONITE_ENABLED 0
+#endif
+
+#include "support/TestSupport.h"
+#include "suites/Suites.h"
+
+using namespace tamga_tests;
+
+
+int main() {
+#if TAMGA_CRYPTONITE_ENABLED && defined(_WIN32)
+    std::cerr << "Running TestCryptoniteIsDirHandlesUtf8Paths\n";
+    TestCryptoniteIsDirHandlesUtf8Paths();
+#endif
+    std::cerr << "Running TestTamgaCApi\n";
+    TestTamgaCApi();
+#if TAMGA_CRYPTONITE_ENABLED
+    std::cerr << "Running TestCApiEarlyVerifyFailureReplacesPreviousReport\n";
+    TestCApiEarlyVerifyFailureReplacesPreviousReport();
+#endif
+    std::cerr << "Running TestFormatStubHeadersContract\n";
+    TestFormatStubHeadersContract();
+    std::cerr << "Running TestXmlDigestEngineUriMapping\n";
+    TestXmlDigestEngineUriMapping();
+#if defined(TAMGA_XMLSEC_CROSSCHECK_ENABLED)
+    std::cerr << "Running TestXmlSecContextInitTeardown\n";
+    TestXmlSecContextInitTeardown();
+#endif  // TAMGA_XMLSEC_CROSSCHECK_ENABLED
+#if defined(TAMGA_XML_SIGNATURES_ENABLED)
+    std::cerr << "Running TestXmlCanonicalizer\n";
+    TestXmlCanonicalizer();
+    std::cerr << "Running TestXmlXxeHardening\n";
+    TestXmlXxeHardening();
+    std::cerr << "Running TestXmlEnvelopedReferencePipeline\n";
+    TestXmlEnvelopedReferencePipeline();
+    std::cerr << "Running TestXmlExternalReferenceKeepsRawOctetsWithoutTransforms\n";
+    TestXmlExternalReferenceKeepsRawOctetsWithoutTransforms();
+    std::cerr << "Running TestXmlExternalReferencePercentDecodedLookup\n";
+    TestXmlExternalReferencePercentDecodedLookup();
+    std::cerr << "Running TestAsicEAmbiguousNormalizedEntryNamesRejected\n";
+    TestAsicEAmbiguousNormalizedEntryNamesRejected();
+#endif
+    std::cerr << "Running TestNormalizeAsicEntryUri\n";
+    TestNormalizeAsicEntryUri();
+    std::cerr << "Running TestImprintDigest\n";
+    TestImprintDigest();
+    std::cerr << "Running TestRevocationEngine\n";
+    TestRevocationEngine();
+    std::cerr << "Running TestCryptoniteAdapterGetCrlNextUpdate\n";
+    TestCryptoniteAdapterGetCrlNextUpdate();
+    std::cerr << "Running TestCrlCacheFreshnessByNextUpdate\n";
+    TestCrlCacheFreshnessByNextUpdate();
+    std::cerr << "Running TestExtractCrlDistributionUrls\n";
+    TestExtractCrlDistributionUrls();
+    std::cerr << "Running TestBase64WhitespaceDecode\n";
+    TestBase64WhitespaceDecode();
+    std::cerr << "Running TestErrorsToStringMapping\n";
+    TestErrorsToStringMapping();
+    std::cerr << "Running TestCliSignFailureExitCodeMapsMissingCertificateAsKeyError\n";
+    TestCliSignFailureExitCodeMapsMissingCertificateAsKeyError();
+    std::cerr << "Running TestCliVerificationExitCodeIsTyped\n";
+    TestCliVerificationExitCodeIsTyped();
+    std::cerr << "Running TestCliEvidenceOutcomeGovernsExitCode\n";
+    TestCliEvidenceOutcomeGovernsExitCode();
+    std::cerr << "Running TestVariantUtilsRoundTrip\n";
+    TestVariantUtilsRoundTrip();
+    std::cerr << "Running TestAtomicOutputWriteCoversAllPaths\n";
+    TestAtomicOutputWriteCoversAllPaths();
+    std::cerr << "Running TestVariantUtilsEnforcesDirectInputLimit\n";
+    TestVariantUtilsEnforcesDirectInputLimit();
+    std::cerr << "Running TestSecureClearWideStringReleasesBuffer\n";
+    TestSecureClearWideStringReleasesBuffer();
+    std::cerr << "Running TestKeyParsersPemDerLoader\n";
+    TestKeyParsersPemDerLoader();
+    std::cerr << "Running TestSupportedMediaAdvertisesVerifyPolicy\n";
+    TestSupportedMediaAdvertisesVerifyPolicy();
+    std::cerr << "Running TestValidationDecisionStatusVocabulary\n";
+    TestValidationDecisionStatusVocabulary();
+    std::cerr << "Running TestValidationLtvRequiresTimestampEvidence\n";
+    TestValidationLtvRequiresTimestampEvidence();
+    std::cerr << "Running TestPolicyResolverStrictRules\n";
+    TestPolicyResolverStrictRules();
+    std::cerr << "Running TestPolicyResolverCompatibilityRules\n";
+    TestPolicyResolverCompatibilityRules();
+    std::cerr << "Running TestPolicyResolverUkraineLegalRules\n";
+    TestPolicyResolverUkraineLegalRules();
+    std::cerr << "Running TestPolicyResolverOfflineAndForensicRules\n";
+    TestPolicyResolverOfflineAndForensicRules();
+    std::cerr << "Running TestPolicyResolverWorkDirPaths\n";
+    TestPolicyResolverWorkDirPaths();
+    std::cerr << "Running TestPolicyResolverInvalidEnumsFailClosed\n";
+    TestPolicyResolverInvalidEnumsFailClosed();
+    std::cerr << "Running TestSigningTimeResolverTrustedRfc3161Wins\n";
+    TestSigningTimeResolverTrustedRfc3161Wins();
+    std::cerr << "Running TestSigningTimeResolverSkipsInvalidRfc3161AndUsesClaimed\n";
+    TestSigningTimeResolverSkipsInvalidRfc3161AndUsesClaimed();
+    std::cerr << "Running TestSigningTimeResolverSkipsEmptyTrustedRfc3161AndUsesClaimed\n";
+    TestSigningTimeResolverSkipsEmptyTrustedRfc3161AndUsesClaimed();
+    std::cerr << "Running TestSigningTimeResolverClaimedBeforeVerificationFallback\n";
+    TestSigningTimeResolverClaimedBeforeVerificationFallback();
+    std::cerr << "Running TestSigningTimeResolverPreservesDateStringsExactly\n";
+    TestSigningTimeResolverPreservesDateStringsExactly();
+    std::cerr << "Running TestSigningTimeResolverUsesVerificationFallback\n";
+    TestSigningTimeResolverUsesVerificationFallback();
+    std::cerr << "Running TestSigningTimeResolverUnavailableWithoutFallback\n";
+    TestSigningTimeResolverUnavailableWithoutFallback();
+    std::cerr << "Running TestSigningTimeResolverTrustedTimeRequirementAddsLimitation\n";
+    TestSigningTimeResolverTrustedTimeRequirementAddsLimitation();
+    std::cerr << "Running TestSigningTimeResolverFirstTrustedRfc3161WinsDeterministically\n";
+    TestSigningTimeResolverFirstTrustedRfc3161WinsDeterministically();
+    std::cerr << "Running TestSigningTimeResolverUsesManualPolicyWithoutProfileLevel\n";
+    TestSigningTimeResolverUsesManualPolicyWithoutProfileLevel();
+    std::cerr << "Running TestComputeVerifySummaryBranches\n";
+    TestComputeVerifySummaryBranches();
+    std::cerr << "Running TestTechnicalReportPolicyBlocks\n";
+    TestTechnicalReportPolicyBlocks();
+    std::cerr << "Running TestUserReportPolicyDecisionAlignment\n";
+    TestUserReportPolicyDecisionAlignment();
+    std::cerr << "Running TestOnlineOutageDoesNotOverrideTrustFailureStatus\n";
+    TestOnlineOutageDoesNotOverrideTrustFailureStatus();
+    std::cerr << "Running TestTrustFailureErrorCodePreservesOcspInvalidAsRevocationFailure\n";
+    TestTrustFailureErrorCodePreservesOcspInvalidAsRevocationFailure();
+    std::cerr << "Running TestTrustFailureErrorCodePreservesTimestampInvalid\n";
+    TestTrustFailureErrorCodePreservesTimestampInvalid();
+    std::cerr << "Running TestTimestampFailureDowngradesTrust\n";
+    TestTimestampFailureDowngradesTrust();
+    std::cerr << "Running TestTimestampInvalidDoesNotMaskExistingRevocationFailure\n";
+    TestTimestampInvalidDoesNotMaskExistingRevocationFailure();
+    std::cerr << "Running TestInitialVerifyReportState\n";
+    TestInitialVerifyReportState();
+    std::cerr << "Running TestEvidenceStoreStableRawEvidenceIds\n";
+    TestEvidenceStoreStableRawEvidenceIds();
+    std::cerr << "Running TestEvidenceStoreCanonicalDerivedEvidenceIds\n";
+    TestEvidenceStoreCanonicalDerivedEvidenceIds();
+    std::cerr << "Running TestEvidenceStoreEscapesDerivedEvidenceJson\n";
+    TestEvidenceStoreEscapesDerivedEvidenceJson();
+    std::cerr << "Running TestEvidenceStoreRejectsInvalidDerivedFields\n";
+    TestEvidenceStoreRejectsInvalidDerivedFields();
+    std::cerr << "Running TestUserReportInitialShape\n";
+    TestUserReportInitialShape();
+    std::cerr << "Running TestUserReportAfterDetachedVerifyContainsSignerFields\n";
+    TestUserReportAfterDetachedVerifyContainsSignerFields();
+    std::cerr << "Running TestNativeApiConfigureAcceptsValidationLevel\n";
+    TestNativeApiConfigureAcceptsValidationLevel();
+    std::cerr << "Running TestNativeApiConfigureUsesSafeOfflineDefault\n";
+    TestNativeApiConfigureUsesSafeOfflineDefault();
+    std::cerr << "Running TestValidationEngineFailsClosedWithoutCryptoVerdict\n";
+    TestValidationEngineFailsClosedWithoutCryptoVerdict();
+    std::cerr << "Running TestKupynaContextCopyCarriesState\n";
+    TestKupynaContextCopyCarriesState();
+    std::cerr << "Running TestSignHashVerifyHashRoundTrip\n";
+    TestSignHashVerifyHashRoundTrip();
+    std::cerr << "Running TestMockTsaTokenValidates\n";
+    TestMockTsaTokenValidates();
+    std::cerr << "Running TestXmlDsigEnvelopedSignVerifyRoundTrip\n";
+    TestXmlDsigEnvelopedSignVerifyRoundTrip();
+    std::cerr << "Running TestXmlDsigDetachedIdReferenceRoundTrip\n";
+    TestXmlDsigDetachedIdReferenceRoundTrip();
+    std::cerr << "Running TestSessionSignVerifyXmlRoundTrip\n";
+    TestSessionSignVerifyXmlRoundTrip();
+    std::cerr << "Running TestSessionSignXmlXadesProfiles\n";
+    TestSessionSignXmlXadesProfiles();
+    std::cerr << "Running TestSessionVerifyXmlMultiSignatureReport\n";
+    TestSessionVerifyXmlMultiSignatureReport();
+    std::cerr << "Running TestSessionVerifyXmlPerSignerTrustAggregation\n";
+    TestSessionVerifyXmlPerSignerTrustAggregation();
+    std::cerr << "Running TestXadesBesSignVerifyRoundTrip\n";
+    TestXadesBesSignVerifyRoundTrip();
+    std::cerr << "Running TestXadesCertDigestMismatchFailsClosed\n";
+    TestXadesCertDigestMismatchFailsClosed();
+    std::cerr << "Running TestXadesSignaturePolicyAndDataObjectFormatRoundTrip\n";
+    TestXadesSignaturePolicyAndDataObjectFormatRoundTrip();
+    std::cerr << "Running TestSessionVerifyXmlSignaturePolicyReport\n";
+    TestSessionVerifyXmlSignaturePolicyReport();
+    std::cerr << "Running TestSessionVerifyXmlCertificatePresentReflectsX509Certificate\n";
+    TestSessionVerifyXmlCertificatePresentReflectsX509Certificate();
+    std::cerr << "Running TestXadesTSignVerifyRoundTrip\n";
+    TestXadesTSignVerifyRoundTrip();
+    std::cerr << "Running TestXadesXLSignVerifyRoundTrip\n";
+    TestXadesXLSignVerifyRoundTrip();
+    std::cerr << "Running TestXadesArchiveSignVerifyRoundTrip\n";
+    TestXadesArchiveSignVerifyRoundTrip();
+    std::cerr << "Running TestXadesArchiveTimeStampRejectsSwappedToken\n";
+    TestXadesArchiveTimeStampRejectsSwappedToken();
+    std::cerr << "Running TestSessionVerifyXmlArchiveProfileRequiresValidTimestamp\n";
+    TestSessionVerifyXmlArchiveProfileRequiresValidTimestamp();
+    std::cerr << "Running TestXadesProfileIgnoresForeignNamespaceProperties\n";
+    TestXadesProfileIgnoresForeignNamespaceProperties();
+    std::cerr << "Running TestXadesForeignNamespaceStructuralNodesRejected\n";
+    TestXadesForeignNamespaceStructuralNodesRejected();
+    std::cerr << "Running TestXmlDsigSignatureScopeIsNamespaceAware\n";
+    TestXmlDsigSignatureScopeIsNamespaceAware();
+    std::cerr << "Running TestSessionVerifyXmlRevocationEvidencePresentField\n";
+    TestSessionVerifyXmlRevocationEvidencePresentField();
+    std::cerr << "Running TestSessionVerifyXmlLtvEvidenceSplitFields\n";
+    TestSessionVerifyXmlLtvEvidenceSplitFields();
+    std::cerr << "Running TestSessionVerifyXmlLtvEvidenceValidatedTrustedPath\n";
+    TestSessionVerifyXmlLtvEvidenceValidatedTrustedPath();
+    std::cerr << "Running TestPadesBSignVerifyRoundTrip\n";
+    TestPadesBSignVerifyRoundTrip();
+    std::cerr << "Running TestPadesIncrementalSigningPreservesExistingPdf\n";
+    TestPadesIncrementalSigningPreservesExistingPdf();
+#if TAMGA_CRYPTONITE_ENABLED && defined(TAMGA_PDF_SIGNATURES_ENABLED)
+    std::cerr << "Running TestPadesIncrementalRevisionStructure\n";
+    TestPadesIncrementalRevisionStructure();
+#endif
+    std::cerr << "Running TestPadesByteRangeRejectsOverflow\n";
+    TestPadesByteRangeRejectsOverflow();
+    std::cerr << "Running TestPadesTandLtaSignVerifyRoundTrip\n";
+    TestPadesTandLtaSignVerifyRoundTrip();
+    std::cerr << "Running TestSessionSignVerifyPdfRoundTrip\n";
+    TestSessionSignVerifyPdfRoundTrip();
+    std::cerr << "Running TestSessionSignPdfProfileSelection\n";
+    TestSessionSignPdfProfileSelection();
+    std::cerr << "Running TestPhase7XadesPadesReport\n";
+    TestPhase7XadesPadesReport();
+    std::cerr << "Running TestSessionVerifyPdfLtvEvidenceValidatedTrustedPath\n";
+    TestSessionVerifyPdfLtvEvidenceValidatedTrustedPath();
+    std::cerr << "Running TestSessionVerifyPdfTimestampReachesCanonicalEngine\n";
+    TestSessionVerifyPdfTimestampReachesCanonicalEngine();
+    std::cerr << "Running TestPadesObjectGraphSignatureExtraction\n";
+    TestPadesObjectGraphSignatureExtraction();
+    std::cerr << "Running TestAsicEXadesEnabledDispatchDoesNotReturnNotSupported\n";
+    TestAsicEXadesEnabledDispatchDoesNotReturnNotSupported();
+    std::cerr << "Running TestCertificateMetadataExtractionForFixture\n";
+    TestCertificateMetadataExtractionForFixture();
+    std::cerr << "Running TestCertificateMetadataSerialUsesDerOrderForPemFixture\n";
+    TestCertificateMetadataSerialUsesDerOrderForPemFixture();
+    std::cerr << "Running TestUserReportRefreshesAfterFailedVerifyDataBase64\n";
+    TestUserReportRefreshesAfterFailedVerifyDataBase64();
+    std::cerr << "Running TestUserReportVerifyDataBase64OperationSync\n";
+    TestUserReportVerifyDataBase64OperationSync();
+    std::cerr << "Running TestUserReportClearsAfterFinalize\n";
+    TestUserReportClearsAfterFinalize();
+    std::cerr << "Running TestParseIso8601Time\n";
+    TestParseIso8601Time();
+    std::cerr << "Running TestCertificateChainValidatorTimeAware\n";
+    TestCertificateChainValidatorTimeAware();
+    std::cerr << "Running TestHistoricalTlSnapshotSelection\n";
+    TestHistoricalTlSnapshotSelection();
+    std::cerr << "Running TestTrustServiceEvaluatorEvaluation\n";
+    TestTrustServiceEvaluatorEvaluation();
+    std::cerr << "Running TestJsonValidatorRejectsMalformedInput\n";
+    TestJsonValidatorRejectsMalformedInput();
+    std::cerr << "Running TestReportJsonSharedSectionsAgree\n";
+    TestReportJsonSharedSectionsAgree();
+    std::cerr << "Running TestReportFactNamingInvariant\n";
+    TestReportFactNamingInvariant();
+    std::cerr << "Running TestTrustListSettingsDefaults\n";
+    TestTrustListSettingsDefaults();
+    std::cerr << "Running TestTrustListSyncReportsXmlSignatureStatus\n";
+    TestTrustListSyncReportsXmlSignatureStatus();
+    std::cerr << "Running TestInvalidUtf8PathFailsCleanlyInsteadOfCrashing\n";
+    TestInvalidUtf8PathFailsCleanlyInsteadOfCrashing();
+    std::cerr << "Running TestCertificateResolverSpkiAndFailClosedMatching\n";
+    TestCertificateResolverSpkiAndFailClosedMatching();
+    std::cerr << "Running TestCertificateResolverSidecarCacheAndFailClosed\n";
+    TestCertificateResolverSidecarCacheAndFailClosed();
+    std::cerr << "Running TestCertificateResolverNetworkSourcesFailClosed\n";
+    TestCertificateResolverNetworkSourcesFailClosed();
+    std::cerr << "Running TestCertificateFetcherMockSeamIsConsistentUnderConcurrency\n";
+    TestCertificateFetcherMockSeamIsConsistentUnderConcurrency();
+    std::cerr << "Running TestTrustListSettingsEmptyUrlUsesDefault\n";
+    TestTrustListSettingsEmptyUrlUsesDefault();
+    std::cerr << "Running TestTrustListReportFieldsExistBeforeSync\n";
+    TestTrustListReportFieldsExistBeforeSync();
+    std::cerr << "Running TestTrustListParserExtractsCertificateAndEndpoints\n";
+    TestTrustListParserExtractsCertificateAndEndpoints();
+    std::cerr << "Running TestTrustListParserAcceptsNamespacedAndAttributedTags\n";
+    TestTrustListParserAcceptsNamespacedAndAttributedTags();
+    std::cerr << "Running TestTrustListParserRejectsDoubleColonElementName\n";
+    TestTrustListParserRejectsDoubleColonElementName();
+    std::cerr << "Running TestTrustListParserHandlesGreaterThanInsideAttribute\n";
+    TestTrustListParserHandlesGreaterThanInsideAttribute();
+    std::cerr << "Running TestTrustListParserRejectsDtdAndExternalEntity\n";
+    TestTrustListParserRejectsDtdAndExternalEntity();
+    std::cerr << "Running TestTrustListParserRejectsOversizedInput\n";
+    TestTrustListParserRejectsOversizedInput();
+    std::cerr << "Running TestTrustListParserIgnoresCommentInjectedService\n";
+    TestTrustListParserIgnoresCommentInjectedService();
+    std::cerr << "Running TestTrustListParserIgnoresCdataInjectedService\n";
+    TestTrustListParserIgnoresCdataInjectedService();
+    std::cerr << "Running TestTrustListParserExtractsRealTlServices\n";
+    TestTrustListParserExtractsRealTlServices();
+    std::cerr << "Running TestPolicyCacheWritesTrustListState\n";
+    TestPolicyCacheWritesTrustListState();
+    std::cerr << "Running TestPolicyCacheDoesNotReplaceXmlWhenStateStagingFails\n";
+    TestPolicyCacheDoesNotReplaceXmlWhenStateStagingFails();
+    std::cerr << "Running TestPolicyCacheMaterializesTrustStoreAndMetadata\n";
+    TestPolicyCacheMaterializesTrustStoreAndMetadata();
+    std::cerr << "Running TestPolicyCacheUsesUtf8WorkDirForCyrillicPaths\n";
+    TestPolicyCacheUsesUtf8WorkDirForCyrillicPaths();
+    std::cerr << "Running TestPolicyCacheMaterializedWriteKeepsOldCacheOnMetadataFailure\n";
+    TestPolicyCacheMaterializedWriteKeepsOldCacheOnMetadataFailure();
+    std::cerr << "Running TestPolicyCacheDoesNotMaterializeLegacyShortServiceTypes\n";
+    TestPolicyCacheDoesNotMaterializeLegacyShortServiceTypes();
+    std::cerr << "Running TestPolicyCacheResolveGrantedTspUrlFindsTsaService\n";
+    TestPolicyCacheResolveGrantedTspUrlFindsTsaService();
+    std::cerr << "Running TestPolicyCacheResolveGrantedTspUrlIgnoresNonTsaService\n";
+    TestPolicyCacheResolveGrantedTspUrlIgnoresNonTsaService();
+    std::cerr << "Running TestPolicyCacheResolveGrantedTspUrlIgnoresWithdrawnTsaService\n";
+    TestPolicyCacheResolveGrantedTspUrlIgnoresWithdrawnTsaService();
+    std::cerr << "Running TestPolicyCacheResolveGrantedTspUrlEmptyWithoutCache\n";
+    TestPolicyCacheResolveGrantedTspUrlEmptyWithoutCache();
+    std::cerr << "Running TestTrustListSyncDownloadsAndCachesXml\n";
+    TestTrustListSyncDownloadsAndCachesXml();
+    std::cerr << "Running TestTrustListSyncVerifiesRealCzoSignature\n";
+    TestTrustListSyncVerifiesRealCzoSignature();
+    std::cerr << "Running TestTrustListSyncUsesPreviousCacheAfterHttpFailure\n";
+    TestTrustListSyncUsesPreviousCacheAfterHttpFailure();
+    std::cerr << "Running TestTrustListSyncOutageContract\n";
+    TestTrustListSyncOutageContract();
+    std::cerr << "Running TestTrustListSyncRejectsTlWithoutGrantedCaAnchors\n";
+    TestTrustListSyncRejectsTlWithoutGrantedCaAnchors();
+    std::cerr << "Running TestTlXmlSigCheck\n";
+    TestTlXmlSigCheck();
+    std::cerr << "Running TestSyncTrustListDoesNotCorruptVerifyReport\n";
+    TestSyncTrustListDoesNotCorruptVerifyReport();
+    std::cerr << "Running TestRevocationProjectionUsesEffectiveVerdict\n";
+    TestRevocationProjectionUsesEffectiveVerdict();
+#if TAMGA_CRYPTONITE_ENABLED
+    std::cerr << "Running TestKalynaKupynaPkcs5RoundTrip\n";
+    TestKalynaKupynaPkcs5RoundTrip();
+    std::cerr << "Running TestOfflineModePreventsAllHttpTransportCalls\n";
+    TestOfflineModePreventsAllHttpTransportCalls();
+    std::cerr << "Running TestCryptoniteOcspResponseErrorPathsAreInitialized\n";
+    TestCryptoniteOcspResponseErrorPathsAreInitialized();
+    std::cerr << "Running TestSnapshotIdIsNotALocalPath\n";
+    TestSnapshotIdIsNotALocalPath();
+    // Фікстура PKCS#8 будується засобами cryptonite, тож і тест, і його
+    // реєстрація існують лише у збірці з увімкненим vendor.
+    std::cerr << "Running TestPkcs8SpkiIsComparableWithCertificate\n";
+    TestPkcs8SpkiIsComparableWithCertificate();
+    std::cerr << "Running TestFindMatchingCertificateSelectsByKeyOwnership\n";
+    TestFindMatchingCertificateSelectsByKeyOwnership();
+#endif
+    std::cerr << "Running TestTlPinnedCertificateMatchesSigner\n";
+    TestTlPinnedCertificateMatchesSigner();
+    std::cerr << "Running TestCaSettingsRegistryParsesRealCzoFile\n";
+    TestCaSettingsRegistryParsesRealCzoFile();
+    std::cerr << "Running TestCmpGenMessageStructure\n";
+    TestCmpGenMessageStructure();
+    std::cerr << "Running TestCertificateChainValidatorRejectsEmptyTrustStore\n";
+    TestCertificateChainValidatorRejectsEmptyTrustStore();
+    std::cerr << "Running TestCertificateChainValidatorTrustsSelfSignedAnchorFixture\n";
+    TestCertificateChainValidatorTrustsSelfSignedAnchorFixture();
+    std::cerr << "Running TestCertificateChainValidatorRejectsMalformedSignerDer\n";
+    TestCertificateChainValidatorRejectsMalformedSignerDer();
+    std::cerr << "Running TestCertificateChainValidatorRejectsWrongDirectionAnchorVerification\n";
+    TestCertificateChainValidatorRejectsWrongDirectionAnchorVerification();
+    std::cerr << "Running TestPathBuilderCurrentTlOnlyIgnoresHistoricalAnchors\n";
+    TestPathBuilderCurrentTlOnlyIgnoresHistoricalAnchors();
+    std::cerr << "Running TestPathBuilderCompatibilityBuildsCurrentThenHistoricalSeparately\n";
+    TestPathBuilderCompatibilityBuildsCurrentThenHistoricalSeparately();
+    std::cerr << "Running TestPathBuilderHistoricalAtSigningTimeRequiresAllowedHistoricalTrust\n";
+    TestPathBuilderHistoricalAtSigningTimeRequiresAllowedHistoricalTrust();
+    std::cerr << "Running TestPathBuilderCustomTrustStoreUsesExplicitAnchors\n";
+    TestPathBuilderCustomTrustStoreUsesExplicitAnchors();
+    std::cerr << "Running TestPathBuilderCustomTrustStoreEmptyExplicitAnchorsDoNotUseCurrentTl\n";
+    TestPathBuilderCustomTrustStoreEmptyExplicitAnchorsDoNotUseCurrentTl();
+    std::cerr << "Running TestPathBuilderPinnedAnchorsUsesExplicitAnchors\n";
+    TestPathBuilderPinnedAnchorsUsesExplicitAnchors();
+    std::cerr << "Running TestPathBuilderPinnedAnchorsEmptyExplicitAnchorsDoNotUseCurrentTl\n";
+    TestPathBuilderPinnedAnchorsEmptyExplicitAnchorsDoNotUseCurrentTl();
+    std::cerr << "Running TestPathBuilderKeepsAiaAsIssuerCandidatesOnly\n";
+    TestPathBuilderKeepsAiaAsIssuerCandidatesOnly();
+    std::cerr << "Running TestPathSelectorChoosesFirstTrustedResultDeterministically\n";
+    TestPathSelectorChoosesFirstTrustedResultDeterministically();
+    std::cerr << "Running TestPathSelectorDoesNotSelectHistoricalWhenPolicyDisallowsIt\n";
+    TestPathSelectorDoesNotSelectHistoricalWhenPolicyDisallowsIt();
+    std::cerr << "Running TestPathSelectorFallsBackToFirstNonTrustedCurrentResult\n";
+    TestPathSelectorFallsBackToFirstNonTrustedCurrentResult();
+    std::cerr << "Running TestPathValidatorDelegatesEmptySignerToCertificateChainValidator\n";
+    TestPathValidatorDelegatesEmptySignerToCertificateChainValidator();
+    std::cerr << "Running TestForensicPathCandidatesDoNotAuthorizeHistoricalUnlessAllowed\n";
+    TestForensicPathCandidatesDoNotAuthorizeHistoricalUnlessAllowed();
+    std::cerr << "Running TestAiaIssuerFetcherExtractsCaIssuersUrl\n";
+    TestAiaIssuerFetcherExtractsCaIssuersUrl();
+    std::cerr << "Running TestAiaIssuerFetcherParsesDerAndPemCertificates\n";
+    TestAiaIssuerFetcherParsesDerAndPemCertificates();
+    std::cerr << "Running TestAiaIssuerFetcherDownloadsAndCachesIssuer\n";
+    TestAiaIssuerFetcherDownloadsAndCachesIssuer();
+    std::cerr << "Running TestAiaIssuerFetcherRequiresExplicitNetworkOptIn\n";
+    TestAiaIssuerFetcherRequiresExplicitNetworkOptIn();
+    std::cerr << "Running TestCrlValidatorUnknownWhenNoCrls\n";
+    TestCrlValidatorUnknownWhenNoCrls();
+    std::cerr << "Running TestCrlValidatorInvalidWhenCrlCannotDecode\n";
+    TestCrlValidatorInvalidWhenCrlCannotDecode();
+    std::cerr << "Running TestCrlValidatorRejectsUnsignedGoodWhenIssuerPresent\n";
+    TestCrlValidatorRejectsUnsignedGoodWhenIssuerPresent();
+    std::cerr << "Running TestCrlValidatorScansPastMalformedCrlsForGood\n";
+    TestCrlValidatorScansPastMalformedCrlsForGood();
+    std::cerr << "Running TestOcspValidatorUnavailable\n";
+    TestOcspValidatorUnavailable();
+    std::cerr << "Running TestOcspStatusMappingRequiresRequestedCertId\n";
+    TestOcspStatusMappingRequiresRequestedCertId();
+    std::cerr << "Running TestOcspStatusMergeUsesResponseOrderForDuplicateSerials\n";
+    TestOcspStatusMergeUsesResponseOrderForDuplicateSerials();
+    std::cerr << "Running TestOcspValidatorInvalidResponse\n";
+    TestOcspValidatorInvalidResponse();
+    std::cerr << "Running TestVerifyReportInvalidRevocationMapping\n";
+    TestVerifyReportInvalidRevocationMapping();
+    std::cerr << "Running TestSessionSyncTrustListUpdatesReport\n";
+    TestSessionSyncTrustListUpdatesReport();
+    std::cerr << "Running TestSessionInitializeKeepsDefaultOfflineMode\n";
+    TestSessionInitializeKeepsDefaultOfflineMode();
+    std::cerr << "Running TestSessionSyncTrustListRequiresInitialize\n";
+    TestSessionSyncTrustListRequiresInitialize();
+    std::cerr << "Running TestNativeApiSyncTrustListUsesCyrillicWorkDir\n";
+    TestNativeApiSyncTrustListUsesCyrillicWorkDir();
+    std::cerr << "Running TestInitializeAppliesDefaultSettings\n";
+    TestInitializeAppliesDefaultSettings();
+    std::cerr << "Running TestOnlineSettingsAllowEmptyUrlAsDisabledDefault\n";
+    TestOnlineSettingsAllowEmptyUrlAsDisabledDefault();
+    std::cerr << "Running TestOnlineSettingsDefaultsAndValidationEdges\n";
+    TestOnlineSettingsDefaultsAndValidationEdges();
+    std::cerr << "Running TestTspSettingsImprintDigestOidValidation\n";
+    TestTspSettingsImprintDigestOidValidation();
+    std::cerr << "Running TestVerifyReportForNotInitializedVerify\n";
+    TestVerifyReportForNotInitializedVerify();
+    std::cerr << "Running TestVerifyReportForInvalidBase64\n";
+    TestVerifyReportForInvalidBase64();
+    std::cerr << "Running TestSessionResetPrivateKeyState\n";
+    TestSessionResetPrivateKeyState();
+#if defined(TAMGA_XML_SIGNATURES_ENABLED)
+    std::cerr << "Running TestVerifyXmlRejectsForeignNamespaceSignature\n";
+    TestVerifyXmlRejectsForeignNamespaceSignature();
+#endif
+    std::cerr << "Running TestVerifyReportDoesNotClaimTrustValidationMissing\n";
+    TestVerifyReportDoesNotClaimTrustValidationMissing();
+    std::cerr << "Running TestJksParserRejectsOverflowingDerLength\n";
+    TestJksParserRejectsOverflowingDerLength();
+    std::cerr << "Running TestReadJksFileWithUnicodeAliasAndPasswords\n";
+    TestReadJksFileWithUnicodeAliasAndPasswords();
+    std::cerr << "Running TestReadJksBinaryWithUnicodeAliasAndPasswords\n";
+    TestReadJksBinaryWithUnicodeAliasAndPasswords();
+    std::cerr << "Running TestReadJksDescriptorWithUnicodeAliasAndPasswords\n";
+    TestReadJksDescriptorWithUnicodeAliasAndPasswords();
+    std::cerr << "Running TestReadJksRejectsWrongAlias\n";
+    TestReadJksRejectsWrongAlias();
+#if TAMGA_CRYPTONITE_ENABLED
+    std::cerr << "Running TestIitKeyContainerDecryptsGoldenVector\n";
+    TestIitKeyContainerDecryptsGoldenVector();
+    std::cerr << "Running TestReadIitKeyContainerThroughSession\n";
+    TestReadIitKeyContainerThroughSession();
+#endif
+    std::cerr << "Running TestReadCorruptedContainerBinaryRejectsInvalidArgument\n";
+    TestReadCorruptedContainerBinaryRejectsInvalidArgument();
+    std::cerr << "Running TestReadCorruptedContainerFileRejectsInvalidArgument\n";
+    TestReadCorruptedContainerFileRejectsInvalidArgument();
+    std::cerr << "Running TestReadPkcs12Pkcs8PemEndToEnd\n";
+    TestReadPkcs12Pkcs8PemEndToEnd();
+    std::cerr << "Running TestSignVerifyRoundTripDstu\n";
+    TestSignVerifyRoundTripDstu();
+    std::cerr << "Running TestClaimedSigningTimeExtraction\n";
+    TestClaimedSigningTimeExtraction();
+    std::cerr << "Running TestDetachedCmsVerifyReportFormalization\n";
+    TestDetachedCmsVerifyReportFormalization();
+    std::cerr << "Running TestAttachedCmsVerifyReportFormalization\n";
+    TestAttachedCmsVerifyReportFormalization();
+    std::cerr << "Running TestDetachedCmsVerifyRejectsTamperedSignature\n";
+    TestDetachedCmsVerifyRejectsTamperedSignature();
+    std::cerr << "Running TestAttachedCmsVerifyRejectsTamperedBlob\n";
+    TestAttachedCmsVerifyRejectsTamperedBlob();
+    std::cerr << "Running TestSignVerifyIntegrationCanonicalFixtureBlocker\n";
+    TestSignVerifyIntegrationCanonicalFixtureBlocker();
+    std::cerr << "Running TestGetCertificateInfoWithPemFixture\n";
+    TestGetCertificateInfoWithPemFixture();
+    std::cerr << "Running TestGetCertificateInfoValidAtExplicitTime\n";
+    TestGetCertificateInfoValidAtExplicitTime();
+    std::cerr << "Running TestResolveDefaultTspUrl\n";
+    TestResolveDefaultTspUrl();
+    std::cerr << "Running TestSessionResolveDefaultTspUrlPrefersTrustListOverIssuerTable\n";
+    TestSessionResolveDefaultTspUrlPrefersTrustListOverIssuerTable();
+    std::cerr << "Running TestSignFileAsicSAndEIntegration\n";
+    TestSignFileAsicSAndEIntegration();
+    std::cerr << "Running TestAsicContainerTimestampValidated\n";
+    TestAsicContainerTimestampValidated();
+    std::cerr << "Running TestCadesAsicEManifestUriNormalization\n";
+    TestCadesAsicEManifestUriNormalization();
+    std::cerr << "Running TestAsicSRejectsMultipleDataObjects\n";
+    TestAsicSRejectsMultipleDataObjects();
+    std::cerr << "Running TestCadesAsicECoverageRejectsUnsignedEntry\n";
+    TestCadesAsicECoverageRejectsUnsignedEntry();
+    std::cerr << "Running TestCadesAsicEAmbiguousNormalizedEntryNamesRejected\n";
+    TestCadesAsicEAmbiguousNormalizedEntryNamesRejected();
+    std::cerr << "Running TestAsicContainerRoundTrip\n";
+    TestAsicContainerRoundTrip();
+    std::cerr << "Running TestAsicReaderLoadFromFileRejectsOversizedContainer\n";
+    TestAsicReaderLoadFromFileRejectsOversizedContainer();
+    std::cerr << "Running TestNativeApiV2MethodMetadata\n";
+    TestNativeApiV2MethodMetadata();
+    std::cerr << "Running TestNativeApiV2ConfigureAndReports\n";
+    TestNativeApiV2ConfigureAndReports();
+    std::cerr << "Running TestNativeApiV2SignVerifyOptionalDispatch\n";
+    TestNativeApiV2SignVerifyOptionalDispatch();
+    std::cerr << "Running TestTspClientMocked\n";
+    TestTspClientMocked();
+    std::cerr << "Running TestHttpClientMockPost\n";
+    TestHttpClientMockPost();
+    std::cerr << "Running TestHttpDestinationPolicyBlocksNonPublicAddresses\n";
+    TestHttpDestinationPolicyBlocksNonPublicAddresses();
+    std::cerr << "Running TestHttpDestinationPolicyRejectsDnsRebindingAndPrivateRedirect\n";
+    TestHttpDestinationPolicyRejectsDnsRebindingAndPrivateRedirect();
+    std::cerr << "Running TestPeerAddressPolicyIsFailClosedForNonIpText\n";
+    TestPeerAddressPolicyIsFailClosedForNonIpText();
+    std::cerr << "Running TestHttpAccessPolicyIsCallableWithoutTransport\n";
+    TestHttpAccessPolicyIsCallableWithoutTransport();
+    std::cerr << "Running TestHttpRedirectSyntaxIsCallableWithoutTransport\n";
+    TestHttpRedirectSyntaxIsCallableWithoutTransport();
+    std::cerr << "Running TestHttpDestinationPolicyRejectsNonIpResolverAnswer\n";
+    TestHttpDestinationPolicyRejectsNonIpResolverAnswer();
+    std::cerr << "Running TestCadesTAppendAndExtract\n";
+    TestCadesTAppendAndExtract();
+    std::cerr << "Running TestGetSignerDigestAlgorithmOid\n";
+    TestGetSignerDigestAlgorithmOid();
+    std::cerr << "Running TestImprintFromDigestOidMapping\n";
+    TestImprintFromDigestOidMapping();
+    std::cerr << "Running TestTimestampModeDisabledDoesNotRequireTsp\n";
+    TestTimestampModeDisabledDoesNotRequireTsp();
+    std::cerr << "Running TestTimestampValidatorMissingForBesSignature\n";
+    TestTimestampValidatorMissingForBesSignature();
+    std::cerr << "Running TestTimestampValidatorFullVerification\n";
+    TestTimestampValidatorFullVerification();
+    std::cerr << "Running TestTimestampValidatorRejectsUnknownImprintOid\n";
+    TestTimestampValidatorRejectsUnknownImprintOid();
+    std::cerr << "Running TestTimestampModeRequiredFailsWhenNoTspUrl\n";
+    TestTimestampModeRequiredFailsWhenNoTspUrl();
+    std::cerr << "Running TestTimestampModeRequiredRawFileClearsStaleOutput\n";
+    TestTimestampModeRequiredRawFileClearsStaleOutput();
+#if TAMGA_CRYPTONITE_ENABLED
+    std::cerr << "Running TestTimestampEngineSuite\n";
+    TestTimestampEngineSuite();
+#endif
+    std::cerr << "Running TestTimestampModeFailuresClearStaleOutput\n";
+    TestTimestampModeFailuresClearStaleOutput();
+    std::cerr << "Running TestTimestampModeBestEffortClearsTspFailure\n";
+    TestTimestampModeBestEffortClearsTspFailure();
+
+    std::cerr << "tamga_tests: " << g_failures << " failure(s), " << g_skips
+              << " skip(s) (baseline " << kExpectedMaxSkips << ")\n";
+
+    if (g_failures != 0) {
+        std::cerr << "tamga_tests: " << g_failures << " failure(s)\n";
+        return EXIT_FAILURE;
+    }
+
+    // С-16: гейт проти тихого зростання кількості пропусків.
+    if (g_skips > kExpectedMaxSkips) {
+        std::cerr << "tamga_tests: skip count " << g_skips
+                  << " exceeds the baseline " << kExpectedMaxSkips
+                  << " - a test path stopped executing\n";
+        return EXIT_FAILURE;
+    }
+
+    std::cout << "tamga_tests: all checks passed\n";
+    return EXIT_SUCCESS;
+}

@@ -1,0 +1,57 @@
+diff --git a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+--- a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
++++ b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+@@ -1233,6 +1233,7 @@ static int sa_sign_data(const SignAdapter *sa, const ByteArray *data, ByteArray
+     ByteArray *digest_to_sign = NULL;
+     ByteArray *seed = NULL;
+     Gost34311Ctx *digest_ctx = NULL;
++    Dstu7564Ctx *kupyna_ctx = NULL;
+     Sha2Ctx *sha2_ctx = NULL;
+     Sha1Ctx *sha1_ctx = NULL;
+     ByteArray *sync = NULL;
+@@ -1252,11 +1253,32 @@ static int sa_sign_data(const SignAdapter *sa, const ByteArray *data, ByteArray
+     sign_parameters_str = (CryptoniteSignParams *)sa->ctx;
+ 
+     if (sign_parameters_str->alg_marker == DSTU4145) {
+-        CHECK_NOT_NULL(sync = ba_alloc_by_len(32));
+-        DO(ba_set(sync, 0));
+-        CHECK_NOT_NULL(digest_ctx = gost34_311_alloc_user_sbox(sign_parameters_str->digest_sbox, sync));
+-        DO(gost34_311_update(digest_ctx, data));
+-        DO(gost34_311_final(digest_ctx, &digest_to_sign));
++        /*
++         * Дзеркало патча 0007 для ПІДПИСУ. Там va_verify_data навчили рахувати
++         * Купину, коли підпис із гілки ...3.6.*; тут же беззастережно рахувався
++         * ГОСТ 34.311 — і підпис ключем, чий сертифікат виданий з Купиною,
++         * виходив внутрішньо суперечливим: signatureAlgorithm і digestAlgorithm
++         * у CMS казали «Купина», а підписувався геш ГОСТ. Такий CMS відхиляє
++         * будь-який верифікатор, зокрема наш власний.
++         *
++         * Джерело рішення те саме, що й у digest_adapter_init_by_cert: гілка
++         * алгоритму ПІДПИСУ (signature_aid), бо тип ключа (...3.1.1) однаковий
++         * і для ГОСТ-, і для Купина-сертифікатів.
++         */
++        if (sign_parameters_str->signature_aid != NULL &&
++                pkix_check_oid_parent(&sign_parameters_str->signature_aid->algorithm,
++                        oids_get_oid_numbers_by_id(OID_PKI_DSTU4145_WITH_DSTU7564_ID))) {
++            CHECK_NOT_NULL(kupyna_ctx = dstu7564_alloc(DSTU7564_SBOX_1));
++            DO(dstu7564_init(kupyna_ctx, 32));
++            DO(dstu7564_update(kupyna_ctx, data));
++            DO(dstu7564_final(kupyna_ctx, &digest_to_sign));
++        } else {
++            CHECK_NOT_NULL(sync = ba_alloc_by_len(32));
++            DO(ba_set(sync, 0));
++            CHECK_NOT_NULL(digest_ctx = gost34_311_alloc_user_sbox(sign_parameters_str->digest_sbox, sync));
++            DO(gost34_311_update(digest_ctx, data));
++            DO(gost34_311_final(digest_ctx, &digest_to_sign));
++        }
+ 
+         CHECK_NOT_NULL(seed = ba_alloc_by_len(40));
+         DO(prng_next_bytes(sign_parameters_str->prng_ctx, seed));
+@@ -1316,6 +1338,7 @@ cleanup:
+      * ECDSA-SHA1. Сесія 1С довгоживуча, тож витік накопичується. */
+     sha1_free(sha1_ctx);
+     gost34_311_free(digest_ctx);
++    dstu7564_free(kupyna_ctx);
+ 
+     return ret;
+ }

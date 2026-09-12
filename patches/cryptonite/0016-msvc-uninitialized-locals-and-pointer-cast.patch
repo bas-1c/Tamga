@@ -1,0 +1,122 @@
+diff --git a/vendor/cryptonite/src/asn1/c/ANY.c b/vendor/cryptonite/src/asn1/c/ANY.c
+index bb12dc1..e503fcb 100644
+--- a/vendor/cryptonite/src/asn1/c/ANY.c
++++ b/vendor/cryptonite/src/asn1/c/ANY.c
+@@ -106,11 +106,11 @@ ANY_new_fromType(asn_TYPE_descriptor_t *td, void *sptr)
+     ANY_t *st = NULL;
+     int ret = RET_OK;
+ 
++    memset(&tmp, 0, sizeof(tmp));
++
+     CHECK_PARAM(sptr != NULL);
+     CHECK_PARAM(td != NULL);
+ 
+-    memset(&tmp, 0, sizeof(tmp));
+-
+     if (ANY_fromType(&tmp, td, sptr)) {
+         return 0;
+     }
+diff --git a/vendor/cryptonite/src/asn1/c/INTEGER.c b/vendor/cryptonite/src/asn1/c/INTEGER.c
+index 829b855..70c1532 100644
+--- a/vendor/cryptonite/src/asn1/c/INTEGER.c
++++ b/vendor/cryptonite/src/asn1/c/INTEGER.c
+@@ -349,7 +349,7 @@ INTEGER_st_prealloc(INTEGER_t *st, int min_size)
+ static enum xer_pbd_rval
+ INTEGER__xer_body_decode(asn_TYPE_descriptor_t *td, void *sptr, const void *chunk_buf, size_t chunk_size) {
+     INTEGER_t *st = (INTEGER_t *)sptr;
+-    long dec_value;
++    long dec_value = 0;
+     long hex_value = 0;
+     const char *lp;
+     const char *lstart = (const char *)chunk_buf;
+diff --git a/vendor/cryptonite/src/asn1/c/ber_decoder.c b/vendor/cryptonite/src/asn1/c/ber_decoder.c
+index b4e0a1f..5d00501 100644
+--- a/vendor/cryptonite/src/asn1/c/ber_decoder.c
++++ b/vendor/cryptonite/src/asn1/c/ber_decoder.c
+@@ -76,7 +76,7 @@ ber_check_tags(asn_codec_ctx_t *opt_codec_ctx,
+     ssize_t tag_len;
+     ssize_t len_len;
+     ber_tlv_tag_t tlv_tag;
+-    ber_tlv_len_t tlv_len;
++    ber_tlv_len_t tlv_len = 0;
+     ber_tlv_len_t limit_len = -1;
+     int expect_00_terminators = 0;
+     int tlv_constr = -1;    /* If CHOICE, opt_tlv_form is not given */
+diff --git a/vendor/cryptonite/src/asn1/c/constr_SET.c b/vendor/cryptonite/src/asn1/c/constr_SET.c
+index 23bef68..dec3134 100644
+--- a/vendor/cryptonite/src/asn1/c/constr_SET.c
++++ b/vendor/cryptonite/src/asn1/c/constr_SET.c
+@@ -473,7 +473,7 @@ SET_encode_der(asn_TYPE_descriptor_t *td,
+     int t2m_build_own = (specs->tag2el_count != td->elements_count);
+     const asn_TYPE_tag2member_t *t2m;
+     asn_TYPE_tag2member_t *t2m_build;
+-    int t2m_count;
++    int t2m_count = 0;
+     ssize_t ret;
+     int edx;
+ 
+diff --git a/vendor/cryptonite/src/asn1/c/per_support.c b/vendor/cryptonite/src/asn1/c/per_support.c
+index 94c4a3a..29599d5 100644
+--- a/vendor/cryptonite/src/asn1/c/per_support.c
++++ b/vendor/cryptonite/src/asn1/c/per_support.c
+@@ -21,7 +21,7 @@ per_data_string(asn_per_data_t *pd)
+     snprintf(buf[n], sizeof(buf[n]),
+             "{m=%ld span %+ld[%d..%d] (%d)}",
+             (long)pd->moved,
+-            (((long)pd->buffer) & 0xf),
++            (long)(((uintptr_t)pd->buffer) & 0xf),
+             (int)pd->nboff, (int)pd->nbits,
+             (int)(pd->nbits - pd->nboff));
+     return buf[n];
+@@ -121,7 +121,7 @@ per_get_few_bits(asn_per_data_t *pd, int nbits)
+     ASN_DEBUG("  [PER got %2d<=%2d bits => span %d %+ld[%d..%d]:%02x (%d) => 0x%x]",
+             (int)nbits, (int)nleft,
+             (int)pd->moved,
+-            (((long)pd->buffer) & 0xf),
++            (long)(((uintptr_t)pd->buffer) & 0xf),
+             (int)pd->nboff, (int)pd->nbits,
+             pd->buffer[0],
+             (int)(pd->nbits - pd->nboff),
+diff --git a/vendor/cryptonite/src/cryptonite/c/dstu4145.c b/vendor/cryptonite/src/cryptonite/c/dstu4145.c
+index 9d64279..cec70d9 100644
+--- a/vendor/cryptonite/src/cryptonite/c/dstu4145.c
++++ b/vendor/cryptonite/src/cryptonite/c/dstu4145.c
+@@ -973,8 +973,8 @@ cleanup:
+ int dstu4145_init_verify(Dstu4145Ctx *ctx, const ByteArray *qx, const ByteArray *qy)
+ {
+     int ret = RET_OK;
+-    int verify_comb_opt_level;
+-    int verify_win_opt_level;
++    int verify_comb_opt_level = 0;
++    int verify_win_opt_level = 0;
+     ECPoint *pub_key = NULL;
+     bool need_update_precomp_q = false;
+ 
+diff --git a/vendor/cryptonite/src/cryptonite/c/dstu7624.c b/vendor/cryptonite/src/cryptonite/c/dstu7624.c
+index 8865fa2..28f104b 100644
+--- a/vendor/cryptonite/src/cryptonite/c/dstu7624.c
++++ b/vendor/cryptonite/src/cryptonite/c/dstu7624.c
+@@ -2420,7 +2420,7 @@ static int p_key_shift(const uint8_t *key, Dstu7624Ctx *ctx, uint64_t **key_shif
+     uint8_t *key_shift_ptr = NULL;
+     size_t i, j = 0;
+     size_t shift;
+-    size_t shift_key_size;
++    size_t shift_key_size = 0;
+     size_t key_len;
+     size_t block_len;
+     int ret = RET_OK;
+diff --git a/vendor/cryptonite/src/cryptonite/c/ecdsa.c b/vendor/cryptonite/src/cryptonite/c/ecdsa.c
+index 69abb59..fd4e7fc 100644
+--- a/vendor/cryptonite/src/cryptonite/c/ecdsa.c
++++ b/vendor/cryptonite/src/cryptonite/c/ecdsa.c
+@@ -807,8 +807,8 @@ cleanup:
+ 
+ int ecdsa_init_verify(EcdsaCtx *ctx, const ByteArray *qx, const ByteArray *qy)
+ {
+-    int verify_comb_opt_level;
+-    int verify_win_opt_level;
++    int verify_comb_opt_level = 0;
++    int verify_win_opt_level = 0;
+     int ret = RET_OK;
+     ECPoint *pub_key = NULL;
+     bool need_update_precomp_q = false;

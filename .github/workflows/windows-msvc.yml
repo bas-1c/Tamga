@@ -1,0 +1,57 @@
+name: windows-msvc-matrix
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  build:
+    name: windows-${{ matrix.arch }}
+    runs-on: windows-2022
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: x64
+            cmake_arch: x64
+            triplet: x64-windows-static
+          - arch: x86
+            cmake_arch: Win32
+            triplet: x86-windows-static
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup MSVC
+        uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1
+        with:
+          arch: ${{ matrix.arch }}
+
+      # ADR-030: toolchain vcpkg тут з'явився не для фіч, а тому, що libxml2
+      # став БЕЗУМОВНОЮ залежністю ядра — базова конфігурація більше не має
+      # саморобних сканерів XML. VCPKG_MANIFEST_FEATURES навмисно не задається:
+      # ставиться рівно те, що оголошено в кореневих `dependencies` маніфесту.
+      - name: Configure
+        shell: pwsh
+        run: >
+          cmake -S . -B build-msvc-${{ matrix.arch }}
+          -G "Visual Studio 17 2022"
+          -A ${{ matrix.cmake_arch }}
+          -DVCPKG_TARGET_TRIPLET=${{ matrix.triplet }}
+          -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
+          -DVCPKG_MANIFEST_MODE=ON
+          -DTAMGA_ENABLE_VENDOR_CRYPTONITE=ON
+          -DTAMGA_BUILD_TESTS=ON
+          -DTAMGA_BUILD_CLI=ON
+
+      - name: Build Release
+        run: cmake --build build-msvc-${{ matrix.arch }} --config Release --parallel
+
+      - name: Run tests
+        run: ctest --test-dir build-msvc-${{ matrix.arch }} -C Release --output-on-failure
+
+      - name: Smoke NativeAPI exports
+        shell: pwsh
+        run: scripts/build-windows-smoke.ps1 -BuildDir build-msvc-${{ matrix.arch }} -Configuration Release

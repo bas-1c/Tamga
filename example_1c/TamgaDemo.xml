@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalDataProcessor name="TamgaDemo" version="1.0">
+  <Synonym>Tamga: Пример подписания и проверки</Synonym>
+  <Description>Выгруженная в файлы внешняя обработка 1С с использованием Tamga.dll.</Description>
+  <MainForm>ОсновнаяФорма</MainForm>
+</ExternalDataProcessor>

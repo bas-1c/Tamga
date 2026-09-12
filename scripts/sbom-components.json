@@ -1,0 +1,137 @@
+{
+  "_comment": [
+    "Довідник для scripts/generate-sbom.ps1: відображення ІМЕНІ БІБЛІОТЕКИ",
+    "з фактичного рядка лінкування у компонент, походження і ліцензію.",
+    "",
+    "Це НЕ очікуваний список залежностей. Очікуваного списку тут свідомо немає:",
+    "склад бінарника береться з CMake File API, а не звідси. Довідник лише",
+    "пояснює, чим є кожна знайдена бібліотека. Якщо в рядку лінкування",
+    "трапиться бібліотека, якої тут немає, скрипт ПАДАЄ і вимагає додати запис",
+    "разом із ліцензією — саме так зміна на кшталт ADR-030 стає помітною.",
+    "",
+    "Для компонентів vcpkg версію і ліцензію скрипт бере не звідси, а з",
+    "vcpkg_installed/<triplet>/share/<port>/vcpkg.spdx.json — щоб вони не могли",
+    "застаріти. Поле 'license' для них — лише запасний варіант.",
+    "",
+    "risk: permissive | copyleft | review.",
+    "У бінарнику допускається лише 'permissive'; інше валить перевірку, доки",
+    "запис не отримає явного \"allowed_in_binary\": true з обґрунтуванням."
+  ],
+
+  "system_libraries": {
+    "windows": [
+      "kernel32", "user32", "gdi32", "winspool", "shell32", "ole32", "oleaut32",
+      "uuid", "comdlg32", "advapi32", "winhttp", "bcrypt", "bcryptprimitives",
+      "crypt32", "ncrypt", "wldap32", "ws2_32", "mswsock", "secur32", "shlwapi",
+      "version", "psapi", "dbghelp", "userenv", "iphlpapi", "normaliz",
+      "wintrust", "rpcrt4", "setupapi", "cfgmgr32", "imm32", "winmm", "dwmapi",
+      "msvcrt", "libcmt", "oldnames", "delayimp"
+    ],
+    "posix": [
+      "pthread", "dl", "m", "rt", "c", "stdc++", "gcc", "gcc_s", "resolv",
+      "anl", "atomic", "uuid"
+    ]
+  },
+
+  "first_party_patterns": [
+    "^tamga-",
+    "^tamga$",
+    "^Tamga$"
+  ],
+
+  "components": [
+    {
+      "id": "cryptonite",
+      "libraries": ["cryptonite", "asn1", "pkix", "storage", "pthread_impl"],
+      "origin": "vendor/cryptonite",
+      "upstream": "https://github.com/privat-it/cryptonite",
+      "license": "BSD-2-Clause-подібна",
+      "license_source": "vendor/cryptonite/LICENSE",
+      "risk": "permissive",
+      "note": "Версія фіксується піном у patches/cryptonite/upstream.json."
+    },
+    {
+      "id": "miniz",
+      "libraries": ["tamga_miniz", "miniz"],
+      "origin": "vendor/miniz",
+      "license": "MIT",
+      "license_source": "vendor/miniz/LICENSE",
+      "risk": "permissive"
+    },
+    {
+      "id": "libxml2",
+      "libraries": ["libxml2", "xml2"],
+      "origin": "vcpkg",
+      "vcpkg_port": "libxml2",
+      "license": "MIT",
+      "risk": "permissive",
+      "note": "ADR-030: безумовна залежність ядра. default-features: false — без фічі iconv."
+    },
+    {
+      "id": "qpdf",
+      "libraries": ["qpdf", "libqpdf"],
+      "origin": "vcpkg",
+      "vcpkg_port": "qpdf",
+      "license": "Apache-2.0",
+      "risk": "permissive",
+      "note": "Apache-2.0 вимагає збереження NOTICE і переліку змін, якщо вони є."
+    },
+    {
+      "id": "zlib",
+      "libraries": ["zs", "zlib", "zlibstatic", "z", "libz"],
+      "origin": "vcpkg",
+      "vcpkg_port": "zlib",
+      "license": "Zlib",
+      "risk": "permissive"
+    },
+    {
+      "id": "libjpeg-turbo",
+      "libraries": ["jpeg", "turbojpeg", "libjpeg", "libturbojpeg"],
+      "origin": "vcpkg",
+      "vcpkg_port": "libjpeg-turbo",
+      "license": "BSD-3-Clause",
+      "risk": "permissive"
+    },
+    {
+      "id": "libiconv",
+      "libraries": ["iconv", "charset", "libiconv", "libcharset"],
+      "origin": "vcpkg",
+      "vcpkg_port": "libiconv",
+      "license": "LGPL-2.1-or-later",
+      "risk": "copyleft",
+      "note": "П-09: був єдиним реальним LGPL-ризиком бінарної дистрибуції. Прибраний тим, що libxml2 збирається без фічі iconv. Поява цього запису в рядку лінкування означає, що фіча повернулася."
+    },
+    {
+      "id": "bee2",
+      "libraries": ["bee2"],
+      "origin": "vendor/cryptonite/libs/bee2",
+      "license": "GPL-3.0-or-later",
+      "risk": "copyleft",
+      "note": "У дереві є, у збірку не входить: vendor/cryptonite/CMakeLists.txt не додає libs/."
+    },
+    {
+      "id": "libgcrypt",
+      "libraries": ["gcrypt", "gpg-error", "libgcrypt", "libgpg-error"],
+      "origin": "vendor/cryptonite/libs/gcrypt",
+      "license": "LGPL-2.1-or-later",
+      "risk": "copyleft",
+      "note": "У дереві є, у збірку не входить."
+    },
+    {
+      "id": "cppcrypto",
+      "libraries": ["cppcrypto"],
+      "origin": "vendor/cryptonite/libs/cppcrypto",
+      "license": "BSD-2-Clause (license.txt у vendored копії відсутній)",
+      "risk": "review",
+      "note": "У дереві є, у збірку не входить. Для source-дистрибуції бракує автентичного тексту ліцензії."
+    },
+    {
+      "id": "libressl",
+      "libraries": ["ssl", "crypto", "tls", "libssl", "libcrypto", "libtls"],
+      "origin": "vendor/cryptonite/libs/libressl або система",
+      "license": "невизначено (LibreSSL / OpenSSL / інше)",
+      "risk": "review",
+      "note": "Імена ssl/crypto надто загальні, щоб визначати походження автоматично. Поява в рядку лінкування потребує ручного з'ясування, що саме влінковано."
+    }
+  ]
+}

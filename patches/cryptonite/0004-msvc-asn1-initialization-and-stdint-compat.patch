@@ -1,0 +1,49 @@
+diff --git a/src/asn1/c/ANY.c b/src/asn1/c/ANY.c
+index 7252ad0..bb12dc1 100644
+--- a/src/asn1/c/ANY.c
++++ b/src/asn1/c/ANY.c
+@@ -65,7 +65,7 @@ static int ANY__consume_bytes(const void *buffer, size_t size, void *key);
+ int
+ ANY_fromType(ANY_t *st, asn_TYPE_descriptor_t *td, void *sptr)
+ {
+-    struct _callback_arg arg;
++    struct _callback_arg arg = {0};
+     asn_enc_rval_t erval;
+     int ret = RET_OK;
+ 
+@@ -103,7 +103,7 @@ ANY_t *
+ ANY_new_fromType(asn_TYPE_descriptor_t *td, void *sptr)
+ {
+     ANY_t tmp;
+-    ANY_t *st;
++    ANY_t *st = NULL;
+     int ret = RET_OK;
+ 
+     CHECK_PARAM(sptr != NULL);
+diff --git a/src/asn1/c/asn_system.h b/src/asn1/c/asn_system.h
+index 01dfad8..d523eef 100644
+--- a/src/asn1/c/asn_system.h
++++ b/src/asn1/c/asn_system.h
+@@ -40,16 +40,13 @@
+ #ifndef __cplusplus
+ #define inline __inline
+ #endif
+-#ifndef    ASSUMESTDTYPES    /* Standard types have been defined elsewhere */
+-#define    ssize_t        SSIZE_T
+-typedef    char        int8_t;
+-typedef    short        int16_t;
+-typedef    int        int32_t;
+-typedef    unsigned char    uint8_t;
+-typedef    unsigned short    uint16_t;
+-typedef    unsigned int    uint32_t;
+-#endif    /* ASSUMESTDTYPES */
++#include <stdint.h>
++#ifndef ASSUMESTDTYPES    /* Standard types have been defined elsewhere */
++#define ssize_t SSIZE_T
++#endif /* ASSUMESTDTYPES */
++#ifndef WIN32_LEAN_AND_MEAN
+ #define WIN32_LEAN_AND_MEAN
++#endif
+ #include <windows.h>
+ #include <float.h>
+ #define finite   _finite

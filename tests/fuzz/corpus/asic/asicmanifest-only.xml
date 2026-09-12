@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asic:ASiCManifest xmlns:asic="http://uri.etsi.org/02918/v1.2.1#">
+  <asic:SigReference URI="META-INF/signature001.p7s" MimeType="application/x-pkcs7-signature"/>
+  <asic:DataObjectReference URI="./%D1%84%D0%B0%D0%B9%D0%BB.pdf" MimeType="application/pdf"/>
+</asic:ASiCManifest>

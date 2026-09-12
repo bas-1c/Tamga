@@ -1,0 +1,1589 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?><TrustServiceStatusList xmlns="http://uri.etsi.org/02231/v2#" Id="TrustServiceStatusList-UA" TSLTag="http://uri.etsi.org/19612/TSLTag" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://uri.etsi.org/02231/v2/additionaltypes#" xmlns:ns4="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns5="http://uri.etsi.org/TrstSvc/SvcInfoExt/eSigDir-1999-93-EC-TrustedList/#" xmlns:ns6="http://uri.etsi.org/01903/v1.4.1#">
+	<SchemeInformation>
+        <TSLVersionIdentifier>6</TSLVersionIdentifier>
+        <TSLSequenceNumber>32</TSLSequenceNumber>
+        <TSLType>http://uri.etsi.org/TrstSvc/TrustedList/TSLType/UAlist</TSLType>
+        <SchemeOperatorName>
+            <Name xml:lang="en">Ministry of digital transformation of Ukraine</Name>
+        </SchemeOperatorName>
+        <SchemeOperatorAddress>
+            <PostalAddresses>
+                <PostalAddress xml:lang="en">
+                    <StreetAddress>24 Dilova st.</StreetAddress>
+                    <Locality>Kyiv</Locality>
+                    <PostalCode>03150</PostalCode>
+                    <CountryName>UA</CountryName>
+                </PostalAddress>
+                <PostalAddress xml:lang="uk">
+                    <StreetAddress>вул. Ділова, 24</StreetAddress>
+                    <Locality>Київ</Locality>
+                    <PostalCode>03150</PostalCode>
+                    <CountryName>UA</CountryName>
+                </PostalAddress>
+            </PostalAddresses>
+            <ElectronicAddress>
+                <URI xml:lang="en">https://thedigital.gov.ua</URI>
+                <URI xml:lang="en">https://czo.gov.ua</URI>
+                <URI xml:lang="en">mailto:support.its@czo.gov.ua</URI>
+            </ElectronicAddress>
+        </SchemeOperatorAddress>
+        <SchemeName>
+            <Name xml:lang="en">UA:Trusted list including information related to the qualified electronic trust service providers which are supervised by the state, together with information related to the qualified electronic trust services provided by them, in accordance with the relevant provisions laid down in  the Law of Ukrane "On electronic identification and electronic trust services".</Name>
+        </SchemeName>
+        <SchemeInformationURI>
+            <URI xml:lang="en">https://czo.gov.ua/en/uaschemeinfo</URI>
+			<URI xml:lang="uk">https://czo.gov.ua/uaschemeinfo</URI>
+        </SchemeInformationURI>
+        <StatusDeterminationApproach>https://czo.gov.ua/uadetermination</StatusDeterminationApproach>
+        <SchemeTypeCommunityRules>
+            <URI xml:lang="en">https://czo.gov.ua/en/uaschemerules</URI>
+			<URI xml:lang="uk">https://czo.gov.ua/uaschemerules</URI>
+        </SchemeTypeCommunityRules>
+        <SchemeTerritory>UA</SchemeTerritory>
+        <PolicyOrLegalNotice>
+            <TSLLegalNotice xml:lang="en">The applicable legal framework for the present trusted list is the Law of Ukrane "On electronic identification and electronic trust services".</TSLLegalNotice>
+        </PolicyOrLegalNotice>
+        <HistoricalInformationPeriod>65535</HistoricalInformationPeriod>
+		<PointersToOtherTSL>
+            <OtherTSLPointer>
+                <ServiceDigitalIdentities>
+                    <ServiceDigitalIdentity>
+                        <DigitalId>
+                            <X509Certificate>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</X509Certificate>
+                        </DigitalId>
+                    </ServiceDigitalIdentity>
+                    <ServiceDigitalIdentity>
+                        <DigitalId>
+                            <X509Certificate>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</X509Certificate>
+                        </DigitalId>
+                    </ServiceDigitalIdentity>
+                    <ServiceDigitalIdentity>
+                        <DigitalId>
+                            <X509Certificate>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</X509Certificate>
+                        </DigitalId>
+                    </ServiceDigitalIdentity>
+                    <ServiceDigitalIdentity>
+                        <DigitalId>
+                            <X509Certificate>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</X509Certificate>
+                        </DigitalId>
+                    </ServiceDigitalIdentity>
+                    <ServiceDigitalIdentity>
+                        <DigitalId>
+                            <X509Certificate>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</X509Certificate>
+                        </DigitalId>
+                    </ServiceDigitalIdentity>
+                    <ServiceDigitalIdentity>
+                        <DigitalId>
+                            <X509Certificate>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</X509Certificate>
+                        </DigitalId>
+                    </ServiceDigitalIdentity>
+                </ServiceDigitalIdentities>
+                <TSLLocation>https://ec.europa.eu/tools/lotl/eu-lotl.xml</TSLLocation>
+                <AdditionalInformation>
+                    <OtherInformation>
+                        <TSLType>http://uri.etsi.org/TrstSvc/TrustedList/TSLType/EUlistofthelists</TSLType>
+                    </OtherInformation>
+                    <OtherInformation>
+                        <SchemeTerritory>EU</SchemeTerritory>
+                    </OtherInformation>
+                    <OtherInformation>
+                        <ns3:MimeType>application/vnd.etsi.tsl+xml</ns3:MimeType>
+                    </OtherInformation>
+                    <OtherInformation>
+                        <SchemeOperatorName>
+                            <Name xml:lang="en">European Commission</Name>
+                        </SchemeOperatorName>
+                    </OtherInformation>
+                    <OtherInformation>
+                        <SchemeTypeCommunityRules>
+                            <URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/schemerules/EUlistofthelists</URI>
+                        </SchemeTypeCommunityRules>
+                    </OtherInformation>
+                </AdditionalInformation>
+            </OtherTSLPointer>
+		</PointersToOtherTSL>
+        <ListIssueDateTime>2026-05-19T09:02:00Z</ListIssueDateTime>
+        <NextUpdate>
+            <dateTime>2026-08-19T09:02:00Z</dateTime>
+        </NextUpdate>
+        <DistributionPoints>
+            <URI>https://czo.gov.ua/download/tl/TL-UA-EC.xml</URI>
+        </DistributionPoints>
+    </SchemeInformation>
+   <TrustServiceProviderList>
+        <TrustServiceProvider>
+            <TSPInformation>
+                <TSPName>
+				    <Name xml:lang="en">State enterprise "DIIA"</Name>
+                    <Name xml:lang="uk">Державне підприємство "ДІЯ"</Name>
+                </TSPName>
+                <TSPTradeName>
+					<Name xml:lang="en">NTRUA-43395033</Name>
+					<Name xml:lang="en">"DIIA". Qualified Trust Services Provider</Name>
+					<Name xml:lang="en">TSA-server QTSP "DIIA"</Name>
+                </TSPTradeName>
+                <TSPAddress>
+                    <PostalAddresses>
+                        <PostalAddress xml:lang="en">
+                            <StreetAddress>24, Dilova</StreetAddress>
+                            <Locality>Kyiv</Locality>
+                            <PostalCode>03150</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                        <PostalAddress xml:lang="uk">
+                            <StreetAddress>вул. Ділова, будинок 24</StreetAddress>
+                            <Locality>Київ</Locality>
+                            <PostalCode>03150</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                    </PostalAddresses>
+                    <ElectronicAddress>
+                        <URI xml:lang="en">https://ca.diia.gov.ua</URI>
+                        <URI xml:lang="en">mailto:ca@diia.gov.ua</URI>
+                    </ElectronicAddress>
+                </TSPAddress>
+                <TSPInformationURI>
+                    <URI xml:lang="en">https://ca.diia.gov.ua/cps</URI>
+                    <URI xml:lang="uk">https://ca.diia.gov.ua/reglament</URI>
+                </TSPInformationURI>
+            </TSPInformation>
+            <TSPServices>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">"DIIA". Qualified Trust Services Provider (UA-43395033-2311)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEbDCCBBGgAwIBAgIUXpKHtb9tW+oBAAAAAQAAADcBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yMjExMjQxMTQ5MDBaFw0yNzExMjQxMTQ5MDBaMIHYMSAwHgYDVQQKDBdTdGF0ZSBlbnRlcnByaXNlICJESUlBIjEwMC4GA1UECwwnRGVwYXJ0bWVudCBvZiBFbGVjdHJvbmljIFRydXN0IFNlcnZpY2VzMTIwMAYDVQQDDCkiRElJQSIuIFF1YWxpZmllZCBUcnVzdCBTZXJ2aWNlcyBQcm92aWRlcjEZMBcGA1UEBRMQVUEtNDMzOTUwMzMtMjMxMTELMAkGA1UEBhMCVUExDTALBgNVBAcMBEt5aXYxFzAVBgNVBGEMDk5UUlVBLTQzMzk1MDMzMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEhQAEgmXpGcFzjoc1csH2RDiVoMA5hfxxvZam9ipTvMhp0jym5qKn3EQ7uyoLkU7jXxx04oLs2ObFKHx6PUruEKOCAbwwggG4MB0GA1UdDgQWBBRmaSQ9KwQzHR6Sq28/SttIIxs/xDAOBgNVHQ8BAf8EBAMCAQYwPAYDVR0gBDUwMzAxBgkqhiQCAQEBAgQwJDAiBggrBgEFBQcCARYWaHR0cHM6Ly9jem8uZ292LnVhL2NwczApBgNVHREEIjAggg5jYS5kaWlhLmdvdi51YYEOY2FAZGlpYS5nb3YudWEwEgYDVR0TAQH/BAgwBgEB/wIBADAYBggrBgEFBQcBAwQMMAowCAYGBACORgEBMB8GA1UdIwQYMBaAFF6Sh7W/bVvq6ekdohGT5F78UImRMEcGA1UdHwRAMD4wPKA6oDiGNmh0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1GdWxsLmNybDBIBgNVHS4EQTA/MD2gO6A5hjdodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjAtRGVsdGEuY3JsMDwGCCsGAQUFBwEBBDAwLjAsBggrBgEFBQcwAYYgaHR0cDovL2N6by5nb3YudWEvc2VydmljZXMvb2NzcC8wCgYIKoZIzj0EAwIDSQAwRgIhALFobqGjXfRBV4NsBLWWEanevvoDJLXzW5zSiy1CP5DgAiEA4qBfYSPuuv7WWUFNW7NdxBj3Z0x8Tr7Jy+gF1sVFfRo=</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43395033,L=Kyiv,C=UA,SERIALNUMBER=UA-43395033-2311,CN=\"DIIA\". Qualified Trust Services Provider,OU=Department of Electronic Trust Services,O=State enterprise \"DIIA\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2022-11-24T11:49:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP "DIIA" (UA-43395033-2312)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEaTCCBBCgAwIBAgIUXpKHtb9tW+oCAAAAAQAAADgBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yMjExMjQxMTUzMDBaFw0yNzExMjQxMTUzMDBaMIHFMSAwHgYDVQQKDBdTdGF0ZSBlbnRlcnByaXNlICJESUlBIjEwMC4GA1UECwwnRGVwYXJ0bWVudCBvZiBFbGVjdHJvbmljIFRydXN0IFNlcnZpY2VzMR8wHQYDVQQDDBZUU0Etc2VydmVyIFFUU1AgIkRJSUEiMRkwFwYDVQQFExBVQS00MzM5NTAzMy0yMzEyMQswCQYDVQQGEwJVQTENMAsGA1UEBwwES3lpdjEXMBUGA1UEYQwOTlRSVUEtNDMzOTUwMzMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATrW5TlBeFGp8aMvj5tTtHcA7dIAOVQeRr6+x0uBiczZ3wOSnl/CfHB9w/yhe07tdyUhHUs55ZWMdiffQVe6DBno4IBzjCCAcowHQYDVR0OBBYEFKX+uENHoeFoTmvTm1BJyROqMt8JMA4GA1UdDwEB/wQEAwIGwDAWBgNVHSUBAf8EDDAKBggrBgEFBQcDCDA8BgNVHSAENTAzMDEGCSqGJAIBAQECBDAkMCIGCCsGAQUFBwIBFhZodHRwczovL2N6by5nb3YudWEvY3BzMCkGA1UdEQQiMCCCDmNhLmRpaWEuZ292LnVhgQ5jYUBkaWlhLmdvdi51YTAMBgNVHRMBAf8EAjAAMBgGCCsGAQUFBwEDBAwwCjAIBgYEAI5GAQEwHwYDVR0jBBgwFoAUXpKHtb9tW+rp6R2iEZPkXvxQiZEwRwYDVR0fBEAwPjA8oDqgOIY2aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLUZ1bGwuY3JsMEgGA1UdLgRBMD8wPaA7oDmGN2h0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1EZWx0YS5jcmwwPAYIKwYBBQUHAQEEMDAuMCwGCCsGAQUFBzABhiBodHRwOi8vY3pvLmdvdi51YS9zZXJ2aWNlcy9vY3NwLzAKBggqhkjOPQQDAgNHADBEAiBiTEoHc4ZVTVdpd1jHFn9gvTNhJ2dyRTNz0JEj31KvzQIgZRTa+95mA6x0bhH5kOWFtZO5BnZ+rsV3NvbIGarHj7Y=</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43395033,L=Kyiv,C=UA,SERIALNUMBER=UA-43395033-2312,CN=TSA-server QTSP \"DIIA\",OU=Department of Electronic Trust Services,O=State enterprise \"DIIA\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2022-11-24T11:53:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">"DIIA". Qualified Trust Services Provider (UA-43395033-2302)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43395033,L=Kyiv,C=UA,SERIALNUMBER=UA-43395033-2302,CN=\"DIIA\". Qualified Trust Services Provider,OU=Department of Electronic Trust Services,O=State enterprise \"DIIA\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-05-08T15:03:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP "DIIA" (UA-43395033-2304)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43395033,L=Kyiv,C=UA,SERIALNUMBER=UA-43395033-2304,CN=TSA-server QTSP \"DIIA\",OU=Department of Electronic Trust Services,O=State enterprise \"DIIA\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-05-08T15:05:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">"DIIA". Qualified Trust Services Provider (UA-43395033-2502)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43395033,L=Kyiv,C=UA,SERIALNUMBER=UA-43395033-2502,CN=\"DIIA\". Qualified Trust Services Provider,OU=Department of Electronic Trust Services,O=State enterprise \"DIIA\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2025-10-13T12:29:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP "DIIA" (UA-43395033-2505)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43395033,L=Kyiv,C=UA,SERIALNUMBER=UA-43395033-2505,CN=TSA-server QTSP \"DIIA\",OU=Department of Electronic Trust Services,O=State enterprise \"DIIA\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2025-10-13T12:35:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">"DIIA". Qualified Trust Services Provider (UA-43395033-2503)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEkzCCBDmgAwIBAgIUeEc2OukoAncBAAAAAQAAAKoBAAAwCgYIKoZIzj0EAwIwgdIxNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRkwFwYDVQQFExBVQS00MzIyMDg1MS0yNTAzMQswCQYDVQQGEwJVQTENMAsGA1UEBwwES3lpdjEXMBUGA1UEYQwOTlRSVUEtNDMyMjA4NTEwHhcNMjUxMDEzMTIzMjAwWhcNMzAxMDEzMTIzMjAwWjCB2DEgMB4GA1UECgwXU3RhdGUgZW50ZXJwcmlzZSAiRElJQSIxMDAuBgNVBAsMJ0RlcGFydG1lbnQgb2YgRWxlY3Ryb25pYyBUcnVzdCBTZXJ2aWNlczEyMDAGA1UEAwwpIkRJSUEiLiBRdWFsaWZpZWQgVHJ1c3QgU2VydmljZXMgUHJvdmlkZXIxGTAXBgNVBAUTEFVBLTQzMzk1MDMzLTI1MDMxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzM5NTAzMzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABMizVG9KNMAhoxs1eAV9HeMEy/F0OjkbIDLNW303GEFIwkQOovuhCHKwvJCpI3GtUPWdDpwCFu1S/SWbiozJ7lSjggHjMIIB3zAdBgNVHQ4EFgQU7A2+gl0BMkrrMj9YrsdOP1wAnxEwDgYDVR0PAQH/BAQDAgEGMDwGA1UdIAQ1MDMwMQYJKoYkAgEBAQIEMCQwIgYIKwYBBQUHAgEWFmh0dHBzOi8vY3pvLmdvdi51YS9jcHMwKQYDVR0RBCIwIIIOY2EuZGlpYS5nb3YudWGBDmNhQGRpaWEuZ292LnVhMBIGA1UdEwEB/wQIMAYBAf8CAQAwPwYIKwYBBQUHAQMEMzAxMAgGBgQAjkYBATAOBgYEAI5GAQcwBBMCVUEwFQYIKwYBBQUHCwIwCQYHBACL7EkBAjAfBgNVHSMEGDAWgBR4RzY66SgCdyJhPEQaUtVivLdfTDBHBgNVHR8EQDA+MDygOqA4hjZodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjUtRnVsbC5jcmwwSAYDVR0uBEEwPzA9oDugOYY3aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDI1LURlbHRhLmNybDA8BggrBgEFBQcBAQQwMC4wLAYIKwYBBQUHMAGGIGh0dHA6Ly9jem8uZ292LnVhL3NlcnZpY2VzL29jc3AvMAoGCCqGSM49BAMCA0gAMEUCIDAQ0r5s2WtdD6wAXpkvu3N6RWJwFTm+sfWrlturt3flAiEA/vzSFSmTgkmLxlasMXsfp/DawVPMpLhqXPN3JhJ/g1Q=</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43395033,L=Kyiv,C=UA,SERIALNUMBER=UA-43395033-2503,CN=\"DIIA\". Qualified Trust Services Provider,OU=Department of Electronic Trust Services,O=State enterprise \"DIIA\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2025-10-13T12:32:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP "DIIA" (UA-43395033-2506)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEkTCCBDigAwIBAgIUeEc2OukoAncCAAAAAQAAAKwBAAAwCgYIKoZIzj0EAwIwgdIxNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRkwFwYDVQQFExBVQS00MzIyMDg1MS0yNTAzMQswCQYDVQQGEwJVQTENMAsGA1UEBwwES3lpdjEXMBUGA1UEYQwOTlRSVUEtNDMyMjA4NTEwHhcNMjUxMDEzMTIzNzAwWhcNMzAxMDEzMTIzNzAwWjCBxTEgMB4GA1UECgwXU3RhdGUgZW50ZXJwcmlzZSAiRElJQSIxMDAuBgNVBAsMJ0RlcGFydG1lbnQgb2YgRWxlY3Ryb25pYyBUcnVzdCBTZXJ2aWNlczEfMB0GA1UEAwwWVFNBLXNlcnZlciBRVFNQICJESUlBIjEZMBcGA1UEBRMQVUEtNDMzOTUwMzMtMjUwNjELMAkGA1UEBhMCVUExDTALBgNVBAcMBEt5aXYxFzAVBgNVBGEMDk5UUlVBLTQzMzk1MDMzMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdl29Rfo0cpWetjTfqMgQNrn5aqBa51KhS+dZCtkom3VgIbCClFz7pKHHxSgD7DCR8qiMZ9xUbU0omUFNG4NgH6OCAfUwggHxMB0GA1UdDgQWBBTeOYnHiqFyUVxjVO8lTvMvGEUImTAOBgNVHQ8BAf8EBAMCBsAwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwgwPAYDVR0gBDUwMzAxBgkqhiQCAQEBAgQwJDAiBggrBgEFBQcCARYWaHR0cHM6Ly9jem8uZ292LnVhL2NwczApBgNVHREEIjAggg5jYS5kaWlhLmdvdi51YYEOY2FAZGlpYS5nb3YudWEwDAYDVR0TAQH/BAIwADA/BggrBgEFBQcBAwQzMDEwCAYGBACORgEBMA4GBgQAjkYBBzAEEwJVQTAVBggrBgEFBQcLAjAJBgcEAIvsSQECMB8GA1UdIwQYMBaAFHhHNjrpKAJ3ImE8RBpS1WK8t19MMEcGA1UdHwRAMD4wPKA6oDiGNmh0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyNS1GdWxsLmNybDBIBgNVHS4EQTA/MD2gO6A5hjdodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjUtRGVsdGEuY3JsMDwGCCsGAQUFBwEBBDAwLjAsBggrBgEFBQcwAYYgaHR0cDovL2N6by5nb3YudWEvc2VydmljZXMvb2NzcC8wCgYIKoZIzj0EAwIDRwAwRAIgeLxuyO/AK36buTI6RYDoX2JRFLms5xoF9UUwTZ/L7HsCIFepEP2S5HiiIuhWhqOLzctuSoTTQauIMI7P5Tzm+Cr9</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43395033,L=Kyiv,C=UA,SERIALNUMBER=UA-43395033-2506,CN=TSA-server QTSP \"DIIA\",OU=Department of Electronic Trust Services,O=State enterprise \"DIIA\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2025-10-13T12:37:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+			</TSPServices>
+		</TrustServiceProvider>
+        <TrustServiceProvider>
+            <TSPInformation>
+                <TSPName>
+				    <Name xml:lang="en">SE "USS"</Name>
+                    <Name xml:lang="uk">ДП "УСС"</Name>
+                </TSPName>
+                <TSPTradeName>
+					<Name xml:lang="en">NTRUA-32348248</Name>
+					<Name xml:lang="en">QTSP SE "USS"</Name>
+                </TSPTradeName>
+                <TSPAddress>
+                    <PostalAddresses>
+                        <PostalAddress xml:lang="en">
+                            <StreetAddress>83-B Illienka Yuriia st.</StreetAddress>
+                            <Locality>Kyiv</Locality>
+                            <PostalCode>04119</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                        <PostalAddress xml:lang="uk">
+                            <StreetAddress>вул. Юрія Іллєнка, 83-Б</StreetAddress>
+                            <Locality>Київ</Locality>
+                            <PostalCode>04119</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                    </PostalAddresses>
+                    <ElectronicAddress>
+                        <URI xml:lang="en">mailto:csk@uss.gov.ua</URI>
+                        <URI xml:lang="en">https://csk.uss.gov.ua</URI>
+                    </ElectronicAddress>
+                </TSPAddress>
+                <TSPInformationURI>
+                    <URI xml:lang="en">http://csk.uss.gov.ua/download/reglament/reglament.pdf</URI>
+                </TSPInformationURI>
+            </TSPInformation>
+            <TSPServices>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP SE "USS" (UA-32348248-2122)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-32348248,L=Kyiv,C=UA,SERIALNUMBER=UA-32348248-2122,CN=QTSP SE \"USS\",O=SE \"USS\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-02-02T15:26:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP SE "USS" (UA-32348248-2322)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-32348248,L=Kyiv,C=UA,SERIALNUMBER=UA-32348248-2322,CN=TSA-server QTSP SE \"USS\",O=SE \"USS\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-02-02T15:32:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP SE "USS" (UA-32348248-3122)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEDjCCA7OgAwIBAgIUXpKHtb9tW+oBAAAAAQAAAD4BAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yMzAyMDIxNTI5MDBaFw0yODAyMDIxNTI5MDBaMHsxETAPBgNVBAoMCFNFICJVU1MiMRYwFAYDVQQDDA1RVFNQIFNFICJVU1MiMRkwFwYDVQQFExBVQS0zMjM0ODI0OC0zMTIyMQswCQYDVQQGEwJVQTENMAsGA1UEBwwES3lpdjEXMBUGA1UEYQwOTlRSVUEtMzIzNDgyNDgwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQtRAXwFeU7McETmSZ9mT4IF6IkYma0OWaEtTYt4fzuk4LdVq5QcUUnpDudltuMz2ALtRtZodMW+9OFETnSczamo4IBvDCCAbgwHQYDVR0OBBYEFCsjGLCS1weCCAgIHTl1pMBJi8poMA4GA1UdDwEB/wQEAwIBBjA8BgNVHSAENTAzMDEGCSqGJAIBAQECBDAkMCIGCCsGAQUFBwIBFhZodHRwczovL2N6by5nb3YudWEvY3BzMCkGA1UdEQQiMCCCDmNzay51c3MuZ292LnVhgQ5jc2tAdXNzLmdvdi51YTASBgNVHRMBAf8ECDAGAQH/AgEAMBgGCCsGAQUFBwEDBAwwCjAIBgYEAI5GAQEwHwYDVR0jBBgwFoAUXpKHtb9tW+rp6R2iEZPkXvxQiZEwRwYDVR0fBEAwPjA8oDqgOIY2aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLUZ1bGwuY3JsMEgGA1UdLgRBMD8wPaA7oDmGN2h0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1EZWx0YS5jcmwwPAYIKwYBBQUHAQEEMDAuMCwGCCsGAQUFBzABhiBodHRwOi8vY3pvLmdvdi51YS9zZXJ2aWNlcy9vY3NwLzAKBggqhkjOPQQDAgNJADBGAiEAh3rTxhoOG4G5wGnC1L2ES/eXTnO1yvb+NsdieGk4In8CIQDRxFKLCvNVhfI7TSKzG8JVoegV8ckG6jwczbe8UaXjnA==</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-32348248,L=Kyiv,C=UA,SERIALNUMBER=UA-32348248-3122,CN=QTSP SE \"USS\",O=SE \"USS\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-02-02T15:29:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP SE "USS" (UA-32348248-3322)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIELDCCA9GgAwIBAgIUXpKHtb9tW+oCAAAAAQAAAEABAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yMzAyMDIxNTM0MDBaFw0yODAyMDIxNTM0MDBaMIGGMREwDwYDVQQKDAhTRSAiVVNTIjEhMB8GA1UEAwwYVFNBLXNlcnZlciBRVFNQIFNFICJVU1MiMRkwFwYDVQQFExBVQS0zMjM0ODI0OC0zMzIyMQswCQYDVQQGEwJVQTENMAsGA1UEBwwES3lpdjEXMBUGA1UEYQwOTlRSVUEtMzIzNDgyNDgwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARqSkomCiLNc0nJgDGrClMvALDR+XVCGOsFZMNna/BAPAppF88mtUNo0o/Z3hrqJgde2WB4xrEgEa0pI27UtAZto4IBzjCCAcowHQYDVR0OBBYEFM80G7GesSx85ogKY8/lsWxJAk4EMA4GA1UdDwEB/wQEAwIGwDAWBgNVHSUBAf8EDDAKBggrBgEFBQcDCDA8BgNVHSAENTAzMDEGCSqGJAIBAQECBDAkMCIGCCsGAQUFBwIBFhZodHRwczovL2N6by5nb3YudWEvY3BzMCkGA1UdEQQiMCCCDmNzay51c3MuZ292LnVhgQ5jc2tAdXNzLmdvdi51YTAMBgNVHRMBAf8EAjAAMBgGCCsGAQUFBwEDBAwwCjAIBgYEAI5GAQEwHwYDVR0jBBgwFoAUXpKHtb9tW+rp6R2iEZPkXvxQiZEwRwYDVR0fBEAwPjA8oDqgOIY2aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLUZ1bGwuY3JsMEgGA1UdLgRBMD8wPaA7oDmGN2h0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1EZWx0YS5jcmwwPAYIKwYBBQUHAQEEMDAuMCwGCCsGAQUFBzABhiBodHRwOi8vY3pvLmdvdi51YS9zZXJ2aWNlcy9vY3NwLzAKBggqhkjOPQQDAgNJADBGAiEAtstvyaAnu5itp6ioC4ORhGKiRecGlIxjKSQpNev7YOQCIQCQEhdjwXxXqbSEZC7xE+zwL9smDeGTUPH8bUwrgYOdHw==</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-32348248,L=Kyiv,C=UA,SERIALNUMBER=UA-32348248-3322,CN=TSA-server QTSP SE \"USS\",O=SE \"USS\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-02-02T15:34:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+			</TSPServices>
+		</TrustServiceProvider>
+        <TrustServiceProvider>
+            <TSPInformation>
+                <TSPName>
+                    <Name xml:lang="en">JSC CB PRIVATBANK</Name>
+                    <Name xml:lang="uk">АКЦІОНЕРНЕ ТОВАРИСТВО КОМЕРЦІЙНИЙ БАНК «ПРИВАТБАНК»</Name>
+                </TSPName>
+                <TSPTradeName>
+                    <Name xml:lang="en">NTRUA-14360570</Name>
+					<Name xml:lang="en">QTSP JSC CB PRIVATBANK</Name>
+                </TSPTradeName>
+                <TSPAddress>
+                    <PostalAddresses>
+                        <PostalAddress xml:lang="en">
+                            <StreetAddress>50 Naberezhna Peremohy st.</StreetAddress>
+                            <Locality>Dnipro</Locality>
+                            <StateOrProvince>Dnipropetrovska</StateOrProvince>
+                            <PostalCode>49094</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                        <PostalAddress xml:lang="uk">
+                            <StreetAddress>вул. Набережна Перемоги, 50</StreetAddress>
+                            <Locality>Дніпро</Locality>
+                            <StateOrProvince>Дніпропетровська</StateOrProvince>
+                            <PostalCode>49094</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                        <PostalAddress xml:lang="en">
+                            <StreetAddress>1D Hrushevskogo st.</StreetAddress>
+                            <Locality>Kyiv</Locality>
+                            <PostalCode>01001</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                        <PostalAddress xml:lang="uk">
+                            <StreetAddress>вул. Грушевського, 1Д</StreetAddress>
+                            <Locality>Київ</Locality>
+                            <PostalCode>01001</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                    </PostalAddresses>
+                    <ElectronicAddress>
+                        <URI xml:lang="en">mailto:acsk@privatbank.ua</URI>
+                        <URI xml:lang="en">https://acsk.privatbank.ua</URI>
+                    </ElectronicAddress>
+                </TSPAddress>
+                <TSPInformationURI>
+					<URI xml:lang="en">https://acsk.privatbank.ua/arch/docs/Reglament_ACSK_PB.pdf</URI>
+                </TSPInformationURI>
+            </TSPInformation>
+            <TSPServices>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP JSC CB PRIVATBANK (UA-14360570-2301)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEFDCCA7qgAwIBAgIUXpKHtb9tW+oBAAAAAQAAAEEBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yMzAzMTAwODQwMDBaFw0yODAzMTAwODQwMDBaMIGNMRowGAYDVQQKDBFKU0MgQ0IgUFJJVkFUQkFOSzEfMB0GA1UEAwwWUVRTUCBKU0MgQ0IgUFJJVkFUQkFOSzEZMBcGA1UEBRMQVUEtMTQzNjA1NzAtMjMwMTELMAkGA1UEBhMCVUExDTALBgNVBAcMBEt5aXYxFzAVBgNVBGEMDk5UUlVBLTE0MzYwNTcwMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFo3tbPb0dBQzhQIcwuoZnZh0qHs284yOcY/1eW3eWW3YfUa8X9Ngjc2a/2losW98T5r2ShO785QFQIfC5a9XKaOCAbAwggGsMB0GA1UdDgQWBBRpKFeymnl1Zwokfr8tKWzx4u9/EzAOBgNVHQ8BAf8EBAMCAQYwPAYDVR0gBDUwMzAxBgkqhiQCAQEBAgQwJDAiBggrBgEFBQcCARYWaHR0cHM6Ly9jem8uZ292LnVhL2NwczAdBgNVHREEFjAUghJhY3NrLnByaXZhdGJhbmsudWEwEgYDVR0TAQH/BAgwBgEB/wIBADAYBggrBgEFBQcBAwQMMAowCAYGBACORgEBMB8GA1UdIwQYMBaAFF6Sh7W/bVvq6ekdohGT5F78UImRMEcGA1UdHwRAMD4wPKA6oDiGNmh0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1GdWxsLmNybDBIBgNVHS4EQTA/MD2gO6A5hjdodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjAtRGVsdGEuY3JsMDwGCCsGAQUFBwEBBDAwLjAsBggrBgEFBQcwAYYgaHR0cDovL2N6by5nb3YudWEvc2VydmljZXMvb2NzcC8wCgYIKoZIzj0EAwIDSAAwRQIgHOHAddaCHXyNflGRjIBDxQUl9f3Yv7dyEVBUJWUBdXICIQDVt9FjLovOBkm5mc8SFYxlGhATbXkqttz1oZDqMyIsrg==</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-14360570,L=Kyiv,C=UA,SERIALNUMBER=UA-14360570-2301,CN=QTSP JSC CB PRIVATBANK,O=JSC CB PRIVATBANK</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-03-10T08:40:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP JSC CB PRIVATBANK (UA-14360570-2302)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEMTCCA9egAwIBAgIUXpKHtb9tW+oCAAAAAQAAAEIBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yMzAzMTAwODQzMDBaFw0yODAzMTAwODQzMDBaMIGYMRowGAYDVQQKDBFKU0MgQ0IgUFJJVkFUQkFOSzEqMCgGA1UEAwwhVFNBLXNlcnZlciBRVFNQIEpTQyBDQiBQUklWQVRCQU5LMRkwFwYDVQQFExBVQS0xNDM2MDU3MC0yMzAyMQswCQYDVQQGEwJVQTENMAsGA1UEBwwES3lpdjEXMBUGA1UEYQwOTlRSVUEtMTQzNjA1NzAwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQwTphV6DeKnE/0WOLMQv24VJpBLFiU0qIk0Nbsoq7csIDeHlmA9IsUOaI1Lziw99yCPVm8UKY6G6Eo0g9u5MB8o4IBwjCCAb4wHQYDVR0OBBYEFG/gmi7qnDaLHPw8YVPPGT7BbxUfMA4GA1UdDwEB/wQEAwIGwDAWBgNVHSUBAf8EDDAKBggrBgEFBQcDCDA8BgNVHSAENTAzMDEGCSqGJAIBAQECBDAkMCIGCCsGAQUFBwIBFhZodHRwczovL2N6by5nb3YudWEvY3BzMB0GA1UdEQQWMBSCEmFjc2sucHJpdmF0YmFuay51YTAMBgNVHRMBAf8EAjAAMBgGCCsGAQUFBwEDBAwwCjAIBgYEAI5GAQEwHwYDVR0jBBgwFoAUXpKHtb9tW+rp6R2iEZPkXvxQiZEwRwYDVR0fBEAwPjA8oDqgOIY2aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLUZ1bGwuY3JsMEgGA1UdLgRBMD8wPaA7oDmGN2h0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1EZWx0YS5jcmwwPAYIKwYBBQUHAQEEMDAuMCwGCCsGAQUFBzABhiBodHRwOi8vY3pvLmdvdi51YS9zZXJ2aWNlcy9vY3NwLzAKBggqhkjOPQQDAgNIADBFAiA6XaUh7mT4FKEDOPjb5MAO8MZV/Ne+4S1EYNnsi9nH7QIhAP84VeYOIRiKrOhcgaaX5hjC9/6hxzpbwFvrq6oZuZRm</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-14360570,L=Kyiv,C=UA,SERIALNUMBER=UA-14360570-2302,CN=TSA-server QTSP JSC CB PRIVATBANK,O=JSC CB PRIVATBANK</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-03-10T08:43:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+			</TSPServices>
+        </TrustServiceProvider>
+		<TrustServiceProvider>
+            <TSPInformation>
+                <TSPName>
+                    <Name xml:lang="en">"VCHASNO SERVICE" LLC</Name>
+					<Name xml:lang="uk">ТОВ "Вчасно Сервіс"</Name>
+                </TSPName>
+                <TSPTradeName>
+                    <Name xml:lang="en">NTRUA-41231992</Name>
+					<Name xml:lang="en">QTSP "VCHASNO SERVICE" LLC</Name>
+                </TSPTradeName>
+                <TSPAddress>
+                    <PostalAddresses>
+                        <PostalAddress xml:lang="en">
+                            <StreetAddress>201/203 Kharkivske Shosse</StreetAddress>
+                            <Locality>Kyiv</Locality>
+                            <PostalCode>02121</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+						<PostalAddress xml:lang="uk">
+                            <StreetAddress>Харківське шосе, 201/203</StreetAddress>
+                            <Locality>Київ</Locality>
+                            <PostalCode>02121</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                    </PostalAddresses>
+                    <ElectronicAddress>
+                        <URI xml:lang="en">mailto:info@vchasno.ua</URI>
+                        <URI xml:lang="en">https://ca.vchasno.ua</URI>
+						<URI xml:lang="en">https://cap.vchasno.com.ua</URI>
+                    </ElectronicAddress>
+                </TSPAddress>
+                <TSPInformationURI>
+                    <URI xml:lang="en">https://ca.vchasno.ua/download/normativedocs/nd1_ua.pdf</URI>
+                </TSPInformationURI>
+            </TSPInformation>
+            <TSPServices>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP "VCHASNO SERVICE" LLC (UA-41231992-2120)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-41231992,L=Kyiv,C=UA,SERIALNUMBER=UA-41231992-2120,CN=QTSP \"VCHASNO SERVICE\" LLC,OU=Certification department,O=\"VCHASNO SERVICE\" LLC</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-03-30T11:05:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP "VCHASNO SERVICE" LLC (UA-41231992-2122)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-41231992,L=Kyiv,C=UA,SERIALNUMBER=UA-41231992-2122,CN=TSA-server QTSP \"VCHASNO SERVICE\" LLC,OU=Certification department,O=\"VCHASNO SERVICE\" LLC</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-03-30T11:11:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP "VCHASNO SERVICE" LLC (UA-41231992-2121)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEOjCCA+CgAwIBAgIUXpKHtb9tW+oBAAAAAQAAAEQBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yMzAzMzAxMTA4MDBaFw0yODAzMzAxMTA4MDBaMIG4MR4wHAYDVQQKDBUiVkNIQVNOTyBTRVJWSUNFIiBMTEMxITAfBgNVBAsMGENlcnRpZmljYXRpb24gZGVwYXJ0bWVudDEjMCEGA1UEAwwaUVRTUCAiVkNIQVNOTyBTRVJWSUNFIiBMTEMxGTAXBgNVBAUTEFVBLTQxMjMxOTkyLTIxMjExCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MTIzMTk5MjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABLDJvt0OB6us71IV1ft5VHQTtMgB0+cMn15YzxIZwo8A02L2JSDwg0zvSYHhDRMKqtGz1JDwj0wSd3mFj3AmAcyjggGrMIIBpzAdBgNVHQ4EFgQUiE0gfIGMrlUlS+gOBIIuboRVwEUwDgYDVR0PAQH/BAQDAgEGMDwGA1UdIAQ1MDMwMQYJKoYkAgEBAQIEMCQwIgYIKwYBBQUHAgEWFmh0dHBzOi8vY3pvLmdvdi51YS9jcHMwGAYDVR0RBBEwD4INY2EudmNoYXNuby51YTASBgNVHRMBAf8ECDAGAQH/AgEAMBgGCCsGAQUFBwEDBAwwCjAIBgYEAI5GAQEwHwYDVR0jBBgwFoAUXpKHtb9tW+rp6R2iEZPkXvxQiZEwRwYDVR0fBEAwPjA8oDqgOIY2aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLUZ1bGwuY3JsMEgGA1UdLgRBMD8wPaA7oDmGN2h0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1EZWx0YS5jcmwwPAYIKwYBBQUHAQEEMDAuMCwGCCsGAQUFBzABhiBodHRwOi8vY3pvLmdvdi51YS9zZXJ2aWNlcy9vY3NwLzAKBggqhkjOPQQDAgNIADBFAiB9JXCZRVuVbM8WPU28He0CCV15OJ3izfvfex4+Um8WmgIhANUf1S8EnJSesJ4RKlvB38zdsRN2RsUDIX2H076z/u+y</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-41231992,L=Kyiv,C=UA,SERIALNUMBER=UA-41231992-2121,CN=QTSP \"VCHASNO SERVICE\" LLC,OU=Certification department,O=\"VCHASNO SERVICE\" LLC</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-03-30T11:08:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP "VCHASNO SERVICE" LLC (UA-41231992-2123)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEVjCCA/2gAwIBAgIUXpKHtb9tW+oCAAAAAQAAAEYBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yMzAzMzAxMTEzMDBaFw0yODAzMzAxMTEzMDBaMIHDMR4wHAYDVQQKDBUiVkNIQVNOTyBTRVJWSUNFIiBMTEMxITAfBgNVBAsMGENlcnRpZmljYXRpb24gZGVwYXJ0bWVudDEuMCwGA1UEAwwlVFNBLXNlcnZlciBRVFNQICJWQ0hBU05PIFNFUlZJQ0UiIExMQzEZMBcGA1UEBRMQVUEtNDEyMzE5OTItMjEyMzELMAkGA1UEBhMCVUExDTALBgNVBAcMBEt5aXYxFzAVBgNVBGEMDk5UUlVBLTQxMjMxOTkyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESOkDe+Nk10onyYFpkHas4lwTidZwwUFKwPLM89dTT9GRDt/Ivtqh8UrO7Rkb5dX8rjTNddI7SiNNVwhVOUfcCKOCAb0wggG5MB0GA1UdDgQWBBT/zjN9TKYGSS7kJ5CDF6c0R2tm3DAOBgNVHQ8BAf8EBAMCBsAwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwgwPAYDVR0gBDUwMzAxBgkqhiQCAQEBAgQwJDAiBggrBgEFBQcCARYWaHR0cHM6Ly9jem8uZ292LnVhL2NwczAYBgNVHREEETAPgg1jYS52Y2hhc25vLnVhMAwGA1UdEwEB/wQCMAAwGAYIKwYBBQUHAQMEDDAKMAgGBgQAjkYBATAfBgNVHSMEGDAWgBRekoe1v21b6unpHaIRk+Re/FCJkTBHBgNVHR8EQDA+MDygOqA4hjZodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjAtRnVsbC5jcmwwSAYDVR0uBEEwPzA9oDugOYY3aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLURlbHRhLmNybDA8BggrBgEFBQcBAQQwMC4wLAYIKwYBBQUHMAGGIGh0dHA6Ly9jem8uZ292LnVhL3NlcnZpY2VzL29jc3AvMAoGCCqGSM49BAMCA0cAMEQCIAl60SdyyHkX5oE2EtHVbYjgx5SHk35iAeSv3lcXacRyAiAsGjYvYbjUTt9n7/r9TnMkmwo0KhcaaGzNljU/q6QNtQ==</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-41231992,L=Kyiv,C=UA,SERIALNUMBER=UA-41231992-2123,CN=TSA-server QTSP \"VCHASNO SERVICE\" LLC,OU=Certification department,O=\"VCHASNO SERVICE\" LLC</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-03-30T11:13:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP "VCHASNO SERVICE" LLC (UA-41231992-2129)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-41231992,L=Kyiv,C=UA,SERIALNUMBER=UA-41231992-2129,CN=QTSP \"VCHASNO SERVICE\" LLC,OU=Certification department,O=\"VCHASNO SERVICE\" LLC</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-04-01T11:51:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP "VCHASNO SERVICE" LLC (UA-41231992-2132)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-41231992,L=Kyiv,C=UA,SERIALNUMBER=UA-41231992-2132,CN=TSA-server QTSP \"VCHASNO SERVICE\" LLC,OU=Certification department,O=\"VCHASNO SERVICE\" LLC</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-04-01T11:55:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP "VCHASNO SERVICE" LLC (UA-41231992-2130)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIESjCCA/GgAwIBAgIUXpKHtb9tW+oBAAAAAQAAAHcBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yNDA0MDExMTUzMDBaFw0yOTA0MDExMTUzMDBaMIG4MR4wHAYDVQQKDBUiVkNIQVNOTyBTRVJWSUNFIiBMTEMxITAfBgNVBAsMGENlcnRpZmljYXRpb24gZGVwYXJ0bWVudDEjMCEGA1UEAwwaUVRTUCAiVkNIQVNOTyBTRVJWSUNFIiBMTEMxGTAXBgNVBAUTEFVBLTQxMjMxOTkyLTIxMzAxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MTIzMTk5MjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABIWGhUqbmGmFSb2Hc93/o/c7HrnE/HIaj/HX9SDXyd+JkDJea2pJwcVAA84ygmgJUdbjwx6jZoUdKHOJ+rxQWMujggG8MIIBuDAdBgNVHQ4EFgQU0DAPkuExaadLdpVq+LmEgNz9IvcwDgYDVR0PAQH/BAQDAgEGMDwGA1UdIAQ1MDMwMQYJKoYkAgEBAQIEMCQwIgYIKwYBBQUHAgEWFmh0dHBzOi8vY3pvLmdvdi51YS9jcHMwKQYDVR0RBCIwIIINY2EudmNoYXNuby51YYEPaW5mb0B2Y2hhc25vLnVhMBIGA1UdEwEB/wQIMAYBAf8CAQAwGAYIKwYBBQUHAQMEDDAKMAgGBgQAjkYBATAfBgNVHSMEGDAWgBRekoe1v21b6unpHaIRk+Re/FCJkTBHBgNVHR8EQDA+MDygOqA4hjZodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjAtRnVsbC5jcmwwSAYDVR0uBEEwPzA9oDugOYY3aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLURlbHRhLmNybDA8BggrBgEFBQcBAQQwMC4wLAYIKwYBBQUHMAGGIGh0dHA6Ly9jem8uZ292LnVhL3NlcnZpY2VzL29jc3AvMAoGCCqGSM49BAMCA0cAMEQCIH4Uxn9kOrolYuF1G14ixfA4TTwD8bcZNBIoJXayBFT2AiAeUGA42/l7gUyaKMSNnzsupwMCDtXCw9fIqvbv7xFeyA==</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-41231992,L=Kyiv,C=UA,SERIALNUMBER=UA-41231992-2130,CN=QTSP \"VCHASNO SERVICE\" LLC,OU=Certification department,O=\"VCHASNO SERVICE\" LLC</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-04-01T11:53:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP "VCHASNO SERVICE" LLC (UA-41231992-2133)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEaDCCBA6gAwIBAgIUXpKHtb9tW+oCAAAAAQAAAHkBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yNDA0MDExMTU4MDBaFw0yOTA0MDExMTU4MDBaMIHDMR4wHAYDVQQKDBUiVkNIQVNOTyBTRVJWSUNFIiBMTEMxITAfBgNVBAsMGENlcnRpZmljYXRpb24gZGVwYXJ0bWVudDEuMCwGA1UEAwwlVFNBLXNlcnZlciBRVFNQICJWQ0hBU05PIFNFUlZJQ0UiIExMQzEZMBcGA1UEBRMQVUEtNDEyMzE5OTItMjEzMzELMAkGA1UEBhMCVUExDTALBgNVBAcMBEt5aXYxFzAVBgNVBGEMDk5UUlVBLTQxMjMxOTkyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFBT179t0unMLdI+mlgTMLYvEoCLXNh9MVkDZo4YK9BNbJVUzfcjzmksXaSv4iLTzXrAvg16PmKHcuYxbTmnHv6OCAc4wggHKMB0GA1UdDgQWBBQ3NwT4xFTubONc64cvFkZ6qvCS5DAOBgNVHQ8BAf8EBAMCBsAwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwgwPAYDVR0gBDUwMzAxBgkqhiQCAQEBAgQwJDAiBggrBgEFBQcCARYWaHR0cHM6Ly9jem8uZ292LnVhL2NwczApBgNVHREEIjAggg1jYS52Y2hhc25vLnVhgQ9pbmZvQHZjaGFzbm8udWEwDAYDVR0TAQH/BAIwADAYBggrBgEFBQcBAwQMMAowCAYGBACORgEBMB8GA1UdIwQYMBaAFF6Sh7W/bVvq6ekdohGT5F78UImRMEcGA1UdHwRAMD4wPKA6oDiGNmh0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1GdWxsLmNybDBIBgNVHS4EQTA/MD2gO6A5hjdodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjAtRGVsdGEuY3JsMDwGCCsGAQUFBwEBBDAwLjAsBggrBgEFBQcwAYYgaHR0cDovL2N6by5nb3YudWEvc2VydmljZXMvb2NzcC8wCgYIKoZIzj0EAwIDSAAwRQIhAJKUkp5TuYr5HujUF2ujcpPYdaH4pCKhdsUOFWZSrWdxAiAtvj+st4gzlGNAYJ1K+liO20QAfJMJeA9F+ITcFab5+g==</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-41231992,L=Kyiv,C=UA,SERIALNUMBER=UA-41231992-2133,CN=TSA-server QTSP \"VCHASNO SERVICE\" LLC,OU=Certification department,O=\"VCHASNO SERVICE\" LLC</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-04-01T11:58:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+            </TSPServices>
+        </TrustServiceProvider>
+		<TrustServiceProvider>
+            <TSPInformation>
+                <TSPName>
+					<Name xml:lang="en">DEPOSIT SIGN LLC</Name>
+					<Name xml:lang="uk">ТОВ "ДЕПОЗИТ САЙН"</Name>
+                </TSPName>
+                <TSPTradeName>
+                    <Name xml:lang="en">NTRUA-43005049</Name>
+					<Name xml:lang="en">QTSP DEPOSIT SIGN LLC</Name>
+                </TSPTradeName>
+                <TSPAddress>
+					<PostalAddresses>
+						<PostalAddress xml:lang="en">
+							<StreetAddress>Room 18, Floor 18, 32/2 Knyaziv Ostrozkykh street</StreetAddress>
+							<Locality>Kyiv</Locality>
+							<PostalCode>01010</PostalCode>
+							<CountryName>UA</CountryName>
+						</PostalAddress>
+						<PostalAddress xml:lang="uk">
+							<StreetAddress>приміщення 18, поверх 18, вул. Князів Острозьких, 32/2</StreetAddress>
+							<Locality>Київ</Locality>
+							<PostalCode>01010</PostalCode>
+							<CountryName>UA</CountryName>
+						</PostalAddress>
+					</PostalAddresses>
+                    <ElectronicAddress>
+                        <URI xml:lang="en">mailto:info@depositsign.com</URI>
+                        <URI xml:lang="en">https://ca.depositsign.com</URI>
+                    </ElectronicAddress>
+                </TSPAddress>
+                <TSPInformationURI>
+					<URI xml:lang="en">https://ca.depositsign.com</URI>
+                </TSPInformationURI>
+            </TSPInformation>
+            <TSPServices>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP DEPOSIT SIGN LLC (UA-43005049-1212)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43005049,L=Kyiv,C=UA,SERIALNUMBER=UA-43005049-1212,CN=QTSP DEPOSIT SIGN LLC,O=DEPOSIT SIGN LLC</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-05-16T08:57:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP DEPOSIT SIGN LLC (UA-43005049-1222)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43005049,L=Kyiv,C=UA,SERIALNUMBER=UA-43005049-1222,CN=TSA-server QTSP DEPOSIT SIGN LLC,O=DEPOSIT SIGN LLC</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-05-16T09:00:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP DEPOSIT SIGN LLC (UA-43005049-1312)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEKDCCA86gAwIBAgIUXpKHtb9tW+oBAAAAAQAAAFEBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yMzA1MTYwOTAyMDBaFw0yODA1MTYwOTAyMDBaMIGLMRkwFwYDVQQKDBBERVBPU0lUIFNJR04gTExDMR4wHAYDVQQDDBVRVFNQIERFUE9TSVQgU0lHTiBMTEMxGTAXBgNVBAUTEFVBLTQzMDA1MDQ5LTEzMTIxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzAwNTA0OTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABMV+7Iv9hf51+T4NgEDECXHCsClD8nQDOPdQ00s1QP2qA/ImG69eb7kgMxsElrzxb8vmVYYjj4/bOmtVMsCc/lqjggHGMIIBwjAdBgNVHQ4EFgQUv1Ke20xAnRtXdWPKolfKQtEF9XAwDgYDVR0PAQH/BAQDAgEGMDwGA1UdIAQ1MDMwMQYJKoYkAgEBAQIEMCQwIgYIKwYBBQUHAgEWFmh0dHBzOi8vY3pvLmdvdi51YS9jcHMwMwYDVR0RBCwwKoISY2EuZGVwb3NpdHNpZ24uY29tgRRpbmZvQGRlcG9zaXRzaWduLmNvbTASBgNVHRMBAf8ECDAGAQH/AgEAMBgGCCsGAQUFBwEDBAwwCjAIBgYEAI5GAQEwHwYDVR0jBBgwFoAUXpKHtb9tW+rp6R2iEZPkXvxQiZEwRwYDVR0fBEAwPjA8oDqgOIY2aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLUZ1bGwuY3JsMEgGA1UdLgRBMD8wPaA7oDmGN2h0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1EZWx0YS5jcmwwPAYIKwYBBQUHAQEEMDAuMCwGCCsGAQUFBzABhiBodHRwOi8vY3pvLmdvdi51YS9zZXJ2aWNlcy9vY3NwLzAKBggqhkjOPQQDAgNIADBFAiAqm2APckhk8v6eugWT9oyGLDoT0c3toY1o4NF4M4tSHwIhAMbHMXm5lxvDhSGN9E3pZk/H+lJIGbLyOvx/CD3wJS66</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43005049,L=Kyiv,C=UA,SERIALNUMBER=UA-43005049-1312,CN=QTSP DEPOSIT SIGN LLC,O=DEPOSIT SIGN LLC</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-05-16T09:02:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP DEPOSIT SIGN LLC (UA-43005049-1322)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIERTCCA+ugAwIBAgIUXpKHtb9tW+oCAAAAAQAAAFIBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yMzA1MTYwOTA0MDBaFw0yODA1MTYwOTA0MDBaMIGWMRkwFwYDVQQKDBBERVBPU0lUIFNJR04gTExDMSkwJwYDVQQDDCBUU0Etc2VydmVyIFFUU1AgREVQT1NJVCBTSUdOIExMQzEZMBcGA1UEBRMQVUEtNDMwMDUwNDktMTMyMjELMAkGA1UEBhMCVUExDTALBgNVBAcMBEt5aXYxFzAVBgNVBGEMDk5UUlVBLTQzMDA1MDQ5MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE5C/cifgIJfxh1peso0rQDeF8cPZc5jFuov1e7pn1qDOSTHmfSceVLA3GsWrV4O5Bdbdxx1/9JXRXcjl5Rt4CWqOCAdgwggHUMB0GA1UdDgQWBBTQq9tZtbZ/xxwBFhzJEC2e+YDfkzAOBgNVHQ8BAf8EBAMCBsAwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwgwPAYDVR0gBDUwMzAxBgkqhiQCAQEBAgQwJDAiBggrBgEFBQcCARYWaHR0cHM6Ly9jem8uZ292LnVhL2NwczAzBgNVHREELDAqghJjYS5kZXBvc2l0c2lnbi5jb22BFGluZm9AZGVwb3NpdHNpZ24uY29tMAwGA1UdEwEB/wQCMAAwGAYIKwYBBQUHAQMEDDAKMAgGBgQAjkYBATAfBgNVHSMEGDAWgBRekoe1v21b6unpHaIRk+Re/FCJkTBHBgNVHR8EQDA+MDygOqA4hjZodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjAtRnVsbC5jcmwwSAYDVR0uBEEwPzA9oDugOYY3aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLURlbHRhLmNybDA8BggrBgEFBQcBAQQwMC4wLAYIKwYBBQUHMAGGIGh0dHA6Ly9jem8uZ292LnVhL3NlcnZpY2VzL29jc3AvMAoGCCqGSM49BAMCA0gAMEUCIGj64+djvmYF2D74XbtwOxGv4VtyHQ82+JM9/ILCsfuzAiEAw+H2/aS2QAPuomYCrau8kNNQrgr1naWiXba7hU1Ms2s=</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43005049,L=Kyiv,C=UA,SERIALNUMBER=UA-43005049-1322,CN=TSA-server QTSP DEPOSIT SIGN LLC,O=DEPOSIT SIGN LLC</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2023-05-16T09:04:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+            </TSPServices>
+        </TrustServiceProvider>
+		<TrustServiceProvider>
+            <TSPInformation>
+                <TSPName>
+					<Name xml:lang="en">State Tax Service of Ukraine</Name>
+					<Name xml:lang="uk">Державна податкова служба України</Name>
+                </TSPName>
+                <TSPTradeName>
+                    <Name xml:lang="en">NTRUA-43005393</Name>
+					<Name xml:lang="en">QTSP State Tax Service of Ukraine</Name>
+                </TSPTradeName>
+                <TSPAddress>
+                    <PostalAddresses>
+                        <PostalAddress xml:lang="en">
+                            <StreetAddress>8, Lvivska Square</StreetAddress>
+                            <Locality>Kyiv</Locality>
+                            <PostalCode>04053</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                        <PostalAddress xml:lang="en">
+                            <StreetAddress>Львівська площа, 8</StreetAddress>
+                            <Locality>Київ</Locality>
+                            <PostalCode>04053</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                    </PostalAddresses>
+                    <ElectronicAddress>
+                        <URI xml:lang="en">mailto:inform@tax.gov.ua</URI>
+                        <URI xml:lang="en">https://ca.tax.gov.ua</URI>
+                    </ElectronicAddress>
+                </TSPAddress>
+                <TSPInformationURI>
+					<URI xml:lang="en">https://ca.tax.gov.ua/reglament</URI>
+                </TSPInformationURI>
+            </TSPInformation>
+            <TSPServices>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP State Tax Service of Ukraine (UA-43005393-0123)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43005393,L=Kyiv,C=UA,SERIALNUMBER=UA-43005393-0123,CN=QTSP State Tax Service of Ukraine,O=State Tax Service of Ukraine</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-01-30T09:54:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP State Tax Service of Ukraine (UA-43005393-0323)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIH3jCCBcagAwIBAgIUPO9neiMVh1cCAAAAAQAAAGYBAAAwDQYJKoZIhvcNAQELBQAwgdIxNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRkwFwYDVQQFDBBVQS00MzIyMDg1MS00MDk2MQswCQYDVQQGEwJVQTENMAsGA1UEBwwES3lpdjEXMBUGA1UEYQwOTlRSVUEtNDMyMjA4NTEwHhcNMjQwMTMwMTAwMDAwWhcNMjkwMTMwMTAwMDAwWjCBrjElMCMGA1UECgwcU3RhdGUgVGF4IFNlcnZpY2Ugb2YgVWtyYWluZTE1MDMGA1UEAwwsVFNBLXNlcnZlciBRVFNQIFN0YXRlIFRheCBTZXJ2aWNlIG9mIFVrcmFpbmUxGTAXBgNVBAUTEFVBLTQzMDA1MzkzLTAzMjMxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzAwNTM5MzCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAIwhPs4Kv+Brk9OonNsYQ79+HFNtHBJxa0UDfGc9UlKxtbfIniF32RA+6M3MdERW1x/DXK45I3ueG5N+Wh5LJx00z4pwfAYiFCpJqReZYmBw24PC7ok65FRmP6r1pKDNhePigJpGxQEArmLJ3gd4efYIa9y7hv8NeaCHZaEqRsddW3dLpjulpykev8oUhUeoFMCp8YY6cDe8YVyiymQvj/4qKW3f0Xb40kLjWZogyJngdmSqEh8vSkENqWjDPCwvyIwPprcp+9M7IJoNIUS9aMX6UGw9L/+aTcpYHwxRdoJjErA55wZmWgMfA9gZ6iSeh+l9kWNcOsYbpLOYevfvEaF2T8efp5IzT8zFxsy7cc/MmdFAcV8xQ9l5W+pKTUw5oR5xLshrg21iYB7ZvOTr5n697f34q/caLa1co5kJdVO0UgtY8r1rof515M0pDdB1VX9lLFnWNyEUKHCK6jnKOiTkieqMz5aGYi68m1Gr3HMXW1f7Opa5qBDz4sf8K8HpCYNz3bFnOdY6SCPLkI4oZ7lyrUQNBGxuU09TBRdJsMLr6tkxNCpkinzxmqhe8trfV+vL75QWLq2ZZy/nGIbc3VTpaRsdTsUUnmhR+qh9dbUwv/BU4FelO1X3WRur8PI0M7QLehip6XAGgesVV7R92UibWpxiAlDUitZk5Jo4VN/PAgMBAAGjggHMMIIByDAdBgNVHQ4EFgQUNui+e10SYfGFQjE2zvYvQWLJWwEwDgYDVR0PAQH/BAQDAgbAMBYGA1UdJQEB/wQMMAoGCCsGAQUFBwMIMDwGA1UdIAQ1MDMwMQYJKoYkAgEBAQIEMCQwIgYIKwYBBQUHAgEWFmh0dHBzOi8vY3pvLmdvdi51YS9jcHMwKwYDVR0RBCQwIoINY2EudGF4Lmdvdi51YYERaW5mb3JtQHRheC5nb3YudWEwDAYDVR0TAQH/BAIwADAYBggrBgEFBQcBAwQMMAowCAYGBACORgEBMB8GA1UdIwQYMBaAFLzvZ3ojFYdXwWZEgCD37IfDpprwMEUGA1UdHwQ+MDwwOqA4oDaGNGh0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtUlNBLTIwMjAtRnVsbC5jcmwwRgYDVR0uBD8wPTA7oDmgN4Y1aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1SU0EtMjAyMC1EZWx0YS5jcmwwPAYIKwYBBQUHAQEEMDAuMCwGCCsGAQUFBzABhiBodHRwOi8vY3pvLmdvdi51YS9zZXJ2aWNlcy9vY3NwLzANBgkqhkiG9w0BAQsFAAOCAgEAlLcgWQ/RR4JCRmVJa97dErKXdcorh2z9VHfyhPwu5beqGMToFqHyobO2f3z+L9n9Z5XFfpLUvh1Zhj6rtUdUeiEApE5tYPRdyB19kxJ8PXkbLcpzo5+kqzvXMmTIlxhMiVk7Fnw2FvLryiE+T/dGL37dw0zSgu+3FUgBGVBQe3VJRthe3YJ0meY3pkF39sRVfhHOcemZ71c5lu1hIjx3UUXGV8fTqoLv9aW6Qm6SDhhKKxZnCcxtWwLuryDK6srgADwz+gPz1kjmcwAIrfAMWx6x2nU+oVMPROBl8fAJv1DO2RHbU3Y2P0aworfE6kOXe1AOHiPKx7xLj++RtdLGyA+foOgXenrlYLqMnePZ6qr8ikYV4ZasYIEJYuWTSp0175xyanxBewKnnpFTyKyHHOWZIvW9A19rCITcUMzk1YP2EC6iohP8PrxWZuzxDJaBapS7xOZCc22b/oY7gAXx/U62mrA04LkMDFgNpJLjT5KDK2UsrC3wC24iXhHakeuKrT+G72jrd3o31ZCYyFX+AaZ2a0ex2yEpq8M/6u5sV1HBpW+2kpWBCqM4n3VkcZv6tlvIJGceCtOktSeR2BYWFIbpQ5BRrVp9ATDfr4Qoa4nl0Gb6S6C3pSv28s0xNIzmY5Fm3OhDLgdyPRU60XUmBoypwysZkihXWVzZFCYTjuo=</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43005393,L=Kyiv,C=UA,SERIALNUMBER=UA-43005393-0323,CN=TSA-server QTSP State Tax Service of Ukraine,O=State Tax Service of Ukraine</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-01-30T10:00:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP State Tax Service of Ukraine (UA-43005393-0223)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEODCCA96gAwIBAgIUXpKHtb9tW+oBAAAAAQAAAGUBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yNDAxMzAwOTU3MDBaFw0yOTAxMzAwOTU3MDBaMIGjMSUwIwYDVQQKDBxTdGF0ZSBUYXggU2VydmljZSBvZiBVa3JhaW5lMSowKAYDVQQDDCFRVFNQIFN0YXRlIFRheCBTZXJ2aWNlIG9mIFVrcmFpbmUxGTAXBgNVBAUTEFVBLTQzMDA1MzkzLTAyMjMxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzAwNTM5MzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABEQIaQ82ih9qACbPadaVpgGrEABT7MMwmh0L23FC/yI2xwyMLpOIAaKpesJ662pEi05PRTIkyzQBQb05pQD+NqujggG+MIIBujAdBgNVHQ4EFgQULM2LwnL/Q0HpyXglLBjrxUv6dewwDgYDVR0PAQH/BAQDAgEGMDwGA1UdIAQ1MDMwMQYJKoYkAgEBAQIEMCQwIgYIKwYBBQUHAgEWFmh0dHBzOi8vY3pvLmdvdi51YS9jcHMwKwYDVR0RBCQwIoINY2EudGF4Lmdvdi51YYERaW5mb3JtQHRheC5nb3YudWEwEgYDVR0TAQH/BAgwBgEB/wIBADAYBggrBgEFBQcBAwQMMAowCAYGBACORgEBMB8GA1UdIwQYMBaAFF6Sh7W/bVvq6ekdohGT5F78UImRMEcGA1UdHwRAMD4wPKA6oDiGNmh0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1GdWxsLmNybDBIBgNVHS4EQTA/MD2gO6A5hjdodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjAtRGVsdGEuY3JsMDwGCCsGAQUFBwEBBDAwLjAsBggrBgEFBQcwAYYgaHR0cDovL2N6by5nb3YudWEvc2VydmljZXMvb2NzcC8wCgYIKoZIzj0EAwIDSAAwRQIge9x24JHWRaH8y68Tt805UgrPYGW4OyWbOjIM02bMfD8CIQCcvDzW0AQgAP5NnFskEP6pw+C895wdqk9B3InlTYARFQ==</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43005393,L=Kyiv,C=UA,SERIALNUMBER=UA-43005393-0223,CN=QTSP State Tax Service of Ukraine,O=State Tax Service of Ukraine</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-01-30T09:57:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP State Tax Service of Ukraine (UA-43005393-0423)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEVjCCA/ugAwIBAgIUXpKHtb9tW+oCAAAAAQAAAGcBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yNDAxMzAxMDAyMDBaFw0yOTAxMzAxMDAyMDBaMIGuMSUwIwYDVQQKDBxTdGF0ZSBUYXggU2VydmljZSBvZiBVa3JhaW5lMTUwMwYDVQQDDCxUU0Etc2VydmVyIFFUU1AgU3RhdGUgVGF4IFNlcnZpY2Ugb2YgVWtyYWluZTEZMBcGA1UEBRMQVUEtNDMwMDUzOTMtMDQyMzELMAkGA1UEBhMCVUExDTALBgNVBAcMBEt5aXYxFzAVBgNVBGEMDk5UUlVBLTQzMDA1MzkzMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEoa7ImghF3PvFEsC5ial+ZziyZaQJ/baa1i3ZQRvPcsUHULj1vUpJapFBrDaWemjHk1YOUIXUp+06y7rByhMwcaOCAdAwggHMMB0GA1UdDgQWBBRY9ZpAtdApdBfju6wITSEEy256BDAOBgNVHQ8BAf8EBAMCBsAwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwgwPAYDVR0gBDUwMzAxBgkqhiQCAQEBAgQwJDAiBggrBgEFBQcCARYWaHR0cHM6Ly9jem8uZ292LnVhL2NwczArBgNVHREEJDAigg1jYS50YXguZ292LnVhgRFpbmZvcm1AdGF4Lmdvdi51YTAMBgNVHRMBAf8EAjAAMBgGCCsGAQUFBwEDBAwwCjAIBgYEAI5GAQEwHwYDVR0jBBgwFoAUXpKHtb9tW+rp6R2iEZPkXvxQiZEwRwYDVR0fBEAwPjA8oDqgOIY2aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLUZ1bGwuY3JsMEgGA1UdLgRBMD8wPaA7oDmGN2h0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1EZWx0YS5jcmwwPAYIKwYBBQUHAQEEMDAuMCwGCCsGAQUFBzABhiBodHRwOi8vY3pvLmdvdi51YS9zZXJ2aWNlcy9vY3NwLzAKBggqhkjOPQQDAgNJADBGAiEAx3sra/mNOmEr/QOBDJ034R74Gjpawarw7o46RBkzsmUCIQCZ0F4eri+mty9tzHclyWLSPonMoekhvWq/6/hGEBiM0A==</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-43005393,L=Kyiv,C=UA,SERIALNUMBER=UA-43005393-0423,CN=TSA-server QTSP State Tax Service of Ukraine,O=State Tax Service of Ukraine</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-01-30T10:02:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+            </TSPServices>
+        </TrustServiceProvider>
+		<TrustServiceProvider>
+            <TSPInformation>
+                <TSPName>
+					<Name xml:lang="en">JOINT STOCK COMPANY "FIRST UKRAINIAN INTERNATIONAL BANK"</Name>
+					<Name xml:lang="uk">АКЦІОНЕРНЕ ТОВАРИСТВО "ПЕРШИЙ УКРАЇНСЬКИЙ МІЖНАРОДНИЙ БАНК"</Name>
+                </TSPName>
+                <TSPTradeName>
+                    <Name xml:lang="en">NTRUA-14282829</Name>
+					<Name xml:lang="en">QTSP JSC "FUIB"</Name>
+                </TSPTradeName>
+                <TSPAddress>
+					<PostalAddresses>
+						<PostalAddress xml:lang="en">
+							<StreetAddress>4 Andriivska st.</StreetAddress>
+							<Locality>Kyiv</Locality>
+							<PostalCode>04070</PostalCode>
+							<CountryName>UA</CountryName>
+						</PostalAddress>
+						<PostalAddress xml:lang="uk">
+							<StreetAddress>вул. Андріївська, 4</StreetAddress>
+							<Locality>Київ</Locality>
+							<PostalCode>04070</PostalCode>
+							<CountryName>UA</CountryName>
+						</PostalAddress>
+					</PostalAddresses>
+                    <ElectronicAddress>
+						<URI xml:lang="en">mailto:pki@pumb.ua</URI>
+						<URI xml:lang="en">https://pki.pumb.ua</URI>
+                    </ElectronicAddress>
+                </TSPAddress>
+                <TSPInformationURI>
+					<URI xml:lang="en">https://pki.pumb.ua/getcontent?pid=3</URI>
+                </TSPInformationURI>
+            </TSPInformation>
+            <TSPServices>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP JSC "FUIB" (UA-14282829-2403)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIH7TCCBdWgAwIBAgIUPO9neiMVh1cBAAAAAQAAAGgBAAAwDQYJKoZIhvcNAQELBQAwgdIxNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRkwFwYDVQQFDBBVQS00MzIyMDg1MS00MDk2MQswCQYDVQQGEwJVQTENMAsGA1UEBwwES3lpdjEXMBUGA1UEYQwOTlRSVUEtNDMyMjA4NTEwHhcNMjQwMjA2MTI0MjAwWhcNMjkwMjA2MTI0MjAwWjCB1zFBMD8GA1UECgw4Sk9JTlQgU1RPQ0sgQ09NUEFOWSAiRklSU1QgVUtSQUlOSUFOIElOVEVSTkFUSU9OQUwgQkFOSyIxKDAmBgNVBAsMH0luZm9ybWF0aW9uIFNlY3VyaXR5IERlcGFydG1lbnQxGDAWBgNVBAMMD1FUU1AgSlNDICJGVUlCIjEZMBcGA1UEBRMQVUEtMTQyODI4MjktMjQwMzELMAkGA1UEBhMCVUExDTALBgNVBAcMBEt5aXYxFzAVBgNVBGEMDk5UUlVBLTE0MjgyODI5MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAoOgCWZVvgEyJz5Pray2urtF+MDdGxkcqrHBqXPURqhuNElHx8UXZ/iOs1Ao/FyHs0M9rkSaPlQ2QPf7+ClHWOBHQQMIg/uc717/PkKueebjwNl0RH4zuQPgTrYa0zgs6EBG+aiL9fFyRUZndQBaSsRUQ/s5NTXk1LoiJF+dT5OrlS7DcKvNc8LlPjyTHeQCmSEZvGEzlJHR30QdT/Mr/IDFhMklkSNQnS5233ftPLeUtPL1vDoAQD+xMjOe3z36JyMJncJlq5btp9Op01lnIK4GID3RCedG9/JZUqnjs1+UPv6Ljv7lbOR8fnZFoWiaIzcv/xyoYeIS+DXsnkJkyllHHsrP3e/3jfbyKrSBBJEEX2SaN/d6t4U9D/IH99NvsZ5JKV7M4eiOqTr79dSuRsms9D82UGdqvQvgDMjil9xR0CzIM+TjnWsHZSevzRGO1/vag9znkHpdkh8PW0KF4wkwXhBb2p0TUU3+KvcKq4VFZmx4FQLXDLHqXFg8u0qS/Yn41dBidWix4FEi4Wq8FxU/auuQ5XcradGdqQPxBWLcs8YJfnobQVgws6bONZ+FA7eWRHixaQqMYPVWyL2wkE448nU6knZ76D6Am80dzD/0EF3ZaSy5ugistyKy0bOpYP8d1HILsb8OdGHXk5ecbxv0lkkO8Uq24ij62S5XQFQ8CAwEAAaOCAbIwggGuMB0GA1UdDgQWBBQRCmME+ZEBvEl+YxfqT/vcLM6Z7zAOBgNVHQ8BAf8EBAMCAQYwPAYDVR0gBDUwMzAxBgkqhiQCAQEBAgQwJDAiBggrBgEFBQcCARYWaHR0cHM6Ly9jem8uZ292LnVhL2NwczAjBgNVHREEHDAaggtwa2kucHVtYi51YYELcGtpQHB1bWIudWEwEgYDVR0TAQH/BAgwBgEB/wIBADAYBggrBgEFBQcBAwQMMAowCAYGBACORgEBMB8GA1UdIwQYMBaAFLzvZ3ojFYdXwWZEgCD37IfDpprwMEUGA1UdHwQ+MDwwOqA4oDaGNGh0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtUlNBLTIwMjAtRnVsbC5jcmwwRgYDVR0uBD8wPTA7oDmgN4Y1aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1SU0EtMjAyMC1EZWx0YS5jcmwwPAYIKwYBBQUHAQEEMDAuMCwGCCsGAQUFBzABhiBodHRwOi8vY3pvLmdvdi51YS9zZXJ2aWNlcy9vY3NwLzANBgkqhkiG9w0BAQsFAAOCAgEAM0WehrgfqpA3BJZzZ/9tlWg3sAFR6bFW3FQuX8/DrcUKRyvB6PkGPzh/Tj6P6SA6NjO0aCqL4rpeFVU5i1di7xL1T7SEGjhxINYUKhLd7HjUaphhbN4Vd++iCjuhLCk3eb8Fdptgi2fg09qF31RNGwGxN7Q3XhWYMNgFDXwBGsxwPUH7UpfqI/OznilSjXAdeLaxlfZ3Ba59rN1tqMr1aaWbsJdM8UMF5wC7Aehv7BzYF03b+OK7Ou1Hlmkm0lYJFW2bnlkMw8PzM2QAnOdzNeFu7Jqb7T0DjZjD9107BiOyyDn3g1IRw4YmyHNusOGKkmsHALXDM854FmJHF328Rwdr3ZoNjiWAFMwoBdDChPkHccb7RMz607066vKUz+i/6XIOE9zGnbDp+7O2Oc/lKUMYgw5PyW2T+rpbWtrvomi5U0hSLArnHoUW9hBRoakL217+cAxRmefhIJ3GhmQGfbGIgyeWBp4qkbr8rxvp0j9/Ss+VJaugdm7j7jKgd9BYSb8lYkBsOI6c94kHXaJ/bTf6AUZQQ1YHaecZ/oCKbTYqjC5OsVYo68o+mlIUc9FUobXtutBdNouIoqfj1rlcBAtOn90+jf7QmC7rrksZxgEK+uIuejFFVy00h3Wc+41UYI4ijEzz0l4AA7s0LsulLzg8zaosD1BsbrPxUkzqxKM=</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-14282829,L=Kyiv,C=UA,SERIALNUMBER=UA-14282829-2403,CN=QTSP JSC \"FUIB\",OU=Information Security Department,O=JOINT STOCK COMPANY \"FIRST UKRAINIAN INTERNATIONAL BANK\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-02-06T12:42:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA server of QTSP JSC "FUIB" (UA-14282829-2405)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-14282829,L=Kyiv,C=UA,SERIALNUMBER=UA-14282829-2405,CN=TSA server of QTSP JSC \"FUIB\",OU=Information Security Department,O=JOINT STOCK COMPANY \"FIRST UKRAINIAN INTERNATIONAL BANK\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-02-06T12:49:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP JSC "FUIB" (UA-14282829-2404)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEZDCCBAqgAwIBAgIUXpKHtb9tW+oBAAAAAQAAAGkBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yNDAyMDYxMjQ0MDBaFw0yOTAyMDYxMjQ0MDBaMIHXMUEwPwYDVQQKDDhKT0lOVCBTVE9DSyBDT01QQU5ZICJGSVJTVCBVS1JBSU5JQU4gSU5URVJOQVRJT05BTCBCQU5LIjEoMCYGA1UECwwfSW5mb3JtYXRpb24gU2VjdXJpdHkgRGVwYXJ0bWVudDEYMBYGA1UEAwwPUVRTUCBKU0MgIkZVSUIiMRkwFwYDVQQFExBVQS0xNDI4MjgyOS0yNDA0MQswCQYDVQQGEwJVQTENMAsGA1UEBwwES3lpdjEXMBUGA1UEYQwOTlRSVUEtMTQyODI4MjkwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATBUmSUHU3FhajmFF02mPC+Udfvy000hrT2nh4wtxMI2jlep0dbTiq0NokyQd9dOaHq8AgfQZgs9r8K+DnpnDVOo4IBtjCCAbIwHQYDVR0OBBYEFIbB050z2yq9GWOaa9KSG0upvBEtMA4GA1UdDwEB/wQEAwIBBjA8BgNVHSAENTAzMDEGCSqGJAIBAQECBDAkMCIGCCsGAQUFBwIBFhZodHRwczovL2N6by5nb3YudWEvY3BzMCMGA1UdEQQcMBqCC3BraS5wdW1iLnVhgQtwa2lAcHVtYi51YTASBgNVHRMBAf8ECDAGAQH/AgEAMBgGCCsGAQUFBwEDBAwwCjAIBgYEAI5GAQEwHwYDVR0jBBgwFoAUXpKHtb9tW+rp6R2iEZPkXvxQiZEwRwYDVR0fBEAwPjA8oDqgOIY2aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLUZ1bGwuY3JsMEgGA1UdLgRBMD8wPaA7oDmGN2h0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1EZWx0YS5jcmwwPAYIKwYBBQUHAQEEMDAuMCwGCCsGAQUFBzABhiBodHRwOi8vY3pvLmdvdi51YS9zZXJ2aWNlcy9vY3NwLzAKBggqhkjOPQQDAgNIADBFAiEAsZdbszTe2DKvbhCH3WJ5Ecq0qUb91DX+aOZxJG4MifICICChRE1mgjnyRvI6212CZle0g/d18lQ0UpdXAdHv1S7P</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-14282829,L=Kyiv,C=UA,SERIALNUMBER=UA-14282829-2404,CN=QTSP JSC \"FUIB\",OU=Information Security Department,O=JOINT STOCK COMPANY \"FIRST UKRAINIAN INTERNATIONAL BANK\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-02-06T12:44:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA server of QTSP JSC "FUIB" (UA-14282829-2406)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEgzCCBCqgAwIBAgIUXpKHtb9tW+oCAAAAAQAAAGsBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yNDAyMDYxMjUxMDBaFw0yOTAyMDYxMjUxMDBaMIHlMUEwPwYDVQQKDDhKT0lOVCBTVE9DSyBDT01QQU5ZICJGSVJTVCBVS1JBSU5JQU4gSU5URVJOQVRJT05BTCBCQU5LIjEoMCYGA1UECwwfSW5mb3JtYXRpb24gU2VjdXJpdHkgRGVwYXJ0bWVudDEmMCQGA1UEAwwdVFNBIHNlcnZlciBvZiBRVFNQIEpTQyAiRlVJQiIxGTAXBgNVBAUTEFVBLTE0MjgyODI5LTI0MDYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS0xNDI4MjgyOTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABGsmMqed0xKCc2NfTH5XRfFanTEN13ZiyG8mIFC/tZhFcaDjXJWxzg8GZqQeZPpTpv4sofcondAzy2XAo1fZIqWjggHIMIIBxDAdBgNVHQ4EFgQUElEQJGcT+G84jbS0qWNHDGOolL0wDgYDVR0PAQH/BAQDAgbAMBYGA1UdJQEB/wQMMAoGCCsGAQUFBwMIMDwGA1UdIAQ1MDMwMQYJKoYkAgEBAQIEMCQwIgYIKwYBBQUHAgEWFmh0dHBzOi8vY3pvLmdvdi51YS9jcHMwIwYDVR0RBBwwGoILcGtpLnB1bWIudWGBC3BraUBwdW1iLnVhMAwGA1UdEwEB/wQCMAAwGAYIKwYBBQUHAQMEDDAKMAgGBgQAjkYBATAfBgNVHSMEGDAWgBRekoe1v21b6unpHaIRk+Re/FCJkTBHBgNVHR8EQDA+MDygOqA4hjZodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjAtRnVsbC5jcmwwSAYDVR0uBEEwPzA9oDugOYY3aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLURlbHRhLmNybDA8BggrBgEFBQcBAQQwMC4wLAYIKwYBBQUHMAGGIGh0dHA6Ly9jem8uZ292LnVhL3NlcnZpY2VzL29jc3AvMAoGCCqGSM49BAMCA0cAMEQCIFuXrGwKkNXuB2Ku1QBrVmmcoXpj8sB5h14lo8Or9O+8AiBww/FO8de/yCVM3F06/n1TwrKsn1uBY08adlUr4gtdIQ==</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-14282829,L=Kyiv,C=UA,SERIALNUMBER=UA-14282829-2406,CN=TSA server of QTSP JSC \"FUIB\",OU=Information Security Department,O=JOINT STOCK COMPANY \"FIRST UKRAINIAN INTERNATIONAL BANK\"</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-02-06T12:51:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+            </TSPServices>
+        </TrustServiceProvider>
+		<TrustServiceProvider>
+            <TSPInformation>
+                <TSPName>
+					<Name xml:lang="en">The General Staff of the Armed Forces of Ukraine</Name>
+					<Name xml:lang="uk">Генеральний штаб Збройних Сил України</Name>
+                </TSPName>
+                <TSPTradeName>
+                    <Name xml:lang="en">NTRUA-22991050</Name>
+					<Name xml:lang="en">QTSP “CSK of Armed Forces of Ukraine”</Name>
+                </TSPTradeName>
+                <TSPAddress>
+					<PostalAddresses>
+                        <PostalAddress xml:lang="en">
+                            <StreetAddress>6 Povitroflotskyi ave.</StreetAddress>
+                            <Locality>Kyiv</Locality>
+                            <PostalCode>03168</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+						<PostalAddress xml:lang="uk">
+                            <StreetAddress>Повітрофлотський проспект, 6</StreetAddress>
+                            <Locality>Київ</Locality>
+                            <PostalCode>03168</PostalCode>
+                            <CountryName>UA</CountryName>
+						</PostalAddress>
+					</PostalAddresses>
+                    <ElectronicAddress>
+                        <URI xml:lang="en">mailto:manager@ca.mil.gov.ua</URI>
+                        <URI xml:lang="en">http://ca.mil.gov.ua</URI>
+                    </ElectronicAddress>
+                </TSPAddress>
+                <TSPInformationURI>
+                    <URI xml:lang="en">http://ca.mil.gov.ua</URI>
+                    <URI xml:lang="uk">http://ca.mil.gov.ua/reglament</URI>
+                </TSPInformationURI>
+            </TSPInformation>
+            <TSPServices>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP “CSK of Armed Forces of Ukraine” (UA-22991050-1167)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-22991050,L=Kyiv,C=UA,SERIALNUMBER=UA-22991050-1167,CN=QTSP “CSK of Armed Forces of Ukraine”,OU=А0136,O=The General Staff of the Armed Forces of Ukraine</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-03-08T13:21:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP “CSK of Armed Forces of Ukraine” (UA-22991050-1170)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-22991050,L=Kyiv,C=UA,SERIALNUMBER=UA-22991050-1170,CN=TSA-server QTSP “CSK of Armed Forces of Ukraine”,OU=А0136,O=The General Staff of the Armed Forces of Ukraine</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-03-08T13:32:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">QTSP “CSK of Armed Forces of Ukraine” (UA-22991050-1168)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEaTCCBA+gAwIBAgIUXpKHtb9tW+oBAAAAAQAAAHABAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yNDAzMDgxMzI0MDBaFw0yOTAzMDgxMzI0MDBaMIHQMTkwNwYDVQQKDDBUaGUgR2VuZXJhbCBTdGFmZiBvZiB0aGUgQXJtZWQgRm9yY2VzIG9mIFVrcmFpbmUxDzANBgNVBAsMBtCQMDEzNjEyMDAGA1UEAwwpUVRTUCDigJxDU0sgb2YgQXJtZWQgRm9yY2VzIG9mIFVrcmFpbmXigJ0xGTAXBgNVBAUTEFVBLTIyOTkxMDUwLTExNjgxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS0yMjk5MTA1MDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABF7LJkaBYBlI9XEGxH5H1Ct/dDs/CCO4Mz4wE9t/MQ/Yuvh+1hBc3QQ8ApObYUt4IAIcG/wzdtobQ4X+Na4i/ZOjggHCMIIBvjAdBgNVHQ4EFgQUKedELs0qA02VYFD+UGzMjtYTjWkwDgYDVR0PAQH/BAQDAgEGMDwGA1UdIAQ1MDMwMQYJKoYkAgEBAQIEMCQwIgYIKwYBBQUHAgEWFmh0dHBzOi8vY3pvLmdvdi51YS9jcHMwLwYDVR0RBCgwJoINY2EubWlsLmdvdi51YYEVbWFuYWdlckBjYS5taWwuZ292LnVhMBIGA1UdEwEB/wQIMAYBAf8CAQAwGAYIKwYBBQUHAQMEDDAKMAgGBgQAjkYBATAfBgNVHSMEGDAWgBRekoe1v21b6unpHaIRk+Re/FCJkTBHBgNVHR8EQDA+MDygOqA4hjZodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjAtRnVsbC5jcmwwSAYDVR0uBEEwPzA9oDugOYY3aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDIwLURlbHRhLmNybDA8BggrBgEFBQcBAQQwMC4wLAYIKwYBBQUHMAGGIGh0dHA6Ly9jem8uZ292LnVhL3NlcnZpY2VzL29jc3AvMAoGCCqGSM49BAMCA0gAMEUCIGeEhYqz7qX1nO51B9+ZgAIWHj/cWgdPzzvNRh7FHgrAAiEA0wKU8oEyBegUfjZizAGnc0wVH97ET309W7VJG5EHrwU=</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-22991050,L=Kyiv,C=UA,SERIALNUMBER=UA-22991050-1168,CN=QTSP “CSK of Armed Forces of Ukraine”,OU=А0136,O=The General Staff of the Armed Forces of Ukraine</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-03-08T13:24:00Z</StatusStartingTime>
+                        <ServiceInformationExtensions>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                            <Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+                            </Extension>
+                        </ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">TSA-server QTSP “CSK of Armed Forces of Ukraine” (UA-22991050-1171)</Name>
+                        </ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEhzCCBCygAwIBAgIUXpKHtb9tW+oCAAAAAQAAAHMBAAAwCgYIKoZIzj0EAwIwgdExNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRgwFgYDVQQFDA9VQS00MzIyMDg1MS0yNTYxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS00MzIyMDg1MTAeFw0yNDAzMDgxMzM1MDBaFw0yOTAzMDgxMzM1MDBaMIHbMTkwNwYDVQQKDDBUaGUgR2VuZXJhbCBTdGFmZiBvZiB0aGUgQXJtZWQgRm9yY2VzIG9mIFVrcmFpbmUxDzANBgNVBAsMBtCQMDEzNjE9MDsGA1UEAww0VFNBLXNlcnZlciBRVFNQIOKAnENTSyBvZiBBcm1lZCBGb3JjZXMgb2YgVWtyYWluZeKAnTEZMBcGA1UEBRMQVUEtMjI5OTEwNTAtMTE3MTELMAkGA1UEBhMCVUExDTALBgNVBAcMBEt5aXYxFzAVBgNVBGEMDk5UUlVBLTIyOTkxMDUwMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEeG3s4A7IpiL6Ek17gqE1PDfpDtqHG+jhRDA1HEVQIX8S0CbLZ7pL4l3xg5nPPdVt1r2a/Pidnyh3ksg/nqLdiaOCAdQwggHQMB0GA1UdDgQWBBRhiazCdPSjI0Sh3opf/0igyySCADAOBgNVHQ8BAf8EBAMCBsAwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwgwPAYDVR0gBDUwMzAxBgkqhiQCAQEBAgQwJDAiBggrBgEFBQcCARYWaHR0cHM6Ly9jem8uZ292LnVhL2NwczAvBgNVHREEKDAmgg1jYS5taWwuZ292LnVhgRVtYW5hZ2VyQGNhLm1pbC5nb3YudWEwDAYDVR0TAQH/BAIwADAYBggrBgEFBQcBAwQMMAowCAYGBACORgEBMB8GA1UdIwQYMBaAFF6Sh7W/bVvq6ekdohGT5F78UImRMEcGA1UdHwRAMD4wPKA6oDiGNmh0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyMC1GdWxsLmNybDBIBgNVHS4EQTA/MD2gO6A5hjdodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjAtRGVsdGEuY3JsMDwGCCsGAQUFBwEBBDAwLjAsBggrBgEFBQcwAYYgaHR0cDovL2N6by5nb3YudWEvc2VydmljZXMvb2NzcC8wCgYIKoZIzj0EAwIDSQAwRgIhAMhWUAehEDTMr7Po8j1KmJgOtlKBJY87vl7uXpPARxHgAiEA2nfy0o4NDiqInBHipxyGVgk+vrqrguv6Vbua0SRyMIY=</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-22991050,L=Kyiv,C=UA,SERIALNUMBER=UA-22991050-1171,CN=TSA-server QTSP “CSK of Armed Forces of Ukraine”,OU=А0136,O=The General Staff of the Armed Forces of Ukraine</X509SubjectName>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+                        <ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+                        <StatusStartingTime>2024-03-08T13:35:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+            </TSPServices>
+        </TrustServiceProvider>
+		<TrustServiceProvider>
+			<TSPInformation>
+				<TSPName>
+					<Name xml:lang="en">JOINT STOCK COMPANY "UNIVERSAL BANK"</Name>
+					<Name xml:lang="uk">АКЦІОНЕРНЕ ТОВАРИСТВО "УНІВЕРСАЛ БАНК"</Name>
+					<Name xml:lang="en">JSC "UNIVERSAL BANK"</Name>
+					<Name xml:lang="uk">АТ "УНІВЕРСАЛ БАНК"</Name>
+				</TSPName>
+				<TSPTradeName>
+					<Name xml:lang="en">NTRUA-21133352</Name>
+					<Name xml:lang="en">QTSP monobank | Universal Bank</Name>
+					<Name xml:lang="uk">КНЕДП monobank | Universal Bank</Name>
+				</TSPTradeName>
+				<TSPAddress>
+					<PostalAddresses>
+						<PostalAddress xml:lang="en">
+							<StreetAddress>23 Olenivska Str.</StreetAddress>
+							<Locality>Kyiv</Locality>
+							<PostalCode>04080</PostalCode>
+							<CountryName>UA</CountryName>
+						</PostalAddress>
+						<PostalAddress xml:lang="uk">
+							<StreetAddress>вул. Оленівська, 23</StreetAddress>
+							<Locality>Київ</Locality>
+							<PostalCode>04080</PostalCode>
+							<CountryName>UA</CountryName>
+						</PostalAddress>
+					</PostalAddresses>
+					<ElectronicAddress>
+						<URI xml:lang="en">mailto:ca@universalbank.com.ua</URI>
+						<URI xml:lang="en">https://ca.monobank.ua</URI>
+					</ElectronicAddress>
+				</TSPAddress>
+				<TSPInformationURI>
+					<URI xml:lang="en">https://ca.monobank.ua/repository</URI>
+				</TSPInformationURI>
+			</TSPInformation>
+			<TSPServices>
+				<TSPService>
+					<ServiceInformation>
+						<ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+						<ServiceName>
+							<Name xml:lang="en">QTSP monobank | Universal Bank(UA-21133352-2512)</Name>
+						</ServiceName>                     
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIFITCCBMigAwIBAgIUNtvYvB68+vQBAAAAAQAAAKYAAAAwCgYIKoZIzj0EAwIwga0xITAfBgNVBAoMGE5hdGlvbmFsIEJhbmsgb2YgVWtyYWluZTE4MDYGA1UEAwwvQmFua2luZyBhbmQgcGF5bWVudCBFQ0RTQSBjZW50cmFsIENBIG9mIFVrcmFpbmUxGTAXBgNVBAUTEFVBLTAwMDMyMTA2LTI1MjExCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS0wMDAzMjEwNjAeFw0yNTExMjYwODAzMDBaFw0zMDExMjUyMTU5NTlaMIHfMQswCQYDVQQGEwJVQTEdMBsGA1UECgwUSlNDICJVTklWRVJTQUwgQkFOSyIxGTAXBgNVBAUTEFVBLTIxMTMzMzUyLTI1MTIxDTALBgNVBAcMBEt5aXYxJzAlBgNVBAMMHlFUU1AgbW9ub2JhbmsgfCBVbml2ZXJzYWwgQmFuazEXMBUGA1UEYQwOTlRSVUEtMjExMzMzNTIxRTBDBgNVBAsMPERlcGFydG1lbnQgb2YgYSBxdWFsaWZpZWQgZWxlY3Ryb25pYyB0cnVzdCBzZXJ2aWNlcyBwcm92aWRlcjCBmzAQBgcqhkjOPQIBBgUrgQQAIwOBhgAEAKjAEBbcqdwJK0m4kWoEY4TYaH95sLO51hDXs6KdHgcYPQQAN8ZkoxZqt1P7DVu7XNGQLXg1ZTpF8q8ttbR44vFSAOkkV74tpVJR01Zpf7y5YD/IIF65djyqLhvoAdkMn25V763/YpL75K/ehkEf8tJnI9OXkhxkMi5IY1wv5qYANDU+o4ICTTCCAkkwHQYDVR0OBBYEFNl1izWAHLP1sDi+xN/F0H9WfBz+MA4GA1UdDwEB/wQEAwIBBjA/BggrBgEFBQcBAwQzMDEwCAYGBACORgEBMA4GBgQAjkYBBzAEEwJVQTAVBggrBgEFBQcLAjAJBgcEAIvsSQECMDIGA1UdEQQrMCmCDmNhLm1vbm9iYW5rLnVhgRdjYUB1bml2ZXJzYWxiYW5rLmNvbS51YTAfBgNVHSMEGDAWgBS229i8Hrz69B6SUUOdEOOcnmq/qzASBgNVHRMBAf8ECDAGAQH/AgEAMEAGA1UdIAQ5MDcwNQYJKoYkAgEBAQICMCgwJgYIKwYBBQUHAgEWGmh0dHBzOi8vemMuYmFuay5nb3YudWEvY3BzMEsGA1UdHwREMEIwQKA+oDyGOmh0dHA6Ly96Yy5iYW5rLmdvdi51YS9kb3dubG9hZC9jcmxzL1pDLUVDRFNBLTIwMjUtRnVsbC5jcmwwTAYDVR0uBEUwQzBBoD+gPYY7aHR0cDovL3pjLmJhbmsuZ292LnVhL2Rvd25sb2FkL2NybHMvWkMtRUNEU0EtMjAyNS1EZWx0YS5jcmwwgZAGCCsGAQUFBwEBBIGDMIGAMDAGCCsGAQUFBzABhiRodHRwOi8vemMuYmFuay5nb3YudWEvc2VydmljZXMvb2NzcC8wTAYIKwYBBQUHMAKGQGh0dHA6Ly96Yy5iYW5rLmdvdi51YS9kb3dubG9hZC9jYS1jZXJ0aWZpY2F0ZXMvWkMtRUNEU0EtMjAyNS5wN2IwCgYIKoZIzj0EAwIDRwAwRAIgUh+H33WHFEJAFIoCV889Y3EW1xI4r/JXW8P1fxymlp4CIG9leLs/FZpGDYUhTBM62mkh9TT+9CbF4bNP9lbGupLF</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OU=Department of a qualified electronic trust services provider,OID.2.5.4.97=NTRUA-21133352,CN=QTSP monobank | Universal Bank,L=Kyiv,SERIALNUMBER=UA-21133352-2512,O=JSC \"UNIVERSAL BANK\",C=UA</X509SubjectName>
+							</DigitalId>
+							<DigitalId>
+								<X509SKI>2XWLNYAcs/WwOL7E38XQf1Z8HP4=</X509SKI>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+						<ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+						<StatusStartingTime>2025-11-26T08:03:00Z</StatusStartingTime>
+						<TSPServiceDefinitionURI>
+							<URI xml:lang="en">https://ca.monobank.ua/repository</URI>
+						</TSPServiceDefinitionURI>
+						<ServiceInformationExtensions>
+							<Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+							</Extension>
+							<Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+							</Extension>
+						</ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+					<ServiceInformation>
+						<ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+						<ServiceName>
+							<Name xml:lang="en">TSA-server QTSP monobank | Universal Bank (UA-21133352-2531)</Name>
+						</ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIE4TCCBIagAwIBAgIUNtvYvB68+vQCAAAAAQAAAKgAAAAwCgYIKoZIzj0EAwIwga0xITAfBgNVBAoMGE5hdGlvbmFsIEJhbmsgb2YgVWtyYWluZTE4MDYGA1UEAwwvQmFua2luZyBhbmQgcGF5bWVudCBFQ0RTQSBjZW50cmFsIENBIG9mIFVrcmFpbmUxGTAXBgNVBAUTEFVBLTAwMDMyMTA2LTI1MjExCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS0wMDAzMjEwNjAeFw0yNTExMjYwODA2MDBaFw0zMDExMjUyMTU5NTlaMIHqMQswCQYDVQQGEwJVQTEdMBsGA1UECgwUSlNDICJVTklWRVJTQUwgQkFOSyIxGTAXBgNVBAUTEFVBLTIxMTMzMzUyLTI1MzExDTALBgNVBAcMBEt5aXYxMjAwBgNVBAMMKVRTQS1zZXJ2ZXIgUVRTUCBtb25vYmFuayB8IFVuaXZlcnNhbCBCYW5rMRcwFQYDVQRhDA5OVFJVQS0yMTEzMzM1MjFFMEMGA1UECww8RGVwYXJ0bWVudCBvZiBhIHF1YWxpZmllZCBlbGVjdHJvbmljIHRydXN0IHNlcnZpY2VzIHByb3ZpZGVyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEG8Gg2KCpkQnOji/D+Z0YPyUNlBwb4Hz3isTk3Gow3DEA2No2VpkvDQzCgPFbexlh3LvBzh9t7K++TLP1eS89KqOCAkMwggI/MB0GA1UdDgQWBBTQDBgZykfH356OE1/MMYtKx9hCLzAOBgNVHQ8BAf8EBAMCBsAwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwgwPwYIKwYBBQUHAQMEMzAxMAgGBgQAjkYBATAOBgYEAI5GAQcwBBMCVUEwFQYIKwYBBQUHCwIwCQYHBACL7EkBAjAZBgNVHREEEjAQgg5jYS5tb25vYmFuay51YTAfBgNVHSMEGDAWgBS229i8Hrz69B6SUUOdEOOcnmq/qzAJBgNVHRMEAjAAMEAGA1UdIAQ5MDcwNQYJKoYkAgEBAQICMCgwJgYIKwYBBQUHAgEWGmh0dHBzOi8vemMuYmFuay5nb3YudWEvY3BzMEsGA1UdHwREMEIwQKA+oDyGOmh0dHA6Ly96Yy5iYW5rLmdvdi51YS9kb3dubG9hZC9jcmxzL1pDLUVDRFNBLTIwMjUtRnVsbC5jcmwwTAYDVR0uBEUwQzBBoD+gPYY7aHR0cDovL3pjLmJhbmsuZ292LnVhL2Rvd25sb2FkL2NybHMvWkMtRUNEU0EtMjAyNS1EZWx0YS5jcmwwgZAGCCsGAQUFBwEBBIGDMIGAMDAGCCsGAQUFBzABhiRodHRwOi8vemMuYmFuay5nb3YudWEvc2VydmljZXMvb2NzcC8wTAYIKwYBBQUHMAKGQGh0dHA6Ly96Yy5iYW5rLmdvdi51YS9kb3dubG9hZC9jYS1jZXJ0aWZpY2F0ZXMvWkMtRUNEU0EtMjAyNS5wN2IwCgYIKoZIzj0EAwIDSQAwRgIhAKnQUV4KcEYzULnv1FEbV1J/cJ4FMQDPJnFvYxtvKUC1AiEApNwLuXnHCPIQhjOX6OOkDErPZVEtx7ucsufdw4fUGsg=</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OU=Department of a qualified electronic trust services provider,OID.2.5.4.97=NTRUA-21133352,CN=TSA-server QTSP monobank | Universal Bank,L=Kyiv,SERIALNUMBER=UA-21133352-2531,O=JSC \"UNIVERSAL BANK\",C=UA</X509SubjectName>
+							</DigitalId>
+							<DigitalId>
+								<X509SKI>0AwYGcpHx9+ejhNfzDGLSsfYQi8=</X509SKI>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+						<ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+						<StatusStartingTime>2025-11-26T08:06:00Z</StatusStartingTime>
+						<TSPServiceDefinitionURI>
+							<URI xml:lang="en">https://ca.monobank.ua/repository</URI>
+						</TSPServiceDefinitionURI>
+					</ServiceInformation>
+				</TSPService>
+			</TSPServices>
+		</TrustServiceProvider>
+		<TrustServiceProvider>
+			<TSPInformation>
+				<TSPName>
+					<Name xml:lang="en">ATS LLC</Name>
+					<Name xml:lang="uk">ТОВ “АТС”</Name>
+					<Name xml:lang="en">ATS LIMITED LIABILITY COMPANY</Name>
+					<Name xml:lang="uk">ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ “АТС”</Name>
+				</TSPName>
+				<TSPTradeName>
+                    <Name xml:lang="en">NTRUA-37636185</Name>
+					<Name xml:lang="en">QTSP EDIN ID of the ATS LLC</Name>
+					<Name xml:lang="uk">КНЕДП EDIN ID ТОВ “АТС”</Name>
+				</TSPTradeName>
+				<TSPAddress>
+                    <PostalAddresses>
+                        <PostalAddress xml:lang="en">
+                            <StreetAddress>6, Mykhaylo Donets St.</StreetAddress>
+                            <Locality>Kyiv</Locality>
+                            <PostalCode>03061</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                        <PostalAddress xml:lang="uk">
+                            <StreetAddress>вул. Михайла Донця, 6</StreetAddress>
+                            <Locality>Київ</Locality>
+                            <PostalCode>03061</PostalCode>
+                            <CountryName>UA</CountryName>
+                        </PostalAddress>
+                    </PostalAddresses>
+                    <ElectronicAddress>
+                        <URI xml:lang="en">mailto:ca@edin.ua</URI>
+                        <URI xml:lang="en">https://ca.edin.ua</URI>
+                    </ElectronicAddress>
+				</TSPAddress>
+                <TSPInformationURI>
+                    <URI xml:lang="en">https://ca.edin.ua/reglament</URI>
+                </TSPInformationURI>
+			</TSPInformation>
+			<TSPServices>
+				<TSPService>
+					<ServiceInformation>
+						<ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+						<ServiceName>
+							<Name xml:lang="en">QTSP EDIN ID of the ATS LLC(UA-37636185-2512)</Name>
+						</ServiceName>                     
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-37636185,L=Kyiv,C=UA,SERIALNUMBER=UA-37636185-2512,CN=QTSP EDIN ID of the ATS LLC,OU=Department of Electronic Trust Services,O=ATS LLC</X509SubjectName>
+							</DigitalId>
+							<DigitalId>
+								<X509SKI>iwlKx2trnylJ1DpKQX74du2Er2A=</X509SKI>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+						<ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+						<StatusStartingTime>2026-02-17T12:32:00Z</StatusStartingTime>
+						<ServiceInformationExtensions>
+							<Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+							</Extension>
+							<Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+							</Extension>
+						</ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+					<ServiceInformation>
+						<ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+						<ServiceName>
+							<Name xml:lang="en">TSA-server QTSP EDIN ID of the ATS LLC (UA-37636185-2532)</Name>
+						</ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>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</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-37636185,L=Kyiv,C=UA,SERIALNUMBER=UA-37636185-2532,CN=TSA-server QTSP EDIN ID of the ATS LLC,OU=Department of Electronic Trust Services,O=ATS LLC</X509SubjectName>
+							</DigitalId>
+							<DigitalId>
+								<X509SKI>6iOFs24eC2AYyJ+I/53zM054vZY=</X509SKI>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+						<ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+						<StatusStartingTime>2026-02-17T12:37:00Z</StatusStartingTime>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+					<ServiceInformation>
+						<ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-CA/QC</ServiceTypeIdentifier>
+						<ServiceName>
+							<Name xml:lang="en">QTSP EDIN ID of the ATS LLC(UA-37636185-2513)</Name>
+						</ServiceName>                     
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEbTCCBBOgAwIBAgIUeEc2OukoAncBAAAAAQAAALQBAAAwCgYIKoZIzj0EAwIwgdIxNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRkwFwYDVQQFExBVQS00MzIyMDg1MS0yNTAzMQswCQYDVQQGEwJVQTENMAsGA1UEBwwES3lpdjEXMBUGA1UEYQwOTlRSVUEtNDMyMjA4NTEwHhcNMjYwMjE3MTIzNDAwWhcNMzEwMjE3MTIzNDAwWjCBujEQMA4GA1UECgwHQVRTIExMQzEwMC4GA1UECwwnRGVwYXJ0bWVudCBvZiBFbGVjdHJvbmljIFRydXN0IFNlcnZpY2VzMSQwIgYDVQQDDBtRVFNQIEVESU4gSUQgb2YgdGhlIEFUUyBMTEMxGTAXBgNVBAUTEFVBLTM3NjM2MTg1LTI1MTMxCzAJBgNVBAYTAlVBMQ0wCwYDVQQHDARLeWl2MRcwFQYDVQRhDA5OVFJVQS0zNzYzNjE4NTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABKmQR/uY8mZ+4kZ8SFnTHBw0tKzC/0BDZN0NtemFDMDDDgXvGV61oAN0Y0xGLEYs9hgOCw7h3OvMydEBr4454bGjggHbMIIB1zAdBgNVHQ4EFgQUCsXG2w2+L7/2rhnbNaAzILF7fjQwDgYDVR0PAQH/BAQDAgEGMDwGA1UdIAQ1MDMwMQYJKoYkAgEBAQIEMCQwIgYIKwYBBQUHAgEWFmh0dHBzOi8vY3pvLmdvdi51YS9jcHMwIQYDVR0RBBowGIIKY2EuZWRpbi51YYEKY2FAZWRpbi51YTASBgNVHRMBAf8ECDAGAQH/AgEAMD8GCCsGAQUFBwEDBDMwMTAIBgYEAI5GAQEwDgYGBACORgEHMAQTAlVBMBUGCCsGAQUFBwsCMAkGBwQAi+xJAQIwHwYDVR0jBBgwFoAUeEc2OukoAnciYTxEGlLVYry3X0wwRwYDVR0fBEAwPjA8oDqgOIY2aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDI1LUZ1bGwuY3JsMEgGA1UdLgRBMD8wPaA7oDmGN2h0dHA6Ly9jem8uZ292LnVhL2Rvd25sb2FkL2NybHMvQ0EtRUNEU0EtMjAyNS1EZWx0YS5jcmwwPAYIKwYBBQUHAQEEMDAuMCwGCCsGAQUFBzABhiBodHRwOi8vY3pvLmdvdi51YS9zZXJ2aWNlcy9vY3NwLzAKBggqhkjOPQQDAgNIADBFAiEAsy3PWrlI5oAmTixoiYNLu38G1SzQFNW0WHsVbhxO1hICIFGTQ62OQhawh4IGhaFSjnnGEah62PC3sdcWwpCpah10</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-37636185,L=Kyiv,C=UA,SERIALNUMBER=UA-37636185-2513,CN=QTSP EDIN ID of the ATS LLC,OU=Department of Electronic Trust Services,O=ATS LLC</X509SubjectName>
+							</DigitalId>
+							<DigitalId>
+								<X509SKI>CsXG2w2+L7/2rhnbNaAzILF7fjQ=</X509SKI>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+						<ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+						<StatusStartingTime>2026-02-17T12:34:00Z</StatusStartingTime>
+						<ServiceInformationExtensions>
+							<Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSignatures</URI>
+								</AdditionalServiceInformation>
+							</Extension>
+							<Extension Critical="true">
+								<AdditionalServiceInformation>
+									<URI xml:lang="en">http://uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</URI>
+								</AdditionalServiceInformation>
+							</Extension>
+						</ServiceInformationExtensions>
+					</ServiceInformation>
+				</TSPService>
+				<TSPService>
+					<ServiceInformation>
+						<ServiceTypeIdentifier>http://czo.gov.ua/TrstSvc/Svctype/MR-TSA/QTST</ServiceTypeIdentifier>
+						<ServiceName>
+							<Name xml:lang="en">TSA-server QTSP EDIN ID of the ATS LLC (UA-37636185-2533)</Name>
+						</ServiceName>
+						<ServiceDigitalIdentity>
+							<DigitalId>
+								<X509Certificate>MIIEiTCCBDCgAwIBAgIUeEc2OukoAncCAAAAAQAAALYBAAAwCgYIKoZIzj0EAwIwgdIxNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSgwJgYDVQQDDB9DZW50cmFsIGNlcnRpZmljYXRpb24gYXV0aG9yaXR5MRkwFwYDVQQFExBVQS00MzIyMDg1MS0yNTAzMQswCQYDVQQGEwJVQTENMAsGA1UEBwwES3lpdjEXMBUGA1UEYQwOTlRSVUEtNDMyMjA4NTEwHhcNMjYwMjE3MTIzOTAwWhcNMzEwMjE3MTIzOTAwWjCBxTEQMA4GA1UECgwHQVRTIExMQzEwMC4GA1UECwwnRGVwYXJ0bWVudCBvZiBFbGVjdHJvbmljIFRydXN0IFNlcnZpY2VzMS8wLQYDVQQDDCZUU0Etc2VydmVyIFFUU1AgRURJTiBJRCBvZiB0aGUgQVRTIExMQzEZMBcGA1UEBRMQVUEtMzc2MzYxODUtMjUzMzELMAkGA1UEBhMCVUExDTALBgNVBAcMBEt5aXYxFzAVBgNVBGEMDk5UUlVBLTM3NjM2MTg1MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEI777r9/8BFGf4XgtZi5rxOCJpCdWYENWTbANYIMF5Hc/ft1DqVFe7B1hCto320E1enUlz1ljvT/DEpCJi5zhMKOCAe0wggHpMB0GA1UdDgQWBBT6MSKx2VaPF6x+R4LP4roHWil9UTAOBgNVHQ8BAf8EBAMCBsAwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwgwPAYDVR0gBDUwMzAxBgkqhiQCAQEBAgQwJDAiBggrBgEFBQcCARYWaHR0cHM6Ly9jem8uZ292LnVhL2NwczAhBgNVHREEGjAYggpjYS5lZGluLnVhgQpjYUBlZGluLnVhMAwGA1UdEwEB/wQCMAAwPwYIKwYBBQUHAQMEMzAxMAgGBgQAjkYBATAOBgYEAI5GAQcwBBMCVUEwFQYIKwYBBQUHCwIwCQYHBACL7EkBAjAfBgNVHSMEGDAWgBR4RzY66SgCdyJhPEQaUtVivLdfTDBHBgNVHR8EQDA+MDygOqA4hjZodHRwOi8vY3pvLmdvdi51YS9kb3dubG9hZC9jcmxzL0NBLUVDRFNBLTIwMjUtRnVsbC5jcmwwSAYDVR0uBEEwPzA9oDugOYY3aHR0cDovL2N6by5nb3YudWEvZG93bmxvYWQvY3Jscy9DQS1FQ0RTQS0yMDI1LURlbHRhLmNybDA8BggrBgEFBQcBAQQwMC4wLAYIKwYBBQUHMAGGIGh0dHA6Ly9jem8uZ292LnVhL3NlcnZpY2VzL29jc3AvMAoGCCqGSM49BAMCA0cAMEQCIGrVOHJRcp4/SHt5oIO+962hcE8yRM5r3yliB9JjIaA+AiBeL5Qod5tTrmMnJ6ok2/3xIYgi79mmclw/JxdnbiTqzA==</X509Certificate>
+							</DigitalId>
+							<DigitalId>
+								<X509SubjectName>OID.2.5.4.97=NTRUA-37636185,L=Kyiv,C=UA,SERIALNUMBER=UA-37636185-2533,CN=TSA-server QTSP EDIN ID of the ATS LLC,OU=Department of Electronic Trust Services,O=ATS LLC</X509SubjectName>
+							</DigitalId>
+							<DigitalId>
+								<X509SKI>+jEisdlWjxesfkeCz+K6B1opfVE=</X509SKI>
+							</DigitalId>
+						</ServiceDigitalIdentity>
+						<ServiceStatus>http://czo.gov.ua/TrstSvc/TrustedList/Svcstatus/granted</ServiceStatus>
+						<StatusStartingTime>2026-02-17T12:34:00Z</StatusStartingTime>
+					</ServiceInformation>
+				</TSPService>
+			</TSPServices>
+		</TrustServiceProvider>
+	</TrustServiceProviderList>
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="id-a3a47550cab0022e1019c2ecb8105850"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/><ds:Reference Id="id-a3a47550cab0022e1019c2ecb8105850-1" Type="" URI=""><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>OoF778hGIaOh/EP3jEEI1Tcu1lPG1WaoS1mlmeECzM0=</ds:DigestValue></ds:Reference><ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#xades-id-a3a47550cab0022e1019c2ecb8105850"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>W4JEUfxnogETj0fZVARL+qvD2TUt0J4PPfpMqctkS+g=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>SCMGUzaAssejm0Vfvk8r3s90Lob6e0aYy9zNRNr16mhOInrnUioZ9n1Qe7YIYJGl3dHis56a4dWDbGkbNEgJrllijvthEq+T5dA5M3fYqE+opiZEa9kzv/bzlN11YJJ46swEkmNWZvIpLtdAuFrcdyOr+l1OzafkxioHJaNwZtZnXwPK7YQns5Bn9+iiPVoeAhcYqEOxnRDsjHFOffpgWc9iBCVEdQMZSQkQKUiQkywMAygeadzl4k1f7rUJWmF5PlxNf/LVe+fIkwOO4t4GratRpdg2SHbEaWyPMWh7VAJG1l3oJ+2zLze2/RV0Tk0LjNuLysnZQCg4bUGuQU5cXJtsUn4gyGeOMr23xcdWBJ/UYU86C2ISDdOIw8K30GbHHfXFRvkCu7H5eBWIO4EZB5P/LbwJdE7npz1FSkqOSGqsaH7uFHapZYFijOdB+X6ao/hqJqboVQhDEHIYQaohRXuz8wIzl79Qqc0hxSPpIkHWkvrvvVtq986Qbl7LXJpNOUM9Jz4WguMsS290gIEf1oqD+yKwNCVKSxMW5tYhHbg2CgkyUvJ8Q/Q5SMsrEV004ljB0C/m7m02HDkixnsyNaDK2Lr/HABnyqyw4M9JBLjRB2FtZubW5iS0fnKE1ci1UMDtlyCdiOos7rZFiV7P++c5XCUr8rmV8dwUvy8EmwA=</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIHEzCCBPugAwIBAgIUEAUFne9IV2QEAAAABQAAADYBAAAwDQYJKoZIhvcNAQELBQAwgb4xNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSMwIQYDVQQDDBpUcnVzdGVkIExpc3QgQWRtaW5pc3RyYXRvcjEKMAgGA1UEBRMBNTELMAkGA1UEBhMCVUExDTALBgNVBAcMBEt5aXYxFzAVBgNVBGEMDk5UUlVBLTQzMjIwODUxMB4XDTIyMDkxMjEyMTIwMFoXDTI3MDkxMjEyMTIwMFowgb4xNjA0BgNVBAoMLU1pbmlzdHJ5IG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gb2YgVWtyYWluZTEeMBwGA1UECwwVQWRtaW5pc3RyYXRvciBJVFMgQ0NBMSMwIQYDVQQDDBpUcnVzdGVkIExpc3QgQWRtaW5pc3RyYXRvcjEKMAgGA1UEBRMBNTELMAkGA1UEBhMCVUExDTALBgNVBAcMBEt5aXYxFzAVBgNVBGEMDk5UUlVBLTQzMjIwODUxMIICITANBgkqhkiG9w0BAQEFAAOCAg4AMIICCQKCAgBOjb8seUKf2IWWp+kKQidIIIY25LdWgCnDlQNUv/h4URyNlDKZhJluG+DPIout41E9B6FzjfXYF+ANu3q9q63OMO3fqNv0Og0pYYFXmzQePUkDOST3fmWJuJV6UikxAok2oclkDXvl1S1cOeRchiIV4HlGc6rJjlx4tvX+cPHq55hxCt9LQ2BmFtgOnUVpp4GOB+tsBWbxO5SLrBPWlG5Y/D+pUG4yxfgzkYznUsD7CC2A/6DUPsrby9VRgJ3HVm32FCbebLkNO7UndX7xbuOCrZUPGKabXnVsXooYVvC8dlMws637Dji6ubtLo/3udX/7ALIg7zt/YaxUEo9sfjAKzFwoC+rRapg8CVs/ra3jvYpcbMOownyYcWmXyZT8bBo0MzI0ALANhkCTkvvn/0Z70wBbQx/WkAgRwdM4bZYluS1c+oJWlzXGns4pw51J/33NMEUKIAHF54sTodCwVdd/l/NT7bQPLUtA/iT04pGbcw1km/ebitPqv7Iqy0tCKZ1qo7A7WIcmbvOh3OSpsY7/mrTaWqhoJYpZnFn5RaOuDXcpqHtaoET2SplB2byYEqyt/o5PEydlbcH1E0VEPaHh/YCS5CO7hntyc9ya6w+Jci27Cye5xk5SkqeS+KtRzlv0hTxvW/lemBNK9LCFLweA1rynqtNbqG2NhDH/omVGXwIDAQABo4IBBjCCAQIwHQYDVR0OBBYEFJAFBZ3vSFdkePxax3yojOYceRguMB8GA1UdIwQYMBaAFJAFBZ3vSFdkePxax3yojOYceRguMA4GA1UdDwEB/wQEAwIGQDARBgNVHSUECjAIBgYEAJE3AwAwPAYDVR0gBDUwMzAxBgkqhiQCAQEBAgQwJDAiBggrBgEFBQcCARYWaHR0cHM6Ly9jem8uZ292LnVhL2NwczAJBgNVHRMEAjAAMFQGCCsGAQUFBwEDBEgwRjAIBgYEAI5GAQEwEwYGBACORgEGMAkGBwQAjkYBBgIwDgYGBACORgEHMAQTAlVBMBUGCCsGAQUFBwsCMAkGBwQAi+xJAQIwDQYJKoZIhvcNAQELBQADggIBABfpbFYBcXOxTAVYcES/MZpyXj9p7Orb4+XIQaE0EUEj0Yx2QrMupbLdUvZu3ZO9ScroxHrHAl4PM4a5CfudX1y0b9anO+gUL/ojS15IcqipNy+C/NhoKV75Vdgx1++8/Bx08qlKsx/RPYxeU3Vus5PJq69U7XeXu3YrMb1aHSpPLwRW2wt9mOsi2PtQKc2vlgxLBwCLPQiho+nly2YtTC5ypS0NFO8LaJK4wjHfRgZVu18JAiyVX0z3c1oqg5DpUwBb5BopMtwXNLxkMzkcR3KqaI/u/Sgcp94dezHOo7wj0WvIzYZxOzNK2zlrolta8bhzDYxRwZI1pEtDquNr8u56s8irJjq93AjWKDLiyB1XzuEJtRqmUcLtw33IJK4OQwcthANw5NUeBPOnhTbH337J+PxzwqVxSIht7+fyNnUyE/NW1uM4JzAm5DbpzZb/kPgXUF/A0RV7NnCfeNRxcF2hd4lJ/fT66FTbWLkmKPPSqeGRVNgGwE8Y6u4+X1cyG7oO3lSFHzkdsE1Bpvqbt7I73w5n5usVcGoFjVKbgbmxphKChsXykJ5xowN38I4ZvwOqFhQO8S432Ad8Z5qvPOKvl88G9GBq8I3QWIyASqZPL77F6Jo9KOsuWwN2hN/JWDZRA1AMJ8BkVNgnMiG6g/jsJPLJVUzUSpIIpUZ+wHAI</ds:X509Certificate></ds:X509Data></ds:KeyInfo><ds:Object><xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" Target="#id-a3a47550cab0022e1019c2ecb8105850"><xades:SignedProperties Id="xades-id-a3a47550cab0022e1019c2ecb8105850"><xades:SignedSignatureProperties><xades:SigningTime>2026-05-19T09:02:00Z</xades:SigningTime><xades:SigningCertificateV2><xades:Cert><xades:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>z/7TqamWezzHxzrYZLyo7bqeHAm4BK/Lf/PvmLFmbXQ=</ds:DigestValue></xades:CertDigest></xades:Cert></xades:SigningCertificateV2></xades:SignedSignatureProperties><xades:SignedDataObjectProperties><xades:DataObjectFormat ObjectReference="#id-a3a47550cab0022e1019c2ecb8105850-1"><xades:MimeType>text/xml</xades:MimeType></xades:DataObjectFormat></xades:SignedDataObjectProperties></xades:SignedProperties></xades:QualifyingProperties></ds:Object></ds:Signature></TrustServiceStatusList>

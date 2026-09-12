@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrustServiceStatusList xmlns="http://uri.etsi.org/02231/v2#">
+  <TrustServiceProviderList><TrustServiceProvider><TSPServices><TSPService>
+    <ServiceInformation><ServiceDigitalIdentity><DigitalId>
+      <X509Certificate>bm90LWEtY2VydA==</X509Certificate>
+    </DigitalId></ServiceDigitalIdentity></ServiceInformation>
+  </TSPService></TSPServices></TrustServiceProvider></TrustServiceProviderList>
+</TrustServiceStatusList>

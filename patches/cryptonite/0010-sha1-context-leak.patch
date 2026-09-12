@@ -1,0 +1,22 @@
+diff --git a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+--- a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
++++ b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+@@ -1173,6 +1173,9 @@
+     ba_free(s);
+     prng_free(prng);
+     sha2_free(sha2_ctx);
++    /* Upstream не звільняв sha1_ctx: витік на кожній операції ПІДПИСУ шляхом
++     * ECDSA-SHA1. Сесія 1С довгоживуча, тож витік накопичується. */
++    sha1_free(sha1_ctx);
+     gost34_311_free(digest_ctx);
+ 
+     return ret;
+@@ -1430,6 +1433,8 @@
+     gost34_311_free(digest_ctx);
+     dstu7564_free(kupyna_ctx);
+     sha2_free(sha2_ctx);
++    /* Той самий витік у шляху ПЕРЕВІРКИ підпису. */
++    sha1_free(sha1_ctx);
+ 
+     return ret;
+ }

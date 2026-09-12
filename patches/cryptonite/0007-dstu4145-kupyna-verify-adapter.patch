@@ -1,0 +1,84 @@
+diff --git a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+--- a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
++++ b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+@@ -1358,6 +1358,7 @@
+     ByteArray *sync = NULL;
+     CryptoniteSignParams *sign_parameters_str = NULL;
+     Gost34311Ctx *digest_ctx = NULL;
++    Dstu7564Ctx *kupyna_ctx = NULL;
+     Sha2Ctx *sha2_ctx = NULL;
+     Sha1Ctx *sha1_ctx = NULL;
+ 
+@@ -1371,11 +1372,28 @@
+     sign_parameters_str = (CryptoniteSignParams *)va->ctx;
+ 
+     if (sign_parameters_str->alg_marker == DSTU4145) {
+-        CHECK_NOT_NULL(sync = ba_alloc_by_len(32));
+-        DO(ba_set(sync, 0));
+-        CHECK_NOT_NULL(digest_ctx = gost34_311_alloc_user_sbox(sign_parameters_str->digest_sbox, sync));
+-        DO(gost34_311_update(digest_ctx, data));
+-        DO(gost34_311_final(digest_ctx, &hash));
++        /*
++         * ДСТУ 4145 вживається з двома дайджестами: ГОСТ 34.311-95 (гілка
++         * підпису ...3.1.*) і Купина/ДСТУ 7564 (гілка ...3.6.*). Раніше тут
++         * беззастережно рахувався ГОСТ, тож підпис на Купині не міг збігтися
++         * незалежно від решти. Дайджест беремо з digest_aid адаптера — його
++         * задає або алгоритм підпису сертифіката, або set_digest_alg із
++         * SignerInfo.digestAlgorithm (нормативне джерело за RFC 5652).
++         */
++        if (sign_parameters_str->digest_aid != NULL &&
++                pkix_check_oid_equal(&sign_parameters_str->digest_aid->algorithm,
++                        oids_get_oid_numbers_by_id(OID_PKI_DSTU7564_256_ID))) {
++            CHECK_NOT_NULL(kupyna_ctx = dstu7564_alloc(DSTU7564_SBOX_1));
++            DO(dstu7564_init(kupyna_ctx, 32));
++            DO(dstu7564_update(kupyna_ctx, data));
++            DO(dstu7564_final(kupyna_ctx, &hash));
++        } else {
++            CHECK_NOT_NULL(sync = ba_alloc_by_len(32));
++            DO(ba_set(sync, 0));
++            CHECK_NOT_NULL(digest_ctx = gost34_311_alloc_user_sbox(sign_parameters_str->digest_sbox, sync));
++            DO(gost34_311_update(digest_ctx, data));
++            DO(gost34_311_final(digest_ctx, &hash));
++        }
+ 
+     } else if (sign_parameters_str->alg_marker == ECDSA) {
+         if (pkix_check_oid_equal(&sign_parameters_str->digest_aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA224_ID))) {
+@@ -1412,6 +1430,7 @@
+     ba_free(hash);
+     ba_free(sync);
+     gost34_311_free(digest_ctx);
++    dstu7564_free(kupyna_ctx);
+     sha2_free(sha2_ctx);
+ 
+     return ret;
+@@ -1713,6 +1732,8 @@
+         hash_checker = OID_PKI_SHA384_ID;
+     } else if (pkix_check_oid_equal(&da_id->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA512_ID))) {
+         hash_checker = OID_PKI_SHA512_ID;
++    } else if (pkix_check_oid_equal(&da_id->algorithm, oids_get_oid_numbers_by_id(OID_PKI_DSTU7564_256_ID))) {
++        hash_checker = OID_PKI_DSTU7564_256_ID;
+     } else {
+         SET_ERROR(RET_PKIX_UNSUPPORTED_DIGEST_ALG);
+     }
+@@ -1760,6 +1781,21 @@
+             if (!pkix_check_oid_equal(&da_id->algorithm, oids_get_oid_numbers_by_id(OID_PKI_GOST3411_ID))) {
+                 SET_ERROR(RET_PKIX_UNSUPPORTED_DIGEST_ALG);
+             }
++        } else if (pkix_check_oid_parent(&sign_params->signature_aid->algorithm,
++                        oids_get_oid_numbers_by_id(OID_PKI_DSTU4145_WITH_GOST3411_ID)) ||
++                pkix_check_oid_parent(&sign_params->signature_aid->algorithm,
++                        oids_get_oid_numbers_by_id(OID_PKI_DSTU4145_WITH_DSTU7564_ID))) {
++            /*
++             * ДСТУ 4145 допускає два дайджести: ГОСТ 34.311-95 і Купину-256.
++             * signature_aid тут — алгоритм підпису сертифіката, який не
++             * зобовʼязаний збігатися з дайджестом самого підпису (сертифікат
++             * може бути виданий на ГОСТ-і, а документ підписаний Купиною), тож
++             * звужувати вибір до одного варіанта не можна. Решта дайджестів
++             * лишається відхиленою.
++             */
++            if (hash_checker != OID_PKI_GOST3411_ID && hash_checker != OID_PKI_DSTU7564_256_ID) {
++                SET_ERROR(RET_PKIX_UNSUPPORTED_DIGEST_ALG);
++            }
+         } else {
+             SET_ERROR(RET_PKIX_UNSUPPORTED_SIGN_ALG);
+         }

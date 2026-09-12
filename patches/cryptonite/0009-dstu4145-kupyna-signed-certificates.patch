@@ -1,0 +1,42 @@
+diff --git a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+--- a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
++++ b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+@@ -946,7 +946,11 @@
+     CHECK_PARAM(sign_parameters_str != NULL);
+ 
+     if (pkix_check_oid_parent(&sign_parameters_str->signature_aid->algorithm,
+-            oids_get_oid_numbers_by_id(OID_PKI_DSTU4145_WITH_GOST3411_ID))) {
++            oids_get_oid_numbers_by_id(OID_PKI_DSTU4145_WITH_GOST3411_ID))
++            || pkix_check_oid_parent(&sign_parameters_str->signature_aid->algorithm,
++                    oids_get_oid_numbers_by_id(OID_PKI_DSTU4145_WITH_DSTU7564_ID))) {
++        /* Обидві гілки — той самий ДСТУ 4145; різниться лише дайджест, а
++         * параметри ключа (DSTU4145Params) беруться з SPKI однаково. */
+         sign_parameters_str->alg_marker = DSTU4145;
+         CHECK_NOT_NULL(params_buf = asn_any2type(sign_parameters_str->params_aid->parameters, &DSTU4145Params_desc));
+         ASN_FREE(&DSTU4145Params_desc, sign_parameters_str->asn_dstu_params);
+@@ -2237,6 +2241,13 @@
+ 
+     if (pkix_check_oid_parent(sign_alg, oids_get_oid_numbers_by_id(OID_PKI_DSTU4145_WITH_GOST3411_ID))) {
+         sa_aid = OID_PKI_DSTU4145_WITH_GOST3411_ID;
++    } else if (pkix_check_oid_parent(sign_alg, oids_get_oid_numbers_by_id(OID_PKI_DSTU4145_WITH_DSTU7564_ID))) {
++        /* ДСТУ 4145 з Купиною: сертифікат, ПІДПИСАНИЙ за гілкою ...3.6.*.
++         * Без цієї гілки verify_adapter_init_by_cert падає з
++         * RET_PKIX_UNSUPPORTED_SIGN_ALG (rc=325) ще до будь-якої криптографії,
++         * тож перевірити підпис такого сертифіката неможливо в принципі.
++         * Реальний випадок: підписант довірчого списку ЦЗО TL-UA-DSTU.xml. */
++        sa_aid = OID_PKI_DSTU4145_WITH_DSTU7564_ID;
+     } else if (pkix_check_oid_parent(sign_alg, oids_get_oid_numbers_by_id(OID_ECDSA_WITH_SHA1_ID))) {
+         sa_aid = OID_ECDSA_WITH_SHA1_ID;
+     } else if (pkix_check_oid_parent(sign_alg, oids_get_oid_numbers_by_id(OID_ECDSA_WITH_SHA224_ID))) {
+@@ -2268,6 +2279,11 @@
+     case OID_PKI_DSTU4145_WITH_GOST3411_ID:
+         DO(aid_create_gost3411(&digest_aid));
+         break;
++    case OID_PKI_DSTU4145_WITH_DSTU7564_ID:
++        /* Купина не параметризована (ні sbox, ні sync), тож достатньо OID. */
++        ASN_ALLOC(digest_aid);
++        DO(aid_init_by_oid(digest_aid, oids_get_oid_numbers_by_id(OID_PKI_DSTU7564_256_ID)));
++        break;
+     case OID_ECDSA_WITH_SHA1_ID:
+         ASN_ALLOC(digest_aid);
+         DO(aid_init_by_oid(digest_aid, oids_get_oid_numbers_by_id(OID_PKI_SHA1_ID)));

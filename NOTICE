@@ -1,0 +1,24 @@
+Tamga
+
+This repository contains third-party source code, headers, libraries and tooling
+under `vendor/`.
+
+The project-owned code and documentation of Tamga are licensed under the
+BSD-3-Clause license. Third-party materials keep their own upstream license
+terms.
+
+A consolidated inventory is provided in `THIRD_PARTY_NOTICES.md`.
+
+Required acknowledgements from bundled LibreSSL / OpenSSL / SSLeay-derived
+materials:
+
+- This product includes software developed by the OpenSSL Project for use in
+  the OpenSSL Toolkit (http://www.openssl.org/).
+- This product includes cryptographic software written by Eric Young
+  (eay@cryptsoft.com).
+- This product includes software written by Tim Hudson
+  (tjh@cryptsoft.com).
+
+Review `THIRD_PARTY_NOTICES.md` for the current source and binary inventory,
+the retained license texts, and redistribution conditions that still need
+confirmation before a public source or binary release.

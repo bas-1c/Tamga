@@ -1,0 +1,27 @@
+diff --git a/vendor/cryptonite/src/cryptonite/c/rsa.c b/vendor/cryptonite/src/cryptonite/c/rsa.c
+--- a/vendor/cryptonite/src/cryptonite/c/rsa.c
++++ b/vendor/cryptonite/src/cryptonite/c/rsa.c
+@@ -1277,14 +1277,22 @@ int rsa_verify_pkcs1_v1_5(RsaCtx *ctx, const ByteArray *hash, const ByteArray *sign)
+     }
+ 
+     len = ctx->gfp->p->len * WORD_BYTE_LENGTH;
+-    CHECK_NOT_NULL(em = malloc(len));
+     tlen = HASH_AID_LEN[ctx->hash_type];
+     hlen = HASH_LEN[ctx->hash_type];
+     if (hash->len != hlen) {
+         SET_ERROR(RET_INVALID_HASH_LEN);
+     }
++    /* RSA-підпис має рівно k байтів. Інша довжина порушує розміри WordArray
++     * у gfp_mod_pow/int_div і може спричинити читання за межами буфера. */
++    if (sign->len != (int_bit_len(ctx->gfp->p) + 7) / 8 || len < (size_t)tlen + hlen + 11) {
++        SET_ERROR(RET_VERIFY_FAILED);
++    }
++    CHECK_NOT_NULL(em = malloc(len));
+ 
+     CHECK_NOT_NULL(sign_wa = wa_alloc_from_ba(sign));
++    if (int_cmp(sign_wa, ctx->gfp->p) >= 0) {
++        SET_ERROR(RET_VERIFY_FAILED);
++    }
+     DO(rsaedp(ctx->gfp, ctx->e, sign_wa, &em_wa));
+ 
+     DO(wa_to_uint8(em_wa, em, len));

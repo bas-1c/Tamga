@@ -1,0 +1,31 @@
+* text=auto
+/.gitattributes text eol=lf
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+*.sh text eol=lf
+NOTICE text eol=lf
+*.md text eol=lf
+*.patch text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.jks binary
+*.p12 binary
+*.pfx binary
+*.der binary
+*.cer binary
+*.crl binary
+
+# Фікстури перевіряються за точними байтами, зокрема PEM і підписані XML.
+tests/fixtures/** -text
+tests/fixtures/**/*.md text eol=lf
+tests/TL-UA-EC.xml -text
+
+# Fuzz-корпус — двійкові дані незалежно від того, чи трапляються там NUL-байти.
+# Без цього git класифікує згенеровані PDF і XML як текст і на Windows-checkout
+# підміняє їм переводи рядків: корпус перестає бути байт-стабільним між
+# платформами, тобто той самий тест згодовує парсерам РІЗНІ байти.
+tests/fuzz/corpus/** binary

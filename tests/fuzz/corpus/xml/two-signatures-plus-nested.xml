@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<doc>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo/><SignatureValue>A</SignatureValue>
+    <Object><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo/></Signature></Object>
+  </Signature>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo/><SignatureValue>B</SignatureValue></Signature>
+</doc>

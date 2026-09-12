@@ -1,0 +1,81 @@
+diff --git a/vendor/cryptonite/src/cryptonite/c/dstu7564.h b/vendor/cryptonite/src/cryptonite/c/dstu7564.h
+--- a/vendor/cryptonite/src/cryptonite/c/dstu7564.h
++++ b/vendor/cryptonite/src/cryptonite/c/dstu7564.h
+@@ -35,6 +35,17 @@
+ CRYPTONITE_EXPORT Dstu7564Ctx *dstu7564_alloc_user_sbox(const ByteArray *sbox);
+ 
+ /**
++ * Створює копію контексту ДСТУ 7564 разом із проміжним станом.
++ *
++ * Дозволяє порахувати кілька гешів від спільного префікса даних, не повторюючи
++ * update() для нього. Копія володіє власним станом і звільняється окремо.
++ *
++ * @param ctx контекст ДСТУ 7564
++ * @return копія контексту або NULL у разі помилки
++ */
++CRYPTONITE_EXPORT Dstu7564Ctx *dstu7564_copy_with_alloc(const Dstu7564Ctx *ctx);
++
++/**
+  * Ініціалізація контексту DSTU7564.
+  *
+  * @param ctx контекст ДСТУ 7564
+diff --git a/vendor/cryptonite/src/cryptonite/c/dstu7564.c b/vendor/cryptonite/src/cryptonite/c/dstu7564.c
+--- a/vendor/cryptonite/src/cryptonite/c/dstu7564.c
++++ b/vendor/cryptonite/src/cryptonite/c/dstu7564.c
+@@ -587,6 +587,38 @@
+     return ctx;
+ }
+ 
++Dstu7564Ctx *dstu7564_copy_with_alloc(const Dstu7564Ctx *ctx)
++{
++    Dstu7564Ctx *out = NULL;
++    int ret = RET_OK;
++
++    CHECK_PARAM(ctx != NULL);
++
++    CALLOC_CHECKED(out, sizeof(Dstu7564Ctx));
++    memcpy(out, ctx, sizeof(Dstu7564Ctx));
++
++    /*
++     * hmac — єдине поле-вказівник у контексті, решта структури значенєва
++     * (p_boxrowcol, last_block, state і лічильники копіюються memcpy).
++     * Копії потрібен ВЛАСНИЙ буфер ключа: інакше два контексти розділяли б
++     * одну область, і dstu7564_free другого дав би double free.
++     */
++    out->hmac = NULL;
++    if (ctx->hmac != NULL) {
++        CALLOC_CHECKED(out->hmac, sizeof(Dstu7564Hmac));
++        memcpy(out->hmac, ctx->hmac, sizeof(Dstu7564Hmac));
++    }
++
++cleanup:
++
++    if (ret != RET_OK) {
++        dstu7564_free(out);
++        out = NULL;
++    }
++
++    return out;
++}
++
+ void dstu7564_free(Dstu7564Ctx *ctx)
+ {
+     if (ctx) {
+diff --git a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+--- a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
++++ b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+@@ -591,13 +591,7 @@
+     } else if (ctx->mode_id == DIGEST_MODE_SHA2) {
+         CHECK_NOT_NULL(params->mode.sha2 = sha2_copy_with_alloc(ctx->mode.sha2));
+     } else if (ctx->mode_id == DIGEST_MODE_DSTU7564) {
+-        /* Upstream dstu7564 не експортує copy_with_alloc, тому клонувати
+-         * ПРОМІЖНИЙ стан Купини неможливо. Свідомо повертаємо помилку замість
+-         * створення свіжого контексту: мовчазна підміна дала б копію з іншим
+-         * станом, тобто інший дайджест. Продакшн-споживачів у pkix немає —
+-         * digest_adapter_copy_with_alloc викликається лише з upstream utest,
+-         * які в цій збірці вимкнені (patch 0001). */
+-        SET_ERROR(RET_PKIX_UNSUPPORTED_OID);
++        CHECK_NOT_NULL(params->mode.dstu7564 = dstu7564_copy_with_alloc(ctx->mode.dstu7564));
+     } else {
+         SET_ERROR(RET_PKIX_UNSUPPORTED_DIGEST_ALG);
+     }

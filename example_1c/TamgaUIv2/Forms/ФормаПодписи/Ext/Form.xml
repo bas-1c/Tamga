@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" version="2.20">
+  <AutoCommandBar name="ФормаКоманднаяПанель" id="-1" />
+  <Events>
+    <Event name="OnOpen">ПриОткрытии</Event>
+  </Events>
+  <ChildItems>
+    <Pages name="Вкладки" id="1">
+      <ChildItems>
+        <Page name="СтраницаПодключение" id="2">
+          <Title>
+            <v8:item>
+              <v8:lang>uk</v8:lang>
+              <v8:content>Підключення</v8:content>
+            </v8:item>
+          </Title>
+          <ChildItems>
+            <CheckBox name="ИспользоватьАсинхронноеПодключение" id="3">
+              <DataPath>ИспользоватьАсинхронноеПодключение</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Асинхронне підключення з макета</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="ИспользоватьАсинхронноеПодключениеКонтекстноеМеню" />
+              <ExtendedTooltip name="ИспользоватьАсинхронноеПодключениеРасширеннаяПодсказка" />
+            </CheckBox>
+            <CheckBox name="РежимОфлайн" id="4">
+              <DataPath>РежимОфлайн</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Офлайн режим</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="РежимОфлайнКонтекстноеМеню" />
+              <ExtendedTooltip name="РежимОфлайнРасширеннаяПодсказка" />
+            </CheckBox>
+            <InputField name="РабочийКаталог" id="5">
+              <DataPath>РабочийКаталог</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Робочий каталог</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">РабочийКаталогНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="РабочийКаталогКонтекстноеМеню" />
+              <ExtendedTooltip name="РабочийКаталогРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="TSP_URL" id="49">
+              <DataPath>TSP_URL</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>TSP URL</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="TSP_URLКонтекстноеМеню" />
+              <ExtendedTooltip name="TSP_URLРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="TSP_Policy" id="50">
+              <DataPath>TSP_Policy</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>TSP policy OID</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="TSP_PolicyКонтекстноеМеню" />
+              <ExtendedTooltip name="TSP_PolicyРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="OCSP_URL" id="51">
+              <DataPath>OCSP_URL</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>OCSP URL</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="OCSP_URLКонтекстноеМеню" />
+              <ExtendedTooltip name="OCSP_URLРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="LDAP_URL" id="52">
+              <DataPath>LDAP_URL</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>LDAP URL</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="LDAP_URLКонтекстноеМеню" />
+              <ExtendedTooltip name="LDAP_URLРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="LDAP_BaseDn" id="53">
+              <DataPath>LDAP_BaseDn</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>LDAP base DN</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="LDAP_BaseDnКонтекстноеМеню" />
+              <ExtendedTooltip name="LDAP_BaseDnРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="CMP_URL" id="54">
+              <DataPath>CMP_URL</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>CMP URL</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="CMP_URLКонтекстноеМеню" />
+              <ExtendedTooltip name="CMP_URLРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="CMP_Profile" id="55">
+              <DataPath>CMP_Profile</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>CMP profile</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="CMP_ProfileКонтекстноеМеню" />
+              <ExtendedTooltip name="CMP_ProfileРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="СостояниеКомпоненты" id="6">
+              <DataPath>СостояниеКомпоненты</DataPath>
+              <ReadOnly>true</ReadOnly>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Стан компоненти</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="СостояниеКомпонентыКонтекстноеМеню" />
+              <ExtendedTooltip name="СостояниеКомпонентыРасширеннаяПодсказка" />
+            </InputField>
+            <UsualGroup name="ГруппаКнопокПодключения" id="7">
+              <Group>Horizontal</Group>
+              <ChildItems>
+                <Button name="КнопкаПодключить" id="8">
+                  <Title>
+                    <v8:item>
+                      <v8:lang>uk</v8:lang>
+                      <v8:content>Підключити</v8:content>
+                    </v8:item>
+                  </Title>
+                  <CommandName>Form.Command.ПодключитьКомпоненту</CommandName>
+                  <ExtendedTooltip name="КнопкаПодключитьРасширеннаяПодсказка" />
+                </Button>
+                <Button name="КнопкаИнициализировать" id="9">
+                  <Title>
+                    <v8:item>
+                      <v8:lang>uk</v8:lang>
+                      <v8:content>Ініціалізувати</v8:content>
+                    </v8:item>
+                  </Title>
+                  <CommandName>Form.Command.ИнициализироватьКомпоненту</CommandName>
+                  <ExtendedTooltip name="КнопкаИнициализироватьРасширеннаяПодсказка" />
+                </Button>
+                <Button name="КнопкаЗавершить" id="10">
+                  <Title>
+                    <v8:item>
+                      <v8:lang>uk</v8:lang>
+                      <v8:content>Завершити</v8:content>
+                    </v8:item>
+                  </Title>
+                  <CommandName>Form.Command.ЗавершитьКомпоненту</CommandName>
+                  <ExtendedTooltip name="КнопкаЗавершитьРасширеннаяПодсказка" />
+                </Button>
+              </ChildItems>
+              <ExtendedTooltip name="ГруппаКнопокПодключенияРасширеннаяПодсказка" />
+            </UsualGroup>
+          </ChildItems>
+          <ExtendedTooltip name="СтраницаПодключениеРасширеннаяПодсказка" />
+        </Page>
+        <Page name="СтраницаКлюч" id="11">
+          <Title>
+            <v8:item>
+              <v8:lang>uk</v8:lang>
+              <v8:content>Ключ</v8:content>
+            </v8:item>
+          </Title>
+          <ChildItems>
+            <InputField name="ФайлКлюча" id="12">
+              <DataPath>ФайлКлюча</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Файл ключа / descriptor</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">ФайлКлючаНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="ФайлКлючаКонтекстноеМеню" />
+              <ExtendedTooltip name="ФайлКлючаРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="Пароль" id="13">
+              <DataPath>Пароль</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Пароль контейнера</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="ПарольКонтекстноеМеню" />
+              <ExtendedTooltip name="ПарольРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="ПарольКлюча" id="14">
+              <DataPath>ПарольКлюча</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Пароль ключа</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="ПарольКлючаКонтекстноеМеню" />
+              <ExtendedTooltip name="ПарольКлючаРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="АлиасКлюча" id="15">
+              <DataPath>АлиасКлюча</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Alias</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="АлиасКлючаКонтекстноеМеню" />
+              <ExtendedTooltip name="АлиасКлючаРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="ТипИсточникаКлюча" id="16">
+              <DataPath>ТипИсточникаКлюча</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Тип джерела</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">ТипИсточникаКлючаНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="ТипИсточникаКлючаКонтекстноеМеню" />
+              <ExtendedTooltip name="ТипИсточникаКлючаРасширеннаяПодсказка" />
+            </InputField>
+            <UsualGroup name="ГруппаКнопокКлюча" id="17">
+              <Group>Horizontal</Group>
+              <ChildItems>
+                <Button name="КнопкаЗагрузитьКлюч" id="18">
+                  <Title>
+                    <v8:item>
+                      <v8:lang>uk</v8:lang>
+                      <v8:content>LoadKey</v8:content>
+                    </v8:item>
+                  </Title>
+                  <CommandName>Form.Command.ЗагрузитьКлюч</CommandName>
+                  <ExtendedTooltip name="КнопкаЗагрузитьКлючРасширеннаяПодсказка" />
+                </Button>
+                <Button name="КнопкаСброситьКлюч" id="19">
+                  <Title>
+                    <v8:item>
+                      <v8:lang>uk</v8:lang>
+                      <v8:content>ResetKey</v8:content>
+                    </v8:item>
+                  </Title>
+                  <CommandName>Form.Command.СброситьКлюч</CommandName>
+                  <ExtendedTooltip name="КнопкаСброситьКлючРасширеннаяПодсказка" />
+                </Button>
+              </ChildItems>
+              <ExtendedTooltip name="ГруппаКнопокКлючаРасширеннаяПодсказка" />
+            </UsualGroup>
+          </ChildItems>
+          <ExtendedTooltip name="СтраницаКлючРасширеннаяПодсказка" />
+        </Page>
+        <Page name="СтраницаДанные" id="20">
+          <Title>
+            <v8:item>
+              <v8:lang>uk</v8:lang>
+              <v8:content>Дані</v8:content>
+            </v8:item>
+          </Title>
+          <ChildItems>
+            <MemoField name="ТекстДанных" id="21">
+              <DataPath>ТекстДанных</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Текст для підпису</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="ТекстДанныхКонтекстноеМеню" />
+              <ExtendedTooltip name="ТекстДанныхРасширеннаяПодсказка" />
+            </MemoField>
+            <InputField name="ФорматПодписиДанных" id="22">
+              <DataPath>ФорматПодписиДанных</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Формат</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">ФорматПодписиДанныхНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="ФорматПодписиДанныхКонтекстноеМеню" />
+              <ExtendedTooltip name="ФорматПодписиДанныхРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="КодированиеРезультатаДанных" id="23">
+              <DataPath>КодированиеРезультатаДанных</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Кодування результату</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">КодированиеРезультатаДанныхНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="КодированиеРезультатаДанныхКонтекстноеМеню" />
+              <ExtendedTooltip name="КодированиеРезультатаДанныхРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="КодированиеСодержимого" id="24">
+              <DataPath>КодированиеСодержимого</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Вміст attached</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">КодированиеСодержимогоНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="КодированиеСодержимогоКонтекстноеМеню" />
+              <ExtendedTooltip name="КодированиеСодержимогоРасширеннаяПодсказка" />
+            </InputField>
+            <MemoField name="ПодписьBase64" id="25">
+              <DataPath>ПодписьBase64</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Підпис Base64 / текстовий результат</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="ПодписьBase64КонтекстноеМеню" />
+              <ExtendedTooltip name="ПодписьBase64РасширеннаяПодсказка" />
+            </MemoField>
+            <UsualGroup name="ГруппаКнопокДанных" id="26">
+              <Group>Horizontal</Group>
+              <ChildItems>
+                <Button name="КнопкаSignData" id="27">
+                  <Title>
+                    <v8:item>
+                      <v8:lang>uk</v8:lang>
+                      <v8:content>SignData</v8:content>
+                    </v8:item>
+                  </Title>
+                  <CommandName>Form.Command.SignData</CommandName>
+                  <ExtendedTooltip name="КнопкаSignDataРасширеннаяПодсказка" />
+                </Button>
+                <Button name="КнопкаVerifyData" id="28">
+                  <Title>
+                    <v8:item>
+                      <v8:lang>uk</v8:lang>
+                      <v8:content>VerifyData</v8:content>
+                    </v8:item>
+                  </Title>
+                  <CommandName>Form.Command.VerifyData</CommandName>
+                  <ExtendedTooltip name="КнопкаVerifyDataРасширеннаяПодсказка" />
+                </Button>
+              </ChildItems>
+              <ExtendedTooltip name="ГруппаКнопокДанныхРасширеннаяПодсказка" />
+            </UsualGroup>
+          </ChildItems>
+          <ExtendedTooltip name="СтраницаДанныеРасширеннаяПодсказка" />
+        </Page>
+        <Page name="СтраницаФайлы" id="29">
+          <Title>
+            <v8:item>
+              <v8:lang>uk</v8:lang>
+              <v8:content>Файли</v8:content>
+            </v8:item>
+          </Title>
+          <ChildItems>
+            <InputField name="ФайлДокумента" id="30">
+              <DataPath>ФайлДокумента</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Документ</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">ФайлДокументаНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="ФайлДокументаКонтекстноеМеню" />
+              <ExtendedTooltip name="ФайлДокументаРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="ФайлПодписи" id="31">
+              <DataPath>ФайлПодписи</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Файл підпису / результат</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">ФайлПодписиНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="ФайлПодписиКонтекстноеМеню" />
+              <ExtendedTooltip name="ФайлПодписиРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="ФорматПодписиФайла" id="32">
+              <DataPath>ФорматПодписиФайла</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Формат</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">ФорматПодписиФайлаНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="ФорматПодписиФайлаКонтекстноеМеню" />
+              <ExtendedTooltip name="ФорматПодписиФайлаРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="КодированиеФайла" id="33">
+              <DataPath>КодированиеФайла</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Кодування</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">КодированиеФайлаНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="КодированиеФайлаКонтекстноеМеню" />
+              <ExtendedTooltip name="КодированиеФайлаРасширеннаяПодсказка" />
+            </InputField>
+            <UsualGroup name="ГруппаКнопокФайла" id="34">
+              <Group>Horizontal</Group>
+              <ChildItems>
+                <Button name="КнопкаSignFile" id="35">
+                  <Title>
+                    <v8:item>
+                      <v8:lang>uk</v8:lang>
+                      <v8:content>SignFile</v8:content>
+                    </v8:item>
+                  </Title>
+                  <CommandName>Form.Command.SignFile</CommandName>
+                  <ExtendedTooltip name="КнопкаSignFileРасширеннаяПодсказка" />
+                </Button>
+                <Button name="КнопкаVerifyFile" id="36">
+                  <Title>
+                    <v8:item>
+                      <v8:lang>uk</v8:lang>
+                      <v8:content>VerifyFile</v8:content>
+                    </v8:item>
+                  </Title>
+                  <CommandName>Form.Command.VerifyFile</CommandName>
+                  <ExtendedTooltip name="КнопкаVerifyFileРасширеннаяПодсказка" />
+                </Button>
+              </ChildItems>
+              <ExtendedTooltip name="ГруппаКнопокФайлаРасширеннаяПодсказка" />
+            </UsualGroup>
+          </ChildItems>
+          <ExtendedTooltip name="СтраницаФайлыРасширеннаяПодсказка" />
+        </Page>
+        <Page name="СтраницаASiC" id="37">
+          <Title>
+            <v8:item>
+              <v8:lang>uk</v8:lang>
+              <v8:content>ASiC</v8:content>
+            </v8:item>
+          </Title>
+          <ChildItems>
+            <InputField name="ФайлASiCДокумента" id="38">
+              <DataPath>ФайлASiCДокумента</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Документ для ASiC</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">ФайлASiCДокументаНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="ФайлASiCДокументаКонтекстноеМеню" />
+              <ExtendedTooltip name="ФайлASiCДокументаРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="ФайлASiCКонтейнера" id="39">
+              <DataPath>ФайлASiCКонтейнера</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>ASiC контейнер</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">ФайлASiCКонтейнераНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="ФайлASiCКонтейнераКонтекстноеМеню" />
+              <ExtendedTooltip name="ФайлASiCКонтейнераРасширеннаяПодсказка" />
+            </InputField>
+            <InputField name="ТипASiC" id="40">
+              <DataPath>ТипASiC</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Тип ASiC</v8:content>
+                </v8:item>
+              </Title>
+              <Events>
+                <Event name="StartChoice">ТипASiCНачалоВыбора</Event>
+              </Events>
+              <ContextMenu name="ТипASiCКонтекстноеМеню" />
+              <ExtendedTooltip name="ТипASiCРасширеннаяПодсказка" />
+            </InputField>
+            <UsualGroup name="ГруппаКнопокASiC" id="41">
+              <Group>Horizontal</Group>
+              <ChildItems>
+                <Button name="КнопкаSignASiC" id="42">
+                  <Title>
+                    <v8:item>
+                      <v8:lang>uk</v8:lang>
+                      <v8:content>SignFile ASiC</v8:content>
+                    </v8:item>
+                  </Title>
+                  <CommandName>Form.Command.SignASiC</CommandName>
+                  <ExtendedTooltip name="КнопкаSignASiCРасширеннаяПодсказка" />
+                </Button>
+                <Button name="КнопкаVerifyASiC" id="43">
+                  <Title>
+                    <v8:item>
+                      <v8:lang>uk</v8:lang>
+                      <v8:content>VerifyFile ASiC</v8:content>
+                    </v8:item>
+                  </Title>
+                  <CommandName>Form.Command.VerifyASiC</CommandName>
+                  <ExtendedTooltip name="КнопкаVerifyASiCРасширеннаяПодсказка" />
+                </Button>
+              </ChildItems>
+              <ExtendedTooltip name="ГруппаКнопокASiCРасширеннаяПодсказка" />
+            </UsualGroup>
+          </ChildItems>
+          <ExtendedTooltip name="СтраницаASiCРасширеннаяПодсказка" />
+        </Page>
+        <Page name="СтраницаОтчет" id="44">
+          <Title>
+            <v8:item>
+              <v8:lang>uk</v8:lang>
+              <v8:content>Звіт</v8:content>
+            </v8:item>
+          </Title>
+          <ChildItems>
+            <InputField name="ПоследняяОшибка" id="45">
+              <DataPath>ПоследняяОшибка</DataPath>
+              <ReadOnly>true</ReadOnly>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Остання помилка</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="ПоследняяОшибкаКонтекстноеМеню" />
+              <ExtendedTooltip name="ПоследняяОшибкаРасширеннаяПодсказка" />
+            </InputField>
+            <MemoField name="ПоследнийОтчет" id="46">
+              <DataPath>ПоследнийОтчет</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>GetReport()</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="ПоследнийОтчетКонтекстноеМеню" />
+              <ExtendedTooltip name="ПоследнийОтчетРасширеннаяПодсказка" />
+            </MemoField>
+            <MemoField name="Журнал" id="47">
+              <DataPath>Журнал</DataPath>
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Журнал</v8:content>
+                </v8:item>
+              </Title>
+              <ContextMenu name="ЖурналКонтекстноеМеню" />
+              <ExtendedTooltip name="ЖурналРасширеннаяПодсказка" />
+            </MemoField>
+            <Button name="КнопкаОбновитьОтчет" id="48">
+              <Title>
+                <v8:item>
+                  <v8:lang>uk</v8:lang>
+                  <v8:content>Оновити звіт</v8:content>
+                </v8:item>
+              </Title>
+              <CommandName>Form.Command.ОбновитьОтчет</CommandName>
+              <ExtendedTooltip name="КнопкаОбновитьОтчетРасширеннаяПодсказка" />
+            </Button>
+          </ChildItems>
+          <ExtendedTooltip name="СтраницаОтчетРасширеннаяПодсказка" />
+        </Page>
+      </ChildItems>
+      <ExtendedTooltip name="ВкладкиРасширеннаяПодсказка" />
+    </Pages>
+  </ChildItems>
+  <Attributes>
+    <Attribute name="ИспользоватьАсинхронноеПодключение" id="1">
+      <Type>
+        <v8:Type>xs:boolean</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="РежимОфлайн" id="2">
+      <Type>
+        <v8:Type>xs:boolean</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="РабочийКаталог" id="3">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="СостояниеКомпоненты" id="4">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ФайлКлюча" id="5">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="Пароль" id="6">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ПарольКлюча" id="7">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="АлиасКлюча" id="8">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ТипИсточникаКлюча" id="9">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="TSP_URL" id="10">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="TSP_Policy" id="11">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="OCSP_URL" id="12">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="LDAP_URL" id="13">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="LDAP_BaseDn" id="14">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="CMP_URL" id="15">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="CMP_Profile" id="16">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ТекстДанных" id="17">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ПодписьBase64" id="18">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ФорматПодписиДанных" id="19">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="КодированиеРезультатаДанных" id="20">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="КодированиеСодержимого" id="21">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ФайлДокумента" id="22">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ФайлПодписи" id="23">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ФорматПодписиФайла" id="24">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="КодированиеФайла" id="25">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ФайлASiCДокумента" id="26">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ФайлASiCКонтейнера" id="27">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ТипASiC" id="28">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ПоследняяОшибка" id="29">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="ПоследнийОтчет" id="30">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+    <Attribute name="Журнал" id="31">
+      <Type>
+        <v8:Type>xs:string</v8:Type>
+      </Type>
+    </Attribute>
+  </Attributes>
+  <Commands>
+    <Command name="ПодключитьКомпоненту" id="1">
+      <Title>
+        <v8:item>
+          <v8:lang>uk</v8:lang>
+          <v8:content>Підключити</v8:content>
+        </v8:item>
+      </Title>
+      <Action>ПодключитьКомпоненту</Action>
+    </Command>
+    <Command name="ИнициализироватьКомпоненту" id="2">
+      <Title>
+        <v8:item>
+          <v8:lang>uk</v8:lang>
+          <v8:content>Ініціалізувати</v8:content>
+        </v8:item>
+      </Title>
+      <Action>ИнициализироватьКомпоненту</Action>
+    </Command>
+    <Command name="ЗавершитьКомпоненту" id="3">
+      <Title>
+        <v8:item>
+          <v8:lang>uk</v8:lang>
+          <v8:content>Завершити</v8:content>
+        </v8:item>
+      </Title>
+      <Action>ЗавершитьКомпоненту</Action>
+    </Command>
+    <Command name="ЗагрузитьКлюч" id="4">
+      <Title>
+        <v8:item>
+          <v8:lang>uk</v8:lang>
+          <v8:content>LoadKey</v8:content>
+        </v8:item>
+      </Title>
+      <Action>ЗагрузитьКлюч</Action>
+    </Command>
+    <Command name="СброситьКлюч" id="5">
+      <Title>
+        <v8:item>
+          <v8:lang>uk</v8:lang>
+          <v8:content>ResetKey</v8:content>
+        </v8:item>
+      </Title>
+      <Action>СброситьКлюч</Action>
+    </Command>
+    <Command name="SignData" id="6">
+      <Title>
+        <v8:item>
+          <v8:lang>uk</v8:lang>
+          <v8:content>SignData</v8:content>
+        </v8:item>
+      </Title>
+      <Action>SignDataFromForm</Action>
+    </Command>
+    <Command name="VerifyData" id="7">
+      <Title>
+        <v8:item>
+          <v8:lang>uk</v8:lang>
+          <v8:content>VerifyData</v8:content>
+        </v8:item>
+      </Title>
+      <Action>VerifyDataFromForm</Action>
+    </Command>
+    <Command name="SignFile" id="8">
+      <Title>
+        <v8:item>
+          <v8:lang>uk</v8:lang>
+          <v8:content>SignFile</v8:content>
+        </v8:item>
+      </Title>
+      <Action>SignFileFromForm</Action>
+    </Command>
+    <Command name="VerifyFile" id="9">
+      <Title>
+        <v8:item>
+          <v8:lang>uk</v8:lang>
+          <v8:content>VerifyFile</v8:content>
+        </v8:item>
+      </Title>
+      <Action>VerifyFileFromForm</Action>
+    </Command>
+    <Command name="SignASiC" id="10">
+      <Title>
+        <v8:item>
+          <v8:lang>uk</v8:lang>
+          <v8:content>SignFile ASiC</v8:content>
+        </v8:item>
+      </Title>
+      <Action>SignASiCFromForm</Action>
+    </Command>
+    <Command name="VerifyASiC" id="11">
+      <Title>
+        <v8:item>
+          <v8:lang>uk</v8:lang>
+          <v8:content>VerifyFile ASiC</v8:content>
+        </v8:item>
+      </Title>
+      <Action>VerifyASiCFromForm</Action>
+    </Command>
+    <Command name="ОбновитьОтчет" id="12">
+      <Title>
+        <v8:item>
+          <v8:lang>uk</v8:lang>
+          <v8:content>Оновити звіт</v8:content>
+        </v8:item>
+      </Title>
+      <Action>ОбновитьОтчет</Action>
+    </Command>
+  </Commands>
+</Form>

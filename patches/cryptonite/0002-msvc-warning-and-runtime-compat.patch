@@ -1,0 +1,55 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 5f48c5f..9171ace 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ cmake_minimum_required(VERSION 3.5)
+-project(cryptonite-main)
++project(cryptonite-main LANGUAGES C CXX)
+ 
+ if(CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
+     set(CRYPTONITE_STANDALONE_DEFAULT ON)
+@@ -18,9 +18,24 @@ add_definitions(-DCRYPTONITE_EXPORT=extern)
+ #################################################################################
+ # Flags
+ #################################################################################
++set(CMAKE_C_STANDARD 99)
++set(CMAKE_C_STANDARD_REQUIRED ON)
++set(CMAKE_C_EXTENSIONS OFF)
+ set(CMAKE_CXX_STANDARD 11)
++set(CMAKE_CXX_STANDARD_REQUIRED ON)
++set(CMAKE_CXX_EXTENSIONS OFF)
+ 
+-add_compile_options(-Werror -Wall)
++option(CRYPTONITE_STRICT_WARNINGS "Treat compiler warnings as errors" ${CRYPTONITE_STANDALONE_DEFAULT})
++
++if(MSVC)
++    add_compile_options(/W4)
++    add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
++else()
++    add_compile_options(-Wall)
++    if(CRYPTONITE_STRICT_WARNINGS)
++        add_compile_options(-Werror)
++    endif()
++endif()
+ 
+ #set(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} -m32")
+ #set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g2 ")
+diff --git a/src/asn1/CMakeLists.txt b/src/asn1/CMakeLists.txt
+index 405a0d1..30f6baa 100644
+--- a/src/asn1/CMakeLists.txt
++++ b/src/asn1/CMakeLists.txt
+@@ -3,10 +3,10 @@ project(asn1)
+ 
+ file(GLOB SOURCE c/*.c)
+ 
+-if(CMAKE_BUILD_TYPE STREQUAL Release)
++if(CMAKE_BUILD_TYPE STREQUAL Release AND NOT MSVC)
+     add_compile_options(-Wno-maybe-uninitialized)
+ endif()
+ 
+ add_library(asn1 STATIC ${SOURCE})
+ target_link_libraries(asn1 cryptonite m)
+-target_include_directories(asn1 PUBLIC c)
+\ No newline at end of file
++target_include_directories(asn1 PUBLIC c)

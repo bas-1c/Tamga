@@ -1,0 +1,392 @@
+warning: in the working copy of 'vendor/cryptonite/src/pkix/c/api/oids.c', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'vendor/cryptonite/src/pkix/c/api/oids.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c', LF will be replaced by CRLF the next time Git touches it
+diff --git a/vendor/cryptonite/src/pkix/c/api/oids.c b/vendor/cryptonite/src/pkix/c/api/oids.c
+index 0242f56..7315d2c 100644
+--- a/vendor/cryptonite/src/pkix/c/api/oids.c
++++ b/vendor/cryptonite/src/pkix/c/api/oids.c
+@@ -86,6 +86,13 @@ CREATE_OID_VARS(OID_ECDSA_SECP_384_R1, {1, 3, 132, 0, 34});
+ CREATE_OID_VARS(OID_ECDSA_SECP_521_R1, {1, 3, 132, 0, 35});
+ CREATE_OID_VARS(OID_ECDSA_SECP_256_K1, {1, 3, 132, 0, 10});
+ 
++/* RSA params. */
++CREATE_OID_VARS(OID_RSA_ENCRYPTION, {1, 2, 840, 113549, 1, 1, 1});
++CREATE_OID_VARS(OID_SHA1_WITH_RSA_ENCRYPTION, {1, 2, 840, 113549, 1, 1, 5});
++CREATE_OID_VARS(OID_SHA256_WITH_RSA_ENCRYPTION, {1, 2, 840, 113549, 1, 1, 11});
++CREATE_OID_VARS(OID_SHA384_WITH_RSA_ENCRYPTION, {1, 2, 840, 113549, 1, 1, 12});
++CREATE_OID_VARS(OID_SHA512_WITH_RSA_ENCRYPTION, {1, 2, 840, 113549, 1, 1, 13});
++
+ /* PBE Params*/
+ CREATE_OID_VARS(OID_PBE_WITH_SHA1_TDES_CBC, {1, 2, 840, 113549, 1, 12, 1, 3});
+ 
+@@ -461,6 +468,11 @@ const OidNumbers *oids_get_oid_numbers_by_id(OidId oid_id)
+         CASE_GET_OID_ST(OID_ECDSA_SECP_384_R1);
+         CASE_GET_OID_ST(OID_ECDSA_SECP_521_R1);
+         CASE_GET_OID_ST(OID_ECDSA_SECP_256_K1);
++        CASE_GET_OID_ST(OID_RSA_ENCRYPTION);
++        CASE_GET_OID_ST(OID_SHA1_WITH_RSA_ENCRYPTION);
++        CASE_GET_OID_ST(OID_SHA256_WITH_RSA_ENCRYPTION);
++        CASE_GET_OID_ST(OID_SHA384_WITH_RSA_ENCRYPTION);
++        CASE_GET_OID_ST(OID_SHA512_WITH_RSA_ENCRYPTION);
+         CASE_GET_OID_ST(OID_AES256_CBC);
+         CASE_GET_OID_ST(OID_DES_EDE3_CBC);
+         CASE_GET_OID_ST(OID_PKI_HMAC_SHA1);
+diff --git a/vendor/cryptonite/src/pkix/c/api/oids.h b/vendor/cryptonite/src/pkix/c/api/oids.h
+index fa6cb62..708885f 100644
+--- a/vendor/cryptonite/src/pkix/c/api/oids.h
++++ b/vendor/cryptonite/src/pkix/c/api/oids.h
+@@ -184,6 +184,11 @@ typedef enum OidId_st {
+     OID_PKI_DSTU4145_WITH_DSTU7564_ID                       = 162,    /* 1.2.804.2.1.1.1.1.3.6 */
+     OID_PKI_DSTU4145_DSTU7564_PB_LE_ID                      = 163,    /* 1.2.804.2.1.1.1.1.3.6.1.1 */
+     OID_PKI_DSTU4145_DSTU7564_PB_BE_ID                      = 164,    /* 1.2.804.2.1.1.1.1.3.6.1.1.1 */
++    OID_RSA_ENCRYPTION_ID                                   = 165,    /* 1.2.840.113549.1.1.1 */
++    OID_SHA1_WITH_RSA_ENCRYPTION_ID                         = 166,    /* 1.2.840.113549.1.1.5 */
++    OID_SHA256_WITH_RSA_ENCRYPTION_ID                       = 167,    /* 1.2.840.113549.1.1.11 */
++    OID_SHA384_WITH_RSA_ENCRYPTION_ID                       = 168,    /* 1.2.840.113549.1.1.12 */
++    OID_SHA512_WITH_RSA_ENCRYPTION_ID                       = 169,    /* 1.2.840.113549.1.1.13 */
+ } OidId;
+ 
+ typedef struct OidNumbers_st {
+diff --git a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+index 8a3f651..233627a 100644
+--- a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
++++ b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+@@ -22,6 +22,7 @@
+ #include "aid.h"
+ #include "spki.h"
+ #include "paddings.h"
++#include "rsa.h"
+ 
+ #define SBOX_SIZE           128
+ #define DSTU4145_KEY_SIZE   64
+@@ -87,9 +88,134 @@ typedef struct CryptoniteDhParams_st {
+ typedef enum SignAlgId_st {
+     DSTU4145,
+     ECDSA,
++    RSA_PKCS1,
+     WRONG_ID
+ } SignAlgId;
+ 
++static bool is_rsa_signature_oid(const OBJECT_IDENTIFIER_t *oid)
++{
++    return pkix_check_oid_equal(oid, oids_get_oid_numbers_by_id(OID_SHA1_WITH_RSA_ENCRYPTION_ID)) ||
++            pkix_check_oid_equal(oid, oids_get_oid_numbers_by_id(OID_SHA256_WITH_RSA_ENCRYPTION_ID)) ||
++            pkix_check_oid_equal(oid, oids_get_oid_numbers_by_id(OID_SHA384_WITH_RSA_ENCRYPTION_ID)) ||
++            pkix_check_oid_equal(oid, oids_get_oid_numbers_by_id(OID_SHA512_WITH_RSA_ENCRYPTION_ID));
++}
++
++static bool der_read_length(const uint8_t *der, size_t der_len, size_t *offset, size_t *value_len)
++{
++    size_t count;
++    size_t len = 0;
++    size_t i;
++
++    if (*offset >= der_len) {
++        return false;
++    }
++    count = der[(*offset)++];
++    if ((count & 0x80) == 0) {
++        *value_len = count;
++        return true;
++    }
++    count &= 0x7f;
++    if (count == 0 || count > sizeof(size_t) || count > der_len - *offset) {
++        return false;
++    }
++    for (i = 0; i < count; i++) {
++        if (len > (SIZE_MAX >> 8)) {
++            return false;
++        }
++        len = (len << 8) | der[(*offset)++];
++    }
++    *value_len = len;
++    return true;
++}
++
++static bool der_read_positive_integer_le(const uint8_t *der, size_t der_len, size_t sequence_end,
++        size_t *offset, ByteArray **value)
++{
++    size_t len;
++    size_t end;
++
++    if (*offset >= sequence_end || der[(*offset)++] != 0x02 ||
++            !der_read_length(der, der_len, offset, &len) || len == 0 || len > sequence_end - *offset) {
++        return false;
++    }
++    end = *offset + len;
++    if ((der[*offset] & 0x80) != 0) {
++        return false;
++    }
++    while (*offset + 1 < end && der[*offset] == 0) {
++        (*offset)++;
++    }
++    *value = ba_alloc_from_uint8(der + *offset, end - *offset);
++    if (*value == NULL || ba_swap(*value) != RET_OK) {
++        ba_free(*value);
++        *value = NULL;
++        return false;
++    }
++    *offset = end;
++    return true;
++}
++
++static int rsa_public_key_from_bit_string(const BIT_STRING_t *public_key, ByteArray **n, ByteArray **e)
++{
++    int ret = RET_OK;
++    ByteArray *encoded = NULL;
++    const uint8_t *der;
++    size_t der_len;
++    size_t offset = 0;
++    size_t sequence_len;
++    size_t sequence_end;
++
++    CHECK_PARAM(public_key != NULL);
++    CHECK_PARAM(n != NULL);
++    CHECK_PARAM(e != NULL);
++
++    DO(asn_BITSTRING2ba(public_key, &encoded));
++    der = ba_get_buf(encoded);
++    der_len = ba_get_len(encoded);
++    if (der_len == 0 || der[offset++] != 0x30 ||
++            !der_read_length(der, der_len, &offset, &sequence_len) || sequence_len != der_len - offset) {
++        SET_ERROR(RET_PKIX_UNSUPPORTED_SPKI_ALG);
++    }
++    sequence_end = offset + sequence_len;
++    if (!der_read_positive_integer_le(der, der_len, sequence_end, &offset, n) ||
++            !der_read_positive_integer_le(der, der_len, sequence_end, &offset, e) || offset != sequence_end) {
++        SET_ERROR(RET_PKIX_UNSUPPORTED_SPKI_ALG);
++    }
++
++cleanup:
++    ba_free(encoded);
++    if (ret != RET_OK) {
++        ba_free(*n);
++        ba_free(*e);
++        *n = NULL;
++        *e = NULL;
++    }
++    return ret;
++}
++
++static int rsa_hash_type_by_aid(const AlgorithmIdentifier_t *aid, RsaHashType *hash_type)
++{
++    int ret = RET_OK;
++
++    CHECK_PARAM(aid != NULL);
++    CHECK_PARAM(hash_type != NULL);
++
++    if (pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA1_ID))) {
++        *hash_type = RSA_HASH_SHA1;
++    } else if (pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA256_ID))) {
++        *hash_type = RSA_HASH_SHA256;
++    } else if (pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA384_ID))) {
++        *hash_type = RSA_HASH_SHA384;
++    } else if (pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA512_ID))) {
++        *hash_type = RSA_HASH_SHA512;
++    } else {
++        SET_ERROR(RET_PKIX_UNSUPPORTED_DIGEST_ALG);
++    }
++
++cleanup:
++    return ret;
++}
++
+ /**
+  * Структура для хранения глобальных параметров механизма подписи и ее проверки.
+  */
+@@ -473,7 +599,8 @@ int digest_adapter_init_by_aid(const AlgorithmIdentifier_t *aid, DigestAdapter *
+         digest_parameters_str->mode_id = DIGEST_MODE_GOST34311;
+         CHECK_NOT_NULL(digest_parameters_str->mode.gost = gost34_311_alloc_user_sbox(sbox, sync));
+     } else if (pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA1_ID))
+-            || pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_ECDSA_WITH_SHA1_ID))) {
++            || pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_ECDSA_WITH_SHA1_ID))
++            || pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_SHA1_WITH_RSA_ENCRYPTION_ID))) {
+         digest_parameters_str->mode_id = DIGEST_MODE_SHA1;
+         CHECK_NOT_NULL(digest_parameters_str->mode.sha1 = sha1_alloc());
+         ASN_ALLOC(digest_parameters_str->digest_aid);
+@@ -485,19 +612,22 @@ int digest_adapter_init_by_aid(const AlgorithmIdentifier_t *aid, DigestAdapter *
+         ASN_ALLOC(digest_parameters_str->digest_aid);
+         DO(pkix_set_oid(oids_get_oid_numbers_by_id(OID_PKI_SHA224_ID), &digest_parameters_str->digest_aid->algorithm));
+     } else if (pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_ECDSA_WITH_SHA256_ID))
+-            || pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA256_ID))) {
++            || pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA256_ID))
++            || pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_SHA256_WITH_RSA_ENCRYPTION_ID))) {
+         digest_parameters_str->mode_id = DIGEST_MODE_SHA2;
+         CHECK_NOT_NULL(digest_parameters_str->mode.sha2 = sha2_alloc(SHA2_VARIANT_256));
+         ASN_ALLOC(digest_parameters_str->digest_aid);
+         DO(pkix_set_oid(oids_get_oid_numbers_by_id(OID_PKI_SHA256_ID), &digest_parameters_str->digest_aid->algorithm));
+     } else if (pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_ECDSA_WITH_SHA384_ID))
+-            || pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA384_ID))) {
++            || pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA384_ID))
++            || pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_SHA384_WITH_RSA_ENCRYPTION_ID))) {
+         digest_parameters_str->mode_id = DIGEST_MODE_SHA2;
+         CHECK_NOT_NULL(digest_parameters_str->mode.sha2 = sha2_alloc(SHA2_VARIANT_384));
+         ASN_ALLOC(digest_parameters_str->digest_aid);
+         DO(pkix_set_oid(oids_get_oid_numbers_by_id(OID_PKI_SHA384_ID), &digest_parameters_str->digest_aid->algorithm));
+     } else if (pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_ECDSA_WITH_SHA512_ID))
+-            || pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA512_ID))) {
++            || pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA512_ID))
++            || pkix_check_oid_equal(&aid->algorithm, oids_get_oid_numbers_by_id(OID_SHA512_WITH_RSA_ENCRYPTION_ID))) {
+         digest_parameters_str->mode_id = DIGEST_MODE_SHA2;
+         CHECK_NOT_NULL(digest_parameters_str->mode.sha2 = sha2_alloc(SHA2_VARIANT_512));
+         ASN_ALLOC(digest_parameters_str->digest_aid);
+@@ -556,6 +686,8 @@ int digest_adapter_init_by_cert(const Certificate_t *cert, DigestAdapter **da)
+                pkix_check_oid_equal(&cert->signatureAlgorithm.algorithm, oids_get_oid_numbers_by_id(OID_ECDSA_WITH_SHA512_ID)) ||
+                pkix_check_oid_equal(&cert->signatureAlgorithm.algorithm, oids_get_oid_numbers_by_id(OID_ECDSA_WITH_SHA1_ID))) {
+         DO(digest_adapter_init_by_aid(&cert->signatureAlgorithm, da));
++    } else if (is_rsa_signature_oid(&cert->signatureAlgorithm.algorithm)) {
++        DO(digest_adapter_init_by_aid(&cert->signatureAlgorithm, da));
+     } else {
+         SET_ERROR(RET_PKIX_UNSUPPORTED_OID);
+     }
+@@ -967,6 +1099,11 @@ static int cryptonite_sign_params_asn_init(CryptoniteSignParams *sign_parameters
+         ASN_FREE(&ECParameters_desc, sign_parameters_str->asn_ec_params);
+         sign_parameters_str->asn_ec_params = params_buf;
+ 
++    } else if (is_rsa_signature_oid(&sign_parameters_str->signature_aid->algorithm) &&
++            pkix_check_oid_equal(&sign_parameters_str->params_aid->algorithm,
++                    oids_get_oid_numbers_by_id(OID_RSA_ENCRYPTION_ID))) {
++        sign_parameters_str->alg_marker = RSA_PKCS1;
++
+     } else {
+         sign_parameters_str->alg_marker = WRONG_ID;
+         SET_ERROR(RET_PKIX_UNSUPPORTED_SIGN_ALG);
+@@ -1063,6 +1200,8 @@ static int cryptonite_sign_params_init(CryptoniteSignParams *sign_parameters_str
+         CHECK_NOT_NULL(seed = ba_alloc_by_len(40));
+         DO(rs_std_next_bytes(seed));
+         CHECK_NOT_NULL(sign_parameters_str->prng_ctx = prng_alloc(PRNG_MODE_DEFAULT, seed));
++    } else if (sign_parameters_str->alg_marker == RSA_PKCS1) {
++        /* RSA verify initializes a short-lived primitive context from SPKI n/e. */
+     } else {
+         LOG_ERROR();
+         SET_ERROR(RET_PKIX_INVALID_CTX_MODE);
+@@ -1254,6 +1393,11 @@ static int va_verify_hash(const VerifyAdapter *va, const ByteArray *hash, const
+     ByteArray *s = NULL;
+     ByteArray *qx = NULL;
+     ByteArray *qy = NULL;
++    ByteArray *rsa_n = NULL;
++    ByteArray *rsa_e = NULL;
++    ByteArray *rsa_sign = NULL;
++    RsaCtx *rsa_ctx = NULL;
++    RsaHashType rsa_hash_type = RSA_HASH_SHA256;
+ 
+     LOG_ENTRY();
+ 
+@@ -1319,6 +1463,15 @@ static int va_verify_hash(const VerifyAdapter *va, const ByteArray *hash, const
+         DO(ecdsa_init_verify(sign_parameters_str->alg_type.ecdsa, qx, qy));
+         DO(ecdsa_verify(sign_parameters_str->alg_type.ecdsa, hash, r, s));
+ 
++    } else if (sign_parameters_str->alg_marker == RSA_PKCS1) {
++        DO(rsa_public_key_from_bit_string(sign_parameters_str->public_key, &rsa_n, &rsa_e));
++        DO(rsa_hash_type_by_aid(sign_parameters_str->digest_aid, &rsa_hash_type));
++        CHECK_NOT_NULL(rsa_sign = ba_copy_with_alloc(sign, 0, 0));
++        DO(ba_swap(rsa_sign));
++        CHECK_NOT_NULL(rsa_ctx = rsa_alloc());
++        DO(rsa_init_verify_pkcs1_v1_5(rsa_ctx, rsa_hash_type, rsa_n, rsa_e));
++        DO(rsa_verify_pkcs1_v1_5(rsa_ctx, hash, rsa_sign));
++
+     } else {
+         SET_ERROR(RET_PKIX_INVALID_CTX_MODE);
+     }
+@@ -1332,6 +1485,10 @@ cleanup:
+     ba_free(s);
+     ba_free(qx);
+     ba_free(qy);
++    ba_free(rsa_n);
++    ba_free(rsa_e);
++    ba_free(rsa_sign);
++    rsa_free(rsa_ctx);
+ 
+     ba_free(compressed_buffer);
+ 
+@@ -1396,7 +1553,8 @@ static int va_verify_data(const VerifyAdapter *va, const ByteArray *data, const
+             DO(gost34_311_final(digest_ctx, &hash));
+         }
+ 
+-    } else if (sign_parameters_str->alg_marker == ECDSA) {
++    } else if (sign_parameters_str->alg_marker == ECDSA ||
++            sign_parameters_str->alg_marker == RSA_PKCS1) {
+         if (pkix_check_oid_equal(&sign_parameters_str->digest_aid->algorithm, oids_get_oid_numbers_by_id(OID_PKI_SHA224_ID))) {
+             CHECK_NOT_NULL(sha2_ctx = sha2_alloc(SHA2_VARIANT_224));
+         } else if (pkix_check_oid_equal(&sign_parameters_str->digest_aid->algorithm,
+@@ -1799,6 +1957,11 @@ static int va_set_digest_alg(VerifyAdapter *va, const DigestAlgorithmIdentifier_
+             if (hash_checker != OID_PKI_GOST3411_ID && hash_checker != OID_PKI_DSTU7564_256_ID) {
+                 SET_ERROR(RET_PKIX_UNSUPPORTED_DIGEST_ALG);
+             }
++        } else if (is_rsa_signature_oid(&sign_params->signature_aid->algorithm)) {
++            if (hash_checker != OID_PKI_SHA1_ID && hash_checker != OID_PKI_SHA256_ID &&
++                    hash_checker != OID_PKI_SHA384_ID && hash_checker != OID_PKI_SHA512_ID) {
++                SET_ERROR(RET_PKIX_UNSUPPORTED_DIGEST_ALG);
++            }
+         } else {
+             SET_ERROR(RET_PKIX_UNSUPPORTED_SIGN_ALG);
+         }
+@@ -2263,6 +2426,14 @@ static __inline int check_signature_alg_params(const OBJECT_IDENTIFIER_t *sign_a
+         sa_aid = OID_ECDSA_WITH_SHA384_ID;
+     } else if (pkix_check_oid_parent(sign_alg, oids_get_oid_numbers_by_id(OID_ECDSA_WITH_SHA512_ID))) {
+         sa_aid = OID_ECDSA_WITH_SHA512_ID;
++    } else if (pkix_check_oid_equal(sign_alg, oids_get_oid_numbers_by_id(OID_SHA1_WITH_RSA_ENCRYPTION_ID))) {
++        sa_aid = OID_SHA1_WITH_RSA_ENCRYPTION_ID;
++    } else if (pkix_check_oid_equal(sign_alg, oids_get_oid_numbers_by_id(OID_SHA256_WITH_RSA_ENCRYPTION_ID))) {
++        sa_aid = OID_SHA256_WITH_RSA_ENCRYPTION_ID;
++    } else if (pkix_check_oid_equal(sign_alg, oids_get_oid_numbers_by_id(OID_SHA384_WITH_RSA_ENCRYPTION_ID))) {
++        sa_aid = OID_SHA384_WITH_RSA_ENCRYPTION_ID;
++    } else if (pkix_check_oid_equal(sign_alg, oids_get_oid_numbers_by_id(OID_SHA512_WITH_RSA_ENCRYPTION_ID))) {
++        sa_aid = OID_SHA512_WITH_RSA_ENCRYPTION_ID;
+     } else {
+         SET_ERROR(RET_PKIX_UNSUPPORTED_SIGN_ALG);
+     }
+@@ -2314,6 +2485,26 @@ static __inline int create_digest_aid_by_oid(const OidId id, SignAlgId *s_id, Al
+         DO(aid_init_by_oid(digest_aid, oids_get_oid_numbers_by_id(OID_PKI_SHA512_ID)));
+         sai = ECDSA;
+         break;
++    case OID_SHA1_WITH_RSA_ENCRYPTION_ID:
++        ASN_ALLOC(digest_aid);
++        DO(aid_init_by_oid(digest_aid, oids_get_oid_numbers_by_id(OID_PKI_SHA1_ID)));
++        sai = RSA_PKCS1;
++        break;
++    case OID_SHA256_WITH_RSA_ENCRYPTION_ID:
++        ASN_ALLOC(digest_aid);
++        DO(aid_init_by_oid(digest_aid, oids_get_oid_numbers_by_id(OID_PKI_SHA256_ID)));
++        sai = RSA_PKCS1;
++        break;
++    case OID_SHA384_WITH_RSA_ENCRYPTION_ID:
++        ASN_ALLOC(digest_aid);
++        DO(aid_init_by_oid(digest_aid, oids_get_oid_numbers_by_id(OID_PKI_SHA384_ID)));
++        sai = RSA_PKCS1;
++        break;
++    case OID_SHA512_WITH_RSA_ENCRYPTION_ID:
++        ASN_ALLOC(digest_aid);
++        DO(aid_init_by_oid(digest_aid, oids_get_oid_numbers_by_id(OID_PKI_SHA512_ID)));
++        sai = RSA_PKCS1;
++        break;
+     default:
+         SET_ERROR(RET_PKIX_UNSUPPORTED_DIGEST_ALG);
+     }
+@@ -2449,7 +2640,7 @@ cleanup:
+ 
+ static int cryptonite_sign_params_set_opt_level(CryptoniteSignParams *ctx, OptLevelId opt_level)
+ {
+-    int ret;
++    int ret = RET_OK;
+ 
+     CHECK_PARAM(ctx != NULL);
+ 
+@@ -2457,6 +2648,8 @@ static int cryptonite_sign_params_set_opt_level(CryptoniteSignParams *ctx, OptLe
+         DO(dstu4145_set_opt_level(ctx->alg_type.dstu, opt_level));
+     } else if (ctx->alg_marker == ECDSA) {
+         DO(ecdsa_set_opt_level(ctx->alg_type.ecdsa, opt_level));
++    } else if (ctx->alg_marker == RSA_PKCS1) {
++        /* RSA primitive does not expose optimization levels. */
+     } else {
+         SET_ERROR(RET_PKIX_UNSUPPORTED_SIGN_ALG);
+     }
+@@ -2519,6 +2712,8 @@ static CryptoniteSignParams *cryptonite_sign_params_copy_with_alloc(CryptoniteSi
+         CHECK_NOT_NULL(sign_params->alg_type.dstu = dstu4145_copy_with_alloc(ctx->alg_type.dstu));
+     } else if (ctx->alg_marker == ECDSA) {
+         CHECK_NOT_NULL(sign_params->alg_type.ecdsa = ecdsa_copy_with_alloc(ctx->alg_type.ecdsa));
++    } else if (ctx->alg_marker == RSA_PKCS1) {
++        /* No persistent RSA primitive context to copy. */
+     } else {
+         SET_ERROR(RET_PKIX_UNSUPPORTED_SIGN_ALG);
+     }

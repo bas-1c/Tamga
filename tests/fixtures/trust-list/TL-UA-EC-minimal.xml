@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrustServiceStatusList>
+  <TrustServiceProvider>
+    <Name>КНЕДП Тест</Name>
+    <Service>
+      <ServiceType>CA</ServiceType>
+      <X509Certificate>Q0VSVA==</X509Certificate>
+      <CRL>https://example.test/test.crl</CRL>
+      <OCSP>https://example.test/ocsp</OCSP>
+      <TSP>https://example.test/tsp</TSP>
+    </Service>
+  </TrustServiceProvider>
+</TrustServiceStatusList>

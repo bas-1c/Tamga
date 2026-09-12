@@ -1,0 +1,5 @@
+_GetClassObject
+_DestroyObject
+_GetClassNames
+_SetPlatformCapabilities
+_GetAttachType

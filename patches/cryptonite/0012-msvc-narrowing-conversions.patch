@@ -1,0 +1,86 @@
+diff --git a/vendor/cryptonite/src/pkix/c/api/pkix_utils.c b/vendor/cryptonite/src/pkix/c/api/pkix_utils.c
+index b16ee3a..5d4e1a4 100644
+--- a/vendor/cryptonite/src/pkix/c/api/pkix_utils.c
++++ b/vendor/cryptonite/src/pkix/c/api/pkix_utils.c
+@@ -459,7 +459,7 @@ int parse_key_value(const char *str, char ***keys, char ***values, size_t *count
+         DO(get_next_key(&ptr, &key, &value));
+ 
+         while (key[i]) {
+-            key[i] = toupper(key[i]);
++            key[i] = (char)toupper((unsigned char)key[i]);
+             i++;
+         }
+ 
+diff --git a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+index 233627a..7c5341d 100644
+--- a/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
++++ b/vendor/cryptonite/src/pkix/c/crypto/cryptonite_manager.c
+@@ -2379,7 +2379,7 @@ static int validate_priv_pub_key(const CryptoniteSignParams *sign_parameters_str
+                 int last_bit = 0;
+                 DO(ecdsa_compress_pubkey(sign_parameters_str->alg_type.ecdsa, qx, qy, &q, &last_bit));
+                 CHECK_NOT_NULL(last_bit_ba = ba_alloc_by_len(1));
+-                DO(ba_set(last_bit_ba, last_bit + 2));
++                DO(ba_set(last_bit_ba, (uint8_t)(last_bit + 2)));
+                 DO(ba_append(last_bit_ba, 0, 0, q));
+                 //Переводим в бе.
+                 DO(ba_swap(q));
+@@ -2949,7 +2949,7 @@ static void iso15946_int2be(int src, void *dst, int dstOff)
+     int i;
+     uint8_t *ptr = dst;
+     for (i = 0; i < 4; i++) {
+-        ptr[dstOff + i] = (src >> (24 - i * 8));
++        ptr[dstOff + i] = (uint8_t)((uint32_t)src >> (24 - i * 8));
+     }
+ }
+ 
+@@ -2971,13 +2971,13 @@ static void iso15946_shared_info(const ByteArray *entity_info, const void *oid,
+     uint8_t supp_pub_info_len = 8;
+     uint8_t entity_info_len = (uint8_t)ba_get_len(entity_info);
+     /*ASN1 head len + ASN1 NULL len = 4. */
+-    uint8_t alg_id_len = 4 + oid_len;
++    int alg_id_len = 4 + oid_len;
+ 
+     if (entity_info != NULL) {
+ 
+         /* ASN1 DER Explicit. */
+         encode[alg_id_len + 2] = 0xa0;
+-        encode[alg_id_len + 3] = entity_info_len + 2;
++        encode[alg_id_len + 3] = (uint8_t)(entity_info_len + 2);
+         /* ASN1 DER OctetString/ */
+         encode[alg_id_len + 4] = 0x04;
+         encode[alg_id_len + 5] = entity_info_len;
+@@ -2987,11 +2987,11 @@ static void iso15946_shared_info(const ByteArray *entity_info, const void *oid,
+ 
+     /* ASN1 Sequence. */
+     encode[0] = 0x30;
+-    encode[1] = shared_info_len - 2;
++    encode[1] = (uint8_t)(shared_info_len - 2);
+ 
+     /* ASN1 Sequence. */
+     encode[2] = 0x30;
+-    encode[3] = alg_id_len - 2;
++    encode[3] = (uint8_t)(alg_id_len - 2);
+ 
+     /* ASN1 OID. */
+     memcpy(encode + 4, oid, oid_len);
+@@ -3252,6 +3252,7 @@ int wrap_session_key(const DhAdapter *dha, const ByteArray *pub_key, const ByteAr
+     CHECK_PARAM(dha != NULL);
+     CHECK_PARAM(session_key != NULL);
+     CHECK_PARAM(rnd_bytes != NULL);
++    CHECK_PARAM(ba_get_len(rnd_bytes) == 64);
+     CHECK_PARAM(wrapped_key != NULL);
+ 
+     DO(dha->get_alg(dha, &aid));
+diff --git a/vendor/cryptonite/src/storage/c/file/pkcs12_utils_internal.c b/vendor/cryptonite/src/storage/c/file/pkcs12_utils_internal.c
+index ba1faf7..7430b79 100644
+--- a/vendor/cryptonite/src/storage/c/file/pkcs12_utils_internal.c
++++ b/vendor/cryptonite/src/storage/c/file/pkcs12_utils_internal.c
+@@ -250,7 +250,7 @@ static int pkcs12_key_gen_for_hmac(const AlgorithmIdentifier_t *aid, ByteArray *
+ {
+     int ret = RET_OK;
+     int hash_block_len;
+-    int id = 3;
++    uint8_t id = 3;
+     DigestAdapter *da = NULL;
+     ByteArray *D = NULL;
+     ByteArray *Ai = NULL;

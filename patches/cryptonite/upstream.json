@@ -1,0 +1,16 @@
+{
+  "_comment": [
+    "Машиночитний пін upstream-знімка vendor/cryptonite.",
+    "Єдине джерело істини для scripts/verify-cryptonite-patches.ps1,",
+    "vendor/README.md і patches/cryptonite/README.md.",
+    "Оновлюється ЛИШЕ разом із перезняттям snapshot і переформуванням series.txt."
+  ],
+  "component": "cryptonite",
+  "url": "https://github.com/privat-it/cryptonite",
+  "commit": "3618d340d22e27a6becf97d89c453f8e64068a39",
+  "ref": "refs/heads/master",
+  "verified": "2026-08-30",
+  "verified_by": "git ls-remote https://github.com/privat-it/cryptonite",
+  "vendor_path": "vendor/cryptonite",
+  "series": "patches/cryptonite/series.txt"
+}

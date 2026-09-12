@@ -1,0 +1,21 @@
+LIBRARY tamga-lib
+
+EXPORTS
+    tamga_version
+    tamga_session_create
+    tamga_session_destroy
+    tamga_session_configure
+    tamga_session_read_key_file
+    tamga_session_read_key_descriptor
+    tamga_session_is_key_loaded
+    tamga_session_sign_file
+    tamga_session_sign_data
+    tamga_session_verify_file
+    tamga_session_verify_data
+    tamga_session_sync_trust_list
+    tamga_session_get_last_error
+    tamga_session_get_last_error_code
+    tamga_session_get_last_report
+    tamga_session_get_user_report
+    tamga_free_bytes
+    tamga_free_string

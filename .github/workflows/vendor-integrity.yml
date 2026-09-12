@@ -1,0 +1,58 @@
+name: vendor-integrity
+
+# П-14. Доводить механічно те, що політика `AGENTS.md` досі лише декларувала:
+# `vendor/cryptonite` дорівнює пінованому upstream-коміту плюс рівно ті патчі,
+# що перелічені в `patches/cryptonite/series.txt`.
+#
+# Доти це трималося на слові: README черги описував пʼять патчів там, де їх
+# було 16, а застосовану версію ніхто не відтворював. Перший же прогін цього
+# джоба локально знайшов два справжні дефекти — зіпсований заголовок гунка в
+# `0003` (git apply мовчки обрізав хвіст) і неоформлене відхилення в `ANY.c`.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "vendor/cryptonite/**"
+      - "patches/cryptonite/**"
+      - "scripts/verify-cryptonite-patches.ps1"
+      - ".github/workflows/vendor-integrity.yml"
+  pull_request:
+    paths:
+      - "vendor/cryptonite/**"
+      - "patches/cryptonite/**"
+      - "scripts/verify-cryptonite-patches.ps1"
+      - ".github/workflows/vendor-integrity.yml"
+  workflow_dispatch:
+
+# Джоб нічого не публікує: лише читає репозиторій і тягне чужий upstream.
+permissions:
+  contents: read
+
+jobs:
+  cryptonite-patch-replay:
+    name: cryptonite patch replay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          # Крок тягне сторонній репозиторій; токен йому не потрібен, тож і
+          # лишати його в конфігурації git ні до чого.
+          persist-credentials: false
+
+      # Раннер ubuntu-24.04 має PowerShell 7 у складі образу
+      # (перевірено 2026-08-30: actions/runner-images,
+      # images/ubuntu/Ubuntu2404-Readme.md → «PowerShell 7.6.5»),
+      # тому окремого кроку встановлення немає.
+      - name: Replay patch queue from pristine upstream
+        shell: pwsh
+        run: |
+          pwsh -File scripts/verify-cryptonite-patches.ps1
+
+      # Окремого кроку «зібрати відтворене дерево» свідомо немає. Попередній
+      # крок доводить ПОБАЙТОВУ рівність відтвореного дерева і
+      # `vendor/cryptonite`; зібрати відтворене дерево означало б зібрати ті
+      # самі байти, які вже збирають `linux-gcc`, `windows-msvc` і
+      # `windows-static-shipping`. Це не додало б жодного факту, лише часу.

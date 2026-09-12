@@ -1,0 +1,79 @@
+name: windows-vendor-off
+
+# Діагностична конфігурація `TAMGA_ENABLE_VENDOR_CRYPTONITE=OFF`.
+#
+# `AGENTS.md` описує її як допустимий build/debug-режим і вимагає, щоб у ній
+# sign/verify повертали `NotSupported`, а не mock-результат. Проте до появи цього
+# job конфігурація **не компілювалася взагалі**: `tests/tamga_tests.cpp` викликав
+# `GenerateDstuFixture`, яка сама живе під `#if TAMGA_CRYPTONITE_ENABLED`.
+#
+# Дефект прожив непоміченим саме тому, що жоден workflow цю конфігурацію не
+# збирав. Тобто документований контракт не перевірявся ніде — ні локально, ні в CI.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  vendor-off:
+    name: windows-x64 (vendor cryptonite OFF)
+    runs-on: windows-2022
+
+    env:
+      BUILD_DIR: build-vendor-off
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup MSVC
+        uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1
+        with:
+          arch: x64
+
+      # Ninja + single-config: та сама розкладка, що й у shipping-збірці, тож
+      # результат порівнюваний, а не «інша збірка з іншими правилами».
+      #
+      # ADR-030: toolchain vcpkg тут з'явився не для фіч, а тому, що libxml2
+      # став БЕЗУМОВНОЮ залежністю ядра — `TrustListParser` і `AsicContainers`
+      # більше не мають саморобних сканерів. VCPKG_MANIFEST_FEATURES навмисно
+      # не задається: у діагностичній конфігурації ставиться рівно те, що
+      # оголошено в кореневих `dependencies` маніфесту, тобто сам libxml2.
+      - name: Configure
+        shell: pwsh
+        run: >
+          cmake -S . -B $env:BUILD_DIR
+          -G Ninja
+          -DCMAKE_BUILD_TYPE=Release
+          -DVCPKG_TARGET_TRIPLET=x64-windows-static
+          -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
+          -DVCPKG_MANIFEST_MODE=ON
+          -DTAMGA_ENABLE_VENDOR_CRYPTONITE=OFF
+          -DTAMGA_BUILD_TESTS=ON
+          -DTAMGA_BUILD_CLI=ON
+          -DTAMGA_BUILD_TOOLS=ON
+
+      - name: Build
+        shell: pwsh
+        run: cmake --build $env:BUILD_DIR --parallel
+
+      # Сторожа проти тихого «успіху»: у цій конфігурації криптографії немає, тож
+      # набір тестів МУСИТЬ бути меншим за повний. Якщо тут раптом опиниться 34
+      # тести, значить cryptonite усе одно ввімкнувся і job перевіряє не те.
+      - name: Assert cryptonite is really OFF
+        shell: pwsh
+        run: |
+          $cache = Get-Content "$env:BUILD_DIR/CMakeCache.txt" -Raw
+          if ($cache -notmatch 'TAMGA_ENABLE_VENDOR_CRYPTONITE:BOOL=OFF') {
+            throw "vendor cryptonite is not OFF in this build"
+          }
+          $list = ctest --test-dir $env:BUILD_DIR -N | Out-String
+          if ($list -match 'tamga-interop-replay-tests') {
+            throw "cryptonite-gated suites must not exist in the OFF configuration"
+          }
+          Write-Host $list
+
+      - name: Run CTest
+        shell: pwsh
+        run: ctest --test-dir $env:BUILD_DIR --output-on-failure

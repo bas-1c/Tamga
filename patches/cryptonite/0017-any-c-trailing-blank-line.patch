@@ -1,0 +1,16 @@
+Прибрання порожнього рядка в кінці src/asn1/c/ANY.c.
+
+Це відхилення існувало у vendor/cryptonite від першого імпорту знімка, але не
+було оформлене жодним патчем. Знайдено 2026-08-30 механічним replay
+(scripts/verify-cryptonite-patches.ps1): upstream-файл закінчується на "}\n\n",
+а дерево репозиторію — на "}\n". Патч фіксує наявний стан, щоб черга описувала
+дерево повністю; функціонального впливу немає.
+
+diff --git a/vendor/cryptonite/src/asn1/c/ANY.c b/vendor/cryptonite/src/asn1/c/ANY.c
+--- a/vendor/cryptonite/src/asn1/c/ANY.c
++++ b/vendor/cryptonite/src/asn1/c/ANY.c
+@@ -175,4 +175,3 @@
+ cleanup:
+     return ret;
+ }
+-

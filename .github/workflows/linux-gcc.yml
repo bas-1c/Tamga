@@ -1,0 +1,95 @@
+name: linux-gcc-matrix
+
+# Linux-збірка перевіряє повноцінну компіляцію, тести CTest та експорт NativeAPI на GCC.
+#
+# RSA-підпис довірчого списку ЦЗО перевіряється через PKIX VerifyAdapter
+# vendored cryptonite (ADR-022), тому попередня функціональна прогалина закрита.
+# Експорт 5 C-функцій та відсутність динамічних сторонніх залежностей перевіряються
+# на кожній збірці.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  build:
+    name: linux-${{ matrix.arch }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: x64
+            multilib: ""
+            # ADR-030: libxml2 — БЕЗУМОВНА залежність ядра, тож заголовки й
+            # бібліотека потрібні навіть у конфігурації без XMLDSIG/XAdES.
+            libxml: "libxml2-dev"
+          - arch: x86
+            # 32-bit needs the i386 multilib compiler plus the i386 C and kernel
+            # headers (libc6-dev-i386 / linux-libc-dev:i386); without the latter
+            # the cryptonite build fails on <asm/errno.h>.
+            multilib: "gcc-13-multilib g++-13-multilib libc6-dev-i386 linux-libc-dev:i386"
+            libxml: "libxml2-dev:i386"
+
+    env:
+      CC: gcc-13
+      CXX: g++-13
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Install toolchain
+        run: |
+          if [ "${{ matrix.arch }}" = "x86" ]; then
+            sudo dpkg --add-architecture i386
+          fi
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            cmake ninja-build gcc-13 g++-13 uuid-dev ${{ matrix.multilib }} ${{ matrix.libxml }}
+
+      - name: Build, test and verify exports (${{ matrix.arch }} Release)
+        run: bash scripts/build-linux.sh --arch ${{ matrix.arch }} --config Release --tests
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: tamga-linux-${{ matrix.arch }}
+          path: |
+            build-${{ matrix.arch }}-release/libTamga.so
+            build-${{ matrix.arch }}-release/libtamga-lib.so
+            build-${{ matrix.arch }}-release/src/cli/tamga-cli
+          if-no-files-found: warn
+
+  # XMLDSIG/XAdES із автономними форматними та security-тестами.
+  # Додатковий зовнішній корпус підключається окремо.
+  xmldsig:
+    name: linux-xmldsig-x64
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      CC: gcc-13
+      CXX: g++-13
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      # П-09: `libxmlsec1-dev` і `libxmlsec1-openssl` прибрано. Продакшн-рушій
+      # XMLDSIG побудований на самому libxml2 (ADR-014); xmlsec потрібен лише
+      # діагностичному crosscheck за `TAMGA_ENABLE_XMLSEC_CROSSCHECK`, який не
+      # вмикається в жодному workflow чи скрипті. Пакет ставився й не
+      # використовувався. Якщо crosscheck колись знадобиться, він вмикається
+      # опцією разом зі своєю залежністю — саме там, де вона потрібна.
+      - name: Install toolchain and XMLDSIG dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            cmake ninja-build gcc-13 g++-13 uuid-dev \
+            libxml2-dev \
+            libcurl4-openssl-dev
+
+      - name: Build and test (XML signatures, x64 Release)
+        run: bash scripts/build-linux.sh --arch x64 --config Release --enable-xml-signatures --tests

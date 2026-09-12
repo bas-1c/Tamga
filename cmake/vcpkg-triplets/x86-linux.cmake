@@ -1,0 +1,6 @@
+set(VCPKG_TARGET_ARCHITECTURE x86)
+set(VCPKG_CRT_LINKAGE dynamic)
+set(VCPKG_LIBRARY_LINKAGE static)
+set(VCPKG_CMAKE_SYSTEM_NAME Linux)
+set(VCPKG_C_FLAGS "-m32 -march=i686 -msse2 -mfpmath=sse -mno-avx512fp16 -mno-avx512bf16 -mno-avxneconvert")
+set(VCPKG_CXX_FLAGS "-m32 -march=i686 -msse2 -mfpmath=sse -mno-avx512fp16 -mno-avx512bf16 -mno-avxneconvert")

@@ -1,0 +1,43 @@
+diff --git a/vendor/cryptonite/CMakeLists.txt b/vendor/cryptonite/CMakeLists.txt
+--- a/vendor/cryptonite/CMakeLists.txt
++++ b/vendor/cryptonite/CMakeLists.txt
+@@ -25,13 +25,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_CXX_EXTENSIONS OFF)
+ 
+-option(CRYPTONITE_STRICT_WARNINGS "Treat compiler warnings as errors" ${CRYPTONITE_STANDALONE_DEFAULT})
++option(CRYPTONITE_STRICT_WARNINGS
++    "Enable strict compiler warnings (warnings as errors on GCC/Clang)"
++    ${CRYPTONITE_STANDALONE_DEFAULT})
+ 
+ if(MSVC)
+-    add_compile_options(/W4)
++    if(CRYPTONITE_STRICT_WARNINGS)
++        add_compile_options(/W4)
++    else()
++        # Embedded builds keep upstream noise isolated while preserving the
++        # uninitialized-local diagnostics tracked separately by Tamga.
++        add_compile_options(/W1 /w14701 /w14703)
++    endif()
+     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
+ else()
+-    add_compile_options(-Wall)
+     if(CRYPTONITE_STRICT_WARNINGS)
+-        add_compile_options(-Werror)
++        add_compile_options(-Wall -Werror)
+     endif()
+ endif()
+     if(CRYPTONITE_STRICT_WARNINGS)
+         add_compile_options(-Wall -Werror)
+     endif()
+diff --git a/vendor/cryptonite/src/storage/c/dirent_internal.c b/vendor/cryptonite/src/storage/c/dirent_internal.c
+--- a/vendor/cryptonite/src/storage/c/dirent_internal.c
++++ b/vendor/cryptonite/src/storage/c/dirent_internal.c
+@@ -167,7 +167,7 @@ bool is_dir(const char *path)
+ {
+     bool is_dir = false;
+     wchar_t *szPath = utf8_to_wchar(path);
+-    DWORD dwAttrib = GetFileAttributes((LPCSTR)szPath);
++    DWORD dwAttrib = GetFileAttributesW(szPath);
+ 
+     is_dir = (dwAttrib != INVALID_FILE_ATTRIBUTES && (dwAttrib & FILE_ATTRIBUTE_DIRECTORY));
+ 

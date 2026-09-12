@@ -1,0 +1,69 @@
+diff --git a/vendor/cryptonite/src/pkix/c/engine/ocsp_response_engine.c b/vendor/cryptonite/src/pkix/c/engine/ocsp_response_engine.c
+index 0e87c6e..f92b1ee 100644
+--- a/vendor/cryptonite/src/pkix/c/engine/ocsp_response_engine.c
++++ b/vendor/cryptonite/src/pkix/c/engine/ocsp_response_engine.c
+@@ -973,18 +973,20 @@ int eocspresp_generate(OcspResponseEngine *ctx,
+         OCSPResponse_t **resp)
+ {
+     int ret = RET_OK;
+-    OCSPResponseStatus_t resp_copy;
++    OCSPResponseStatus_t resp_copy = {0};
+     ResponseBytes_t *resp_bytes = NULL;
+     OCSPResponse_t *ocsp_response = NULL;
+ 
+     LOG_ENTRY();
+ 
++    if (resp != NULL) {
++        *resp = NULL;
++    }
+     CHECK_PARAM(ctx != NULL);
+     CHECK_PARAM(req != NULL);
+     CHECK_PARAM(req_va != NULL);
+     CHECK_PARAM(resp != NULL);
+ 
+-    memset(&resp_copy, 0, sizeof(resp_copy));
+     ret = try_check_status(ctx, req, req_va, current_time, &resp_bytes);
+ 
+     switch (ret) {
+@@ -1128,13 +1130,15 @@ int eocspresp_form_unauthorized(OCSPResponse_t **resp)
+ {
+     int ret = RET_OK;
+     OCSPResponse_t *ocsp_response = NULL;
+-    OCSPResponseStatus_t resp_copy;
++    OCSPResponseStatus_t resp_copy = {0};
+ 
+     LOG_ENTRY();
+ 
++    if (resp != NULL) {
++        *resp = NULL;
++    }
+     CHECK_PARAM(resp);
+ 
+-    memset(&resp_copy, 0, sizeof(resp_copy));
+     DO(asn_long2INTEGER(&resp_copy, OCSPResponseStatus_unauthorized));
+ 
+     ASN_ALLOC(ocsp_response);
+@@ -1146,9 +1150,9 @@ int eocspresp_form_unauthorized(OCSPResponse_t **resp)
+ cleanup:
+ 
+     if (RET_OK != ret) {
+-        ASN_FREE(&OCSPResponse_desc, *resp);
++        ASN_FREE(&OCSPResponse_desc, ocsp_response);
+     }
+-    free(resp_copy.buf);
++    ASN_FREE_CONTENT_STATIC(&OCSPResponseStatus_desc, &resp_copy);
+     return ret;
+ }
+ 
+diff --git a/vendor/cryptonite/src/pkixUtest/c/utest_ocsp_response_engine.c b/vendor/cryptonite/src/pkixUtest/c/utest_ocsp_response_engine.c
+index 309f71f..d43b508 100644
+--- a/vendor/cryptonite/src/pkixUtest/c/utest_ocsp_response_engine.c
++++ b/vendor/cryptonite/src/pkixUtest/c/utest_ocsp_response_engine.c
+@@ -357,6 +357,7 @@ static void test_eocspresp_generate_3(void)
+     response = NULL;
+     status = NULL;
+ 
++    ASSERT_RET(RET_INVALID_PARAM, eocspresp_form_unauthorized(NULL));
+     ASSERT_RET_OK(eocspresp_form_unauthorized(&response));
+ 
+     ASSERT_RET_OK(ocspresp_get_status(response, &status));

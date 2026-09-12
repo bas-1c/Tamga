@@ -1,0 +1,60 @@
+diff --git a/vendor/cryptonite/CMakeLists.txt b/vendor/cryptonite/CMakeLists.txt
+index 9171ace..fbaa7db 100644
+--- a/vendor/cryptonite/CMakeLists.txt
++++ b/vendor/cryptonite/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.5)
++cmake_minimum_required(VERSION 3.10)
+ project(cryptonite-main LANGUAGES C CXX)
+ 
+ if(CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
+diff --git a/vendor/cryptonite/src/asn1/CMakeLists.txt b/vendor/cryptonite/src/asn1/CMakeLists.txt
+index 201bcfc..bd6d189 100644
+--- a/vendor/cryptonite/src/asn1/CMakeLists.txt
++++ b/vendor/cryptonite/src/asn1/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.5)
++cmake_minimum_required(VERSION 3.10)
+ project(asn1)
+ 
+ file(GLOB SOURCE c/*.c)
+diff --git a/vendor/cryptonite/src/cryptonite/CMakeLists.txt b/vendor/cryptonite/src/cryptonite/CMakeLists.txt
+index e00906e..4885ec7 100644
+--- a/vendor/cryptonite/src/cryptonite/CMakeLists.txt
++++ b/vendor/cryptonite/src/cryptonite/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.5)
++cmake_minimum_required(VERSION 3.10)
+ project(cryptonite)
+ 
+ file(GLOB SOURCE c/*.c)
+diff --git a/vendor/cryptonite/src/pkix/CMakeLists.txt b/vendor/cryptonite/src/pkix/CMakeLists.txt
+index baf5180..21d5866 100644
+--- a/vendor/cryptonite/src/pkix/CMakeLists.txt
++++ b/vendor/cryptonite/src/pkix/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.5)
++cmake_minimum_required(VERSION 3.10)
+ project(pkix)
+ 
+ file(GLOB SOURCE
+diff --git a/vendor/cryptonite/src/pthread/CMakeLists.txt b/vendor/cryptonite/src/pthread/CMakeLists.txt
+index c1156fe..46b8ce7 100644
+--- a/vendor/cryptonite/src/pthread/CMakeLists.txt
++++ b/vendor/cryptonite/src/pthread/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.5)
++cmake_minimum_required(VERSION 3.10)
+ project(pthread-impl C)
+ 
+ file(GLOB SOURCE c/*.c)
+diff --git a/vendor/cryptonite/src/storage/CMakeLists.txt b/vendor/cryptonite/src/storage/CMakeLists.txt
+index b7f62be..2acd270 100644
+--- a/vendor/cryptonite/src/storage/CMakeLists.txt
++++ b/vendor/cryptonite/src/storage/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.5)
++cmake_minimum_required(VERSION 3.10)
+ project(storage)
+ 
+ file(GLOB SOURCE

@@ -1,0 +1,54 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0c2bb08..5f48c5f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,6 +1,15 @@
+ cmake_minimum_required(VERSION 3.5)
+ project(cryptonite-main)
+ 
++if(CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
++    set(CRYPTONITE_STANDALONE_DEFAULT ON)
++else()
++    set(CRYPTONITE_STANDALONE_DEFAULT OFF)
++endif()
++
++option(CRYPTONITE_BUILD_TESTS "Build cryptonite test targets" ${CRYPTONITE_STANDALONE_DEFAULT})
++option(CRYPTONITE_BUILD_EXAMPLES "Build cryptonite example targets" ${CRYPTONITE_STANDALONE_DEFAULT})
++
+ #################################################################################
+ # Define
+ #################################################################################
+@@ -30,16 +39,19 @@ add_subdirectory(src/storage)
+ #################################################################################
+ # Test
+ #################################################################################
+-add_subdirectory(src/cryptoniteTestUtils)
+-add_subdirectory(src/cryptoniteUtest)
+-add_subdirectory(src/cryptoniteAtest)
+-add_subdirectory(src/cryptonitePtest)
+-add_subdirectory(src/cryptoniteXtest)
+-add_subdirectory(src/cryptoniteExample)
+-
+-add_subdirectory(src/asn1Utest)
+-
+-add_subdirectory(src/pkixTestUtils)
+-add_subdirectory(src/pkixUtest)
+-add_subdirectory(src/storageUtest)
+-add_subdirectory(src/pkiExample)
+\ No newline at end of file
++if(CRYPTONITE_BUILD_TESTS)
++    add_subdirectory(src/cryptoniteTestUtils)
++    add_subdirectory(src/cryptoniteUtest)
++    add_subdirectory(src/cryptoniteAtest)
++    add_subdirectory(src/cryptonitePtest)
++    add_subdirectory(src/cryptoniteXtest)
++    add_subdirectory(src/asn1Utest)
++    add_subdirectory(src/pkixTestUtils)
++    add_subdirectory(src/pkixUtest)
++    add_subdirectory(src/storageUtest)
++endif()
++
++if(CRYPTONITE_BUILD_EXAMPLES)
++    add_subdirectory(src/cryptoniteExample)
++    add_subdirectory(src/pkiExample)
++endif()

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE r [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+  <SignedInfo><Reference URI=""><DigestValue>&xxe;</DigestValue></Reference></SignedInfo>
+  <SignatureValue>AA==</SignatureValue>
+</Signature>

@@ -1,0 +1,2292 @@
+[
+  {
+    "path": "androidLibCryptonite.gradle",
+    "sha256": "f6a8756ce323ad8d19fc6d6b03a7f6f14a602aa05c5bb8d83c7b7cf6860374d9",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "androidLibPkix.gradle",
+    "sha256": "6a8d7924edf37758bcf7bb9b2d2f4a7609bd3cfd9c4012a367b07edd5b183129",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "build.gradle",
+    "sha256": "2af94cfde87c3c8429c879b0b2a286344a4e5b1a930206aa6d5a5823cadc5908",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "cryptonite.gradle",
+    "sha256": "64de2f813b3349a9ec3249a0bca0762bb6fd894751dccd3cceba497eac8549d6",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "gradle/wrapper/gradle-wrapper.jar",
+    "sha256": "16caeaf66d57a0d1d2087fef6a97efa62de8da69afa5b908f40db35afc4342da",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "gradle/wrapper/gradle-wrapper.properties",
+    "sha256": "2ffc9c5b058a50a8fb8755f47f72a411f5d462cebf839c9cbceee34e92fdf7b1",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "gradlew",
+    "sha256": "ec56c02543666d92d9ac5ae7fcc48f88ce4de0deb8b7f9b39928ca46f68c1b2b",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "gradlew.bat",
+    "sha256": "f4f428c5626b3d90cef3bd4e7fd3ad3ea5760442db8c09d586b5bfe031dbe5e3",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs.gradle",
+    "sha256": "0ea532078bc7f3e28078f94a8e4362a2c42d9ab6b2455c4218000be07339f32d",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/bake.h",
+    "sha256": "bc6df8ab37afa83c7963ab36d0c07f0e76f70dc86bb6dfb7b729a83e9c7426de",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/bash.h",
+    "sha256": "aee57ce9f15d1f70ab6adcb00cc58afdc4bfe2f2d98b877cc7d75536014050d7",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/bels.h",
+    "sha256": "55f2fac78463c00b9521634c1d21e6c9a603946445383488712be1654ee501bc",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/belt.h",
+    "sha256": "fc3c9eb1edd10d8cbb16c25a9b8eed918f7a521a0b48baacff6a5dea69df32e9",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/bign.h",
+    "sha256": "d7ae84d906f82ad46623d0bdca842ee95f2f2bedcd0f8394ed18b11ebbed3e51",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/blob.h",
+    "sha256": "ee15775a8ee91e24072b18b9bec522d2651d3e8bc078a1f7fb3d55bf7b334c87",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/botp.h",
+    "sha256": "6111ff6032259d0c539189dc65e9c17f97d3db2aa707fd2c47a27c8000ab0ba1",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/brng.h",
+    "sha256": "fc0d4a99d5f41f32abb25acee9c8b644826d4d643fed6074bf31a769e0187bfc",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/dec.h",
+    "sha256": "74332b0aa45bf71de92abb971028ef9a76ed660a0593f5e544006668101c5b02",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/defs.h",
+    "sha256": "66536eaf679d900597893939f5efbfd5f13bf626fe63beebd43582dc89edca24",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/der.h",
+    "sha256": "efcbff2829ae5abb69b78c33242d0869a365d49080f9ee95fd69302578b9aee7",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/dstu.h",
+    "sha256": "fb129815306b9c0756f391c4894d29b1d37a4352be9edd8b0a4646cd42ad9176",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/ec.h",
+    "sha256": "4a14d7c3598ed2bbc01b0f9faf8d862c4ebdb60571176ebc85b2ebe2d0883115",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/ec2.h",
+    "sha256": "7f3cf59a734c979bea09e8ba0b75b8fe877216cd4e54766342dc0f678704accb",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/ecp.h",
+    "sha256": "2af5f3ee00017341eb6b1636c54b83c209aea4d0af122ae9e694e51cc0896ef8",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/err.h",
+    "sha256": "da244d2d901b154ed8f45f17d91594e49cb3c24673dcf8227e4b85feff68fd0e",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/g12s.h",
+    "sha256": "2297414c4216b29ed65822ba5e66f151be36428e426e808099a702370d88655b",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/gf2.h",
+    "sha256": "b4941828373fc9c6cafe692f275f57cf44ed8818ba2b5e9c76433ab61a39bd4c",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/gfp.h",
+    "sha256": "8e38c6e83a5a5e432602005e61b6056135e512c636af647789f0bf8e60409092",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/hex.h",
+    "sha256": "289265aa8e0259ff4227bd442143bcbe7ee80e91ff3af75e4b9138bef818611e",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/info.h",
+    "sha256": "f73ddfdcef29e21e659128493cbc7d6b979cdbd5074646da5bfbd1cbca7f869e",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/mem.h",
+    "sha256": "0bd2e0f2c4eb771f3f7c0c9fb531e14afa78a66019f9724bac7e5c40c92515e8",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/mt.h",
+    "sha256": "9d712511515c5792ab49d0eba41e3550183fc5bf3e919eab70baa63609ab974a",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/obj.h",
+    "sha256": "1edfb89c372dcc0b4decde54fbb9b45640c5a196e9ae8048361f8246359f8cd2",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/oid.h",
+    "sha256": "3e67bfb42413730a5d62bdb13b360f0efb7a6662db123038555b6ef9bc1bb4bb",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/pfok.h",
+    "sha256": "e4b29efe481557cd1475d4be5499cd1f75c14cdd261bdd6ddfc060dff07a1f73",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/pp.h",
+    "sha256": "8a1b7b7561aae84e7464cb3dd4698238181658187d313b3783e5c02f98bcd6a9",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/pri.h",
+    "sha256": "416bc2ff6829b0e0c59aa01e9a5c9f3d6a683f0a4df93433a7e2fa25c2c6da3d",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/prng.h",
+    "sha256": "d341e9baf83da24aa4c4c9de2ce793a12b91aab7e65c5ef3126d817bcedb071d",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/qr.h",
+    "sha256": "55e410de776190cf03602390db568eb9f11aa76387d49fdb44dfe2ccfea11870",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/rng.h",
+    "sha256": "2bf33bc8ed0c2a52d6fb2f4cc7075cd461bb2af58b707a64c49c1a9b3a7f0aa8",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/safe.h",
+    "sha256": "69a511f55c856ffc0cfdec2bd40cc93de019924be625f8838b982b63461baa3d",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/stack.h",
+    "sha256": "8ba0491591833203c12ff5dd8976cd7ce1685b7cba87d499f49c7f18bb4e74fa",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/str.h",
+    "sha256": "a09092e0e31713bc18bad7cce0e954dbc2837b877614dfca5b9dedc8f2c1a3f1",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/tm.h",
+    "sha256": "75b3b3d5a5dcfbeb71640390b810c7290058ac440ae39b4a92167067eb8bbfe0",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/u16.h",
+    "sha256": "d583a6877e356a394712aff6628b55b3c1bd1139f7112d2c6a95cad2f1cdf48f",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/u32.h",
+    "sha256": "ab629bc4e4372fb74b7ea451fd2992807bc1e26fc65f1d945c3653997bcb9772",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/u64.h",
+    "sha256": "3bbdc66fd0a0e5dc3f2b25be9963ecf7306ec75a98013cd240d0c110c8528fbf",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/util.h",
+    "sha256": "657f8d362ed0f6d2abcba7c79eb365e877d14425a522924b5f413abc47116913",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/word.h",
+    "sha256": "f649fa5fca270691a2fe979a9c460d7fbd6b46fade456107fc4e32271e6022a6",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/ww.h",
+    "sha256": "936509722bf3713398961d093db3d4c50273c4fece308a43b8c5def4acc06853",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/zm.h",
+    "sha256": "6346f4910b5a9724b9750c73fa59adbf055aa9983bb8c785e801b5a4e123bbf9",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/bee2/zz.h",
+    "sha256": "cb40aae97a1b5f6f116cd0a7994c61047e6d8ef01c019dbbaf6a388477c0f152",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/include/info.h.in",
+    "sha256": "07410cbd9eb7308b9a15883d7c500ba494a9ae7cc573818abbbc02744a728877",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/linux_arm-v7/libbee2.a",
+    "sha256": "e7b65f7c596a3369ff0761d46809268469f48d4fd7e0d4647688298dcaf3d427",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/linux_arm-v8/libbee2.a",
+    "sha256": "8d2f7a94ee3a9a4b5c6213b052446970b5812b38ee0c83a3d2f95f701b4ccbae",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/linux_x86-64/libbee2.a",
+    "sha256": "c060fc10642a3ada0ffc695d1072b1c3975ff59688a42871f576f4fc0d93446e",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/linux_x86/libbee2.a",
+    "sha256": "8a6f756dfeb39c99ce341d8afa6474d324f51bb68ff61d02d0eff6eac5685d64",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/osx_x86-64/libbee2.a",
+    "sha256": "f10cf01c8e3a21737802f9bc83fdf8041093956b03d1ac9cd73e4d7e4415f24b",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/osx_x86/libbee2.a",
+    "sha256": "4ac527d3363d1179e10c01fc6fe0a5262bdb742ff009cbed3a21b170fdaffaa2",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/unix_x86-64/libbee2.a",
+    "sha256": "c68c7c5929bb1e6f686e806ce261b9ca587ecb467b6b2844df4d4028b1a119de",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/windows_x86-64/libbee2.lib",
+    "sha256": "27ab2c49d701bba5a5d275d1c8ff8a43e3d552cc5fd46d69943852703b9c245d",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/bee2/windows_x86/libbee2.lib",
+    "sha256": "a79b74aabd6320b12df71328d81784cc68099baa3569da62f9b2dd5687505151",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/include/alignedarray.h",
+    "sha256": "a8c3fb6173d738fefaaf8dae65f17601fe2f4fa90e9fb13e60bf61b6722f84cd",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/include/block_cipher.h",
+    "sha256": "327100ca28a6e6acc47312b21145c728910c2962aaa16bd7b925e06c9047ce7d",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/include/cbc.h",
+    "sha256": "3dedd2d186e4d029e71f825191649504a96ef5389b163f76938ea995e0808530",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/include/cppcrypto.h",
+    "sha256": "920e43f1715b5249f759773ed4b75bc7bad56a951d6dfe1200b1d5f13f73a7fa",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/include/cpuinfo.h",
+    "sha256": "47509cd0e63f573faa91606fad513470c5d595adce9a018b2a06b99d6dde20e4",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/include/crypto_hash.h",
+    "sha256": "2eb5d69116b52f9d7026f98205f4e3f8fce5d194c68400574693f870f3832edd",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/include/ctr.h",
+    "sha256": "b2b8d9fb22b8358513b475a6cb70d6a76986ab4a7cf4e23d7490ec1d3a7e36f4",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/include/kalyna.h",
+    "sha256": "d3a4c0c5649bcef77ca5e11c1a121638966b3f907120d57623f0de0ef33a7e54",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/include/kupyna.h",
+    "sha256": "c582b09442c3ca0f87af80cfcf39683fca406ce6263186f5bc9ff8fd07d70f26",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/include/portability.h",
+    "sha256": "4c33bd371d557e6a28ba185986e5f7cda38db3ff8bd6cb49a03603d6a625d346",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/include/stream_cipher.h",
+    "sha256": "629226cb20bf270122b9dacfb3ce65ef5861b9c15ad44a3ec7792445c629759c",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/linux_x86-64/libcppcrypto.a",
+    "sha256": "ee596805e165740be5a957a417391fdefe45cfa7c54c5da4ae2662e9eb0e77f4",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/linux_x86/libcppcrypto.a",
+    "sha256": "5585b04d5ed3c1879abd780d2a35d3d5b2a2ff0705c812e04098ad60313ad6be",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/windows_x86-64/libcppcrypto.lib",
+    "sha256": "132c130f8792256d42e60dd285317e5b3f204b0388ad0959338af03caef5cdd2",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/cppcrypto/windows_x86/libcppcrypto.lib",
+    "sha256": "efaa4d60fb5bc3e2f7e26dc4394e7727eaba88a1dccf60e0080ad4201676294f",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/include/gcrypt.h",
+    "sha256": "6f725e8c3520c9b34f42628c97fb3f380e8a1bc3c6dc4553582efa6b744cf4f1",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/include/gpg-error.h",
+    "sha256": "0d123fc5e2c2c1ef4fcd2ea31a4d57a8fcf77a8bf6f58811125d50dca053f639",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/linux_arm-v7/libgcrypt.a",
+    "sha256": "d7f57990c817c53a727ce168d2335b2bdf627ccd176793ac9b5c1ed7b0e7eda0",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/linux_arm-v7/libgpg-error.a",
+    "sha256": "6b7a5e6d050f8668f4a3d489a8f6bc309f9e85bc2d182581b95ffc2cb7ee8e2e",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/linux_arm-v8/libgcrypt.a",
+    "sha256": "7b0df1ae45c766818355888cc916ab8e950c913175f0e94d2f5ec1c38afb8a05",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/linux_arm-v8/libgpg-error.a",
+    "sha256": "f143248304a97e60056a25925f2d0534fc1c9427f8914cd1e279846c9c9fbbc0",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/linux_x86-64/libgcrypt.a",
+    "sha256": "0b8db6c1444b47898841bbec357c87acb1eb661732d336efc55857c32fc5116d",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/linux_x86-64/libgpg-error.a",
+    "sha256": "bd8289d5029ad2ecb5eee5b21415fa91ea8ef8949f2c9ae719dd6aa3ef0f7db6",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/linux_x86/libgcrypt.a",
+    "sha256": "820a311a780316d288e67c45204637e36666021cc66ce75032fcd0bc7b691f50",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/linux_x86/libgpg-error.a",
+    "sha256": "81d77a38bef5a62c14cd9479487ad6ce7d4c514286a6775702727efe40a20583",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/osx_ppc/libgcrypt.a",
+    "sha256": "8b864eee50cdc3ba090168f319a5eba7471ba51a78b82b5d24a86be8a250304a",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/osx_ppc/libgpg-error.a",
+    "sha256": "1046e1cf1570627c8dd97ab4ed265d36d810eb3ad09f2c95a8e67e2955f3a447",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/osx_x86-64/libgcrypt.a",
+    "sha256": "92232e0731835ac75030868c20dc748957193cb338abdd4c5185c4bdc973909a",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/osx_x86-64/libgpg-error.a",
+    "sha256": "6e8b0f0d4a409c787d61864d23365f4b4754e91f0adb03ee5b9e025558515c0a",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/osx_x86/libgcrypt.a",
+    "sha256": "70311da6a070273a66c69f0fdd3421b0fc83a7ddc043b35fda4b57dedd7b2040",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/osx_x86/libgpg-error.a",
+    "sha256": "b7c20202ed237866eb22fa78e9cf8bdbaf446ce2313348e6437bee0f07aba73e",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/unix_x86-64/libgcrypt.a",
+    "sha256": "2d12cac359245cbad24773147b5e31c3f83d24e7a3adbb16ceaba041e4ecafed",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/unix_x86-64/libgpg-error.a",
+    "sha256": "635cf2b9cb55aa5c6e22844e6cd78a05b8cb0e055e2f50504c7932ef294910bb",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/unix_x86/libgcrypt.a",
+    "sha256": "ee1caa8f97d181ea3f86af50fd8e5567844f522876ed4dc74a8c9cc79387d499",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/unix_x86/libgpg-error.a",
+    "sha256": "ffc754ed2ef9fe0cc021c2a898c86a42d1ec0c6b33adfae8cb59ed408cb5224b",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/windows_x86-64/libgcrypt-20.dll",
+    "sha256": "3c7007f338f4277185b94a8c179a74ecbd02e604e42fffd03b755122736164c8",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/windows_x86-64/libgcrypt.dll.a",
+    "sha256": "079defc961994293578119806a048da0f478f1ef9524e720488ff82dd008db72",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/windows_x86-64/libgpg-error-0.dll",
+    "sha256": "83b17e0ce02d2d729eec5ea81fde7d7b2eb2d1da7a0100b2a6060e61b88cfa29",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/windows_x86-64/libgpg-error.dll.a",
+    "sha256": "7cd0aeedaef85593c5a6f02ada740a44c36edccb18a614f49324f9e9c7f65c64",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/windows_x86/libgcrypt-20.dll",
+    "sha256": "a34ce498b9ae1cf7480ace0f1483b29e98a6a5264650efb8f9aaebf91c81ad0c",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/windows_x86/libgcrypt.dll.a",
+    "sha256": "074fc5a1c40ebe356638504652035513d1d404779296b3571357ebe9780f49df",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/windows_x86/libgpg-error-0.dll",
+    "sha256": "7319075e1ee492d63566248aadfcb76562e228e845e7c2101f6dba5823ec916a",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/gcrypt/windows_x86/libgpg-error.dll.a",
+    "sha256": "2137b917d281b05744035a3cb6a41ad6a57d3d55aa9f9cdf801b1f205ff1a9f7",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/iconv/arm64-v8a/libiconv.a",
+    "sha256": "68f1f35d63c73573f04075ceebeda9006e1aa916e13a3ad4ef757edbc84a5d42",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/iconv/armeabi-v7a/libiconv.a",
+    "sha256": "0514bafd913e403cc712f058112410ac854e6bc2bf277816c8fbc342527015c0",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/iconv/armeabi/libiconv.a",
+    "sha256": "0ee2bb5cd1d57276c61e1688ef1935276ec16f8bdd9d52e9533dbf55ea95ad77",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/iconv/include/iconv.h",
+    "sha256": "cc3453687e482efd082c139753ea9d1bc927f760b1fbe58b219fefbd558913b5",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/iconv/mips/libiconv.a",
+    "sha256": "459da66b4bac4c2d66ef6bb9ad3030e45fc160342d3fe180f3b617cfbc55cc8a",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/iconv/mips64/libiconv.a",
+    "sha256": "0948db333da0f1bd2afb0513fcd4c92b593e6d7afaa2ee406cd4e4fd0a824e52",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/iconv/x86/libiconv.a",
+    "sha256": "77a23917ff3d62cfd4cdc497cbeb813dab73085b04406f6a5fc549cd9403471a",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/iconv/x86_64/libiconv.a",
+    "sha256": "c228986729376792388bbe6afa75bf2bd8858b36bde324e8a0fa0c4a57b48472",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/aes.h",
+    "sha256": "bb5acca889aa21e1884b4c32f367dabef49ffe6eee670d3301865b5351564552",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/applink.c",
+    "sha256": "3d98b13cfb3e927c778422ea6c813f8354c0ee3398e2a7205158850b25042477",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/asn1.h",
+    "sha256": "a0e4931cfba5363dfe78c83985967ebdafaa78f3e96bc1ffe82f6bda16c63927",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/asn1_mac.h",
+    "sha256": "986a49ad3adcd1ec2d37b2b5ecc2cea1fbc473b37438c1e745820a7cab9878e6",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/asn1t.h",
+    "sha256": "eae7300811f50879adc4f24d5156ea500294cb68d16e9fdf13d616403fe0311f",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/bio.h",
+    "sha256": "07fac3bbb0d39bfc05d8d6a46b17ea9dd490f689100c31b9f0e22be00b9bd089",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/blowfish.h",
+    "sha256": "36369ddcebfddeb805712a54ffcd8e14fbb069dfeb5abd69631053ec7b38e4e7",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/bn.h",
+    "sha256": "a3701b1f27beddfe32bcc0c0277e95c6ce12f9829a8f8f2e26d882ffd938d748",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/buffer.h",
+    "sha256": "0ee7561254083f73254a61b8c852c2ac070b3ba69d8090981f025a86a2cf1bb9",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/camellia.h",
+    "sha256": "70be2e296b2532a33e30833f8b84ffd44ed37d1024cd2ccd18b5e2ff047f15dc",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/cast.h",
+    "sha256": "b5ac3cff516bdc3978001d6a393c37757979cdb8e9b9de314926f3b0a84909a1",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/chacha.h",
+    "sha256": "a305ffc27f5729e423cdcf26992f053a6ef371466b446cb6a3524b5e5664e09d",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/cmac.h",
+    "sha256": "a76c74d488069fadcc5f969237b18960aced8202f380165bb40df401a4437fdf",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/cms.h",
+    "sha256": "715e90dbd06e968eac5538875a75d9a7d9ba14a7b6ef08a444a89441809c684b",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/comp.h",
+    "sha256": "3cfbc94cf282641b9a2ed3218d1cd1852ea7ee649b7f7eeece2f32e1bbd81a04",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/conf.h",
+    "sha256": "26e7ef4c21e3ffc786cabf7e3923ce479db5a15dc4d2cb48f5ac0da124a03cfc",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/conf_api.h",
+    "sha256": "ec5ec2b5668d66b99c84bc818b9c5145d08414eaf78440f1030c4b5d74b38507",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/crypto.h",
+    "sha256": "c1a6aea8a6020037cc9180d56379c2832888cc1cc34a78b0d9703d894e497948",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/des.h",
+    "sha256": "b69403bcd4e8ae66a52ccefc08a52f1d6f6c483ba086f79aa3c3625a99c7dd44",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/des_old.h",
+    "sha256": "3853f9d3521136a378c62c940952bcfcd00622ef3fd958fc457480d4944dfb03",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/dh.h",
+    "sha256": "7f36c2f4e04e202a24364ec914a4b036b0b77e183f0bd72033320cda6213f652",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/dsa.h",
+    "sha256": "b2337c0074de6ed9301e718a57fd570766a0c6e777e2918c97f14a695f99bfff",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/dso.h",
+    "sha256": "744108abca19229454c1eeda3261d56e2b1ddb72a85249960210c3882384ed55",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/dtls1.h",
+    "sha256": "1d65ba2ec4b0a8bbe77a4d30ba60b34e36a310082039e8c48c093d2306790e3a",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/e_os2.h",
+    "sha256": "28fdd6e9b2c16e8b5011206f3c0ee7b879ae9dfd8ee8053cb2b781491c6f734a",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ebcdic.h",
+    "sha256": "44d0e8e3053d20d3ef60702497fac6fbc733250cd5f6b0c19775ac0865a85484",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ec.h",
+    "sha256": "92c285f6dfbeed7f7da3d0bcbd8daadb4bc033a57f702ff1eb54c4ee69e67921",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ecdh.h",
+    "sha256": "12cb276adc1ea972ab18e0ebf4d3ff422288272aa57d9278f334fcf9a9df854f",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ecdsa.h",
+    "sha256": "2bd432a2a4f265487af6e4a70070d582314a95fc19fdde7d8b3ee71d9415c86c",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/engine.h",
+    "sha256": "67dc67e5304581a8ff6618e87870815c3dcbf77385304689c3bd7d3483b87870",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/err.h",
+    "sha256": "f44d1253852a1f7ca2d8929d62718222d444156565a7467054a0bcebf671e2e3",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/evp.h",
+    "sha256": "549be0bc3a8bdadb2c9edce8b66e276b595644d1b1cb2a1d2544bec9c7daf3fe",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/gost.h",
+    "sha256": "21987c152157bb6a23736468143d3e6081eb577a1a2cbdd841c6baf989bed4a9",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/hmac.h",
+    "sha256": "9b5f5a79dec5ade8ad40abd697c76f3ee1d58c73641b02cd86ab45237bc3c47b",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/idea.h",
+    "sha256": "7a486b3c9511ded14c11604089f5d883cab1215205ee8e43aaadf2a6c889dcbd",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/krb5_asn.h",
+    "sha256": "ea9749f5def9d0c13375a1653b721bb388b3b8065c3612f497a274f9942be105",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/kssl.h",
+    "sha256": "8b416ebd7180eec58d7247a7783d1b007bb183159e4367303ddc68899d78a269",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/lhash.h",
+    "sha256": "973a818a3160b3003aab79e1370c94d7bd528e86bd6fdd0ea862244ff78d3743",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/md4.h",
+    "sha256": "0b31382aa79e6d19b9ac71c053501318d75db790a69462815637352371e6e01a",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/md5.h",
+    "sha256": "1daebcebf6073951756004ddfb11a75d20b618bad3bacd095452430cb3b73dbb",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/mdc2.h",
+    "sha256": "abccfbbda4d56465aa152e585699058e6d98354bb2cc90f64af3fd123ddc2c2e",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/modes.h",
+    "sha256": "93446dda5dc1cc8e26b406cf8a8e4c886bf4b6d374d26e1e4e6803a3fd59b8f6",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/obj_mac.h",
+    "sha256": "46fce4f4f903112fc7d2fc25e1dcf94d6d681cf928ebedf553a0ff367f99b434",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/objects.h",
+    "sha256": "2ab55e39f6d4e605fc53c947a21f6972200b97838545fe032a03a63f23f0fc75",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ocsp.h",
+    "sha256": "2ce279ed94d2768591ec974b413721158b3c9249660e19423240e6aa7a9017fd",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/opensslconf.h",
+    "sha256": "b211745339da37af4065a52aaf11150b2620a74a0aaa49c61ea2f93bfc88c0ec",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/opensslfeatures.h",
+    "sha256": "b506cd31fa1ae6547f22b8c66cf2ac1e464ed2d210834c79dfe48452d3ce68fc",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/opensslv.h",
+    "sha256": "5e42ca58ef3f46b074432ab233b203b701918b77e32ab29217981a710166c144",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ossl_typ.h",
+    "sha256": "c3fa0870621a6d538e992ee44231a0d5534b5c18d91fe339c0e4426361b46a0d",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/pem.h",
+    "sha256": "203c813e0c41b95fc32b844234ec60789e23cda14c012b7efe358deded9d3f0b",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/pem2.h",
+    "sha256": "a94bb801be9391bfd557083da56987e83cef6b9ed860ecdb850eedc5c2a09e86",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/pkcs12.h",
+    "sha256": "1f9baf2884b563318057719a5a5b1ad6f258acdf13acbfc09db3792a56109d7a",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/pkcs7.h",
+    "sha256": "a56cb6d4d4062237154db4acc3bdb1c1e8231ac26a25f1974afb296185ee4a68",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/poly1305.h",
+    "sha256": "57ef886c2380d170c73f46f31869c35ffd1e47bd269d7916ee77d39519fa9c8f",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/pqueue.h",
+    "sha256": "4dc61f64aee274bd8678bcc2b93867d1139704098fc68e415ce3e088f62e41bd",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/rand.h",
+    "sha256": "60bf84ea68f5a2fa322d2268151082c88519e40fe7d02df669a2974afb7e7d5a",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/rc2.h",
+    "sha256": "a2177c3eaa611b18b62306effbd3afa5d82b27b57b5d19930f895fef105bceb8",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/rc4.h",
+    "sha256": "1a5385afba80a938dfd642da5a36304e248b443916b7e47c3685334af034554b",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ripemd.h",
+    "sha256": "a00d0609040874ee600d4fff6d0717c40f86840e965b14e2c29704cbd035f7ba",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/rsa.h",
+    "sha256": "606538b8ba6051ed2cb307ad0e6ecef8f7f04d53120ddce43a12ade6daf94821",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/safestack.h",
+    "sha256": "033706c1e15a7229cb4b295a5d8e8a84f85091eb07eccbd530902911ada4d125",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/seed.h",
+    "sha256": "0845773d9b8329da9fd42bcee81f36338bf5124a97ae569a3daff99a22bd062f",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/sha.h",
+    "sha256": "21195304e1203bb5ecf264a013a4ca7ee41e872a6110b38a7a24c710c00fe0f4",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/srp.h",
+    "sha256": "0c2bc59a69658e4b48914fc3f7619ca488a915b0738818f7847add41a58a5d16",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/srtp.h",
+    "sha256": "5c41cc8ec77021e14eface51db40929d0d5fa9e92473a14b397370595619bfbc",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ssl.h",
+    "sha256": "dde2514f92626bd22a09b3aa2b903267959fe7ca5ac97db43a9074ad87b0c65e",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ssl2.h",
+    "sha256": "1fea6cc2a3e3c5892b5998ed209b8086dff6dc859a8359d70bcab844d4f8f214",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ssl23.h",
+    "sha256": "f8d5d760dc095e84a0934a9644b369690911d65a3dc245338dd2d17126e9a596",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ssl3.h",
+    "sha256": "a17d5bbc98684a54bfb7091cddb73b99872c134af92758959c9f9229e46431a0",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/stack.h",
+    "sha256": "2b18a607caee97a622844c109d0d3ce6077020cd909b94d440d5bf8ba10278a2",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/symhacks.h",
+    "sha256": "8ba45bb386971ac88d005cd8d3301d93dc4314136fb926d576e0bcdcc6c608e9",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/tls1.h",
+    "sha256": "5e7350ecbf197fb4c5f4f311862cf3e4f54956cd7dda31016ccaf5a2cd37ef10",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ts.h",
+    "sha256": "2a16ce59bc755096327e2011a60aef478c92d199c932cb8c395ebdd100aedbf7",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/txt_db.h",
+    "sha256": "c7209658ea6569c54b080795668728ff803aaa813798c2b57afd9f9a4dd628d6",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ui.h",
+    "sha256": "3223b1787b251c34e2e09bc4732e32bab9a946eb6c621a7da6022adff56c5549",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/ui_compat.h",
+    "sha256": "abd3f8c67d06a578f5c3531f1f8dc29607a03ec68e2806a1faffc580a7933e91",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/whrlpool.h",
+    "sha256": "483c106a88cacbd66e3943c1b0354a2fd815ca12f77eed15bc9932217d02be1b",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/x509.h",
+    "sha256": "2d3982038998303cc53fd33023c19e9ccb87e0ffc35c18338ccb25efb5edd8d8",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/x509_vfy.h",
+    "sha256": "f4cb6e98b050c8ead0426b438222e7157fb1be7b25208571dd4738519125d11e",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/include/openssl/x509v3.h",
+    "sha256": "03c5a4a893d11bbfcdde04a1f6c527988636670b32545f9dbf43a510f5c6db4c",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/linux_arm-v7/libcrypto.a",
+    "sha256": "99c307c580a985a6ba44ba1f9833dc8d76f1cc104e718de112d96a3add81f87c",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/linux_arm-v8/libcrypto.a",
+    "sha256": "fb8a685038a5000f5e761260bc2eab45d29354238611434e70ae05bc065ad730",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/linux_x86-64/libcrypto.a",
+    "sha256": "0221d17857fb7f1b5eaaf73d2fe5cec3f46203057c39cb712bce1705827d2e0d",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/linux_x86-64/libtls.a",
+    "sha256": "4000859b60130956ad1a10553eb970b29930809a8117eddf55bd54284a5a21c0",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/linux_x86/libcrypto.a",
+    "sha256": "a9152178e752c906a5405ba71889e85f4fa0878b9e32e16d7ab250f5faf3750c",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/osx_ppc/libcrypto.a",
+    "sha256": "f4cbd134399b4c8d99c1219290a81f55f859497578b1f612f0f8fc4856f489e7",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/osx_x86-64/libcrypto.a",
+    "sha256": "bf8079673af99bb25c428902cfda29d1a42e3d998cc2730dd38b9b01230af53e",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/osx_x86/libcrypto.a",
+    "sha256": "2b4039ad10260ff045d8764398f7cb174f068b3a4d17b2862c18a4f7a81b8e59",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/unix_x86-64/libcrypto.a",
+    "sha256": "62ba419f8ad16fd4e989086cd1a8b3dc7a1465fd4f83b2d1ea61d4b9d415daea",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/unix_x86/libcrypto.a",
+    "sha256": "dc511389e3ea545ad509a80267bfd1e906dff3124988505cbf3ee195545396d1",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/windows_x86-64/libcrypto-37.dll",
+    "sha256": "19873d1464151a0b4407be49e5dffdb990076907f94316421553bee1f89dda66",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/windows_x86-64/libcrypto.lib",
+    "sha256": "0274354b9ecfd4d5d961fe37d6f40583750e4a2a02999b7b2c22619f3cad1d48",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/windows_x86/libcrypto-37.dll",
+    "sha256": "6b0687199875dd8280478cace611689d22d2baa3edcbf6f42a3bb3e97f7141d3",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "libs/libressl/windows_x86/libcrypto.lib",
+    "sha256": "6187c9fa5be0a60ae36dd67424de3815ca492a87f92f55d9b98631bc61d02978",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "pkix.gradle",
+    "sha256": "22eb2fdd925df6330c6b14bd62029a0030723f8bd9c720bcc442887a5277af06",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "tools/astyle/astyle.cfg",
+    "sha256": "eadff82b45e7308b43afe6683048fbbe063c1b44b73dcc1f3525bf8a11c0bd78",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "tools/astyle/linux_x86-64/astyle",
+    "sha256": "3ebf3e7c565db0e4b9f6ea6de4b32ef2bf5d7529fa03918a3ca9b7ad18b8ef85",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "tools/astyle/max_indent.patch",
+    "sha256": "97557e9d5ed41b3b7c87bac07b843e6516c9a1c13e79796b969f107e249419df",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "tools/astyle/windows_x86/AStyle.exe",
+    "sha256": "2642b930d06fdb97caedd8203d3b72233f080d5a1141864142abe36c734463a1",
+    "reason": "not in Tamga CMake graph; pinned upstream + private history"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_any.c",
+    "sha256": "6b330b811917b1e0e945e70911d4de08bfc2139cdeadcb4d54282ba309895850",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "7ca4a2ad59da275ef65c97e60967e8238899ee8ddd86ae5e8b1ed97af7160cf1"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_asn1.c",
+    "sha256": "40c670a1f1e669f3d9d9f5df75202141dd4e96e962a9a45e51123120df6aac84",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "5ae51789476ab23ef150715e2dae0df455875ca30552b4e1959d57c943f99910"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_asn1.h",
+    "sha256": "13644ee2df8c9fb36a1587be23ec9ae8bb9d3915c299808d4c9329e4dcc75518",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "8b6f7814af20a12177a79a7421011b768c152a070a9301b5dffcd0a72cf95e3e"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_asn1null.c",
+    "sha256": "6a3044a88695ec529fa832a1724a1caee41c3a8b8614dacbe244982718dd61f1",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "b9b08fec641cd251011a71a2d3dc598fc9bf7ea3ee0d66d708c6e54e4f3912f1"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_bitstring.c",
+    "sha256": "bf034c979dba4912008e31c73a85e0ae05c40cbfbbeb98df0a643d34003f8b80",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "a57cd503d805fc7aac8bc7e2fa9526d4d58fb38d8f3d9edc127d63690bfc4a5e"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_bmpstring.c",
+    "sha256": "47f68fb6e8e4253cc90945a0d93832d5a77fce1d0ce1806bcb065023a102b3bd",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "ed5953a5d9d5a342eed374e988f6cf4b43a526b8370fb8f764b88aadc88997f7"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_boolean.c",
+    "sha256": "4a4f3e4efcb49d1126822531465a756fe540581f2d76f6f0aed224d99a4cd99a",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "be234ea55a12e755df8ba193ef5049cf6b274ff81bbefd157ca069949d09135b"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_enumerator.c",
+    "sha256": "6c94326c69d31e9c4080f54471082b063a72024810e882a9f278e6c9db2a2517",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "cb369c75c487a5c9d362bcb1a176d950d23065b9a8bd616dfab2ea42498ef1e0"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_generalizedtime.c",
+    "sha256": "77b7f522fadf6a1469ba9fca694909d5da3cc2a223847cb7d93f8c66dd50a0ab",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "83332f7acce8d90aae4b4c4e61ebca2242e65871d23841f82e3eb9f51bcc21d3"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_graphicstring.c",
+    "sha256": "ad35963531d6419ea520928b10cd30f06d87cae5ce1eda501293c841477f98e0",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "e1b4af84b0f61e7eae5de95dac3bb4ba18869d28e413da8c25cc6a45c9f0263f"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_Ia5string.c",
+    "sha256": "b2ec52974fd2eb134eef2370b8c15be8851b7c9b33c8f2185ae0a76ca64ba284",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "3f786e0a3346a5cf128dc3b30488c8ede75b2d1cb997c676d112fca597d31244"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_integer.c",
+    "sha256": "d9780f69eb34eaad70290f05ef8088e23b875aaf831bd7850c3f7425d712156e",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "9878b4d0dae348182705e42cc8ce282c879c43d5063370e63045150b332659c6"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_iso646string.c",
+    "sha256": "35fdf38b9a386ef6aaafe5eb8a8bc8bbac9636b9e3b3b2603c8a392294b7dd0a",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "00529e8ce09c70d9954075acdd9fa61e13e510518da13f677da12135fd62543d"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_nativeenumerated.c",
+    "sha256": "9c79bf33ede49dc20553dc319e73f549259449d831675a6081dc73df3e85cd3f",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "1b33d13c7c19f57d6f998e0062cf17de6434427269f2c22f1384b76c624f4b17"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_nativeinteger.c",
+    "sha256": "a7bdad7afabb9433ed8d04f3522d0d7dde288c547b74a057c7d11037f293a555",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "dcea2d4e373a47905a1504d6bfbc69189ccecf63c5fec6e00ba7ab40291c8fb7"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_nativereal.c",
+    "sha256": "6d27d926854a2d91cd877f900d85b94b8cf3f687ce70ea3e7194a081be2b2773",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "09ba9f83df6defecf3bec7e9e3d1a56dc538e79e2090741fdae02b95b71a0a8c"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_numericstring.c",
+    "sha256": "008b549da6f8d6439f22f4d1b392651a9ca11515f17d865831cfa18f2d25ec23",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "8004aeafaa80b6dbbe05b6bfb2299dae658d7362d4270966f0ba1a5594321d5b"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_object_identifier.c",
+    "sha256": "933a870d83a20f53f3926200232c1bde83a1c5d26b1ddb7505899d3e6b88fa91",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "89b64e941f9ad01c9ddcc86062def71d1dbefe5e3ce21157c08bffc2a17f3030"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_octetstring.c",
+    "sha256": "d4c87f54f7af4497b641cff719693327fb0061e76d802bd9d6b8bc5e6af39e89",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "f8642fdb3ba1eafb547f1dca59deb94b05e27491ff7bfbf7b29d716086b2dc79"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_printablestring.c",
+    "sha256": "952d51676a11913807e53bbf4b7e8283baabe74c622ff2aa152634833ad91b94",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "590efa89fe40726e36a4a7f4d89aaab8709290c9987b607d9344056c6a2bca58"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_real.c",
+    "sha256": "ee49cd3c89af66910da4391fc93ff9e8f28fe6b15088d266f8d4562765812d39",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "50131f8fb449064e8bcc829f47d14ca9fa96106f3a6565d757fad38e9ba00a30"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_t61string.c",
+    "sha256": "dec48c06b823fefd87762067fa1befa8369b2bbbffd9e4b87610441a81fdc4c4",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "250096004f9e328247dd16b102cc3f2f44f4fc3892cdf6288775e7b7f03444a5"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_teletexstring.c",
+    "sha256": "3199dbad90d24972d632be254d216ed826486726696a787d0b4819ec1c324d7e",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "480ac67e762a55ee28b1ba57410b5eb2a15c3b13501bbe38a615269ae3b08ba8"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_universalstring.c",
+    "sha256": "cca9878b521c8416bab66a0885ceafd947fc59b44ca5124e1296d5a23eb6ade9",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "346958a87a6b1b42ce3296b64b790edcc22f03ba644aa6957ad1187d122643ef"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_utctime.c",
+    "sha256": "4c13c28ac2b9e1f3ef9ffaf8b7b070e5d20d7ac61a78f5a73a805a3e09c5f1f9",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "b6d3d1eacc7d0da0577f87745962249ab274fcd36d912c2f1017b7d81e4ee87b"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_utf8string.c",
+    "sha256": "7dccb947ca427bf275cf78447fdab67ba26f8110e2c554e0f2bf79a19537fe63",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "548ee51a534cdaec991702a815e2087b6351e4c008b27e68d59a84e5dfe77662"
+  },
+  {
+    "path": "src/asn1Utest/c/utest_visiblestring.c",
+    "sha256": "2b72c58d6801491e43267d1b65cd73698e1b4be2bf3662c753ab4c2583ba4136",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "3c862070e20adc074fb9c4a14c45164bcf8b409be0135c5575ab6993e1725393"
+  },
+  {
+    "path": "src/asn1Utest/CMakeLists.txt",
+    "sha256": "88abbdb126f8f140ca6d2dbc919f0c400521066217b123da0a641cacf8fecc4e",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "467d25221ef94483c715d005894ffcdbc1295a189adae258990dee05bb23fbb4"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest.c",
+    "sha256": "adcd1ab33142c073e6348ca98da600b289c7678185cff3dd86f922b238d0fd27",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "f11cb68a06df6f64bfb7897f30ccdf6a2b2c36990407acc09e298bbb7c386be0"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest.h",
+    "sha256": "da28f65e119838d2d6f02c75ba01e0298a0590ea805b84d26c84919c9af25422",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "61437c5826644e70aa0e995bcf2860fe94c56e64ce8fdb290b6e97bfe8fa15cd"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_aes.c",
+    "sha256": "77f236f5878c006f3c7c2e7ecd4f9f634455a06a6a2aad5c97c53276866fed7d",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "780f51f2c96959ce84c63b0cddb595e191e76924955c5c98c0bf3dfec561359a"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_des.c",
+    "sha256": "52ba7d1106bf72c1c380555496ca361bfd5d74b21b535c8bc2864a45004e89e1",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "7dc05ef771dce685490feb9655572af905a6bc1c7b062569a633ec3cc4b83884"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_dsa.c",
+    "sha256": "7465b0b92e4282ee4bae854c55daa66a79febd35b8fe55c5af84fd58be130046",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "50054fe351b1ad10b0a599a20ad172dcfca6fc1f5bd39c5b9c9e0cd2bae051b5"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_dstu4145.c",
+    "sha256": "6935b53448f47e5d60a9d374d21cfe4455b4c56ebd60c7829ba6bd768aacb569",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "dacf15bcb9cef743bd3c92529bdb97cb5e26795d9f33a3f6c6f9b32c5633812a"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_dstu7564.c",
+    "sha256": "358ca1bf6a7b5a47bc6a63d2ba131e4d9357e41de112860013dfa0431eed86d5",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "607668f0c785868f229a9270b8c491f0c36e07edfc6d693c81d72b77b260aee9"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_dstu7624.c",
+    "sha256": "c2ddf48cd87b8769a8d7f4bc667e2d8b10b821e1d0b1665f7f81c6acf870ca8b",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "e558a8ee8b954a763f4b9946bd4ea50c611f77f76f7867f1a80e35fdbca59b12"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_ecdsa.c",
+    "sha256": "c68a1f5715a52b662e8586d74ab2445ec222731cc525e6d63748e39a5f1f2440",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "b7c9ff92e89231b0267d6f4e8989ad5287558988fc9c746c37703c4c48d32ae3"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_gost28147.c",
+    "sha256": "08053d322ca279380d348b8294290c6d07c1badedb4160eedea098bdaded8a20",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "d0c86cd81076a7ca40985d6c26baaf09f624fd3b113bcbd017061243a0d1831d"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_gost34_311.c",
+    "sha256": "85892c7eda6ffb265b7530d8c5f99accb025f9e24663e8bf84eef223441d5701",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "09bcc6c2029bc16a4a2079c22000bf23481e992dc490c870e27aadbccc838ccc"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_md5.c",
+    "sha256": "95ad4e9692b11dc144724137066483752f4f79733b3f74e1042b638df8bc4df4",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "d349d631a29f196d2d73ff27acb7b2a1491967f67a1481d10c981dad11f8a4d4"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_padding.c",
+    "sha256": "7e16e367cb4bdc16f3194d30476a36d6e3eddb4758216f48ebb9ccdf97012758",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "8bbed5a63498f85ffab6afa4c72ec6de17a67fe6dddf95104cc2c7fa70c6f4fb"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_ripemd.c",
+    "sha256": "80034623d88e3c838f77e6f66d4829c1d3e4e293a58303e5bc2bfcfbeb8618e9",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "5cada485123746d170e61763c64ea4ded832a88067fa15e4ba51cb3d03f9b378"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_sha1.c",
+    "sha256": "6ab517577d13b935de5537357ede8139a6e7bf20c86f0f0b349def13a16e1450",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "3775043c3c7d5a2f658d69e064329f3ed58c5e46e18e9589539080e7cb5e0b40"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_sha2.c",
+    "sha256": "3c8046fb13140c32df4facc2ad4930e17e2ea4fcdf67dc24eb5538cd9eabdec5",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "a5c229f0ddf5866e4553b35e19d601b80d96dd32873b5831e32b5af4f455e891"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_utils.c",
+    "sha256": "04fe989fa4f86633a0c2c5fbe680dd1ed56b4c56452854b760dec0cdcde35f8f",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "0a5f500d516a7d5a5014d615c52dc9c830c53c357bbd5618bec8e0a770a91dfd"
+  },
+  {
+    "path": "src/cryptoniteAtest/c/atest_utils.h",
+    "sha256": "ab5608f8cc61168743bbb6ae923c3a01d3c7150545218e3c883f63187e47e713",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "1a3838322dcaf0738aa44631265ff3d6be303348dadbb0a085863084204fe554"
+  },
+  {
+    "path": "src/cryptoniteAtest/CMakeLists.txt",
+    "sha256": "050d0985c534d397af8015b449b37e70cedce976ede929f2003ae640df10cd56",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "1df90b576a8c1fdcf5fd45222e76afb3d263dcc836c811f6b66ac6880d99d4b8"
+  },
+  {
+    "path": "src/cryptoniteExample/c/cryptonite_example.c",
+    "sha256": "efddc1451c3c9510f4b665f56c17528cd1f54f971571c47cb0ce853458e41ce5",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "671c68c1f1a1a66fe275053ed78b3ce94e083e3e515712acd0be49e73fe7b033"
+  },
+  {
+    "path": "src/cryptoniteExample/CMakeLists.txt",
+    "sha256": "2a4bf1aa7333ea8c39a5ac5f4232f01df532fa85970da72eedbff16a86da6d58",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "8b3d60fa762f6e1f51155f6f0f93a98603df3659e8226de9f0a3095a648605a9"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest.c",
+    "sha256": "77c5989c161fa5fd4743c245d8ef0c250b614d643f29e278f23d3cc3c6177b2b",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "5641d5068773f3419104bdedd04c73f8a8b53ecf47c0544cefc24a23014ce6de"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest.h",
+    "sha256": "a5a213bf7f76f63cf70fb826ec1fe37c152d02dc093e1e22b3df6a304e531dac",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "a4b465b251092568a0e7d8e4993e258a9d007e0aa4f900310990d11a78a22de7"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_aes.c",
+    "sha256": "fefd30861517f8454030863b4a6b11fa7f8288ef105e7800c4dbd0c0c7ac09c3",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "ff9a7e750a8954417611582c871934842e2b9842ef490f5e5bfaac1af873e580"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_des.c",
+    "sha256": "400d5dd293933ebafd5f254fa181754d521bd08abf9e4c0b265aaa565ad685e2",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "3df261629331d1583e40e7d55b2723b0f0dd3fbe6e33ca75139836f4817ff776"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_dsa.c",
+    "sha256": "128806b82ad517529d87e9952c578662e04908f301a3ecc8d48e3dd14aa46d44",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "f34e3a29e36c452225a3abb51a3ec3c4f004b5b98a4e043ba4f491f0dd62e23c"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_dstu4145.c",
+    "sha256": "3c4e0a11d0ee100d6950b0c331f4fbc8ea372fa5ce924675228b3fea97683eef",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "7376442eaffd190610c2367bff3bf386f02e23e7e09a0f0440d4d08745329d05"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_dstu7564.c",
+    "sha256": "a312820358ab120a36fd8dee817784c26a2b563d1cf5d06872c3a8ff22b15a46",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "7758c0d8a34d799a1c4070ffc374d179fe812961e0e70632ab14fdaabbafd665"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_dstu7624.c",
+    "sha256": "9399bf3c07dc8b12c11c37fafed917ef537b73b3ef754b3bcdeadc0a37bb053d",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "9ca0f98e4b5e42097fcb46b058aea0d23c19210b35aff41408c431e18d4cee34"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_ecdsa.c",
+    "sha256": "dc4e6b20c1614d27f84f5af2747914fb31ff392e5f85f35f8137ea994293a122",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "2a694729f1b68a658a89e80768a5b5e933efcea2ad5def8c36e3cf19280ec349"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_gost28147.c",
+    "sha256": "80daabfdf0dccb87c06788589e3bdc6323aefc1e011b3699cd01e03428c80416",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "4880ed3b597bf5fb9854f4db5057667a9eece4ba1c5487dacdc455589e07921d"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_gost34_311.c",
+    "sha256": "08cba96319d5e2d8b0d2c706fa634b0835cd43d77ea55819f4b51625cd01197b",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "9ade729345553e0ae2c99995fc07bbfae78cf94f86459b1cb42e5b2686471df7"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_md5.c",
+    "sha256": "5a0e270a463cf5ae037d33f05bc511448355a5ce700b16901aab491eed18acf3",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "27c2ed1e5ea7759d196fd2d8e755d5f76c1ac79c1bd141a4c3641ae868645029"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_rsa.c",
+    "sha256": "14411c4ee92c70a229e3d1440247046479c65a60efd06d01558726a4aeaece9c",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "e3fde66753c07f4894c9cb76e78f9c867d48116f651d2b16b1626835d2f273ab"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_sha1.c",
+    "sha256": "0b8d3de401bc7c5d5dc13687578f7a7b5d652254f1a6aac0cfcba50181853c49",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "f3da05ceba8e5dab74bd6758d297b031bcd1f06e55ca2c2ff4b67d8d81b47567"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_sha2.c",
+    "sha256": "a3d189848dde3f37907f5c3c3e138123f8aa32c1cc9df974ccf96f46fc4dce03",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "9bbe9552a9aca2965c68f9131134bd7efc7bdd306e645f80209791dc59ca19c1"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_utils.c",
+    "sha256": "449430c11574963dfdd2d5bafbee2943bcf6ef8b23924a16ab6e03034fde5f97",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "eef92117d389833b391cc58ccdc59fcff570603538a4c5ba790dfb0fde29df62"
+  },
+  {
+    "path": "src/cryptonitePtest/c/ptest_utils.h",
+    "sha256": "53be714ddcd2bed5df0e81ea37679d4275de5258f84cf275f3fedf1dc952003e",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "184452de8a1cf31707daa50368bfea85fa1857b131d076a2dc4ff8b0d758e020"
+  },
+  {
+    "path": "src/cryptonitePtest/CMakeLists.txt",
+    "sha256": "c92c9573d7b5dcdf00f233e91b33f66a6719d4fe967fccaae3867aeb9abe4fd3",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "e4a347d4e334a2daf99244633351c2c92fb6a795becc894b83fb383d7f14e70c"
+  },
+  {
+    "path": "src/cryptoniteTestUtils/c/test_utils.c",
+    "sha256": "a6f1ffe99cda576d235cd2e40bc4dbd364f23a754a3026ab06d0ef08316990f6",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "ccee17b29ef19eb934edab0f476ea3cc13c953eed7b6f462fdbf872d9c14d58f"
+  },
+  {
+    "path": "src/cryptoniteTestUtils/c/test_utils.h",
+    "sha256": "a201199335204009e54a3f74b72b98e2e1f8233ae41baea6ff757c26c35cf180",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "a783ec0335894339b9735d325cbc8a2a36a36e4b4d9ad7909ae69b6c26674777"
+  },
+  {
+    "path": "src/cryptoniteTestUtils/CMakeLists.txt",
+    "sha256": "2f7c22e8ca64e8d0ea6cc830f4452f1436a1ef80125aa3ca7991a095ecc2adcb",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "d9ffdf099dc72368d125d87dfc68f94ecde10939d3ce7a8aca1d4103681d2262"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest.c",
+    "sha256": "cee3386b1e5052e1be5f9c0cace8e4747b9b72f62f1c5bef9fcd868dc0869629",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "ada7638766ffcee3d7c7cdd81c51ca73c125a27df30338b9b149a74e4f1b3faf"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest.h",
+    "sha256": "4bafecc566d270c6ce9fb3ea3b259b84b04210a4d1727111a54ed3faf2d097c6",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "e5b2798584d0cd764b173c8e16708d4251c380122d919e223e0022be76fd2a75"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_aes.c",
+    "sha256": "ad00c477a0fbc1ed7369bc5dc81853f7a48f992d8dab0232abc2106c11328fed",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "0149bbd15061dd8050267d7f9aed221baa3477f4efa3bd8f251bae17884ee62b"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_byte_array.c",
+    "sha256": "552b502930c58c094a7ed25f323f6165d80d84b9f0772010db45a640cea65cc9",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "a32893401cb22669315e8ab5bb740c036936265251ce54d176a5fb4ef21d7082"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_byte_utils.c",
+    "sha256": "427e7cd9519b2dc248475265707c6b4b376eb09d199549fd825c3afc89dc9cad",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "ff2a1e9d895e6c2241ae20483f62fae4363965452702e7b0799b0caee7a593f2"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_crypto_cache.c",
+    "sha256": "f96813412f97ff0d6c092d55279082c9655fd5b40e492616ce8dddf0cd884882",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "9f00374980596e522c7b85a1b4d4af6d88a9cd17e6f70ed2023b825905a525ac"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_des.c",
+    "sha256": "d1cfab26be6b0a34a47de6ed716a9c7c3863102dce5fa3076cb4e914d8a4aaee",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "8dc533e47a40b067e56e75ce3aed53ddb26f3d68b5183cb3366ed9b6e8d77468"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_dsa.c",
+    "sha256": "40b9950ab9da430caa5beba4cffb42064932e2b4143a9bcb0d91839ff128a7fc",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "4236065588176bc2976e4ce6c5f2c094691d54386b71188eaf4b9249225fc7ef"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_dstu4145.c",
+    "sha256": "5d1ac9cff7caedeb543fba84eec95ce136476505741527041fec4b462d36775e",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "9dd539639ba6734cb6df548ebc2abb26d3d925da7f627a649a3090040447d80f"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_dstu7564.c",
+    "sha256": "c09dd50421b74822d884ad07849f3f851cfd83de23c8d72dc26861f3c9ace291",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "1da3ff4e64197a2edc517f17a36f41e8badcf198226c60bde85dd68f07f1b18b"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_dstu7624.c",
+    "sha256": "385913cbc6ebd88d57f493021378bcd71a8055f5b8f0233d86c71d5c855ad75a",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "6cfaf7da6c4f802860e7e1979d609913f6aa19484da25c5ae28aa57ff1bfd62b"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_ecdsa.c",
+    "sha256": "850c4f1cfaac6312a7e449ec8ff37631036160680ab87e09420f28aa05fc660e",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "84d0ac7859678b4fb72ecc845b41f9506ffa0a3d3fbfbac7a6e96c36256a8a13"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_gost28147.c",
+    "sha256": "11b0be23eab89b0e6b0a53e234f2274aa68ded2b29807b25bff90c827e97f568",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "c0038f71eadd7b322c18a64653b3d528fb85d75849ac0164d6aa374ce7a8a573"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_gost3410.c",
+    "sha256": "eb9d7e882046e9d3bc352cf457926f79ea8523579255d8b471e5ff0716f485ad",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "6e43fc56a3f1c8d629f6f70f9eadb4a2ff35ef8673745ab42a68cbd977302342"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_gost34_311.c",
+    "sha256": "986df24c42ef62d85d5921c68b50389c297b32eae2a339b188d1c38bc32cb973",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "8df9d92154ddfd5ec4f3e4320147ac78a25d25db3821b8797cc3190a6977011f"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_hmac.c",
+    "sha256": "aba78def568b6c1cde0092350ae3ed51400e445bd604913f91744960243eecce",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "05d421124841dbcdb3d67a165e1eab17fb40c06fd175a07dec2c2dcf9f6ab19a"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_math_ec2m.c",
+    "sha256": "035d3cadf358b652c41c22619cdc6ce91442a79795bb6e252f2759ed1d06188e",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "b2bb1da1a7fa3479983e401a9ca1c4fef65624c27bec1adf6a58a2504a0ee173"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_math_ecp.c",
+    "sha256": "61142b450fb067acdf5f00cd22042eaeca553db57d37767c4e2aca49ec5388bc",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "21e273e29cf9c57b923e8644acbebdd35c1bc4897641b526da244fe89a31cc34"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_math_gf2m.c",
+    "sha256": "277f29dd7e02bf0368d82fa98108d67512047df778c2763270076cc284ae77bb",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "e6b41c5285025628292a7f67480be0b356886a2e2285b5f11117204480931a62"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_math_gfp.c",
+    "sha256": "06405767c814aa1156e337f9b0565783132718f4b65a84491441f068cda55a4c",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "42bf744af71bd966b244844951d780408251a735122173945ceeb40d590bba18"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_math_int.c",
+    "sha256": "17c6cbf253d548ec93f309962720817eaf49a66537bd3fc33237bf09a95cb768",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "82a2d13a26748a955431e8e4b958586924d5a646a0c35bec06c78597488ebd9f"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_md5.c",
+    "sha256": "2e9015e3bc9e416a324adeabf231c9bf38d9d48929fe7638aaed5aeb41760070",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "918080b65ca24ab4289bba77f7dcd49dafd94b354dbea64e4a743e51354d2aec"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_ripemd.c",
+    "sha256": "ee01de8bd2b23d451b38fb2be927c0c8ccb9db3dce13d797e56eced7d7c82707",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "dcc7ab762a3ec9d63c75146d4b1be22dd3ce5e4478ea1759700c3df2216801cf"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_rs.c",
+    "sha256": "14a239614557e8fb15bc9cb88c7c4ddb3d01fbbb8fff0739b8c3349afeab6bb4",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "c3d95c8cd9b804366962702721e0a0c97a0291fa7b5dd8d1968957b7d6243ff5"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_rsa.c",
+    "sha256": "ccf83998e7c66140856a702e4cdc68f84ca80d265c39da7fa7fb0443fab161dc",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "da5951553ab6d0ce8c14a14708d91d0ee1d53dc82969079103c107532e849ebe"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_sha1.c",
+    "sha256": "68d5a77cd701b37a123a09511f3d4ccf0021b10289e8f62ed95ca12c7068d251",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "0cc8c62882647ad93355529676ca05c3e67c2ea1103cf3b6b8e9b5ba81125c9d"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_sha2.c",
+    "sha256": "9d4f6896235bca26cd5777ea919e3794400323f34094b408517df5d70bb2a7d5",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "bd030e66c4ad0c9c493b742ce4621bae94ab675737089f8b59d8b7ffdfc0c502"
+  },
+  {
+    "path": "src/cryptoniteUtest/c/utest_stacktrace.c",
+    "sha256": "b0b5d7fed801e242f35b2b6e517d942eca61ee129f5e5fe7fff1ca33fc31ca91",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "81b1058e85db29e42620503aad7e8c8e22d970b6949a205537f1a986123aed0b"
+  },
+  {
+    "path": "src/cryptoniteUtest/CMakeLists.txt",
+    "sha256": "87275610d6784a8465cba9fe1d209c4ee6d59eeaf0910d169805104a968d33c9",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "5e673d82633bc70e312056ac1843bdb312256f2320bd51c2cb6f6052673e9593"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/base64_utils_internal.c",
+    "sha256": "1360883641f91b2bb10d43fa5c11b08d9f0f33bd71f3793276af3503b96a0df5",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "a4fdd5a83034f1e85af8e9088ef6330bb88ef8d46cd99e8baf0d03cf96c0c59d"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/base64_utils_internal.h",
+    "sha256": "c2fdd79e9151de41a5fc970067942ad9287f115607c8376433ceb88b935b6cbf",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "6243adef8787dc862d5e32879a6fc61de8212f458d695427f534456eed79bd5e"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest.c",
+    "sha256": "535f965e3a09eb367e325d223fd89d90bbfd7d11242480f843f44867bad76a28",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "fd050eb7bb95a91a46292951cf195cd4b9cbcdc2daefbe01543698d5d71ecfcc"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest.h",
+    "sha256": "281a2421b84ed5c2e21de2807d60010e1e219a04658b6982f77bda445b6d6f56",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "3a8fec01a70b49d65531cd837a846d70b20f0fdf93ebb6098825e40571e1a45a"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_aes.c",
+    "sha256": "7fd49dc6db4c421ea614049f866a7647080789e06087a97d7f04e98d2a583af5",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "cbf6e2d8b0be48be8f2b7aae90a7a5289e4ba45ba1843d42a47d0e3db2598dca"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_des.c",
+    "sha256": "5ae9bb47203a0fa154d6cca423b565a5d37445d8a0939e417044cc4717d11e4a",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "ef70ea3ead843a21cae2cf34c1f0864fd25e3a17c1bbb1d9a7abff315e10f424"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_dstu4145.c",
+    "sha256": "7f0a163fd9be920b592f772afd550e45430218b01a9e9964bd832ef250405469",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "6978bffd339fdb690b7069dd4b99cea0aaf67f9bc8deb4a650ab2211aeaad393"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_dstu7.cpp",
+    "sha256": "2e6322c51b2df05b96a0ce530c6cc3ec6ece5a6b36567139f086ccb626a0c210",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "1785945a2781b17f64817fb3142d4b3254dde5d7f10de11d0ede60a61284c422"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_ecdsa.c",
+    "sha256": "48ac0f10cfebe2ef92f028377d6c16cdade2d91c646ec552f78190500ec66832",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "80ef2b43448342f8a7fc38862dcf83ff409c48f29a0d03e6b69eb4905b332406"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_gost28147.c",
+    "sha256": "a7b36295eadb1854d66215a1bd3f553ea5a45bf1ed3e6abf635fc2aa10d820a8",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "61d38d186867bd170fd4919cbc54f47f9d9d4d2a4899e2f961c787655ebb9bb4"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_gost34311.c",
+    "sha256": "8ed6ffe698a03a8e3b22ddd784f3909fc3fcdbe493a457e14f77872009bc75cc",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "d59f19d0ec4ec44bececd482cb638510951aa8ac4099285609c73ccf47588583"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_md5.c",
+    "sha256": "830fd9a9de1934b71a19b6596784e19d1c688ec5fc5f039222d1747a17148d80",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "d47a90aa6832bd0647772269311eae29cd0368f49d26539b264416dd3ff8f389"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_ripemd.c",
+    "sha256": "81bf90600624f59e9c685a91135a7e9de385e846de4f883acf30a2de30c78a9b",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "d96a3ac2db4d07be27a6ac4eee5a292ee3b0c9395dfb919386dd8b056fea4901"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_rsa.c",
+    "sha256": "3812ab677c6a781a362ee7e1de18a2abbc342df9471701cc0c26d22855665e2d",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "5e8d80a2b642241c18e30a5df1358f44e018dfe1ef81c63e1b2c9e50787f6e61"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_sha.c",
+    "sha256": "b674e02b8a8d06cdd367012582230a5260281776cc90ce08e7abc1e1a08364c5",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "467d5b3b2a56b2dc6fa3982bcc79a03664623bb55247ea08f0717937c01e4e11"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_utils.c",
+    "sha256": "99727f2d1d8436a128c5d796f97a23984595cfc91df5893a2c03d95a0e71b6ca",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "dadfbc00488f0b66f110695ac751ae621371da967b63ba9adbf2889bec5e0b80"
+  },
+  {
+    "path": "src/cryptoniteXtest/c/xtest_utils.h",
+    "sha256": "b07ef01b82c63d19248bd09c14a5cf9d102990c2519a29a2aff06af4b4b17fbe",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "9102d9c4c3a9689b720ab1fdca5690e0f432cd554e242d5497a909fb358f161c"
+  },
+  {
+    "path": "src/cryptoniteXtest/CMakeLists.txt",
+    "sha256": "409d42d8bc463e7e935b6de1b093c9930070a92496ad228998ecb7807d073881",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "fc9034284b5e2a06d6e7a1309ed9dbb8bb001a4c8cf91c291287994a54380f2a"
+  },
+  {
+    "path": "src/pkiExample/c/pki_example.c",
+    "sha256": "7e42970e95560ba3f8935e3c47440c0e52a37f6008ed597c2634bf79454a09a9",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "d9456abce0d955294471bc40e23ab51c458a0f137256ed49cc7e90be39d30dce"
+  },
+  {
+    "path": "src/pkiExample/CMakeLists.txt",
+    "sha256": "002759070c7071a964b2685adb5b357be5c3be21002a3f8d6e324638b2b6ba79",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "56a09323197deeedae81fe143b7e73897f3943c387c3aafaf3460f3bd52a1088"
+  },
+  {
+    "path": "src/pkixTestUtils/c/pkix_test_utils.c",
+    "sha256": "f79ab10278070ac2d1c8ded0d15c55eda5f44ac1c7a7e90aaead54a9e0fcf60c",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "f88f4249b171a7cb67693f4c5703e02ca77998a55c41971ef0a5f33a53101b78"
+  },
+  {
+    "path": "src/pkixTestUtils/c/pkix_test_utils.h",
+    "sha256": "5d9751c010f50a72321cf25a38355f0c7d7f48e42dcfeed8b9f72b4bb3018ef8",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "01e1b7c73b6268d48a92ba5508094a22d8095af3bb978538b2db1a62d0934142"
+  },
+  {
+    "path": "src/pkixTestUtils/CMakeLists.txt",
+    "sha256": "2d96527f03275da46e14a887a2e10ff7b9a4e2f4f3939570ddaaeca1b4ba538c",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "54c74fa17e7acdf6bf06b27b44793ecdeb708a33954a06f2c87f833581458168"
+  },
+  {
+    "path": "src/pkixUtest/c/utest.c",
+    "sha256": "936c655aa03d6fa212855036d07ad037b210f98373381a6cee0934c216c46b7e",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "4b48855315b793815741729219e85acce8fef7a4d8910b660feaee5f98c540d5"
+  },
+  {
+    "path": "src/pkixUtest/c/utest.h",
+    "sha256": "d89e310b7b68f63975e86b3ca92bbaae241be7802ba6833f0a4a2d30e063ce06",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "197d8cdc7d2a0dc4f542e58b1d4a3c4a990ef42793f12e17a811806b2388fd1d"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_aids.c",
+    "sha256": "a970869190bb02bad73a56adb752e899c56102109523558a30ee05d7cdddb5c1",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "7a93194829ef3a58a042f4359ef4eb3f2d30f27828e57bcf91bf78f165172818"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_cert.c",
+    "sha256": "4b588effaf8de01e12934d17fbef528f1d32f746031dbddbd22a4a971f48f8d5",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "eb6f8e91985961a432c1628d0ff72438d44368ebbf37a12d8c88b3c0ed96c4f2"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_cert_engine.c",
+    "sha256": "7c04ae99b4edfcbdabd426b7918126a124dde858788b37851e023a928ff2b54d",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "256b43743b4b301aede06c2f83929c68a7968c3bd2f4c450c8a066a2cd3d7ddc"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_creq.c",
+    "sha256": "7fae0d7477f19d3a0b8114858643393dc97261ddf57aa2046aa98c8c35822c8c",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "bab9dca140f56426a3ca2660f2a33e02e68c4cc1fbae92a4c56d85916fd8240f"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_crl.c",
+    "sha256": "72b3a79c1a90635320f5239faa2f882bd23046ea2e9b81ffe305cbde9aad8aff",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "c22c2f4f731486140814859a6f5a6b480efe6522f9ba1150ad37327a6b3f49a3"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_crl_engine.c",
+    "sha256": "6cbba5d81f499eb4dfde16f2f5413f5900c4634aa0aa4c2b55213488c2409a16",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "ba11894b57a208a05bbc7211e50a7856888a5b04ead320093136358d922cff72"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_cryptonite_manager.c",
+    "sha256": "dbc9c09e11937d18718e0e130afbad8c31b18c4c48a1fa5cd5f0927157a1ee5c",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "b0d676a6c2825078718bd5b633aebfb186f9dbf645ed01920680af78dc580b23"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_enveloped_data.c",
+    "sha256": "f21fae8c2bb12face76b5ad56b4e0cb6bf4b0a67788ba02a7827c7ad02c8fae0",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "d894f7f7273561e7e596d9faa16f7cac7fb06c198569bba2818d9d1dd4626c7b"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_ext.c",
+    "sha256": "2fc846e115db29f7b85d618d993f126559a475f40d66d37bef7e1de9479029e5",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "ebec16ca5f6f633aaa6222f03d026f56b5649a67ee2c9a3bf01420e9574c056d"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_ocsp_request.c",
+    "sha256": "a16afffdd39d21a107c4476075ced8cf34d440df6fe1c09d2a72111b9bf47c3f",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "89bb6c74fe325812276c2809ff603f1fd3041ac9b8c97202a87ce6ffce46baae"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_ocsp_request_engine.c",
+    "sha256": "0f3373a91f8ce02e3e33a80d498356d9dd18381d1b3667acb49614f32c9d4955",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "4f979b0e6a0d7e28f6c8989996be0e0c7ae5727a812e2f130356537539ed921e"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_ocsp_response.c",
+    "sha256": "8a5f024806df9d4ef9744a95d8361b6e116fe0833421629467e08c54125b612a",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "01a8421b55af7bb80e6ae1233ccd3ca858391fe2273840d4a23a83441b0a0aef"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_ocsp_response_engine.c",
+    "sha256": "64377eaf892dc96015ceff6a0f1f4964dc16631298fd401b5501b476bd99ad3c",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "c325211833d8299406fe0cba844b4f7dc68733d4f69e472acdf9ba40c9939007"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_oids.c",
+    "sha256": "360d13c5a867eecad8ed8eb9256bf136ddfde40c100b59573dad0f281c04b325",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "be18555a5c17eea4ad55133e90e044f67a44955bdbd5fe003e1d71eb66aaa24c"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_pkix_utils.c",
+    "sha256": "aa597c154399f8189171d87cdf77dd04cc06e7f4e5d081ad7a547f2246b20eeb",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "f344b6eee8dc1a78d97caf9c077b0686aadb49fb35e3449607c639f88a500703"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_signed_data.c",
+    "sha256": "0c68bb398e24c5fcaa3515e0340d9b12178c5652abd8a92fbae437480c1d2833",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "2f2f1b51ba1ff9df55510dbc70d3e209cde237125b416e1d320359961c033903"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_signed_data_engine.c",
+    "sha256": "ea3621f2fa79a57cbd6c001c20a2d8eb466a1a16531212f7008d956a43f91071",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "eb2cd42fc0515aa88a17ac63ec41213bca131ba9a0685d14449e61ef2be11085"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_signer_info_engine.c",
+    "sha256": "fef993a769f6a00525962dc3ba3d17e3dc48d58169df7c0928d875c7cf1c8a08",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "0307dbc92d15497eae875e210fab7874c0c27d8a6ff18566f5d74b51f3e36348"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_sinfo.c",
+    "sha256": "17d9cfb29a29066eef4285f9fd4b8bd93c5d6dc3375ab06222164425eef7eee2",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "be35a8e645c8165bbc2fe3c3cb36a5a6432e99dc19d0eeac7ad70e2dbe38b05f"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_spki.c",
+    "sha256": "489f71e215182145f64fa88657bbd818d22f679d19613860c39000af55e7d7b9",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "9e1bd58174fe0795a229e76d17d38e47ddb475dabb13f752b50086810a7ec207"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_tsp_request.c",
+    "sha256": "92a73d40753c192839cd4a41f77687b8bf5f9185cd22f8b15da2bdf3da6a40df",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "9129a9113b79c3e430f6edb341d3c8ab07f2789638e8553bce4c3921d75a18ac"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_tsp_request_engine.c",
+    "sha256": "2cef657db7584f2346f604f05364af33afd3dd80950c63ec4f9482489a050b6f",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "ec937e947520e0f47a82e56cde91a41f9d4acaa6e616b52922d0b5c896c9ff40"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_tsp_response.c",
+    "sha256": "3d4bd5ec0e1ba2bc0810afd108e44a77b8538a669387a9a0e82452ac130bf9e9",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "0ade2308e45881932d9d66ea6d87477823d77516fb9abecb408c67333638f80a"
+  },
+  {
+    "path": "src/pkixUtest/c/utest_tsp_response_engine.c",
+    "sha256": "699ef0a4434a7f75e749ff31ed6acbeb405813478af06301362425d74646d2fd",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "6d66d4c5ec323cb5f28fd272fa6d9ead1e50ca7e6fea3175a8ec85ab4fbd5fef"
+  },
+  {
+    "path": "src/pkixUtest/CMakeLists.txt",
+    "sha256": "ee6840fe845146dc5f9daab0bd218dff7338ddd298c6342041bfdc47cf43dcee",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "bed4a18ad9eed9903db867b40a9bcbdca33df5930e95d59d7d0329c2b977a0d0"
+  },
+  {
+    "path": "src/pkixUtest/resources/83C539C16F20B8257B0F298E20141840.crt",
+    "sha256": "cff6c82ff19a16584b5010b4d4dca95aee16c1dce1030ae1f0648edf9d79b1d9",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "cff6c82ff19a16584b5010b4d4dca95aee16c1dce1030ae1f0648edf9d79b1d9"
+  },
+  {
+    "path": "src/pkixUtest/resources/certificate257.cer",
+    "sha256": "cc13297a189aab96df30d99c1bbdc5cab61d640c67ef41c658089ef4f92fb520",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "cc13297a189aab96df30d99c1bbdc5cab61d640c67ef41c658089ef4f92fb520"
+  },
+  {
+    "path": "src/pkixUtest/resources/cms_sign/3sign.pdf",
+    "sha256": "8428763b683ec9f371ccff2a670ccf6d55562e42896e48d7bc2db91d9b2d0104",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "8428763b683ec9f371ccff2a670ccf6d55562e42896e48d7bc2db91d9b2d0104"
+  },
+  {
+    "path": "src/pkixUtest/resources/cms_sign/3sign_1.dat",
+    "sha256": "e1bf5252802abc17f550f2719aa24bd5f69d48f41f8cd255b24ed328c9faccef",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "e1bf5252802abc17f550f2719aa24bd5f69d48f41f8cd255b24ed328c9faccef"
+  },
+  {
+    "path": "src/pkixUtest/resources/cms_sign/3sign_2.dat",
+    "sha256": "1a47dc67ae1f861bce6561acc1c28518ab95316103e26ca6046e60af02de35c3",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "1a47dc67ae1f861bce6561acc1c28518ab95316103e26ca6046e60af02de35c3"
+  },
+  {
+    "path": "src/pkixUtest/resources/cms_sign/3sign_3.dat",
+    "sha256": "c344df897c72ea99fe92e982e9bf475738dff8259b5a6ad860a1226fa12c9cf2",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "c344df897c72ea99fe92e982e9bf475738dff8259b5a6ad860a1226fa12c9cf2"
+  },
+  {
+    "path": "src/pkixUtest/resources/cms_sign/cms1_ecdsa.dat",
+    "sha256": "e8ece6021164ff6d8652507283aa30531040885315cd592751dae509b6ad1088",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "e8ece6021164ff6d8652507283aa30531040885315cd592751dae509b6ad1088"
+  },
+  {
+    "path": "src/pkixUtest/resources/cms_sign/cms2_ecdsa.dat",
+    "sha256": "dab0b14f21ab18f534cc27547ae2582f45048ec142c550be6d6b0a894230cb8b",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "dab0b14f21ab18f534cc27547ae2582f45048ec142c550be6d6b0a894230cb8b"
+  },
+  {
+    "path": "src/pkixUtest/resources/cms_sign/cms_ecdsa_2sdata.dat",
+    "sha256": "08ff0f8f392675b05bf7cbcfafe0e8f6fb3d78364bf3976cfd3d011f6182df7a",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "08ff0f8f392675b05bf7cbcfafe0e8f6fb3d78364bf3976cfd3d011f6182df7a"
+  },
+  {
+    "path": "src/pkixUtest/resources/cms_sign/hash.dat",
+    "sha256": "feea25438d26fde76b16a48b47e28e86d5c3958f5791760808e81ae6ebe04238",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "feea25438d26fde76b16a48b47e28e86d5c3958f5791760808e81ae6ebe04238"
+  },
+  {
+    "path": "src/pkixUtest/resources/cms_sign/SignInfo_1.dat",
+    "sha256": "622948961050eb01f826566dc8199268c416c602a0ea852716cd8a09e549708a",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "622948961050eb01f826566dc8199268c416c602a0ea852716cd8a09e549708a"
+  },
+  {
+    "path": "src/pkixUtest/resources/crl.dat",
+    "sha256": "0117fb79eddef3e4fb98ab1fdddbd234227add49f1f68eabdd1a49065b8cff59",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "0117fb79eddef3e4fb98ab1fdddbd234227add49f1f68eabdd1a49065b8cff59"
+  },
+  {
+    "path": "src/pkixUtest/resources/CZO-Delta.crl",
+    "sha256": "5ebf8f0b091073c8032ac7a0af1b46ce813cd745f06c0c8c58a6dc4fdb3873f9",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "5ebf8f0b091073c8032ac7a0af1b46ce813cd745f06c0c8c58a6dc4fdb3873f9"
+  },
+  {
+    "path": "src/pkixUtest/resources/CZO-Full.crl",
+    "sha256": "fb01c9689ee7fdefc82cc9c322d8a6f95b246963f55cd3ce8a3c9dd6db3c1819",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "fb01c9689ee7fdefc82cc9c322d8a6f95b246963f55cd3ce8a3c9dd6db3c1819"
+  },
+  {
+    "path": "src/pkixUtest/resources/E06F3A31973F8370F4166BF3223C347E.crt",
+    "sha256": "ff5512f5929768b16f65bc0e6a678004165a888289249c1b63efaa2f3fc19f43",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "ff5512f5929768b16f65bc0e6a678004165a888289249c1b63efaa2f3fc19f43"
+  },
+  {
+    "path": "src/pkixUtest/resources/E06F3A31973F8370F4166BF3223C347E.txt",
+    "sha256": "fb189e019edc30251528eb5dbbb26da21ca71221bf72f30d5ee043c959266e0d",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "fb189e019edc30251528eb5dbbb26da21ca71221bf72f30d5ee043c959266e0d"
+  },
+  {
+    "path": "src/pkixUtest/resources/ecdsa_cert.crt",
+    "sha256": "eb880ecd6e39b35e8512cda20603e0a89ceb775a19d511b8b5c7740d9ad21575",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "eb880ecd6e39b35e8512cda20603e0a89ceb775a19d511b8b5c7740d9ad21575"
+  },
+  {
+    "path": "src/pkixUtest/resources/env_data_cert.dat",
+    "sha256": "614cef53523d81922b53aee9e9d9da9148f69c37b81345768abd85f9ce2376d3",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "614cef53523d81922b53aee9e9d9da9148f69c37b81345768abd85f9ce2376d3"
+  },
+  {
+    "path": "src/pkixUtest/resources/enveloped_data.dat",
+    "sha256": "c30f17a09001cd45c9a7d5d4fd30c108d47f86e7fe61f50fda1137bdfeb76826",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "c30f17a09001cd45c9a7d5d4fd30c108d47f86e7fe61f50fda1137bdfeb76826"
+  },
+  {
+    "path": "src/pkixUtest/resources/ocsp.cer",
+    "sha256": "567ebef7897d671bf25540404a634ed15b2c34d44d2fde5593a312d5510b3fbe",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "567ebef7897d671bf25540404a634ed15b2c34d44d2fde5593a312d5510b3fbe"
+  },
+  {
+    "path": "src/pkixUtest/resources/ocsp_request.dat",
+    "sha256": "3e5bc4b3f558c1495efffa5ac7a50c07a6eb06f253ee8321661756d2f6840389",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "3e5bc4b3f558c1495efffa5ac7a50c07a6eb06f253ee8321661756d2f6840389"
+  },
+  {
+    "path": "src/pkixUtest/resources/ocsp_resp_for_revoked_cert.dat",
+    "sha256": "a370b270752e5b8462da705cab6638eae278ffb49c9b6dc6b7ed34d61f8a6af1",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "a370b270752e5b8462da705cab6638eae278ffb49c9b6dc6b7ed34d61f8a6af1"
+  },
+  {
+    "path": "src/pkixUtest/resources/ocsp_response.dat",
+    "sha256": "4e77ff333e48218bd12c0c523ef8c8a917663156b43a60e9e9260886d7fb704f",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "4e77ff333e48218bd12c0c523ef8c8a917663156b43a60e9e9260886d7fb704f"
+  },
+  {
+    "path": "src/pkixUtest/resources/oscp_request_with_sign.dat",
+    "sha256": "ecbdfc4f7ba9588d1c37e4cde01aed65b40b70d2014113670965bfd74eda2e1f",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "ecbdfc4f7ba9588d1c37e4cde01aed65b40b70d2014113670965bfd74eda2e1f"
+  },
+  {
+    "path": "src/pkixUtest/resources/pkiExample_DSTU4145_M257_PB/delta.crl",
+    "sha256": "9e173b211c79268cc1dafd0e3130da5016fe3ef6519dba205fc00c1c433c5c3c",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "9e173b211c79268cc1dafd0e3130da5016fe3ef6519dba205fc00c1c433c5c3c"
+  },
+  {
+    "path": "src/pkixUtest/resources/pkiExample_DSTU4145_M257_PB/ocsp_certificate.cer",
+    "sha256": "84052282464586b86fa0ede46ee835e93bee7236287baecbe8b43271f08eb3af",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "84052282464586b86fa0ede46ee835e93bee7236287baecbe8b43271f08eb3af"
+  },
+  {
+    "path": "src/pkixUtest/resources/pkiExample_DSTU4145_M257_PB/ocsp_private_key_ba.dat",
+    "sha256": "cd9aa9930e182d15dd8b5a881164b824ea96acf3c531d811ed2b09d10b056da9",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "cd9aa9930e182d15dd8b5a881164b824ea96acf3c531d811ed2b09d10b056da9"
+  },
+  {
+    "path": "src/pkixUtest/resources/pkiExample_DSTU4145_M257_PB/ocsp_request.der",
+    "sha256": "c2e9fac6b8291f4a9fa1176fdf2837f2e0ff30a0e42601b3bff70d23ced0ce0e",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "c2e9fac6b8291f4a9fa1176fdf2837f2e0ff30a0e42601b3bff70d23ced0ce0e"
+  },
+  {
+    "path": "src/pkixUtest/resources/pkiExample_DSTU4145_M257_PB/root_private_key_ba.dat",
+    "sha256": "4b2d03badbdad116c2cb61782bc036705e68f1266b6926727b4343987df6d0fd",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "4b2d03badbdad116c2cb61782bc036705e68f1266b6926727b4343987df6d0fd"
+  },
+  {
+    "path": "src/pkixUtest/resources/pkiExample_DSTU4145_M257_PB/tsp_request.der",
+    "sha256": "b1bbcd29fcdfb905d4b86a28925cb3f471aa37a24bc3d2b6a08a8321a2815aa8",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "b1bbcd29fcdfb905d4b86a28925cb3f471aa37a24bc3d2b6a08a8321a2815aa8"
+  },
+  {
+    "path": "src/pkixUtest/resources/pkiExample_DSTU4145_M257_PB/userfiz_private_key_ba.dat",
+    "sha256": "e3e471a2dcf6b622807bdb93d25756ee81f292839bbe5586ea9087c53b1721a7",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "e3e471a2dcf6b622807bdb93d25756ee81f292839bbe5586ea9087c53b1721a7"
+  },
+  {
+    "path": "src/pkixUtest/resources/pkiExample_DSTU4145_M257_PB/userur_private_key_ba.dat",
+    "sha256": "1ef3428b80cd39ba789d1450bb9998dec42c29d4ff2f426f2fe1769e260f3a74",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "1ef3428b80cd39ba789d1450bb9998dec42c29d4ff2f426f2fe1769e260f3a74"
+  },
+  {
+    "path": "src/pkixUtest/resources/rsa.cer",
+    "sha256": "571f5707913aa4b8b47393ff16d7562b71a499803ae84eddd72b716569dca47f",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "571f5707913aa4b8b47393ff16d7562b71a499803ae84eddd72b716569dca47f"
+  },
+  {
+    "path": "src/pkixUtest/resources/signed_data.dat",
+    "sha256": "207e8407a4583f71f0c9bf165d02c5fec59fb419999eb8bfaf6e3902420dff90",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "207e8407a4583f71f0c9bf165d02c5fec59fb419999eb8bfaf6e3902420dff90"
+  },
+  {
+    "path": "src/pkixUtest/resources/sinfo.dat",
+    "sha256": "8cbc192d0bf777309f049f3f3d01c2bee8cbe3c96270af19daebf4998ee68b75",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "8cbc192d0bf777309f049f3f3d01c2bee8cbe3c96270af19daebf4998ee68b75"
+  },
+  {
+    "path": "src/pkixUtest/resources/test.crt",
+    "sha256": "4eead886e37484135271f906b67f74a2cfd09085071453a3d5dd54e29b890066",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "4eead886e37484135271f906b67f74a2cfd09085071453a3d5dd54e29b890066"
+  },
+  {
+    "path": "src/pkixUtest/resources/test_cms.p7s",
+    "sha256": "8fade357366605c992bb59205925a4a9caa2e0090ae6055fad939d9ee2fe85c3",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "8fade357366605c992bb59205925a4a9caa2e0090ae6055fad939d9ee2fe85c3"
+  },
+  {
+    "path": "src/pkixUtest/resources/test_cms_sign.dat",
+    "sha256": "0373eebff9a390b6c8c98bec9bdef8f42539a8cb3d1ff80f1886eef0aac40709",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "0373eebff9a390b6c8c98bec9bdef8f42539a8cb3d1ff80f1886eef0aac40709"
+  },
+  {
+    "path": "src/pkixUtest/resources/test_cms_signed_attr.der",
+    "sha256": "f6d0d46916bd80ee55eadda168da4e2cb799075d2d1918dadb8dcdee191ba05f",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "f6d0d46916bd80ee55eadda168da4e2cb799075d2d1918dadb8dcdee191ba05f"
+  },
+  {
+    "path": "src/pkixUtest/resources/test_cms_unsigned_attr.der",
+    "sha256": "7a040226ff8d3a6660dcf7f44807531daa76c2ef8f5dcbdc0f18154f194800d5",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "7a040226ff8d3a6660dcf7f44807531daa76c2ef8f5dcbdc0f18154f194800d5"
+  },
+  {
+    "path": "src/pkixUtest/resources/test_sign.cer",
+    "sha256": "4884b7bde336a6801b3cc9ce243d15f74165ed792b9c03359e5d3731bb38e8d9",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "4884b7bde336a6801b3cc9ce243d15f74165ed792b9c03359e5d3731bb38e8d9"
+  },
+  {
+    "path": "src/pkixUtest/resources/test_sign_pub_key.der",
+    "sha256": "dfe701f48463a49e0ffb0f442f8f3fe708afd398433d7aaa8b87d21feb8f3ced",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "dfe701f48463a49e0ffb0f442f8f3fe708afd398433d7aaa8b87d21feb8f3ced"
+  },
+  {
+    "path": "src/pkixUtest/resources/tsp_request.dat",
+    "sha256": "6f687db34f0ebec5673b3850b36e02e4ffbc6f584cec1ccfd2eb91424f0fde77",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "6f687db34f0ebec5673b3850b36e02e4ffbc6f584cec1ccfd2eb91424f0fde77"
+  },
+  {
+    "path": "src/pkixUtest/resources/tsp_response.dat",
+    "sha256": "10f06d85317a94e7d43ea4551908ec7dd93110160b304324d455f6676112b59e",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "10f06d85317a94e7d43ea4551908ec7dd93110160b304324d455f6676112b59e"
+  },
+  {
+    "path": "src/storageUtest/c/utest.c",
+    "sha256": "04e7c344e3258264816c8e6e0607680799a8ed44d6ee722299e2a70f55bc9440",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "2bf989966a1863b1a7bbe514efb1b4df92bc8dbbd856e7d45c6ea545d0f9b59b"
+  },
+  {
+    "path": "src/storageUtest/c/utest.h",
+    "sha256": "d3a6a07426ea20b1a31b10895ccab9371007c8ab69cf73cf87db2971d1232de1",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "0ee8dc80a98cdc9564cdb73388326c0bab6f5b766980efe1058f3b74af453978"
+  },
+  {
+    "path": "src/storageUtest/c/utest_pkcs12_dstu.c",
+    "sha256": "072fdbdd1ddc489107ddff5afa93462b38f95efee11ab6d7a7b2bd0d7b8c57f7",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "596b91638eb254ad257cdc79f93786716c32aa061b5e104a0a7770ea9d25fe8f"
+  },
+  {
+    "path": "src/storageUtest/c/utest_pkcs12_ecdsa.c",
+    "sha256": "3d259a4171bb7626322764eef3bffdde85ebe72c7a88d81148e4d306107d5849",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "7abdaf8a6d77ff24651e2ecf1a574b0b67db7747dabaafa6664f91019cb0aed0"
+  },
+  {
+    "path": "src/storageUtest/c/utest_pkcs5.c",
+    "sha256": "6cb6d88713ded24f4211cf8e2400234efea25ee9b312ca001630d3c6ca910927",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "4bbc829d5b09e0c9d6117000875316e4ad2d7289886d2249235e2b464b4c2131"
+  },
+  {
+    "path": "src/storageUtest/CMakeLists.txt",
+    "sha256": "81474abeb6b3c2cd06fdb951d4b33aaa6540eafa2daac0e4924f4a609815e7bc",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "cbda81d161e6d42b2c298706412af6302fa10ad3b303ff77000f5043b2bd991b"
+  },
+  {
+    "path": "src/storageUtest/resources/ossl_ecdsa_aes_256_cbc_storage_123456.p12",
+    "sha256": "0e21002cf79a606f3f66a59da8d3f203d5ce8247ca0f6fa774c37682819b86a3",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "0e21002cf79a606f3f66a59da8d3f203d5ce8247ca0f6fa774c37682819b86a3"
+  },
+  {
+    "path": "src/storageUtest/resources/pkcs12_by_iit(123456).pfx",
+    "sha256": "3d72b034c79607cf3f3f8fef74bee1cfe0d13107a77c96372cb6badc03664086",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "3d72b034c79607cf3f3f8fef74bee1cfe0d13107a77c96372cb6badc03664086"
+  },
+  {
+    "path": "src/storageUtest/resources/pkcs12_cert_cryptonite.crt",
+    "sha256": "7f51cbf29d3c75a279629f50a766ccd17e8457f8ea29d7bbc346ff6050473934",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "7f51cbf29d3c75a279629f50a766ccd17e8457f8ea29d7bbc346ff6050473934"
+  },
+  {
+    "path": "src/storageUtest/resources/pkcs12_ecdsa_sha1_by_openssl(123456).pfx",
+    "sha256": "34681d2d06b4cc93e7781c347e8619c04fdc8b0c2d830e25b65964642c1cbb93",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "34681d2d06b4cc93e7781c347e8619c04fdc8b0c2d830e25b65964642c1cbb93"
+  },
+  {
+    "path": "src/storageUtest/resources/pkcs12_rsa(123456).pfx",
+    "sha256": "9cb80b7b923b8d25d03002f099c3fc059a46b9e33f79b581e1dd13cd3a582a04",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "9cb80b7b923b8d25d03002f099c3fc059a46b9e33f79b581e1dd13cd3a582a04"
+  },
+  {
+    "path": "src/storageUtest/resources/pkcs8.crt",
+    "sha256": "7a12ebd850a425fab56bcbbd01b090eeb92402c34562e7856de198c1321e5b63",
+    "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
+    "source_sha256": "7a12ebd850a425fab56bcbbd01b090eeb92402c34562e7856de198c1321e5b63"
+  }
+]

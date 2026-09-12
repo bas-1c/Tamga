@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "tamga",
+  "version": "0.10.0",
+  "description": "Бібліотека українського КЕП із компонентою 1С NativeAPI",
+  "builtin-baseline": "94a541197763a4f449a1b91478df48c0584a6256",
+  "dependencies": [
+    {
+      "name": "libxml2",
+      "default-features": false
+    }
+  ],
+  "default-features": [],
+  "features": {
+    "xml-signatures": {
+      "description": "Підсистема підпису XMLDSIG/XAdES (TAMGA_ENABLE_XML_SIGNATURES=ON). Власних портів більше не має: libxml2 з ADR-030 — безумовна залежність ядра. Фіча збережена, бо на неї посилаються VCPKG_MANIFEST_FEATURES у workflow і документації.",
+      "dependencies": []
+    },
+    "pdf-signatures": {
+      "description": "PAdES: потребує qpdf, який тягне zlib і libjpeg-turbo (TAMGA_ENABLE_PDF_SIGNATURES=ON)",
+      "dependencies": [
+        "qpdf",
+        "libjpeg-turbo",
+        "zlib"
+      ]
+    },
+    "xmlsec-crosscheck": {
+      "description": "Діагностична перехресна перевірка підпису через xmlsec (TAMGA_ENABLE_XMLSEC_CROSSCHECK=ON); у постачанні вимкнена",
+      "dependencies": [
+        "xmlsec"
+      ]
+    }
+  }
+}
