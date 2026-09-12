@@ -9,7 +9,7 @@
 | cryptonite | `patches/cryptonite/upstream.json`, повний текст у `vendor/cryptonite/LICENSE`; BSD-2-Clause-подібна ліцензія |
 | miniz | `vendor/miniz/`; збережені MIT copyright/license banners і LICENSE |
 | pthread | Windows-реалізація в `vendor/cryptonite/src/pthread`; умови й attribution у вихідних файлах |
-| 1C NativeAPI SDK headers | `vendor/1c-nativeapi-sdk/include`; в імпортованій копії немає окремого license-файла. Право на публічне поширення потребує підтвердження перед випуском |
+| 1C NativeAPI SDK headers | `vendor/1c-nativeapi-sdk/include`; в імпортованій копії немає окремого license-файла. Заголовки належать сторонньому SDK; ліцензія власного коду Tamga не встановлює умови їх поширення |
 
 Невикористовувані upstream libs, тести та приклади виключено з дистрибуції. Кожний вилучений шлях і hash записано в `patches/cryptonite/excluded-paths.json`; patch replay перевіряє проєкцію patched upstream на це дерево. Повний standalone-набір upstream tests у цій проєкції не постачається.
 
