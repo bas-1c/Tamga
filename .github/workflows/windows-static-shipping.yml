@@ -76,11 +76,13 @@ jobs:
           $log = cmake -S . -B $env:BUILD_DIR -LA 2>&1 | Out-String
           if ($log -notmatch 'TAMGA_ENABLE_XML_SIGNATURES:BOOL=ON') { throw "XMLDSIG engine is OFF" }
           if ($log -notmatch 'TAMGA_ENABLE_PDF_SIGNATURES:BOOL=ON') { throw "PAdES engine is OFF" }
-          $tests = ctest --test-dir $env:BUILD_DIR -N | Out-String
-          foreach ($t in @('tamga-xmldsig-security-tests','tamga-pades-security-tests')) {
-            if ($tests -notmatch [regex]::Escape($t)) { throw "gated suite missing: $t" }
+          $tests = ctest --test-dir $env:BUILD_DIR --show-only=json-v1 | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { throw "CTest inventory failed" }
+          $testNames = @($tests.tests | ForEach-Object { $_.name })
+          foreach ($t in @('tamga-xmldsig-multisig-tests','tamga-fuzz-pdf-corpus')) {
+            if ($testNames -notcontains $t) { throw "gated suite missing: $t" }
           }
-          Write-Host $tests
+          Write-Host ($testNames -join "`n")
 
       - name: Run full CTest
         shell: pwsh
