@@ -196,6 +196,9 @@ function Get-LibraryName {
         if ($Token -notmatch '[\\/]') { return $null }   # прапорець лінкера
     }
     $leaf = ($Token -split '[\\/]')[-1]
+    # Unix додає lib до імені target; довідник використовує ім'я бібліотеки.
+    # Windows .lib зберігає власне ім'я (наприклад, libxml2.lib).
+    if ($leaf -match '^lib.+\.(a|so|dylib)(\.[0-9.]+)?$') { $leaf = $leaf.Substring(3) }
     $leaf = $leaf -replace '\.(lib|a|so|dylib|tbd|dll)(\.[0-9.]+)?$', ''
     if (-not $leaf) { return $null }
     return $leaf
