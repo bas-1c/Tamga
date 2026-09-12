@@ -197,12 +197,14 @@ try {
             throw "$name : змішані корені шляхів (частина від '$($manifest.vendor_path)/', частина ні) — патч не можна накласти однією командою"
         }
 
-        & git -C $replayDir apply --check "-p$strip" --whitespace=nowarn -- $patch 2>&1 | ForEach-Object { Write-Host "    $_" }
+        # Git apply також читає глобальний core.autocrlf; фіксуємо LF,
+        # щоб SHA-256 пропатчених виключень збігався на Windows і Linux.
+        & git -c core.autocrlf=false -c core.eol=lf -C $replayDir apply --check "-p$strip" --whitespace=nowarn -- $patch 2>&1 | ForEach-Object { Write-Host "    $_" }
         if ($LASTEXITCODE -ne 0) {
             Write-Bad "$name не накладається (корінь $root, -p$strip)"
             throw "патч $name не накладається на upstream+попередні патчі"
         }
-        & git -C $replayDir apply "-p$strip" --whitespace=nowarn -- $patch
+        & git -c core.autocrlf=false -c core.eol=lf -C $replayDir apply "-p$strip" --whitespace=nowarn -- $patch
         if ($LASTEXITCODE -ne 0) { throw "патч $name не застосувався попри успішний --check" }
         $applied++
         Write-Host ("    [{0,2}/{1}] {2}  (-p{3})" -f $applied, $series.Count, $name, $strip)

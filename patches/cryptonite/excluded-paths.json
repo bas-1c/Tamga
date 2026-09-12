@@ -1877,7 +1877,7 @@
   },
   {
     "path": "src/pkixUtest/c/utest_ocsp_response_engine.c",
-    "sha256": "64377eaf892dc96015ceff6a0f1f4964dc16631298fd401b5501b476bd99ad3c",
+    "sha256": "d5fb0be3ea230db1baa570180c40680e18df871923b80606f6d9db9f04ef81dc",
     "reason": "Unused upstream test/example tree; resources not needed by Tamga; exact original retained privately",
     "source_sha256": "c325211833d8299406fe0cba844b4f7dc68733d4f69e472acdf9ba40c9939007"
   },
