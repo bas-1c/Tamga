@@ -281,4 +281,6 @@ jobs:
             Для 1С/BAS завантажте `Tamga.zip` (чотири компоненти та MANIFEST.XML) і `Tamga-licenses.zip` (повні ліцензійні матеріали).
             Окремі бінарники, CLI, SBOM для кожної архітектури та `SHA256SUMS.txt` додано нижче.
             `release-manifest.json` містить commit джерел і hashes компонентів. Архітектуру PE/ELF та відповідність пакета збіркам перевірено автоматично.
+
+            Linux-профіль зібрано без HTTP backend: онлайн-запити TSP/OCSP/CRL недоступні. Windows використовує WinHTTP.
           files: release-files/*

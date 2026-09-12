@@ -59,6 +59,13 @@ def main():
         for name in [f'licenses-{triplet}.zip', f'sbom-{triplet}.json', f'link-map-{triplet}.txt']:
             if not (args.out / name).is_file():
                 raise ValueError('Missing required release artifact: ' + name)
+        sbom = json.loads((args.out / f'sbom-{triplet}.json').read_text(encoding='utf-8-sig'))
+        properties = {p['name']: p['value'] for p in sbom['metadata']['properties']}
+        if properties.get('tamga:triplet') != triplet:
+            raise ValueError('SBOM triplet mismatch: ' + triplet)
+        for feature in ['VENDOR_CRYPTONITE', 'XML_SIGNATURES', 'PDF_SIGNATURES']:
+            if properties.get('tamga:TAMGA_ENABLE_' + feature) != 'ON':
+                raise ValueError(f'Required release feature is disabled: {triplet}/{feature}')
     expected_hashes = {}
     with tempfile.TemporaryDirectory(prefix='tamga-release-') as temporary:
         staging = Path(temporary)
@@ -98,6 +105,7 @@ def main():
     (args.out / 'release-manifest.json').write_text(json.dumps({
         'source_commit': args.commit, 'version': json.loads((ROOT / 'vcpkg.json').read_text())['version'],
         'xml_signatures': True, 'pdf_signatures': True, 'component_sha256': expected_hashes,
+        'http_backend': {'Windows': 'WinHTTP', 'Linux': None},
         'architecture_and_manifest_verified': True,
     }, indent=2) + '\n', encoding='utf-8')
     checksums = []

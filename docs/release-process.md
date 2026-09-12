@@ -20,3 +20,5 @@ gh workflow run release.yml --repo bas-1c/Tamga --ref main -f tag=v0.10.0 -f pre
 Для встановлення компоненти в 1С/BAS потрібен `Tamga.zip`: `MANIFEST.XML`, `TamgaNative.dll`, `TamgaNative64.dll`, `libTamga32.so`, `libTamga64.so`. Разом із ним поширюй `Tamga-licenses.zip` із повними умовами для всіх чотирьох збірок. Окремі бінарники, CLI, SBOM і link maps також доступні в assets випуску.
 
 `scripts/prepare-release.py` перевіряє архітектуру PE/ELF, повноту manifest та збіг hashes упакованих компонентів з CI artifacts. `release-manifest.json` фіксує commit джерел і SHA-256 чотирьох компонентів; `SHA256SUMS.txt` містить контрольні суми всіх assets, крім самого файлу сум.
+
+У поточному Linux shipping-профілі HTTP backend вимкнено: онлайн-запити TSP/OCSP/CRL недоступні. Windows використовує WinHTTP. Пакувальник звіряє ввімкнення Cryptonite/XML/PDF за SBOM кожної платформи.
