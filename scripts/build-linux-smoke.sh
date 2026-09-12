@@ -39,7 +39,7 @@ cli="$BUILD_DIR/src/cli/tamga-cli"
 command -v readelf >/dev/null 2>&1 || die "readelf is unavailable in PATH"
 command -v nm >/dev/null 2>&1 || die "nm is unavailable in PATH"
 
-allowed_regex='^(libc\.so|libc\.so\..*|libm\.so|libm\.so\..*|libstdc\+\+\.so|libstdc\+\+\.so\..*|libgcc_s\.so|libgcc_s\.so\..*|libpthread\.so|libpthread\.so\..*|libdl\.so|libdl\.so\..*|librt\.so|librt\.so\..*)$'
+allowed_regex='^(libc\.so|libc\.so\..*|libm\.so|libm\.so\..*|libstdc\+\+\.so|libstdc\+\+\.so\..*|libgcc_s\.so|libgcc_s\.so\..*|libpthread\.so|libpthread\.so\..*|libdl\.so|libdl\.so\..*|librt\.so|librt\.so\..*|ld-linux\.so\.2|ld-linux-x86-64\.so\.2)$'
 forbidden_regex='^(libtamga-lib\.so.*|libxml2\.so.*|libxmlsec.*\.so.*|libqpdf\.so.*|libcrypto\.so.*|libssl\.so.*|libz\.so.*|zlib\.so.*|libjpeg.*\.so.*|libturbojpeg.*\.so.*|libcurl\.so.*)$'
 
 list_elf_needed_deps() {
@@ -58,7 +58,8 @@ check_no_unexpected_dynamic_deps() {
         echo
         echo "===== readelf -d $label ====="
         # DT_NEEDED is the linker-authored dependency list. Unlike ldd output,
-        # it does not include linux-vdso.so.1 or the ELF interpreter/loader.
+        # it does not include linux-vdso.so.1. The glibc loader can also be
+        # an explicit DT_NEEDED dependency and is part of the platform runtime.
         readelf -d "$binary"
         echo
         echo "===== DT_NEEDED $label ====="
