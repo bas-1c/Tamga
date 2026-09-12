@@ -4,30 +4,24 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Release tag (e.g. v0.1.0-pre)"
+        description: "Release tag matching the project version"
         required: true
-        default: "v0.1.0-pre"
+        default: "v0.10.0"
       prerelease:
         description: "Mark as prerelease"
         type: boolean
-        default: true
+        default: false
   push:
     tags: ["v*"]
 
-# П-09: право запису дається ЛИШЕ джобу публікації (`release` нижче).
-# Доти `contents: write` діяло на весь workflow, тобто й на збіркові джоби, які
-# лише завантажують артефакти і жодного запису в репозиторій не роблять. Це
-# принцип найменших прав: збірковий джоб виконує сторонні дії (vcpkg, порти,
-# екшени за рухомими тегами), і давати йому токен із правом створювати релізи
-# немає причин.
+concurrency:
+  group: release-${{ github.event.inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+
 permissions:
   contents: read
 
 jobs:
-  # П-14. Гейт перед публікацією: реліз не повинен їхати з чергою патчів
-  # vendor, яку неможливо відтворити. Дублює `vendor-integrity.yml`, але той
-  # запускається за змінами шляхів, а тут потрібна перевірка саме на тегу.
-  # Джоб коштує близько хвилини і не збирає нічого: він порівнює дерева.
   vendor-replay:
     name: cryptonite patch replay
     runs-on: ubuntu-24.04
@@ -74,15 +68,6 @@ jobs:
 
       - name: Bootstrap vcpkg (порти ставить manifest-режим під час configure)
         run: |
-          # Н-08 (завершення): baseline більше НЕ дублюється тут.
-          # Раніше той самий SHA стояв і у `vcpkg.json`, і рядком нижче;
-          # оновивши один, легко було лишити другий — і реліз зібрався б
-          # на інших версіях, ніж описує маніфест. Тепер джерело одне.
-          # Сторожа `tamga-vcpkg-baseline-tests` падає, якщо в workflow
-          # знову зʼявиться літерал SHA.
-          # Витяг без jq/python: щоб крок не залежав від того, що
-          # виявиться на раннері. Регулярка перевірена локально на цьому
-          # самому `vcpkg.json`.
           vcpkg_baseline="$(grep -o '"builtin-baseline"[[:space:]]*:[[:space:]]*"[0-9a-f]\{40\}"' vcpkg.json | grep -o '[0-9a-f]\{40\}')"
           if [ -z "$vcpkg_baseline" ]; then
             echo "vcpkg.json: builtin-baseline не знайдено" >&2
@@ -95,24 +80,6 @@ jobs:
             git -C "$vcpkg_root" checkout --quiet "$vcpkg_baseline"
             "$vcpkg_root/bootstrap-vcpkg.sh" -disableMetrics
           fi
-          # Явного `vcpkg install` тут БІЛЬШЕ НЕМАЄ, і це виправлення, а не
-          # спрощення.
-          #
-          # `scripts/buildsystems/vcpkg.cmake` вмикає manifest-режим сам, щойно
-          # бачить `vcpkg.json` у CMAKE_SOURCE_DIR, і тоді бере дерево з
-          # `<build>/vcpkg_installed`, а НЕ з `<VCPKG_ROOT>/installed`, куди
-          # ставив цей крок. Тобто порти, які він збирав, у графі лінкування не
-          # опинялися взагалі: витрачений час плюс хибне враження, що склад
-          # залежностей задано тут.
-          #
-          # Тепер склад задає рівно один документ — `vcpkg.json` — а фічі
-          # `xml-signatures;pdf-signatures` передає `scripts/build-linux.sh`
-          # разом із `-DVCPKG_MANIFEST_MODE=ON`. Ліцензійний бік від цього не
-          # слабшає, а зміцнюється: маніфест оголошує libxml2 з
-          # `default-features: false`, тобто без фічі `iconv` (LGPL) — те саме,
-          # що давав токен `libxml2[core]`, але вже спільно з Windows-джобами.
-          # П-09 стався саме через два різні шляхи встановлення залежностей;
-          # тепер він один.
           echo "VCPKG_ROOT=$vcpkg_root" >> "$GITHUB_ENV"
 
       - name: Build (Release)
@@ -124,14 +91,6 @@ jobs:
           --static-third-party-deps
           --vcpkg-triplet ${{ matrix.vcpkg_triplet }}
 
-      # Артефакти обов'язкові, а не «якщо є».
-      #
-      # Раніше кожне копіювання закінчувалося `|| true`, а вивантаження мало
-      # `if-no-files-found: warn`. Разом це означало, що збірка, яка не дала
-      # жодного бінарника, публікувала реліз БЕЗ Linux-артефактів і лишалася
-      # зеленою. Саме такий м'який режим — «крок начебто спрацював, а
-      # перевірено нічого» — дав П-09, тож тут він знятий: відсутній файл
-      # валить джоб і називає, якого саме файлу немає.
       - name: Stage artifacts
         run: |
           set -euo pipefail
@@ -143,15 +102,6 @@ jobs:
           cp "$b/src/cli/tamga-cli" "dist/tamga-cli-linux-${{ matrix.arch }}"
           ls -la dist
 
-      # П-09 / план п.17: SBOM і link-map знімаються з ФАКТИЧНОГО графа
-      # лінкування (CMake File API), а не з переліку в документації, і на
-      # кожен triplet окремо. Крок падає, якщо в рядку лінкування зʼявилася
-      # бібліотека, якої немає в `scripts/sbom-components.json`, — тобто
-      # компонент із невідомою ліцензією в артефакті, що постачається.
-      #
-      # `-CheckNotices` тут НЕ вмикається: згенерований блок у
-      # `THIRD_PARTY_NOTICES.md` зафіксовано для `x64-windows-static` (склад
-      # компонентів залежить від triplet). Для Linux публікується SBOM.
       - name: SBOM + link-map
         shell: pwsh
         run: >
@@ -197,27 +147,6 @@ jobs:
         with:
           arch: ${{ matrix.arch }}
 
-      # П-09: Windows-джоби релізу переведено в manifest-режим — той самий, що
-      # в `windows-static-shipping.yml`.
-      #
-      # ЩО ЦЕ ВИПРАВЛЯЄ, і це не косметика. Класичний `vcpkg install libxml2`
-      # ставив порт із ДЕФОЛТНИМИ фічами, а в порту libxml2
-      # `default-features: ["iconv", "zlib"]`, і фіча `iconv` тягне `libiconv`
-      # під LGPL. `vcpkg.json` натомість оголошує libxml2 із
-      # `default-features: false`. Отже артефакт, який ми ПОСТАЧАЄМО,
-      # статично лінкував LGPL-компонент, а артефакт, який ми ТЕСТУЄМО, — ні.
-      #
-      # Вимір, а не припущення: у класичному дереві `libxml2-export.cmake`
-      # містить `INTERFACE_LINK_LIBRARIES ... Iconv::Iconv ...`, а `libxml2.lib`
-      # — посилання на `libiconv_open`; у manifest-дереві `iconv.lib` і
-      # `charset.lib` відсутні взагалі, а в `build.ninja` немає жодної згадки.
-      # `THIRD_PARTY_NOTICES.md` сам називав «зібрати libxml2 без iconv»
-      # найдешевшим способом прибрати єдиний LGPL-компонент із бінарника —
-      # manifest-шлях це вже робив, реліз просто ніколи цього не отримав.
-      #
-      # `xmlsec` прибрано: `TAMGA_ENABLE_XMLSEC_CROSSCHECK` не вмикається в
-      # жодному workflow чи скрипті, тож пакет ставився й не лінкувався ніде.
-      # Для x86 це ще й помітно скорочує збірку портів із джерел.
       - name: Configure
         shell: pwsh
         run: >
@@ -235,9 +164,6 @@ jobs:
           -DTAMGA_BUILD_TESTS=ON
           -DTAMGA_BUILD_CLI=ON
 
-      # Сторожа проти найтихішого способу зіпсувати цей джоб: CMake не знайшов
-      # libxml2/qpdf, мовчки вимкнув рушій — і реліз поїхав би БЕЗ XAdES і
-      # PAdES, лишаючись зеленим. Та сама перевірка, що в shipping-CI.
       - name: Assert both format engines are enabled
         shell: pwsh
         run: |
@@ -270,12 +196,6 @@ jobs:
           Get-ChildItem dist
           Get-Item "tamga-windows-${{ matrix.arch }}.zip"
 
-      # Той самий SBOM-крок, що в Linux-джобі, але для x64 він ще й ЗВІРЯЄ
-      # згенерований блок із тим, що записано в `THIRD_PARTY_NOTICES.md`.
-      # `x64-windows-static` — конфігурація, для якої цей блок зафіксовано;
-      # розбіжність означає, що склад бінарника змінився, а notices — ні.
-      # Саме цей клас розходження дав П-09 (LGPL-твердження, прив'язане не до
-      # того шляху збірки) і ADR-030 (libxml2 став безумовною залежністю).
       - name: SBOM + link-map (x64, зі звіркою notices)
         if: matrix.arch == 'x64'
         shell: pwsh
@@ -313,17 +233,9 @@ jobs:
     name: publish-release
     needs: [vendor-replay, build-linux, build-windows]
     runs-on: ubuntu-24.04
-    # Єдиний джоб, якому справді потрібне право запису: він створює реліз.
     permissions:
       contents: write
     steps:
-      # Ліцензійний комплект береться з тегованого дерева, а не зі збіркових
-      # артефактів: жоден збірковий джоб його не завантажував, тож до цієї
-      # правки `LICENSE`, `NOTICE` і `THIRD_PARTY_NOTICES.md` у релізі
-      # ФІЗИЧНО не з'являлися, хоч `docs/release-process.md` перелічує їх у
-      # таблиці «Що входить у реліз». Це не косметика: `THIRD_PARTY_NOTICES.md`
-      # — єдиний документ, який супроводжує бінарну дистрибуцію переліком
-      # сторонніх компонентів і їхніх ліцензій.
       - name: Checkout (ліцензійний комплект)
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -334,26 +246,26 @@ jobs:
         with:
           path: artifacts
 
-      - name: Flatten artifacts
-        run: |
-          mkdir -p release-files
-          find artifacts -type f -exec cp -f {} release-files/ \;
-          for f in LICENSE NOTICE THIRD_PARTY_NOTICES.md; do
-            [ -f "$f" ] || { echo "ліцензійний комплект неповний: немає $f" >&2; exit 1; }
-            cp -f "$f" release-files/
-          done
-          ls -la release-files
+      - name: Prepare and verify four-platform package
+        run: python3 scripts/prepare-release.py --artifacts artifacts --out release-files --commit "$GITHUB_SHA"
 
       - name: Resolve tag
         id: tag
+        env:
+          INPUT_TAG: ${{ inputs.tag }}
+          INPUT_PRERELEASE: ${{ inputs.prerelease }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "tag=${{ github.event.inputs.tag }}" >> "$GITHUB_OUTPUT"
-            echo "prerelease=${{ github.event.inputs.prerelease }}" >> "$GITHUB_OUTPUT"
-          else
-            echo "tag=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
-            echo "prerelease=false" >> "$GITHUB_OUTPUT"
-          fi
+          python3 - <<'PY'
+          import json, os, re
+          from pathlib import Path
+          version = json.loads(Path('vcpkg.json').read_text())['version']
+          tag = os.environ['INPUT_TAG'] if os.environ['GITHUB_EVENT_NAME'] == 'workflow_dispatch' else os.environ['GITHUB_REF_NAME']
+          if not re.fullmatch(r'v' + re.escape(version) + r'(?:-[A-Za-z0-9.-]+)?', tag):
+              raise SystemExit('Release tag must match vcpkg.json version')
+          prerelease = os.environ.get('INPUT_PRERELEASE', 'false') if os.environ['GITHUB_EVENT_NAME'] == 'workflow_dispatch' else ('true' if '-' in tag else 'false')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write(f'tag={tag}\nprerelease={prerelease}\n')
+          PY
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
@@ -361,6 +273,12 @@ jobs:
           tag_name: ${{ steps.tag.outputs.tag }}
           target_commitish: ${{ github.sha }}
           prerelease: ${{ steps.tag.outputs.prerelease }}
-          generate_release_notes: true
-          fail_on_unmatched_files: false
+          generate_release_notes: false
+          fail_on_unmatched_files: true
+          body: |
+            NativeAPI-компонента для Windows і Linux, x86 та x64, з XML/XAdES і PDF/PAdES рушіями.
+
+            Для 1С/BAS завантажте `Tamga.zip` (чотири компоненти та MANIFEST.XML) і `Tamga-licenses.zip` (повні ліцензійні матеріали).
+            Окремі бінарники, CLI, SBOM для кожної архітектури та `SHA256SUMS.txt` додано нижче.
+            `release-manifest.json` містить commit джерел і hashes компонентів. Архітектуру PE/ELF та відповідність пакета збіркам перевірено автоматично.
           files: release-files/*
