@@ -50,6 +50,13 @@ endif()
 if(DEFINED TAMGA_MT_COMPILER AND NOT TAMGA_MT_COMPILER STREQUAL "")
     list(APPEND _configure_args "-DCMAKE_MT=${TAMGA_MT_COMPILER}")
 endif()
+# GCC/Ninja задає x86 через -m32, без generator platform. Передаємо
+# compile/link flags, щоб незалежний consumer мав ABI встановленого пакета.
+foreach(_flags C_FLAGS CXX_FLAGS EXE_LINKER_FLAGS)
+    if(DEFINED TAMGA_${_flags})
+        list(APPEND _configure_args "-DCMAKE_${_flags}=${TAMGA_${_flags}}")
+    endif()
+endforeach()
 execute_process(
     COMMAND "${CMAKE_COMMAND}" ${_configure_args}
     RESULT_VARIABLE _configure_result

@@ -991,12 +991,22 @@ void TestTimestampEngineSuite() {
         ExpectTrue(invalid.crypto_valid && invalid.reason_code == "TIMESTAMP_TIME_INVALID",
                    "Неправильний календар має відрізнятися від неправильного підпису");
 
-        for (const std::string outside : {"20000101000000Z", "20990101000000Z"}) {
+        // Фікстура чинна один рік. Перевіряємо прострочення в межах time_t,
+        // а 2099 рік окремо перевіряє відмову платформ із 32-бітним часом.
+        const auto after_certificate = TimestampTimeForTest(std::time(nullptr) + 2 * 365 * 86400);
+        for (const std::string& outside : {std::string("20000101000000Z"), after_certificate,
+                                          std::string("20990101000000Z")}) {
             const auto valid_tst = CreateTstInfoDer(imprint, outside);
             ExpectTrue(GenerateMockTspToken(tsa.pkcs12_blob, tsa.cert_der, valid_tst,
                                             input.explicit_timestamp_token_der), "Історичний/майбутній TSTInfo підписується");
             const auto expired = TimestampEngine{}.Validate(input);
             ExpectFalse(expired.valid, "genTime поза строком TSA не є валідним");
+            if (outside == "20990101000000Z" && std::numeric_limits<std::time_t>::max() < 4070908800LL) {
+                ExpectTrue(expired.crypto_valid && !expired.gen_time_valid &&
+                           expired.reason_code == "TIMESTAMP_TIME_INVALID",
+                           "Час поза діапазоном time_t відхиляється без fallback на now");
+                continue;
+            }
             ExpectTrue(expired.gen_time_valid && !expired.certificate_time_valid &&
                        expired.reason_code == "TSA_CERTIFICATE_TIME_INVALID",
                        "Строк сертифіката оцінюється на genTime, а не на now");
