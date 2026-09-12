@@ -191,10 +191,10 @@ function Split-LinkFragment {
 
 function Get-LibraryName {
     param([string]$Token)
-    if ($Token -match '^-l(.+)$') { return $Matches[1] }
-    if ($Token.StartsWith('-') -or $Token.StartsWith('/')) {
-        if ($Token -notmatch '[\\/]') { return $null }   # прапорець лінкера
-    }
+    if ($Token -cmatch '^-l(.+)$') { return $Matches[1] }
+    # RPATH/-L можуть містити шляхи, але залишаються прапорцями.
+    # Абсолютні Unix-шляхи бібліотек починаються з / і не є MSVC options.
+    if ($Token.StartsWith('-') -or $Token -match '^/[A-Za-z]+:') { return $null }
     $leaf = ($Token -split '[\\/]')[-1]
     # Unix додає lib до імені target; довідник використовує ім'я бібліотеки.
     # Windows .lib зберігає власне ім'я (наприклад, libxml2.lib).
