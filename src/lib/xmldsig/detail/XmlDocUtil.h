@@ -397,9 +397,10 @@ inline std::string SerializeNode(xmlDocPtr doc, xmlNodePtr node) {
                             ? xmlNodeDump(buffer, scratch, copy, 0, 0)
                             : xmlNodeDump(buffer, doc, node, 0, 0);
     std::string result;
-    if (written >= 0 && buffer->content != nullptr) {
-        result.assign(reinterpret_cast<const char*>(buffer->content),
-                      static_cast<std::size_t>(buffer->use));
+    const xmlChar* content = xmlBufferContent(buffer);
+    if (written >= 0 && content != nullptr) {
+        result.assign(reinterpret_cast<const char*>(content),
+                      static_cast<std::size_t>(xmlBufferLength(buffer)));
     }
     xmlBufferFree(buffer);
     if (scratch != nullptr) {
