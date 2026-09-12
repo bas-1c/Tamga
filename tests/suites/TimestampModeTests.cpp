@@ -1001,7 +1001,7 @@ void TestTimestampEngineSuite() {
                                             input.explicit_timestamp_token_der), "Історичний/майбутній TSTInfo підписується");
             const auto expired = TimestampEngine{}.Validate(input);
             ExpectFalse(expired.valid, "genTime поза строком TSA не є валідним");
-            if (outside == "20990101000000Z" && std::numeric_limits<std::time_t>::max() < 4070908800LL) {
+            if (outside == "20990101000000Z" && std::numeric_limits<std::time_t>::digits < 32) {
                 ExpectTrue(expired.crypto_valid && !expired.gen_time_valid &&
                            expired.reason_code == "TIMESTAMP_TIME_INVALID",
                            "Час поза діапазоном time_t відхиляється без fallback на now");
